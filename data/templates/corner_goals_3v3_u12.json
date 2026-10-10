@@ -1,0 +1,288 @@
+{
+  "id": "corner_goals_3v3_u12",
+  "kind": "game_related",
+  "ageGroups": [
+    "U11",
+    "U12",
+    "U13"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 12,
+  "area": {
+    "lengthM": 30,
+    "widthM": 20
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "mini_goals"
+  ],
+  "themes": [
+    "possession",
+    "width_and_support",
+    "decision_making"
+  ],
+  "name": {
+    "en": "Corner goals 3v3",
+    "fr": "Buts dans les coins 3 contre 3",
+    "ar": "أهداف الزوايا 3 ضد 3"
+  },
+  "organisation": {
+    "en": "30 m by 20 m area with a mini goal in each corner. Two teams of three plus three neutral players who support the team in possession. Score by passing or dribbling into a corner goal. The team that loses the ball defends all four goals.",
+    "fr": "Zone de 30 m sur 20 m avec un mini-but dans chaque coin. Deux équipes de trois et trois joueurs neutres qui soutiennent l'équipe en possession. On marque en passant ou en conduisant dans un but de coin. L'équipe qui perd le ballon défend les quatre buts.",
+    "ar": "منطقة 30 × 20 م مع مرمى صغير في كل زاوية. فريقان من ثلاثة لاعبين وثلاثة لاعبين محايدين يساندون الفريق المستحوذ. يُسجَّل بالتمرير أو بالمراوغة إلى أحد مرامي الزوايا. الفريق الذي يفقد الكرة يدافع عن المرامي الأربعة."
+  },
+  "coachingPoints": {
+    "en": [
+      "Create width early so the ball can switch sides",
+      "Support the ball carrier from 5 to 10 m",
+      "Pick the corner goal furthest from the nearest defender"
+    ],
+    "fr": [
+      "Créer de la largeur tôt pour pouvoir changer de côté",
+      "Soutenir le porteur à 5-10 m",
+      "Choisir le but de coin le plus éloigné du défenseur le plus proche"
+    ],
+    "ar": [
+      "أنشئ العرض مبكرًا لتتمكن من تحويل اللعب للجهة الأخرى",
+      "ساند حامل الكرة من مسافة 5 إلى 10 م",
+      "اختر مرمى الزاوية الأبعد عن أقرب مدافع"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "en": "Remove the neutral players",
+        "fr": "Retirer les joueurs neutres",
+        "ar": "أزل اللاعبين المحايدين"
+      }
+    },
+    {
+      "label": "progression_for_stronger_players",
+      "text": {
+        "en": "Two touches maximum for the neutral players",
+        "fr": "Deux touches maximum pour les joueurs neutres",
+        "ar": "لمستان كحد أقصى للاعبين المحايدين"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 0.2,
+        "w": 2.6,
+        "h": 0.9
+      },
+      {
+        "x": 27.2,
+        "y": 0.2,
+        "w": 2.6,
+        "h": 0.9
+      },
+      {
+        "x": 0.2,
+        "y": 18.9,
+        "w": 2.6,
+        "h": 0.9
+      },
+      {
+        "x": 27.2,
+        "y": 18.9,
+        "w": 2.6,
+        "h": 0.9
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 8,
+        "y": 10
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 12,
+        "y": 5
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 11,
+        "y": 15
+      },
+      {
+        "id": "r1",
+        "team": "b",
+        "label": "4",
+        "x": 14,
+        "y": 10
+      },
+      {
+        "id": "r2",
+        "team": "b",
+        "label": "5",
+        "x": 15,
+        "y": 6
+      },
+      {
+        "id": "r3",
+        "team": "b",
+        "label": "6",
+        "x": 16,
+        "y": 14
+      },
+      {
+        "id": "y1",
+        "team": "n",
+        "label": "7",
+        "x": 15,
+        "y": 1.5
+      },
+      {
+        "id": "y2",
+        "team": "n",
+        "label": "8",
+        "x": 15,
+        "y": 18.5
+      },
+      {
+        "id": "y3",
+        "team": "n",
+        "label": "9",
+        "x": 27,
+        "y": 10
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 8.7,
+        "y": 10.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 3,
+        "caption": {
+          "en": "Blue passes wide to a neutral player",
+          "fr": "Les bleus passent sur le côté à un joueur neutre",
+          "ar": "الأزرق يمرّر إلى لاعب محايد على الطرف"
+        },
+        "moves": {
+          "b": [
+            [15.7, 2]
+          ],
+          "a2": [
+            [10, 3.5]
+          ],
+          "a3": [
+            [10, 16.5]
+          ],
+          "r1": [
+            [12, 9]
+          ],
+          "r2": [
+            [13.5, 7]
+          ],
+          "r3": [
+            [14, 15.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "en": "The neutral switches the play",
+          "fr": "Le joueur neutre change le jeu de côté",
+          "ar": "اللاعب المحايد يحوّل اللعب"
+        },
+        "moves": {
+          "b": [
+            [15.7, 19]
+          ],
+          "a3": [
+            [12.5, 17.5]
+          ],
+          "r1": [
+            [13, 11]
+          ],
+          "r2": [
+            [14, 8.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "en": "Pass to the player free in space",
+          "fr": "Passe vers le joueur libre dans l'espace",
+          "ar": "تمريرة إلى اللاعب الحر في المساحة"
+        },
+        "moves": {
+          "b": [
+            [13.2, 18]
+          ],
+          "r3": [
+            [12, 15]
+          ]
+        }
+      },
+      {
+        "durationS": 3.5,
+        "caption": {
+          "en": "Dribble to the open corner goal",
+          "fr": "Conduire vers le but de coin libre",
+          "ar": "راوغ نحو مرمى الزاوية المفتوح"
+        },
+        "moves": {
+          "a3": [
+            [6, 18.2],
+            [2.4, 17.6]
+          ],
+          "b": [
+            [6.7, 18.7],
+            [3.0999999999999996, 18.1]
+          ],
+          "r3": [
+            [7, 16.5]
+          ],
+          "r1": [
+            [10, 13]
+          ],
+          "r2": [
+            [12, 11]
+          ]
+        }
+      },
+      {
+        "durationS": 1.2,
+        "caption": {
+          "en": "Score",
+          "fr": "But",
+          "ar": "هدف"
+        },
+        "moves": {
+          "b": [
+            [1.5, 19.3]
+          ]
+        }
+      }
+    ]
+  }
+}

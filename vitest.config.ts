@@ -6,11 +6,13 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const p = (...s: string[]) => path.join(root, ...s);
 
 export default defineConfig({
+  esbuild: { jsx: "automatic" },
   resolve: {
     alias: [
       { find: /^@mourabbi\/schemas$/, replacement: p("packages/schemas/src/index.ts") },
       { find: /^@mourabbi\/animation\/core$/, replacement: p("packages/animation/src/core.ts") },
       { find: /^@mourabbi\/animation\/validate$/, replacement: p("packages/animation/src/validate.ts") },
+      { find: /^@mourabbi\/animation\/static$/, replacement: p("packages/animation/src/static.tsx") },
       { find: /^@mourabbi\/animation\/authoring$/, replacement: p("packages/animation/src/authoring.ts") },
       { find: /^@mourabbi\/animation$/, replacement: p("packages/animation/src/index.ts") },
       { find: /^@\/(.*)$/, replacement: p("apps/web") + "/$1" },

@@ -1,0 +1,312 @@
+{
+  "id": "dynamic_warmup_ball",
+  "kind": "warmup",
+  "ageGroups": [
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U19",
+    "senior"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 30,
+  "area": {
+    "lengthM": 20,
+    "widthM": 20
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "other"
+  ],
+  "name": {
+    "en": "Dynamic warm-up with a ball",
+    "fr": "Échauffement dynamique avec ballon",
+    "ar": "إحماء ديناميكي بالكرة"
+  },
+  "organisation": {
+    "en": "Each player has a ball inside a 20 m square. On the coach's call: change direction, swap balls with a partner, dribble to a coloured cone. Build from walking pace to match pace.",
+    "fr": "Chaque joueur a un ballon dans un carré de 20 m. À l'appel de l'entraîneur : changer de direction, échanger de ballon avec un partenaire, conduire jusqu'à un plot de couleur. Montée en intensité progressive, de la marche au rythme de match.",
+    "ar": "لكل لاعب كرة داخل مربع طوله 20 م. عند نداء المدرّب: تغيير الاتجاه، تبديل الكرة مع زميل، المراوغة نحو قمع ملوّن. يزداد الإيقاع تدريجيًا من المشي حتى إيقاع المباراة."
+  },
+  "coachingPoints": {
+    "en": [
+      "Heads up while dribbling",
+      "Short touches, ball close to the feet",
+      "Raise the intensity step by step"
+    ],
+    "fr": [
+      "Tête relevée en conduisant",
+      "Touches courtes, ballon près des pieds",
+      "Augmenter l'intensité progressivement"
+    ],
+    "ar": [
+      "ارفع رأسك أثناء المراوغة",
+      "لمسات قصيرة والكرة قريبة من القدمين",
+      "ارفع الشدة تدريجيًا"
+    ]
+  },
+  "variants": [],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 2,
+        "y": 2,
+        "color": "o"
+      },
+      {
+        "x": 18,
+        "y": 2,
+        "color": "y"
+      },
+      {
+        "x": 18,
+        "y": 18,
+        "color": "w"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "color": "r"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "p1",
+        "team": "a",
+        "label": "1",
+        "x": 4,
+        "y": 4
+      },
+      {
+        "id": "p2",
+        "team": "a",
+        "label": "2",
+        "x": 16,
+        "y": 5
+      },
+      {
+        "id": "p3",
+        "team": "a",
+        "label": "3",
+        "x": 5,
+        "y": 15
+      },
+      {
+        "id": "p4",
+        "team": "a",
+        "label": "4",
+        "x": 15,
+        "y": 16
+      }
+    ],
+    "balls": [
+      {
+        "id": "b1",
+        "x": 4.7,
+        "y": 4.5
+      },
+      {
+        "id": "b2",
+        "x": 16.7,
+        "y": 5.5
+      },
+      {
+        "id": "b3",
+        "x": 5.7,
+        "y": 15.5
+      },
+      {
+        "id": "b4",
+        "x": 15.7,
+        "y": 16.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 4,
+        "caption": {
+          "en": "Dribble freely with your head up",
+          "fr": "Conduire librement, tête relevée",
+          "ar": "راوغ بحرية مع رفع الرأس"
+        },
+        "moves": {
+          "p1": [
+            [9, 7],
+            [6, 12]
+          ],
+          "b1": [
+            [9.7, 7.5],
+            [6.7, 12.5]
+          ],
+          "p2": [
+            [12, 9],
+            [15, 13]
+          ],
+          "b2": [
+            [12.7, 9.5],
+            [15.7, 13.5]
+          ],
+          "p3": [
+            [9, 13],
+            [4, 9]
+          ],
+          "b3": [
+            [9.7, 13.5],
+            [4.7, 9.5]
+          ],
+          "p4": [
+            [11, 12],
+            [9, 17]
+          ],
+          "b4": [
+            [11.7, 12.5],
+            [9.7, 17.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "en": "On the coach's call, change direction",
+          "fr": "À l'appel de l'entraîneur, changer de direction",
+          "ar": "عند نداء المدرّب غيّر الاتجاه"
+        },
+        "moves": {
+          "p1": [
+            [11, 14]
+          ],
+          "b1": [
+            [11.7, 14.5]
+          ],
+          "p2": [
+            [16, 8]
+          ],
+          "b2": [
+            [16.7, 8.5]
+          ],
+          "p3": [
+            [8, 5]
+          ],
+          "b3": [
+            [8.7, 5.5]
+          ],
+          "p4": [
+            [14, 13]
+          ],
+          "b4": [
+            [14.7, 13.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "en": "Find a partner",
+          "fr": "Trouver un partenaire",
+          "ar": "اذهب إلى زميل"
+        },
+        "moves": {
+          "p1": [
+            [9.5, 10.5]
+          ],
+          "b1": [
+            [10.2, 11]
+          ],
+          "p3": [
+            [9.5, 8]
+          ],
+          "b3": [
+            [10.2, 8.5]
+          ],
+          "p2": [
+            [14.5, 11.5]
+          ],
+          "b2": [
+            [15.2, 12]
+          ],
+          "p4": [
+            [14.5, 14]
+          ],
+          "b4": [
+            [15.2, 14.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "en": "Swap balls",
+          "fr": "Échanger les ballons",
+          "ar": "بدّل الكرات"
+        },
+        "moves": {
+          "b1": [
+            [10.2, 8.5]
+          ],
+          "b3": [
+            [10.2, 11]
+          ],
+          "b2": [
+            [15.2, 14.5]
+          ],
+          "b4": [
+            [15.2, 12]
+          ]
+        }
+      },
+      {
+        "durationS": 4,
+        "caption": {
+          "en": "Dribble to a coloured cone",
+          "fr": "Conduire jusqu'à un plot de couleur",
+          "ar": "راوغ نحو قمع ملوّن"
+        },
+        "moves": {
+          "p1": [
+            [3, 3]
+          ],
+          "b3": [
+            [3.7, 3.5]
+          ],
+          "p3": [
+            [17, 3]
+          ],
+          "b1": [
+            [17.7, 3.5]
+          ],
+          "p2": [
+            [17, 17]
+          ],
+          "b4": [
+            [17.7, 17.5]
+          ],
+          "p4": [
+            [3, 17]
+          ],
+          "b2": [
+            [3.7, 17.5]
+          ]
+        }
+      }
+    ]
+  }
+}

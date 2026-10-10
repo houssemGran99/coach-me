@@ -1,0 +1,173 @@
+{
+  "id": "cooldown_walk_stretch",
+  "kind": "cooldown",
+  "ageGroups": [
+    "U6",
+    "U7",
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U19",
+    "senior"
+  ],
+  "minPlayers": 4,
+  "maxPlayers": 40,
+  "area": {
+    "lengthM": 15,
+    "widthM": 15
+  },
+  "equipment": [],
+  "themes": [
+    "other"
+  ],
+  "name": {
+    "en": "Walk and stretch",
+    "fr": "Marche et étirements",
+    "ar": "مشي وإطالة"
+  },
+  "organisation": {
+    "en": "Slow walk around the pitch, then static stretches for the main leg muscles, about 20 seconds each. Finish with a short group talk.",
+    "fr": "Marche lente autour du terrain, puis étirements statiques des principaux muscles des jambes, environ 20 secondes chacun. Terminer par un court échange en groupe.",
+    "ar": "مشي بطيء حول الملعب، ثم إطالة ثابتة لعضلات الساقين الرئيسية نحو 20 ثانية لكل عضلة. تُختتم بحديث قصير مع المجموعة."
+  },
+  "coachingPoints": {
+    "en": [
+      "Breathe slowly and keep the pace easy",
+      "Ask each player one thing they did well"
+    ],
+    "fr": [
+      "Respirer lentement et garder un rythme tranquille",
+      "Demander à chaque joueur une chose qu'il a bien faite"
+    ],
+    "ar": [
+      "تنفّس ببطء وحافظ على إيقاع هادئ",
+      "اسأل كل لاعب عن أمر واحد أجاده"
+    ]
+  },
+  "variants": [],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "c0",
+        "team": "c",
+        "label": "C",
+        "x": 7.5,
+        "y": 7.5
+      },
+      {
+        "id": "p1",
+        "team": "a",
+        "label": "1",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "id": "p2",
+        "team": "a",
+        "label": "2",
+        "x": 13,
+        "y": 2
+      },
+      {
+        "id": "p3",
+        "team": "a",
+        "label": "3",
+        "x": 13,
+        "y": 13
+      },
+      {
+        "id": "p4",
+        "team": "a",
+        "label": "4",
+        "x": 2,
+        "y": 13
+      }
+    ],
+    "balls": [],
+    "steps": [
+      {
+        "durationS": 5,
+        "caption": {
+          "en": "Walk slowly around the pitch",
+          "fr": "Marcher lentement autour du terrain",
+          "ar": "امشِ ببطء حول الملعب"
+        },
+        "moves": {
+          "p1": [
+            [13, 2]
+          ],
+          "p2": [
+            [13, 13]
+          ],
+          "p3": [
+            [2, 13]
+          ],
+          "p4": [
+            [2, 2]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "en": "Stretch the main leg muscles",
+          "fr": "Étirer les principaux muscles des jambes",
+          "ar": "أطِل عضلات الساقين الرئيسية"
+        },
+        "moves": {
+          "p1": [
+            [7.5, 3]
+          ],
+          "p2": [
+            [12, 7.5]
+          ],
+          "p3": [
+            [7.5, 12]
+          ],
+          "p4": [
+            [3, 7.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "en": "Gather for a short group talk",
+          "fr": "Se rassembler pour un court échange",
+          "ar": "اجتمعوا لحديث قصير"
+        },
+        "moves": {
+          "p1": [
+            [7.5, 4.9]
+          ],
+          "p2": [
+            [10.1, 7.5]
+          ],
+          "p3": [
+            [7.5, 10.1]
+          ],
+          "p4": [
+            [4.9, 7.5]
+          ]
+        }
+      }
+    ]
+  }
+}

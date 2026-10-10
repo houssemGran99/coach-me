@@ -11,7 +11,7 @@
     "dev": "pnpm --filter @mourabbi/web dev",
     "build": "pnpm --filter @mourabbi/web build",
     "lint": "pnpm -r --if-present lint",
-    "typecheck": "pnpm -r --if-present typecheck",
+    "typecheck": "tsc --noEmit && pnpm -r --if-present typecheck",
     "test": "vitest run",
     "test:e2e": "pnpm --filter @mourabbi/web test:e2e",
     "templates:validate": "tsx scripts/validate-templates.ts",
@@ -21,6 +21,8 @@
     "@types/node": "^26.6.5",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.3"
+    "vitest": "^5.0.3",
+    "@mourabbi/schemas": "workspace:*",
+    "@mourabbi/animation": "workspace:*"
   }
 }

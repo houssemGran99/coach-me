@@ -1,0 +1,262 @@
+{
+  "id": "small_sided_game_5v5",
+  "kind": "game",
+  "ageGroups": [
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U19"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 20,
+  "area": {
+    "lengthM": 40,
+    "widthM": 30
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "mini_goals"
+  ],
+  "themes": [
+    "transition",
+    "finishing",
+    "decision_making",
+    "width_and_support"
+  ],
+  "name": {
+    "en": "5v5 small-sided game",
+    "fr": "Jeu réduit 5 contre 5",
+    "ar": "لعبة مصغّرة 5 ضد 5"
+  },
+  "organisation": {
+    "en": "40 m by 30 m pitch with a mini goal at each end. Two teams of four or five. Quick restarts and an immediate kick-off after every goal. The coach freezes play to coach the session focus.",
+    "fr": "Terrain de 40 m sur 30 m avec un mini-but à chaque extrémité. Deux équipes de quatre ou cinq joueurs. Remises en jeu rapides et reprise immédiate après chaque but. L'entraîneur fige le jeu pour travailler le thème de la séance.",
+    "ar": "ملعب 40 × 30 م بمرمى صغير في كل طرف. فريقان من أربعة أو خمسة لاعبين. إعادة اللعب سريعة واستئناف فوري بعد كل هدف. يوقف المدرّب اللعب ليعمل على محور الحصة."
+  },
+  "coachingPoints": {
+    "en": [
+      "Name one focus before kick-off",
+      "Freeze play for 20 seconds, ask one question, restart",
+      "Praise the right attempt even when it fails"
+    ],
+    "fr": [
+      "Annoncer un seul objectif avant le coup d'envoi",
+      "Figer le jeu 20 secondes, poser une question, reprendre",
+      "Féliciter la bonne intention même si elle échoue"
+    ],
+    "ar": [
+      "حدّد هدفًا واحدًا قبل صافرة البداية",
+      "أوقف اللعب 20 ثانية، اطرح سؤالًا واحدًا، ثم استأنف",
+      "اشكر المحاولة الصحيحة حتى لو لم تنجح"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "en": "Add a neutral player for the team in possession",
+        "fr": "Ajouter un joueur neutre pour l'équipe en possession",
+        "ar": "أضف لاعبًا محايدًا للفريق المستحوذ"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "en": "Two touches maximum",
+        "fr": "Deux touches maximum",
+        "ar": "لمستان كحد أقصى"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": true,
+    "cones": [],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 13.5,
+        "w": 0.9,
+        "h": 3
+      },
+      {
+        "x": 38.9,
+        "y": 13.5,
+        "w": 0.9,
+        "h": 3
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 8,
+        "y": 15
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 12,
+        "y": 8
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 14,
+        "y": 22
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 22,
+        "y": 15
+      },
+      {
+        "id": "r1",
+        "team": "b",
+        "label": "5",
+        "x": 27,
+        "y": 13
+      },
+      {
+        "id": "r2",
+        "team": "b",
+        "label": "6",
+        "x": 27,
+        "y": 8
+      },
+      {
+        "id": "r3",
+        "team": "b",
+        "label": "7",
+        "x": 27,
+        "y": 22
+      },
+      {
+        "id": "r4",
+        "team": "b",
+        "label": "8",
+        "x": 33,
+        "y": 15
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 8.7,
+        "y": 15.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "en": "Blue builds from the back",
+          "fr": "Les bleus construisent depuis l'arrière",
+          "ar": "الأزرق يبني اللعب من الخلف"
+        },
+        "moves": {
+          "b": [
+            [12.7, 8.5]
+          ],
+          "r1": [
+            [24, 11]
+          ],
+          "r2": [
+            [24, 7]
+          ],
+          "r3": [
+            [25, 19]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "en": "Blue switches the play",
+          "fr": "Les bleus changent le jeu de côté",
+          "ar": "الأزرق يحوّل اللعب"
+        },
+        "moves": {
+          "b": [
+            [14.7, 22.5]
+          ],
+          "r1": [
+            [22, 12]
+          ],
+          "r2": [
+            [21, 8]
+          ],
+          "r3": [
+            [22, 23]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "en": "The coach freezes play and asks one question",
+          "fr": "L'entraîneur fige le jeu et pose une question",
+          "ar": "المدرّب يوقف اللعب ويطرح سؤالًا"
+        },
+        "moves": {}
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "en": "Play restarts: the ball goes to the free striker",
+          "fr": "Le jeu reprend : le ballon va à l'attaquant libre",
+          "ar": "يُستأنف اللعب: الكرة إلى المهاجم الحر"
+        },
+        "moves": {
+          "a4": [
+            [26, 15]
+          ],
+          "b": [
+            [26.7, 15.5]
+          ],
+          "r1": [
+            [24, 13.5]
+          ],
+          "r3": [
+            [24, 21]
+          ],
+          "r4": [
+            [31, 17]
+          ]
+        }
+      },
+      {
+        "durationS": 2.2,
+        "caption": {
+          "en": "Shoot into the goal",
+          "fr": "Tir au but",
+          "ar": "تسديدة نحو المرمى"
+        },
+        "moves": {
+          "b": [
+            [39.4, 14.4]
+          ]
+        }
+      }
+    ]
+  }
+}
