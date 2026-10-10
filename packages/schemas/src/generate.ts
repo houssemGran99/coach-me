@@ -80,6 +80,11 @@ const FALLBACK_MESSAGES = {
     fr: "Le temps est trop court pour un échauffement, les exercices et un retour au calme.",
     ar: "الوقت أقصر من أن يتسع للإحماء والتمارين والتهدئة.",
   },
+  OUT_OF_SCOPE: {
+    en: "I can only help with coaching a squad: sessions and practices.",
+    fr: "Je peux seulement aider à entraîner une équipe : séances et exercices.",
+    ar: "يمكنني المساعدة فقط في تدريب فريق: الحصص والتمارين.",
+  },
 } as const;
 
 export function errorMessage(code: keyof typeof FALLBACK_MESSAGES, lang: "fr" | "ar" | "en"): string {
@@ -112,10 +117,13 @@ export function buildFallbackSession(
   request: SessionRequest,
   eligible: Practice[],
   ctx: BuildContext,
+  opts: { pin?: Practice } = {},
 ): FallbackResult {
   const ranked = rankByTheme(eligible, request.focus.theme);
-  const warm = ranked.find((p) => p.kind === "warmup");
-  const cool = ranked.find((p) => p.kind === "cooldown");
+  // A pinned practice ("Use in a session") is honoured only if it fits the squad.
+  const pin = opts.pin && eligible.some((p) => p.id === opts.pin!.id) ? opts.pin : undefined;
+  const warm = pin?.kind === "warmup" ? pin : ranked.find((p) => p.kind === "warmup");
+  const cool = pin?.kind === "cooldown" ? pin : ranked.find((p) => p.kind === "cooldown");
   const skills = ranked.filter((p) => p.kind === "technical" || p.kind === "main" || p.kind === "game_related");
   const games = ranked.filter((p) => p.kind === "game" || p.kind === "game_related");
   if (!warm || !cool || skills.length === 0) {
@@ -127,8 +135,12 @@ export function buildFallbackSession(
   const coolMin = 5;
 
   // Game-like phase: prefer a true game, else a game-related drill.
-  const gamePick = games.find((p) => p.kind === "game") ?? games[0];
+  const pinnedGame = pin && (pin.kind === "game" || pin.kind === "game_related") ? pin : undefined;
+  const gamePick = pinnedGame ?? games.find((p) => p.kind === "game") ?? games[0];
   const skillPicks = skills.filter((p) => p.id !== gamePick?.id);
+  if (pin && (pin.kind === "technical" || pin.kind === "main")) {
+    skillPicks.sort((a, b) => Number(b.id === pin.id) - Number(a.id === pin.id));
+  }
   const middle: Practice[] = [];
   const budget = avail - warmMin - coolMin;
   const wantSkills = budget >= 70 ? 2 : 1;

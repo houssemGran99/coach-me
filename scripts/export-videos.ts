@@ -10,7 +10,8 @@
  *
  * Frames are drawn with the same core and pitch as the app (buildTimeline/stateAt/PitchSvg),
  * rasterised by the Chromium that Playwright already installs for e2e tests, and encoded by ffmpeg.
- * Requires `ffmpeg` on PATH. No new dependencies.
+ * Requires `ffmpeg` on PATH. No new dependencies. If Playwright's browser build does not match,
+ * run `pnpm exec playwright install chromium` or set CHROMIUM_PATH to any Chromium/Chrome executable.
  */
 import { spawn } from "node:child_process";
 import { createRequire } from "node:module";
@@ -106,8 +107,9 @@ html,body{width:${w}px;height:${h}px;overflow:hidden;background:#0D1A13;color:#E
 #title{font-size:${wide ? 64 : 76}px;line-height:1.08;font-weight:800;letter-spacing:-.01em}
 #meta{font-size:32px;color:#9DB4A5}
 #stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-#stage svg{width:100%;height:auto;max-height:100%;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
-#side{display:flex;flex-direction:column;flex:1;min-width:0;gap:36px}
+#stage{overflow:hidden}
+#stage svg{width:100%!important;height:100%!important;border-radius:20px}
+#side{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;gap:${wide || w === h ? 24 : 36}px}
 #cap{min-height:${wide ? 150 : 190}px;display:flex;align-items:flex-start;gap:20px;font-size:${wide ? 44 : 52}px;line-height:1.2;font-weight:600}
 #cap b{flex:none;min-width:72px;height:72px;border-radius:36px;background:#F2C230;color:#1B1F23;display:grid;place-items:center;font-size:42px}
 #bar{height:10px;background:#1B3326;border-radius:5px;overflow:hidden;direction:ltr}
@@ -131,7 +133,7 @@ function intro(p: Practice, lang: Lang) {
   if (p.review.status === "reviewed" && p.review.reviewedBy) tags.push(`<span class="tag ok">${esc(t.reviewedBy(p.review.reviewedBy))}</span>`);
   else if (p.review.status === "ai_draft") tags.push(`<span class="tag">${esc(t.aiDraft)}</span>`);
   const players = p.minPlayers === p.maxPlayers ? `${p.minPlayers}` : `${p.minPlayers}–${p.maxPlayers}`;
-  return { tags: tags.join(""), title: esc(p.name[lang]), meta: `${players} ${t.players} · ${p.area.lengthM}×${p.area.widthM} m` };
+  return { tags: tags.join(""), title: esc(p.name[lang]), meta: `${players} ${t.players} · ⁦${p.area.lengthM}×${p.area.widthM} m⁩` };
 }
 
 async function exportOne(p: Practice, opts: ReturnType<typeof parseArgs>, browser: import("@playwright/test").Browser): Promise<string> {
@@ -222,7 +224,7 @@ async function main() {
   // @playwright/test lives in apps/web (e2e dependency); reuse it and its installed Chromium.
   const req = createRequire(path.join(REPO_ROOT, "apps/web/package.json"));
   const { chromium } = req("@playwright/test") as typeof import("@playwright/test");
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
   try {
     for (const p of list) {
       process.stdout.write(`${p.id} … `);

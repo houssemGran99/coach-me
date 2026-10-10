@@ -6,7 +6,6 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const p = (...s: string[]) => path.join(root, ...s);
 
 export default defineConfig({
-  esbuild: { jsx: "automatic" },
   resolve: {
     alias: [
       { find: /^server-only$/, replacement: p("test-support/server-only.ts") },
