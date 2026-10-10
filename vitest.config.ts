@@ -9,6 +9,7 @@ export default defineConfig({
   esbuild: { jsx: "automatic" },
   resolve: {
     alias: [
+      { find: /^server-only$/, replacement: p("test-support/server-only.ts") },
       { find: /^@mourabbi\/schemas$/, replacement: p("packages/schemas/src/index.ts") },
       { find: /^@mourabbi\/animation\/core$/, replacement: p("packages/animation/src/core.ts") },
       { find: /^@mourabbi\/animation\/validate$/, replacement: p("packages/animation/src/validate.ts") },

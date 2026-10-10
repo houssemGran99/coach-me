@@ -8,14 +8,16 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "pnpm --filter @mourabbi/web dev",
-    "build": "pnpm --filter @mourabbi/web build",
+    "dev": "pnpm templates:bundle && pnpm --filter @mourabbi/web dev",
+    "build": "pnpm templates:bundle && pnpm --filter @mourabbi/web build",
     "lint": "pnpm -r --if-present lint",
     "typecheck": "tsc --noEmit && pnpm -r --if-present typecheck",
     "test": "vitest run",
     "test:e2e": "pnpm --filter @mourabbi/web test:e2e",
     "templates:validate": "tsx scripts/validate-templates.ts",
-    "templates:preview": "tsx scripts/preview-templates.ts"
+    "templates:preview": "tsx scripts/preview-templates.ts",
+    "templates:bundle": "tsx scripts/bundle-templates.ts",
+    "videos:export": "tsx scripts/export-videos.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

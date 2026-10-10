@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coach – Votre séance d'entraînement en 30 secondes</title>
+<meta name="description" content="Coach aide les entraîneurs de football de Tunisie à préparer une séance chronométrée à partir d'exercices relus, à les visionner en animation et à les partager par lien.">
+<meta property="og:title" content="Coach – Votre séance d'entraînement en 30 secondes">
+<meta property="og:description" content="Des exercices animés, une séance chronométrée, un lien à partager. Pour les entraîneurs d'académies de football.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14532d">
+<style>
+:root{
+  --bg:#f7faf5; --ink:#10261a; --muted:#4b5f53; --card:#ffffff; --line:#dbe5d9;
+  --green:#14532d; --green2:#1f7a43; --accent:#f5b301; --blue:#2563eb; --red:#dc2626;
+  --pitch:#2f8f4e; --pitch2:#2a8148;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0d1a12; --ink:#eef5ee; --muted:#a6b8ab; --card:#14251a; --line:#25402d; --green:#4ade80; --green2:#22c55e;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:16px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.01em}
+.logo span{color:var(--green2)}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1.4rem;border-radius:999px;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--green2)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+@media (prefers-color-scheme: dark){.btn{color:#06210f}}
+.hero{padding:32px 0 56px;display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.hero{grid-template-columns:1.1fr .9fr}}
+.badge{display:inline-block;background:var(--card);border:1px solid var(--line);color:var(--muted);padding:.3rem .8rem;border-radius:999px;font-size:.85rem}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:.8rem 0 1rem;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--green2)}
+.lead{color:var(--muted);font-size:1.12rem;max-width:34em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.note{font-size:.85rem;color:var(--muted);margin-top:12px}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.demo svg{width:100%;height:auto;display:block;border-radius:12px}
+.demo .cap{display:flex;justify-content:space-between;gap:8px;font-size:.85rem;color:var(--muted);padding:10px 4px 2px}
+.demo .cap b{color:var(--ink)}
+section{padding:48px 0}
+section h2{font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.15;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px;max-width:38em}
+.grid{display:grid;gap:16px}
+@media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{margin:.2rem 0 .4rem;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.num{width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800}
+@media (prefers-color-scheme: dark){.num{color:#06210f}}
+.band{background:var(--green);color:#fff;border-radius:20px;padding:28px}
+.band h2,.band p{color:#fff}
+.band p{opacity:.9;max-width:40em}
+@media (prefers-color-scheme: dark){.band{background:#123a22}}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{color:var(--muted);margin:.6rem 0 0}
+form{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+input[type=email]{flex:1 1 240px;padding:.85rem 1rem;border-radius:999px;border:1.5px solid var(--line);font-size:1rem;background:var(--card);color:var(--ink)}
+.band input[type=email]{border-color:transparent}
+.band .btn{background:var(--accent);color:#1b1500}
+.band .btn:hover{background:#ffc928}
+.msg{margin-top:10px;font-size:.95rem;min-height:1.3em}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion: reduce){ .demo svg *{animation:none!important} }
+/* démo animée */
+@keyframes pass1{0%,10%{transform:translate(0,0)}35%,100%{transform:translate(120px,-10px)}}
+@keyframes pass2{0%,35%{transform:translate(0,0)}60%,100%{transform:translate(-110px,20px)}}
+@keyframes ball{0%,10%{transform:translate(0,0)}35%{transform:translate(120px,-10px)}60%{transform:translate(10px,10px)}85%,100%{transform:translate(-100px,-30px)}}
+@keyframes press{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,10px)}}
+.a1{animation:pass1 6s ease-in-out infinite alternate}
+.a2{animation:pass2 6s ease-in-out infinite alternate}
+.bl{animation:ball 6s ease-in-out infinite alternate}
+.r1{animation:press 3s ease-in-out infinite}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Coach</div>
+    <a class="btn ghost" href="#acces">Accès anticipé</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <div>
+      <span class="badge">Pour les entraîneurs d'académies de football en Tunisie</span>
+      <h1>Votre séance d'entraînement <em>en 30 secondes</em>.</h1>
+      <p class="lead">Décrivez votre effectif et ce qui n'a pas marché la semaine dernière. Coach vous propose une séance chronométrée, avec des exercices que vous pouvez <strong>voir en animation</strong> avant de les installer sur le terrain.</p>
+      <div class="cta">
+        <a class="btn" href="#acces">Rejoindre l'accès anticipé</a>
+        <a class="btn ghost" href="#comment">Voir comment ça marche</a>
+      </div>
+      <p class="note">Gratuit pendant la phase de lancement. Aucune donnée personnelle sur vos joueurs.</p>
+    </div>
+
+    <div class="demo" aria-label="Exemple d'exercice animé">
+      <svg viewBox="0 0 400 270" role="img" aria-label="Exercice de possession : deux bleus échangent le ballon sous la pression d'un rouge">
+        <rect width="400" height="270" fill="#2f8f4e"/>
+        <rect x="0" y="0" width="200" height="270" fill="#2a8148"/>
+        <rect x="14" y="14" width="372" height="242" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+        <rect x="90" y="60" width="220" height="150" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="6 5"/>
+        <g fill="#f59e0b"><polygon points="90,60 98,60 94,52"/><polygon points="310,60 318,60 314,52"/><polygon points="90,216 98,216 94,208"/><polygon points="310,216 318,216 314,208"/></g>
+        <g class="a1"><circle cx="130" cy="120" r="13" fill="#2563eb" stroke="#fff" stroke-width="2"/><text x="130" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">A</text></g>
+        <g class="a2"><circle cx="270" cy="110" r="13" fill="#2563eb" stroke="#fff" stroke-width="2"/><text x="270" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">B</text></g>
+        <g><circle cx="200" cy="170" r="13" fill="#2563eb" stroke="#fff" stroke-width="2"/><text x="200" y="175" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">C</text></g>
+        <g class="r1"><circle cx="170" cy="100" r="13" fill="#dc2626" stroke="#fff" stroke-width="2"/><text x="170" y="105" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">X</text></g>
+        <g class="bl"><circle cx="146" cy="122" r="6" fill="#fff" stroke="#111" stroke-width="1.5"/></g>
+      </svg>
+      <div class="cap"><span><b>Possession 3 contre 1</b> · U10</span><span>⏱ 8 min</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Préparer une séance prend trop de temps.</h2>
+    <p class="sub">Entre le travail, les trajets et les effectifs qui changent, on improvise souvent. Coach vous donne une base solide, que vous gardez la main pour modifier.</p>
+    <div class="grid c3">
+      <div class="card"><h3>⏱ Une séance prête</h3><p>Échauffement, exercices, jeu, retour au calme : une séance complète avec une durée pour chaque bloc.</p></div>
+      <div class="card"><h3>🎬 Des exercices animés</h3><p>Voyez les déplacements, les passes et les zones avant la séance. Plus besoin de longs schémas à décoder.</p></div>
+      <div class="card"><h3>🔗 Un lien à partager</h3><p>Envoyez un exercice à votre staff par WhatsApp. Il s'ouvre sur le téléphone, sans installation.</p></div>
+    </div>
+  </section>
+
+  <section id="comment">
+    <h2>Comment ça marche</h2>
+    <p class="sub">Trois étapes, sur votre téléphone.</p>
+    <div class="grid c3">
+      <div class="card"><div class="num">1</div><h3>Décrivez votre groupe</h3><p>Catégorie d'âge, nombre de joueurs, matériel et espace disponibles, et ce qu'il faut améliorer : en français, en arabe ou en darija.</p></div>
+      <div class="card"><div class="num">2</div><h3>Recevez une séance</h3><p>Coach assemble les exercices adaptés. Vous modifiez, remplacez ou supprimez ce que vous voulez.</p></div>
+      <div class="card"><div class="num">3</div><h3>Entraînez et partagez</h3><p>Utilisez-la même hors connexion, gardez vos exercices favoris dans votre bibliothèque, partagez-les par lien.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Conçu pour le terrain, pas pour un bureau</h2>
+    <div class="grid c2" style="margin-top:20px">
+      <div class="card"><h3>🌍 Français, arabe, anglais</h3><p>Interface complète, y compris l'arabe de droite à gauche. Écrivez comme vous parlez.</p></div>
+      <div class="card"><h3>📶 Fonctionne hors connexion</h3><p>Application web installable : vos séances restent accessibles au stade, même avec un mauvais réseau.</p></div>
+      <div class="card"><h3>✅ Contenu relu, contenu IA séparés</h3><p>Les exercices relus par un entraîneur sont clairement identifiés. Tout ce qui est généré par IA est marqué « Brouillon IA » jusqu'à votre validation.</p></div>
+      <div class="card"><h3>🛡 Respect des enfants</h3><p>Aucune donnée personnelle sur les joueurs. Coach refuse les demandes de santé, d'alimentation ou de traitement concernant un enfant en particulier.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band" id="acces">
+      <h2>Rejoignez l'accès anticipé</h2>
+      <p>Nous ouvrons Coach à un petit groupe d'entraîneurs et d'académies pour construire l'outil avec eux. Laissez votre e-mail et nous vous contactons.</p>
+      <form id="f" novalidate>
+        <input type="email" name="email" placeholder="votre@email.com" aria-label="Adresse e-mail" required autocomplete="email">
+        <button class="btn" type="submit">Je veux essayer</button>
+      </form>
+      <div class="msg" id="msg" role="status"></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Questions fréquentes</h2>
+    <div style="margin-top:20px">
+      <details><summary>Est-ce gratuit ?</summary><p>Oui pendant le lancement. Une offre pour les académies (bibliothèque partagée entre plusieurs entraîneurs) viendra plus tard ; l'usage individuel restera accessible.</p></details>
+      <details><summary>L'IA remplace-t-elle l'entraîneur ?</summary><p>Non. Tout ce qui est généré est un brouillon que vous modifiez, enregistrez ou rejetez. C'est vous qui décidez.</p></details>
+      <details><summary>Faut-il installer une application ?</summary><p>Non, Coach s'ouvre dans le navigateur de votre téléphone et peut être ajoutée à l'écran d'accueil.</p></details>
+      <details><summary>Quelles catégories d'âge ?</summary><p>De U6 à U17, U19 et seniors.</p></details>
+      <details><summary>Collectez-vous des données sur mes joueurs ?</summary><p>Non. Vous décrivez un groupe, pas des enfants identifiés.</p></details>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Coach · Fait pour les entraîneurs de Tunisie.</div>
+</footer>
+
+<script>
+// TODO: remplacer par l'endpoint réel (Supabase, formulaire, etc.). Pour l'instant, rien n'est envoyé.
+var WAITLIST_ENDPOINT = "";
+document.getElementById("f").addEventListener("submit", function(e){
+  e.preventDefault();
+  var email = this.email.value.trim(), msg = document.getElementById("msg");
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent = "Veuillez saisir une adresse e-mail valide."; return; }
+  if(!WAITLIST_ENDPOINT){ msg.textContent = "Inscriptions bientôt ouvertes. Réessayez dans quelques jours."; return; }
+  fetch(WAITLIST_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+    .then(function(r){ if(!r.ok) throw 0; msg.textContent = "Merci ! Nous vous écrivons très vite."; e.target.reset(); })
+    .catch(function(){ msg.textContent = "Une erreur est survenue. Réessayez plus tard."; });
+});
+</script>
+</body>
+</html>
