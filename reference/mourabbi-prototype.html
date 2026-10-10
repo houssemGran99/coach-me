@@ -1,0 +1,1004 @@
+<title>Mourabbi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Layout concept: a coach's clipboard. Squad form on the left as flat controls, the session as a single white sheet on the right, with a to-scale pitch sketch and a scoreboard-style clock. */
+:root{
+  --bg:#EDF2EE; --surface:#FFFFFF; --surface-2:#E3EAE5; --ink:#10201A; --muted:#51635A; --line:#CBD7CE;
+  --accent:#C8102E; --accent-ink:#FFFFFF; --pitch:#1E6B43; --pitch-fill:#D8E8DA;
+  --k-prep:#8A9A90; --k-skill:#1E6B43; --k-game:#2B6CB0;
+  --ok:#1B7A4B; --warn:#9A5B00; --bad:#B3261E;
+  --turf-a:#2F7D4E; --turf-b:#2A7448; --chalk:#F3F8F4; --stage:#0D1A13; --stage-ink:#E9F2EB;
+  --t-a:#2F6FDE; --t-b:#D93A3A; --t-n:#F2C230; --t-k:#20262B; --t-c:#F3F3F3;
+  --f-display:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  --f-body:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1511; --surface:#131F19; --surface-2:#1B2B23; --ink:#E6EFE8; --muted:#93A89B; --line:#26382E;
+    --accent:#FF5468; --accent-ink:#1A0509; --pitch:#3FAE74; --pitch-fill:#183526;
+    --k-prep:#6F8479; --k-skill:#3FAE74; --k-game:#6AA7E8;
+    --ok:#5CCB92; --warn:#E7B04A; --bad:#FF8479; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1511; --surface:#131F19; --surface-2:#1B2B23; --ink:#E6EFE8; --muted:#93A89B; --line:#26382E;
+  --accent:#FF5468; --accent-ink:#1A0509; --pitch:#3FAE74; --pitch-fill:#183526;
+  --k-prep:#6F8479; --k-skill:#3FAE74; --k-game:#6AA7E8;
+  --ok:#5CCB92; --warn:#E7B04A; --bad:#FF8479; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;padding-inline:clamp(16px,4vw,32px);padding-block:8px 56px}
+h1,h2,h3,p,ul{margin:0}
+ul{padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1120px;margin-inline:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.proto{margin-block:12px 0;padding:10px 14px;background:var(--surface-2);border:1px dashed var(--line);border-radius:6px;font-size:13px;color:var(--muted)}
+.proto b{color:var(--ink)}
+
+#app[lang="ar"]{--f-display:'IBM Plex Sans Arabic',system-ui,sans-serif;--f-body:'IBM Plex Sans Arabic',system-ui,sans-serif}
+#app[lang="ar"] *{letter-spacing:0 !important}
+#app{font-family:var(--f-body)}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:18px 4px}
+.brand{font:700 30px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.lang button{min-width:48px;min-height:40px;border:0;background:transparent;cursor:pointer;font-weight:600;font-size:14px;letter-spacing:.06em}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+.intro{padding-block:14px 26px;max-width:720px}
+.intro h1{font:700 clamp(34px,6vw,52px)/1.02 var(--f-display);text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+.intro p{margin-top:10px;color:var(--muted);max-width:62ch}
+
+.layout{display:grid;gap:24px;grid-template-columns:minmax(0,1fr);align-items:start}
+.layout > *{min-width:0}
+@media (min-width:900px){.layout{grid-template-columns:340px minmax(0,1fr)}}
+
+.sec-t{font:600 12px/1.2 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.form{display:grid;gap:16px}
+.field{display:grid;gap:6px}
+.field > label,.field > .lab{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hint{font-size:12px;color:var(--muted)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type="number"],select,textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+textarea{min-height:92px;resize:vertical;line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:inline-flex}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:40px;padding-inline:14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:14px;font-weight:500}
+.chip input:checked + span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+
+.btn{min-height:46px;padding-inline:20px;border-radius:6px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+
+.space{display:grid;gap:6px}
+.space svg{width:100%;height:auto;display:block;direction:ltr}
+.space .dims{font:600 14px var(--f-body);font-variant-numeric:tabular-nums}
+
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:clamp(16px,3vw,28px);display:grid;gap:26px;min-width:0}
+.sheet h2{font:700 26px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.04em;text-wrap:balance}
+.sheet h2 code,.err-code{font:600 13px ui-monospace,Menlo,Consolas,monospace;letter-spacing:0;text-transform:none}
+.stale{padding:10px 12px;background:var(--surface-2);border-radius:6px;font-size:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.stale span{flex:1 1 220px}
+.head{display:grid;gap:12px}
+.clock{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.clock-n{font:700 68px/0.9 var(--f-display);font-variant-numeric:tabular-nums}
+.clock-u{font:600 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.08em}
+.clock-of{color:var(--muted);font-size:14px}
+.clock.over .clock-n{color:var(--bad)}
+.k-prep{--kc:var(--k-prep)} .k-skill{--kc:var(--k-skill)} .k-game{--kc:var(--k-game)}
+.bar{display:flex;gap:2px;height:14px}
+.bar i{display:block;min-width:4px;border-radius:2px;background:var(--kc)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend span::before,.kind::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--kc);margin-inline-end:6px}
+.metaline{font-size:14px;color:var(--muted)}
+
+.blk{display:grid;gap:12px}
+.blk-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.blk-h .sum{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.checks{display:grid;gap:12px 24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.chk{display:grid;grid-template-columns:20px minmax(0,1fr);gap:2px 10px;align-items:start;font-size:14px}
+.chk svg{width:20px;height:20px;grid-row:span 2;margin-top:1px}
+.chk .lbl{font-weight:600}
+.chk .det{color:var(--muted);font-size:13px}
+.chk.ok svg{color:var(--ok)} .chk.warn svg{color:var(--warn)} .chk.bad svg{color:var(--bad)}
+.chk.bad .det{color:var(--bad)}
+
+.phases{display:grid}
+.phase{display:grid;grid-template-columns:56px minmax(0,1fr) 44px;gap:12px 18px;padding-block:20px;border-top:1px solid var(--line)}
+.phase:first-child{border-top:0;padding-top:4px}
+.time{display:flex;flex-direction:column-reverse;align-items:center;justify-content:flex-end;gap:4px}
+.mins{text-align:center;line-height:1}
+.mins .n{display:block;font:700 34px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.mins .u{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.step{width:44px;height:40px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;font-size:20px;line-height:1}
+.step:hover:not(:disabled){border-color:var(--ink)}
+.step:disabled{opacity:.35;cursor:default}
+.move{display:grid;gap:6px;align-content:start}
+.body{display:grid;gap:8px;min-width:0;align-content:start}
+.meta-row{display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center;font-size:12px}
+.kind{font-weight:600;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center}
+.badge{border:1px solid var(--warn);color:var(--warn);border-radius:4px;padding:1px 6px;font-size:11px;font-weight:600}
+.body h3{font:700 23px/1.15 var(--f-display);letter-spacing:.02em}
+.org{color:var(--muted);font-size:15px;max-width:68ch}
+.mini{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.pts{display:grid;gap:4px;font-size:15px}
+.pts li{display:flex;gap:10px}
+.pts li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--ink)}
+.vars{font-size:14px;color:var(--muted)}
+.vars span{display:block}
+.vars b{color:var(--ink);font-weight:600}
+@media (max-width:560px){
+  .phase{grid-template-columns:minmax(0,1fr) auto}
+  .time{grid-column:1;grid-row:1;flex-direction:row;justify-content:flex-start;gap:10px}
+  .move{grid-column:2;grid-row:1;display:flex}
+  .body{grid-column:1 / -1;grid-row:2}
+  .mins .n{font-size:30px}
+}
+
+.share-row{display:flex;flex-wrap:wrap;gap:10px}
+details{border-top:1px solid var(--line);padding-block:12px}
+summary{cursor:pointer;font-weight:600;min-height:32px;display:flex;align-items:center}
+details > :not(summary){margin-top:10px}
+.bubble{white-space:pre-wrap;background:var(--surface-2);padding:12px 14px;border-radius:10px;font-size:15px;max-width:440px}
+pre{overflow-x:auto;margin:0;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;direction:ltr;text-align:left;background:var(--surface-2);padding:12px;border-radius:6px;max-height:420px}
+.lib li{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;font-size:14px;padding-block:8px;border-bottom:1px solid var(--line)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;border:1px solid var(--line)}
+.tag.sel{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tag.no{color:var(--muted)}
+.reflect{display:grid;gap:12px}
+.reflect textarea{min-height:68px}
+.rating{display:flex;gap:6px}
+.rating button{width:44px;height:44px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;font:600 20px var(--f-display)}
+.rating button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.watch{margin-inline-start:auto;min-height:36px;padding-inline:12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;font:600 12px var(--f-body);letter-spacing:.06em;text-transform:uppercase}
+.watch:hover{border-color:var(--ink)}
+.anim{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--stage);color:var(--stage-ink);margin-block:4px}
+.anim-head{display:flex;justify-content:space-between;align-items:center;gap:8px 12px;flex-wrap:wrap;padding:10px 14px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.anim-time{font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.stage{display:block;width:100%;height:auto;max-height:72vh;direction:ltr}
+.stage .ta{fill:var(--turf-a)} .stage .tb{fill:var(--turf-b)}
+.stage .ln{fill:none;stroke:var(--chalk);stroke-width:2.2}
+.stage .mk{fill:none;stroke:var(--chalk);stroke-width:1.6;opacity:.85}
+.stage .goal{fill:rgba(255,255,255,.2);stroke:var(--chalk);stroke-width:1.8}
+.stage .zone{fill:rgba(255,255,255,.08);stroke:var(--chalk);stroke-width:1.4;stroke-dasharray:5 4}
+.stage .zbg{fill:rgba(8,18,12,.85)}
+.stage .zl{fill:#fff;font:600 7px var(--f-body)}
+.stage .disc{stroke:#fff;stroke-width:2}
+.stage .num{font:700 9px var(--f-body);fill:#fff;text-anchor:middle}
+.stage .num.sm{font-size:6.5px}
+.stage .team-a .disc{fill:var(--t-a)}
+.stage .team-b .disc{fill:var(--t-b)}
+.stage .team-n .disc{fill:var(--t-n)} .stage .team-n .num{fill:#1B1F23}
+.stage .team-k .disc{fill:var(--t-k)}
+.stage .team-c .disc{fill:var(--t-c)} .stage .team-c .num{fill:#1B1F23}
+.stage .ball{fill:#fff;stroke:#1B1F23;stroke-width:1}
+.anim-say{margin:0;padding:12px 14px 4px;font-size:16px;font-weight:600;min-height:3.4em}
+.anim-ctl{display:flex;gap:8px;flex-wrap:wrap;padding:6px 14px}
+.anim-ctl button{min-height:44px;min-width:44px;padding-inline:14px;border-radius:6px;border:1px solid rgba(233,242,235,.4);background:transparent;color:var(--stage-ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600}
+.anim-ctl button.pl{background:var(--stage-ink);color:var(--stage);border-color:var(--stage-ink)}
+.anim-ctl svg{width:18px;height:18px}
+.anim input[type="range"]{display:block;width:calc(100% - 28px);margin:8px 14px 16px;accent-color:var(--stage-ink);min-height:28px}
+
+.later{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.later ul{display:grid;gap:4px;margin-top:8px;list-style:disc;padding-inline-start:20px}
+.toast{position:fixed;inset-inline:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));margin-inline:auto;width:max-content;max-width:calc(100% - 32px);padding:10px 16px;background:var(--ink);color:var(--bg);border-radius:6px;font-size:14px;z-index:10}
+</style>
+
+<div class="wrap">
+  <div class="proto"><b>Prototype.</b> Generation is a rule-based stand-in for the AI model. It picks from 6 sample drills, all still marked pending coach review, and checks the result against your inputs. French and Arabic text are drafts that need native review. Practice animations are hand-scripted for these 6 drills; in the product each library drill would carry its own animation spec. Mourabbi is a working name.</div>
+  <div id="app"></div>
+  <section class="later">
+    <b>Not in this prototype</b>
+    <ul>
+      <li>Real AI generation behind the same rules and checks</li>
+      <li>Accounts, a saved library and the weekly planner</li>
+      <li>Offline use and install to the home screen</li>
+      <li>A full drill library reviewed by a qualified coach</li>
+      <li>Animations for the rest of the library, and photo-to-animation scanning (later phases)</li>
+    </ul>
+  </section>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function(){
+'use strict';
+const $=(s,r)=>(r||document).querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>{try{return crypto.randomUUID();}catch(e){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&3|8)).toString(16);});}};
+
+const AGES=['U6','U7','U8','U9','U10','U11','U12','U13','U14','U15','U16','U17','U19','senior'];
+const ageRange=(a,b)=>AGES.slice(AGES.indexOf(a),AGES.indexOf(b)+1);
+const THEME_KEYS=['width_and_support','possession','passing','receiving','pressing','transition','finishing','decision_making'];
+const EQUIP_KEYS=['balls','cones','bibs','mini_goals','full_goals'];
+const SURFACE_KEYS=['grass','artificial','indoor','gravel','other'];
+
+const I={
+en:{
+ brand:"Mourabbi",
+ title:"Plan this week's session.",
+ intro:"Tell it who you coach and what went wrong last week. It builds a timed session from a reviewed drill library, checks the session against your space, players and kit, and lets you edit and share it.",
+ squad:"Squad and problem", age:"Age group", senior:"Senior", players:"Players", minutes:"Minutes available", len:"Space length (m)", wid:"Space width (m)", surface:"Surface", equipment:"Equipment", focus:"Focus",
+ note:"What happened last week?", noteHint:"Example text. Replace it with your own.", generate:"Generate session",
+ stale:"Squad details changed. Generate again to rebuild the session.",
+ space:"Space check", spaceCap:"Dashed outlines show the area each drill needs.",
+ sessionFor:"{age} session", metaLine:"{n} players, {l} by {w} m, {surface}", min:"min", of:"of {n} available", free:"{n} min unplanned",
+ gPrep:"Warm-up and cool-down", gSkill:"Technical and main", gGame:"Game",
+ pending:"Pending coach review", shorter:"Shorter", longer:"Longer", up:"Move up", down:"Move down",
+ points:"Coaching points",
+ checks:"Checks", checksSummary:"{ok} of {n} passed", stOk:"Passed", stWarn:"Warning", stBad:"Problem",
+ cTime:"Total time fits", cTimeOk:"{sum} of {avail} min", cTimeBad:"{sum} min is {over} over the {avail} available",
+ cPlayers:"Player numbers fit each drill", cPlayersOk:"{n} players", cPlayersBad:"{drill} needs {min} to {max}",
+ cArea:"Drills fit your space", cAreaOk:"Within {l} by {w} m", cAreaBad:"{drill} needs {dl} by {dw} m",
+ cKit:"Equipment is available", cKitOk:"All drills covered", cKitBad:"{drill} needs {items}",
+ cOrder:"Warm-up first, cool-down last", cOrderOk:"Order is valid", cOrderBad:"Put the warm-up at the top and the cool-down at the bottom",
+ cReview:"Drills reviewed by a coach", cReviewBad:"{n} of {total} still pending",
+ coachNotes:"Your notes", coachNotesPh:"Add a note for the group",
+ share:"Share", wa:"Share on WhatsApp", copy:"Copy text", copied:"Copied", copyFail:"Select the text and copy it", preview:"Message preview",
+ after:"After the session", worked:"What worked?", didnt:"What did not work?", next:"Next action", rating:"Rating", saveRef:"Save reflection", savedRef:"Added to the session data below",
+ data:"Session data", why:"Why these drills", selected:"Selected", notChosen:"Eligible, not chosen",
+ rAge:"Not for {age}", rPlayers:"Needs {min} to {max} players", rSpace:"Needs {l} by {w} m", rKit:"Needs {items}",
+ shareHead:"{age} session: {theme}", shareMeta:"{n} players, {m} min",
+ err:"Could not build a session",
+ aTitle:"Practice animation", aStep:"Step {n} of {m}", aWatch:"Watch animation", aHide:"Hide animation", aPlay:"Play", aPause:"Pause", aReplay:"Replay", aPrev:"Previous step", aNext:"Next step", aSpeed:"Speed", aScrub:"Timeline"
+},
+fr:{
+ brand:"Mourabbi",
+ title:"Planifiez la séance de la semaine.",
+ intro:"Dites qui vous entraînez et ce qui n'a pas marché la semaine dernière. L'outil construit une séance chronométrée à partir d'une bibliothèque d'exercices validée, la vérifie selon votre espace, vos joueurs et votre matériel, puis vous la modifiez et la partagez.",
+ squad:"Équipe et problème", age:"Catégorie d'âge", senior:"Senior", players:"Joueurs", minutes:"Minutes disponibles", len:"Longueur de l'espace (m)", wid:"Largeur de l'espace (m)", surface:"Surface", equipment:"Matériel", focus:"Thème",
+ note:"Que s'est-il passé la semaine dernière ?", noteHint:"Texte d'exemple. Remplacez-le par le vôtre.", generate:"Générer la séance",
+ stale:"Les informations de l'équipe ont changé. Générez à nouveau pour reconstruire la séance.",
+ space:"Contrôle de l'espace", spaceCap:"Les pointillés montrent la surface nécessaire à chaque exercice.",
+ sessionFor:"Séance {age}", metaLine:"{n} joueurs, {l} sur {w} m, {surface}", min:"min", of:"sur {n} disponibles", free:"{n} min non planifiées",
+ gPrep:"Échauffement et retour au calme", gSkill:"Technique et principal", gGame:"Jeu",
+ pending:"En attente de validation", shorter:"Plus court", longer:"Plus long", up:"Monter", down:"Descendre",
+ points:"Points de coaching",
+ checks:"Contrôles", checksSummary:"{ok} sur {n} réussis", stOk:"Réussi", stWarn:"Attention", stBad:"Problème",
+ cTime:"Durée totale compatible", cTimeOk:"{sum} sur {avail} min", cTimeBad:"{sum} min dépasse de {over} min les {avail} disponibles",
+ cPlayers:"Nombre de joueurs adapté à chaque exercice", cPlayersOk:"{n} joueurs", cPlayersBad:"{drill} nécessite {min} à {max}",
+ cArea:"Exercices adaptés à votre espace", cAreaOk:"Dans {l} sur {w} m", cAreaBad:"{drill} nécessite {dl} sur {dw} m",
+ cKit:"Matériel disponible", cKitOk:"Tous les exercices sont couverts", cKitBad:"{drill} nécessite {items}",
+ cOrder:"Échauffement d'abord, retour au calme à la fin", cOrderOk:"Ordre valide", cOrderBad:"Placez l'échauffement en premier et le retour au calme en dernier",
+ cReview:"Exercices validés par un entraîneur", cReviewBad:"{n} sur {total} encore en attente",
+ coachNotes:"Vos notes", coachNotesPh:"Ajoutez une note pour le groupe",
+ share:"Partager", wa:"Partager sur WhatsApp", copy:"Copier le texte", copied:"Copié", copyFail:"Sélectionnez le texte et copiez-le", preview:"Aperçu du message",
+ after:"Après la séance", worked:"Qu'est-ce qui a marché ?", didnt:"Qu'est-ce qui n'a pas marché ?", next:"Prochaine action", rating:"Note", saveRef:"Enregistrer le bilan", savedRef:"Ajouté aux données de la séance ci-dessous",
+ data:"Données de la séance", why:"Pourquoi ces exercices", selected:"Choisi", notChosen:"Compatible, non retenu",
+ rAge:"Pas pour {age}", rPlayers:"Nécessite {min} à {max} joueurs", rSpace:"Nécessite {l} sur {w} m", rKit:"Nécessite {items}",
+ shareHead:"Séance {age} : {theme}", shareMeta:"{n} joueurs, {m} min",
+ err:"Impossible de construire une séance",
+ aTitle:"Animation de l'exercice", aStep:"Étape {n} sur {m}", aWatch:"Voir l'animation", aHide:"Masquer l'animation", aPlay:"Lecture", aPause:"Pause", aReplay:"Rejouer", aPrev:"Étape précédente", aNext:"Étape suivante", aSpeed:"Vitesse", aScrub:"Chronologie"
+},
+ar:{
+ brand:"مربّي",
+ title:"خطّط حصة هذا الأسبوع.",
+ intro:"أخبرنا من تدرّب وما الذي لم ينجح الأسبوع الماضي. تُبنى حصة بتوقيت محدد من مكتبة تمارين تمت مراجعتها، وتُفحص وفق مساحتك ولاعبيك ومعداتك، ثم يمكنك تعديلها ومشاركتها.",
+ squad:"الفريق والمشكلة", age:"الفئة العمرية", senior:"الكبار", players:"عدد اللاعبين", minutes:"الدقائق المتاحة", len:"طول المساحة (م)", wid:"عرض المساحة (م)", surface:"نوع الأرضية", equipment:"المعدات", focus:"محور العمل",
+ note:"ماذا حدث الأسبوع الماضي؟", noteHint:"نص تجريبي. استبدله بنصك.", generate:"أنشئ الحصة",
+ stale:"تغيّرت بيانات الفريق. أنشئ الحصة من جديد لإعادة بنائها.",
+ space:"فحص المساحة", spaceCap:"تُظهر الخطوط المتقطعة المساحة التي يحتاجها كل تمرين.",
+ sessionFor:"حصة {age}", metaLine:"{n} لاعبًا، {l} × {w} م، {surface}", min:"د", of:"من {n} متاحة", free:"{n} د دون تخطيط",
+ gPrep:"إحماء وتهدئة", gSkill:"تقني ورئيسي", gGame:"لعب",
+ pending:"بانتظار مراجعة المدرّب", shorter:"أقصر", longer:"أطول", up:"تحريك للأعلى", down:"تحريك للأسفل",
+ points:"نقاط التوجيه",
+ checks:"الفحوصات", checksSummary:"اجتاز {ok} من {n}", stOk:"ناجح", stWarn:"تنبيه", stBad:"مشكلة",
+ cTime:"المدة الإجمالية مناسبة", cTimeOk:"{sum} من {avail} د", cTimeBad:"{sum} د تتجاوز الوقت المتاح ({avail} د) بمقدار {over} د",
+ cPlayers:"عدد اللاعبين مناسب لكل تمرين", cPlayersOk:"{n} لاعبًا", cPlayersBad:"{drill} يحتاج من {min} إلى {max}",
+ cArea:"التمارين تناسب مساحتك", cAreaOk:"ضمن {l} × {w} م", cAreaBad:"{drill} يحتاج {dl} × {dw} م",
+ cKit:"المعدات متوفرة", cKitOk:"كل التمارين مغطاة", cKitBad:"{drill} يحتاج {items}",
+ cOrder:"الإحماء أولًا والتهدئة أخيرًا", cOrderOk:"الترتيب صحيح", cOrderBad:"ضع الإحماء في الأعلى والتهدئة في الأسفل",
+ cReview:"التمارين راجعها مدرّب", cReviewBad:"{n} من {total} ما زالت بانتظار المراجعة",
+ coachNotes:"ملاحظاتك", coachNotesPh:"أضف ملاحظة للمجموعة",
+ share:"مشاركة", wa:"مشاركة عبر واتساب", copy:"نسخ النص", copied:"تم النسخ", copyFail:"حدّد النص وانسخه", preview:"معاينة الرسالة",
+ after:"بعد الحصة", worked:"ما الذي نجح؟", didnt:"ما الذي لم ينجح؟", next:"الخطوة التالية", rating:"التقييم", saveRef:"حفظ التقييم", savedRef:"أُضيف إلى بيانات الحصة أدناه",
+ data:"بيانات الحصة", why:"لماذا هذه التمارين", selected:"مختار", notChosen:"مناسب، لكنه لم يُختر",
+ rAge:"غير مناسب لفئة {age}", rPlayers:"يحتاج من {min} إلى {max} لاعبًا", rSpace:"يحتاج {l} × {w} م", rKit:"يحتاج {items}",
+ shareHead:"حصة {age}: {theme}", shareMeta:"{n} لاعبًا، {m} دقيقة",
+ err:"تعذّر بناء حصة",
+ aTitle:"رسم متحرك للتمرين", aStep:"الخطوة {n} من {m}", aWatch:"شاهد الرسم المتحرك", aHide:"إخفاء الرسم المتحرك", aPlay:"تشغيل", aPause:"إيقاف مؤقت", aReplay:"إعادة", aPrev:"الخطوة السابقة", aNext:"الخطوة التالية", aSpeed:"السرعة", aScrub:"المخطط الزمني"
+}};
+
+const ERR={
+ NO_SUITABLE_DRILLS:{en:"No reviewed drill fits these constraints yet. Try another age group, more players, a bigger space or more equipment.",fr:"Aucun exercice validé ne convient à ces contraintes pour l'instant. Essayez une autre catégorie, plus de joueurs, un espace plus grand ou plus de matériel.",ar:"لا يوجد تمرين تمت مراجعته يناسب هذه الشروط حاليًا. جرّب فئة عمرية أخرى أو عددًا أكبر من اللاعبين أو مساحة أكبر أو معدات أكثر."},
+ CONSTRAINTS_CONFLICT:{en:"The time is too short to fit a warm-up, the drills and a cool-down.",fr:"Le temps est trop court pour un échauffement, les exercices et un retour au calme.",ar:"الوقت أقصر من أن يتسع للإحماء والتمارين والتهدئة."}
+};
+const THEME={
+ width_and_support:{en:"Width and support",fr:"Largeur et soutien",ar:"العرض والمساندة"},
+ possession:{en:"Possession",fr:"Conservation du ballon",ar:"الاستحواذ"},
+ passing:{en:"Passing",fr:"Passes",ar:"التمرير"},
+ receiving:{en:"Receiving",fr:"Contrôle et réception",ar:"استلام الكرة"},
+ pressing:{en:"Pressing",fr:"Pressing",ar:"الضغط"},
+ transition:{en:"Transition",fr:"Transition",ar:"التحوّل"},
+ finishing:{en:"Finishing",fr:"Finition",ar:"إنهاء الهجمات"},
+ decision_making:{en:"Decision making",fr:"Prise de décision",ar:"اتخاذ القرار"}
+};
+const SURFACE={grass:{en:"Grass",fr:"Pelouse",ar:"عشب"},artificial:{en:"Artificial",fr:"Synthétique",ar:"صناعي"},indoor:{en:"Indoor",fr:"Salle",ar:"قاعة"},gravel:{en:"Gravel",fr:"Gravier",ar:"حصى"},other:{en:"Other",fr:"Autre",ar:"أخرى"}};
+const EQUIP={balls:{en:"Balls",fr:"Ballons",ar:"كرات"},cones:{en:"Cones",fr:"Plots",ar:"أقماع"},bibs:{en:"Bibs",fr:"Chasubles",ar:"صدريات"},mini_goals:{en:"Mini goals",fr:"Mini-buts",ar:"مرمى صغير"},full_goals:{en:"Full goals",fr:"Grands buts",ar:"مرمى كبير"}};
+const KIND={warmup:{en:"Warm-up",fr:"Échauffement",ar:"إحماء"},technical:{en:"Technical",fr:"Technique",ar:"تقني"},game_related:{en:"Game-related",fr:"Proche du jeu",ar:"قريب من المباراة"},main:{en:"Main",fr:"Principal",ar:"رئيسي"},game:{en:"Game",fr:"Jeu",ar:"مباراة"},cooldown:{en:"Cool-down",fr:"Retour au calme",ar:"تهدئة"}};
+const VARIANT={easier:{en:"Easier",fr:"Plus facile",ar:"أسهل"},harder:{en:"Harder",fr:"Plus difficile",ar:"أصعب"},progression_for_stronger_players:{en:"For stronger players",fr:"Pour les plus forts",ar:"للاعبين الأقوى"},progression_for_weaker_players:{en:"For weaker players",fr:"Pour les moins forts",ar:"للاعبين الأضعف"}};
+const DEFAULT_NOTE={
+ en:"We lost our width and support after the first pass. Two stronger players need more challenge.",
+ fr:"Nous avons perdu la largeur et le soutien après la première passe. Deux joueurs plus forts ont besoin de plus de défi.",
+ ar:"فقدنا العرض والمساندة بعد التمريرة الأولى. لاعبان أقوى يحتاجان إلى تحدٍّ أكبر."
+};
+
+const LIB=[
+ {id:'dynamic_warmup_ball',kind:'warmup',ages:ageRange('U8','senior'),min:6,max:30,area:[20,20],equip:['balls','cones'],themes:['other'],reviewedBy:'PENDING',
+  name:{en:"Dynamic warm-up with a ball",fr:"Échauffement dynamique avec ballon",ar:"إحماء ديناميكي بالكرة"},
+  org:{en:"Each player has a ball inside a 20 m square. On the coach's call: change direction, swap balls with a partner, dribble to a coloured cone. Build from walking pace to match pace.",
+       fr:"Chaque joueur a un ballon dans un carré de 20 m. À l'appel de l'entraîneur : changer de direction, échanger de ballon avec un partenaire, conduire jusqu'à un plot de couleur. Montée en intensité progressive, de la marche au rythme de match.",
+       ar:"لكل لاعب كرة داخل مربع طوله 20 م. عند نداء المدرّب: تغيير الاتجاه، تبديل الكرة مع زميل، المراوغة نحو قمع ملوّن. يزداد الإيقاع تدريجيًا من المشي حتى إيقاع المباراة."},
+  pts:{en:["Heads up while dribbling","Short touches, ball close to the feet","Raise the intensity step by step"],
+       fr:["Tête relevée en conduisant","Touches courtes, ballon près des pieds","Augmenter l'intensité progressivement"],
+       ar:["ارفع رأسك أثناء المراوغة","لمسات قصيرة والكرة قريبة من القدمين","ارفع الشدة تدريجيًا"]},
+  vars:[]},
+ {id:'rondo_4v2_u10',kind:'technical',ages:ageRange('U9','U11'),min:6,max:10,area:[15,15],equip:['balls','cones'],themes:['possession','passing','receiving'],reviewedBy:'PENDING',
+  name:{en:"4v2 rondo",fr:"Rondo 4 contre 2",ar:"روندو 4 ضد 2"},
+  org:{en:"Square of 15 m by 15 m with cones. Four players keep the ball from two defenders in the middle. A defender who wins the ball swaps with the player who lost it. Rotate every 2 minutes.",
+       fr:"Carré de 15 m sur 15 m avec des plots. Quatre joueurs gardent le ballon face à deux défenseurs au centre. Un défenseur qui récupère le ballon prend la place du joueur qui l'a perdu. Rotation toutes les 2 minutes.",
+       ar:"مربع 15 × 15 م بالأقماع. أربعة لاعبين يحتفظون بالكرة أمام مدافعَين في الوسط. المدافع الذي يستخلص الكرة يتبادل المكان مع اللاعب الذي فقدها. التدوير كل دقيقتين."},
+  pts:{en:["Move to receive, don't wait for the pass","Pass firmly with the inside of the foot","Open your body so the first touch goes away from the nearest defender"],
+       fr:["Se déplacer pour recevoir, sans attendre la passe","Passer fermement avec l'intérieur du pied","Ouvrir le corps pour que la première touche s'éloigne du défenseur proche"],
+       ar:["تحرّك لتستقبل الكرة ولا تنتظر التمريرة","مرّر بباطن القدم وبقوة مناسبة","افتح جسمك لتبتعد اللمسة الأولى عن أقرب مدافع"]},
+  vars:[{label:'easier',text:{en:"Remove one defender or enlarge the square",fr:"Retirer un défenseur ou agrandir le carré",ar:"أزل مدافعًا أو وسّع المربع"}},
+        {label:'harder',text:{en:"One touch only for the outside players",fr:"Une seule touche de balle pour les joueurs extérieurs",ar:"لمسة واحدة فقط للاعبين الخارجيين"}}]},
+ {id:'corner_goals_3v3_u12',kind:'game_related',ages:ageRange('U11','U13'),min:6,max:12,area:[30,20],equip:['balls','cones','bibs','mini_goals'],themes:['possession','width_and_support','decision_making'],reviewedBy:'PENDING',
+  name:{en:"Corner goals 3v3",fr:"Buts dans les coins 3 contre 3",ar:"أهداف الزوايا 3 ضد 3"},
+  org:{en:"30 m by 20 m area with a mini goal in each corner. Two teams of three plus three neutral players who support the team in possession. Score by passing or dribbling into a corner goal. The team that loses the ball defends all four goals.",
+       fr:"Zone de 30 m sur 20 m avec un mini-but dans chaque coin. Deux équipes de trois et trois joueurs neutres qui soutiennent l'équipe en possession. On marque en passant ou en conduisant dans un but de coin. L'équipe qui perd le ballon défend les quatre buts.",
+       ar:"منطقة 30 × 20 م مع مرمى صغير في كل زاوية. فريقان من ثلاثة لاعبين وثلاثة لاعبين محايدين يساندون الفريق المستحوذ. يُسجَّل بالتمرير أو بالمراوغة إلى أحد مرامي الزوايا. الفريق الذي يفقد الكرة يدافع عن المرامي الأربعة."},
+  pts:{en:["Create width early so the ball can switch sides","Support the ball carrier from 5 to 10 m","Pick the corner goal furthest from the nearest defender"],
+       fr:["Créer de la largeur tôt pour pouvoir changer de côté","Soutenir le porteur à 5-10 m","Choisir le but de coin le plus éloigné du défenseur le plus proche"],
+       ar:["أنشئ العرض مبكرًا لتتمكن من تحويل اللعب للجهة الأخرى","ساند حامل الكرة من مسافة 5 إلى 10 م","اختر مرمى الزاوية الأبعد عن أقرب مدافع"]},
+  vars:[{label:'easier',text:{en:"Remove the neutral players",fr:"Retirer les joueurs neutres",ar:"أزل اللاعبين المحايدين"}},
+        {label:'progression_for_stronger_players',text:{en:"Two touches maximum for the neutral players",fr:"Deux touches maximum pour les joueurs neutres",ar:"لمستان كحد أقصى للاعبين المحايدين"}}]},
+ {id:'buildout_4v2_u14',kind:'main',ages:ageRange('U13','U16'),min:8,max:14,area:[25,20],equip:['balls','cones','bibs','full_goals'],themes:['possession','pressing','transition','width_and_support'],reviewedBy:'PENDING',
+  name:{en:"4v2 build-out",fr:"Construction 4 contre 2",ar:"بناء اللعب 4 ضد 2"},
+  org:{en:"25 m by 20 m area. The goalkeeper starts play. Four attackers try to play through a gate guarded by two pressing defenders, then pass to a striker beyond it. If the ball is lost, the defenders counter into a full-size goal.",
+       fr:"Zone de 25 m sur 20 m. Le gardien relance. Quatre attaquants cherchent à franchir une porte gardée par deux défenseurs qui pressent, puis à servir un attaquant situé derrière. Si le ballon est perdu, les défenseurs contre-attaquent vers un grand but.",
+       ar:"منطقة 25 × 20 م. حارس المرمى يبدأ اللعب. أربعة مهاجمين يحاولون تجاوز بوابة يحرسها مدافعان يضغطان، ثم التمرير إلى مهاجم خلفها. إذا ضاعت الكرة يشنّ المدافعان هجومًا مرتدًا نحو مرمى كبير."},
+  pts:{en:["Start with a safe short pass from the goalkeeper","Use the wide players to stretch the two pressers","Play through the gate quickly when the pressers are out of shape"],
+       fr:["Commencer par une courte passe sûre du gardien","Utiliser les joueurs larges pour étirer les deux presseurs","Franchir la porte vite quand les presseurs sont désorganisés"],
+       ar:["ابدأ بتمريرة قصيرة آمنة من الحارس","استخدم اللاعبين على الأطراف لإبعاد المدافعَين عن بعضهما","مرّر عبر البوابة بسرعة عندما يختل توازن المدافعَين"]},
+  vars:[{label:'easier',text:{en:"Defenders press only after the first pass",fr:"Les défenseurs ne pressent qu'après la première passe",ar:"لا يضغط المدافعان إلا بعد التمريرة الأولى"}},
+        {label:'harder',text:{en:"Defenders may press as soon as the goalkeeper plays",fr:"Les défenseurs peuvent presser dès la relance du gardien",ar:"يمكن للمدافعَين الضغط منذ لحظة بدء الحارس"}}]},
+ {id:'small_sided_game_5v5',kind:'game',ages:ageRange('U9','U19'),min:8,max:20,area:[40,30],equip:['balls','cones','bibs','mini_goals'],themes:['transition','finishing','decision_making','width_and_support'],reviewedBy:'PENDING',
+  name:{en:"5v5 small-sided game",fr:"Jeu réduit 5 contre 5",ar:"لعبة مصغّرة 5 ضد 5"},
+  org:{en:"40 m by 30 m pitch with a mini goal at each end. Two teams of four or five. Quick restarts and an immediate kick-off after every goal. The coach freezes play to coach the session focus.",
+       fr:"Terrain de 40 m sur 30 m avec un mini-but à chaque extrémité. Deux équipes de quatre ou cinq joueurs. Remises en jeu rapides et reprise immédiate après chaque but. L'entraîneur fige le jeu pour travailler le thème de la séance.",
+       ar:"ملعب 40 × 30 م بمرمى صغير في كل طرف. فريقان من أربعة أو خمسة لاعبين. إعادة اللعب سريعة واستئناف فوري بعد كل هدف. يوقف المدرّب اللعب ليعمل على محور الحصة."},
+  pts:{en:["Name one focus before kick-off","Freeze play for 20 seconds, ask one question, restart","Praise the right attempt even when it fails"],
+       fr:["Annoncer un seul objectif avant le coup d'envoi","Figer le jeu 20 secondes, poser une question, reprendre","Féliciter la bonne intention même si elle échoue"],
+       ar:["حدّد هدفًا واحدًا قبل صافرة البداية","أوقف اللعب 20 ثانية، اطرح سؤالًا واحدًا، ثم استأنف","اشكر المحاولة الصحيحة حتى لو لم تنجح"]},
+  vars:[{label:'easier',text:{en:"Add a neutral player for the team in possession",fr:"Ajouter un joueur neutre pour l'équipe en possession",ar:"أضف لاعبًا محايدًا للفريق المستحوذ"}},
+        {label:'harder',text:{en:"Two touches maximum",fr:"Deux touches maximum",ar:"لمستان كحد أقصى"}}]},
+ {id:'cooldown_walk_stretch',kind:'cooldown',ages:ageRange('U6','senior'),min:4,max:40,area:[15,15],equip:[],themes:['other'],reviewedBy:'PENDING',
+  name:{en:"Walk and stretch",fr:"Marche et étirements",ar:"مشي وإطالة"},
+  org:{en:"Slow walk around the pitch, then static stretches for the main leg muscles, about 20 seconds each. Finish with a short group talk.",
+       fr:"Marche lente autour du terrain, puis étirements statiques des principaux muscles des jambes, environ 20 secondes chacun. Terminer par un court échange en groupe.",
+       ar:"مشي بطيء حول الملعب، ثم إطالة ثابتة لعضلات الساقين الرئيسية نحو 20 ثانية لكل عضلة. تُختتم بحديث قصير مع المجموعة."},
+  pts:{en:["Breathe slowly and keep the pace easy","Ask each player one thing they did well"],
+       fr:["Respirer lentement et garder un rythme tranquille","Demander à chaque joueur une chose qu'il a bien faite"],
+       ar:["تنفّس ببطء وحافظ على إيقاع هادئ","اسأل كل لاعب عن أمر واحد أجاده"]},
+  vars:[]}
+];
+const drill=id=>LIB.find(d=>d.id===id);
+
+/* Animation specs: positions in metres inside each drill's area, origin top-left. A ball carried by a player is the player's path shifted by the foot offset. */
+const BO=[0.7,0.5];
+const bo=pts=>pts.map(p=>[p[0]+BO[0],p[1]+BO[1]]);
+const carry=arr=>{const o={};arr.forEach(x=>{o[x[0]]=x[2];o[x[1]]=bo(x[2]);});return o;};
+const mix=(...o)=>Object.assign({},...o);
+const say=(en,fr,ar)=>({en:en,fr:fr,ar:ar});
+const act=(id,team,n,x,y)=>({id:id,team:team,n:n,x:x,y:y});
+const ball=(id,x,y)=>({id:id,x:x,y:y});
+const ANIM={
+ dynamic_warmup_ball:{
+  cones:[{x:2,y:2,c:'o'},{x:18,y:2,c:'y'},{x:18,y:18,c:'w'},{x:2,y:18,c:'r'}],
+  actors:[act('p1','a','1',4,4),act('p2','a','2',16,5),act('p3','a','3',5,15),act('p4','a','4',15,16)],
+  balls:[ball('b1',4.7,4.5),ball('b2',16.7,5.5),ball('b3',5.7,15.5),ball('b4',15.7,16.5)],
+  steps:[
+   {d:4,say:say("Dribble freely with your head up","Conduire librement, tête relevée","راوغ بحرية مع رفع الرأس"),mv:carry([['p1','b1',[[9,7],[6,12]]],['p2','b2',[[12,9],[15,13]]],['p3','b3',[[9,13],[4,9]]],['p4','b4',[[11,12],[9,17]]]])},
+   {d:3,say:say("On the coach's call, change direction","À l'appel de l'entraîneur, changer de direction","عند نداء المدرّب غيّر الاتجاه"),mv:carry([['p1','b1',[[11,14]]],['p2','b2',[[16,8]]],['p3','b3',[[8,5]]],['p4','b4',[[14,13]]]])},
+   {d:3,say:say("Find a partner","Trouver un partenaire","اذهب إلى زميل"),mv:carry([['p1','b1',[[9.5,10.5]]],['p3','b3',[[9.5,8]]],['p2','b2',[[14.5,11.5]]],['p4','b4',[[14.5,14]]]])},
+   {d:2,say:say("Swap balls","Échanger les ballons","بدّل الكرات"),mv:{b1:[[10.2,8.5]],b3:[[10.2,11]],b2:[[15.2,14.5]],b4:[[15.2,12]]}},
+   {d:4,say:say("Dribble to a coloured cone","Conduire jusqu'à un plot de couleur","راوغ نحو قمع ملوّن"),mv:carry([['p1','b3',[[3,3]]],['p3','b1',[[17,3]]],['p2','b4',[[17,17]]],['p4','b2',[[3,17]]]])}
+  ]},
+ rondo_4v2_u10:{
+  cones:[{x:0.8,y:0.8,c:'o'},{x:14.2,y:0.8,c:'o'},{x:14.2,y:14.2,c:'o'},{x:0.8,y:14.2,c:'o'}],
+  actors:[act('a1','a','1',7.5,1.2),act('a2','a','2',13.8,7.5),act('a3','a','3',7.5,13.8),act('a4','a','4',1.2,7.5),act('d1','b','5',6.5,7),act('d2','b','6',8.5,8.2)],
+  balls:[ball('b',8.2,1.7)],
+  steps:[
+   {d:2.5,say:say("Player 1 passes to player 2","Le joueur 1 passe au joueur 2","اللاعب 1 يمرّر إلى اللاعب 2"),mv:{b:[[14.5,8]],d1:[[9,6.5]],d2:[[11,7.5]]}},
+   {d:2.5,say:say("Switch the play to player 3","Changer de côté vers le joueur 3","حوّل اللعب إلى اللاعب 3"),mv:{a3:[[6.5,13.3]],b:[[7.2,13.8]],d1:[[9,9.5]],d2:[[11.5,8.2]]}},
+   {d:2.5,say:say("Player 3 finds player 4","Le joueur 3 trouve le joueur 4","اللاعب 3 يجد اللاعب 4"),mv:{a4:[[2,9]],b:[[2.7,9.5]],d1:[[6,9.2]],d2:[[8.5,10.5]]}},
+   {d:2.5,say:say("A loose pass: a defender intercepts","Passe imprécise : un défenseur intercepte","تمريرة غير دقيقة: مدافع يعترضها"),mv:{b:[[4.8,6.5]],d1:[[4.1,6]],d2:[[6.5,8.5]]}},
+   {d:3,say:say("The defender swaps with the player who lost the ball","Le défenseur prend la place du joueur qui a perdu le ballon","يتبادل المدافع المكان مع اللاعب الذي فقد الكرة"),mv:mix(carry([['d1','b',[[2.8,6.2],[2,9]]]]),{a4:[[3.4,8.8],[4.1,6]]}),set:{a4:'b',d1:'a'}}
+  ]},
+ corner_goals_3v3_u12:{
+  goals:[{x:0.2,y:0.2,w:2.6,h:0.9},{x:27.2,y:0.2,w:2.6,h:0.9},{x:0.2,y:18.9,w:2.6,h:0.9},{x:27.2,y:18.9,w:2.6,h:0.9}],
+  actors:[act('a1','a','1',8,10),act('a2','a','2',12,5),act('a3','a','3',11,15),act('r1','b','4',14,10),act('r2','b','5',15,6),act('r3','b','6',16,14),act('y1','n','7',15,1.5),act('y2','n','8',15,18.5),act('y3','n','9',27,10)],
+  balls:[ball('b',8.7,10.5)],
+  steps:[
+   {d:3,say:say("Blue passes wide to a neutral player","Les bleus passent sur le côté à un joueur neutre","الأزرق يمرّر إلى لاعب محايد على الطرف"),mv:{b:[[15.7,2]],a2:[[10,3.5]],a3:[[10,16.5]],r1:[[12,9]],r2:[[13.5,7]],r3:[[14,15.5]]}},
+   {d:3,say:say("The neutral switches the play","Le joueur neutre change le jeu de côté","اللاعب المحايد يحوّل اللعب"),mv:{b:[[15.7,19]],a3:[[12.5,17.5]],r1:[[13,11]],r2:[[14,8.5]]}},
+   {d:2.5,say:say("Pass to the player free in space","Passe vers le joueur libre dans l'espace","تمريرة إلى اللاعب الحر في المساحة"),mv:{b:[[13.2,18]],r3:[[12,15]]}},
+   {d:3.5,say:say("Dribble to the open corner goal","Conduire vers le but de coin libre","راوغ نحو مرمى الزاوية المفتوح"),mv:mix(carry([['a3','b',[[6,18.2],[2.4,17.6]]]]),{r3:[[7,16.5]],r1:[[10,13]],r2:[[12,11]]})},
+   {d:1.2,say:say("Score","But","هدف"),mv:{b:[[1.5,19.3]]}}
+  ]},
+ buildout_4v2_u14:{
+  cones:[{x:16,y:5,c:'o'},{x:16,y:15,c:'o'}],
+  zones:[{x:15.4,y:5,w:1.2,h:10,label:say("Gate","Porte","البوابة")}],
+  goals:[{x:0.2,y:6.5,w:1,h:7},{x:23.8,y:6.5,w:1,h:7}],
+  actors:[act('gk','k','GK',2.4,10),act('a1','a','1',5,6.5),act('a2','a','2',5,13.5),act('a3','a','3',11,3),act('a4','a','4',21,10),act('d1','b','5',13,7.5),act('d2','b','6',13,12.5)],
+  balls:[ball('b',3.1,10.5)],
+  steps:[
+   {d:2.5,say:say("The goalkeeper starts with a short pass","Le gardien relance court","الحارس يبدأ بتمريرة قصيرة"),mv:{b:[[5.7,7]],d1:[[10,7.5]],d2:[[11,11.5]]}},
+   {d:2.5,say:say("Pass across to draw the pressers","Passe latérale pour attirer les presseurs","تمريرة عرضية لجذب المدافعَين"),mv:{b:[[5.7,14]],d1:[[9,12]],d2:[[9.5,10.5]]}},
+   {d:2.5,say:say("Switch to the wide player","Changement de jeu vers le joueur côté","حوّل اللعب إلى اللاعب على الطرف"),mv:{b:[[11.7,3.5]],d1:[[12.5,6.5]],d2:[[11.5,9]]}},
+   {d:2.5,say:say("Play through the gate to the striker","Franchir la porte vers l'attaquant","مرّر عبر البوابة إلى المهاجم"),mv:{b:[[21.7,10.5]],d1:[[14,8]],d2:[[14,10.5]]}}
+  ]},
+ small_sided_game_5v5:{
+  halfway:true,
+  goals:[{x:0.2,y:13.5,w:0.9,h:3},{x:38.9,y:13.5,w:0.9,h:3}],
+  actors:[act('a1','a','1',8,15),act('a2','a','2',12,8),act('a3','a','3',14,22),act('a4','a','4',22,15),act('r1','b','5',27,13),act('r2','b','6',27,8),act('r3','b','7',27,22),act('r4','b','8',33,15)],
+  balls:[ball('b',8.7,15.5)],
+  steps:[
+   {d:2.5,say:say("Blue builds from the back","Les bleus construisent depuis l'arrière","الأزرق يبني اللعب من الخلف"),mv:{b:[[12.7,8.5]],r1:[[24,11]],r2:[[24,7]],r3:[[25,19]]}},
+   {d:2.5,say:say("Blue switches the play","Les bleus changent le jeu de côté","الأزرق يحوّل اللعب"),mv:{b:[[14.7,22.5]],r1:[[22,12]],r2:[[21,8]],r3:[[22,23]]}},
+   {d:2,say:say("The coach freezes play and asks one question","L'entraîneur fige le jeu et pose une question","المدرّب يوقف اللعب ويطرح سؤالًا"),mv:{}},
+   {d:3,say:say("Play restarts: the ball goes to the free striker","Le jeu reprend : le ballon va à l'attaquant libre","يُستأنف اللعب: الكرة إلى المهاجم الحر"),mv:{a4:[[26,15]],b:[[26.7,15.5]],r1:[[24,13.5]],r3:[[24,21]],r4:[[31,17]]}},
+   {d:2.2,say:say("Shoot into the goal","Tir au but","تسديدة نحو المرمى"),mv:{b:[[39.4,14.4]]}}
+  ]},
+ cooldown_walk_stretch:{
+  actors:[act('c0','c','C',7.5,7.5),act('p1','a','1',2,2),act('p2','a','2',13,2),act('p3','a','3',13,13),act('p4','a','4',2,13)],
+  balls:[],
+  steps:[
+   {d:5,say:say("Walk slowly around the pitch","Marcher lentement autour du terrain","امشِ ببطء حول الملعب"),mv:{p1:[[13,2]],p2:[[13,13]],p3:[[2,13]],p4:[[2,2]]}},
+   {d:3,say:say("Stretch the main leg muscles","Étirer les principaux muscles des jambes","أطِل عضلات الساقين الرئيسية"),mv:{p1:[[7.5,3]],p2:[[12,7.5]],p3:[[7.5,12]],p4:[[3,7.5]]}},
+   {d:2.5,say:say("Gather for a short group talk","Se rassembler pour un court échange","اجتمعوا لحديث قصير"),mv:{p1:[[7.5,4.9]],p2:[[10.1,7.5]],p3:[[7.5,10.1]],p4:[[4.9,7.5]]}}
+  ]}
+};
+LIB.forEach(d=>{d.anim=ANIM[d.id];});
+const KORDER={warmup:0,technical:1,main:2,game_related:3,game:4,cooldown:5};
+
+const state={
+ lang:'en',
+ form:{age:'U12',players:12,minutes:60,length:40,width:30,surface:'grass',equipment:['balls','cones','bibs','mini_goals'],theme:'width_and_support',note:DEFAULT_NOTE.en,noteIsDefault:true},
+ session:null,userNotes:'',reflection:{worked:'',didnt:'',next:'',rating:0,saved:false},
+ open:{lib:false,json:false,share:false},animOpen:null
+};
+
+const t=(k,v)=>{let s=(I[state.lang][k]!==undefined?I[state.lang][k]:(I.en[k]!==undefined?I.en[k]:k));if(v){for(const x in v){s=s.split('{'+x+'}').join(v[x]);}}return s;};
+const dl=o=>o[state.lang];
+const lab=(m,k)=>m[k]?m[k][state.lang]:k;
+const SEP=()=>state.lang==='ar'?'، ':', ';
+const num=(v,min,max,prev)=>{const n=parseInt(v,10);return Number.isFinite(n)?Math.min(max,Math.max(min,n)):prev;};
+const ptsLimit=age=>{const i=AGES.indexOf(age);return i<=3?1:(i<=7?3:5);};
+const kg=k=>(k==='warmup'||k==='cooldown')?'k-prep':(k==='technical'||k==='main')?'k-skill':'k-game';
+
+function fitsArea(d,f){const a=d.area[0],b=d.area[1];return (a<=f.length&&b<=f.width)||(a<=f.width&&b<=f.length);}
+function reasons(d,f){
+ const r=[];
+ if(!d.ages.includes(f.age)) r.push({k:'rAge',age:f.age});
+ if(f.players<d.min||f.players>d.max) r.push({k:'rPlayers',min:d.min,max:d.max});
+ if(!fitsArea(d,f)) r.push({k:'rSpace',l:d.area[0],w:d.area[1]});
+ const miss=d.equip.filter(e=>!f.equipment.includes(e));
+ if(miss.length) r.push({k:'rKit',items:miss});
+ return r;
+}
+
+function generate(f){
+ const input={age:f.age,players:f.players,minutes:f.minutes,length:f.length,width:f.width,surface:f.surface,equipment:f.equipment.slice(),theme:f.theme,note:f.note};
+ const elig=LIB.map(d=>({d:d,r:reasons(d,input)}));
+ const ok=elig.filter(e=>!e.r.length).map(e=>e.d);
+ const warm=ok.find(d=>d.kind==='warmup'),cool=ok.find(d=>d.kind==='cooldown');
+ const core=ok.filter(d=>d.kind!=='warmup'&&d.kind!=='cooldown');
+ const score=d=>d.themes.includes(input.theme)?2:0;
+ const sorter=(a,b)=>score(b)-score(a)||KORDER[a.kind]-KORDER[b.kind];
+ const early=core.filter(d=>d.kind==='technical'||d.kind==='main').sort(sorter);
+ const late=core.filter(d=>d.kind==='game_related'||d.kind==='game').sort(sorter);
+ let pick;
+ if(early.length&&late.length) pick=[early[0],late[0]];
+ else pick=(early.length?early:late).slice(0,2);
+ pick.sort((a,b)=>KORDER[a.kind]-KORDER[b.kind]);
+ const base={id:uid(),createdAt:new Date().toISOString(),input:input,elig:elig};
+ if(!pick.length) return Object.assign(base,{error:'NO_SUITABLE_DRILLS'});
+ const wm=warm?(input.minutes<60?8:12):0,cm=cool?5:0;
+ const rem=input.minutes-wm-cm;
+ if(rem<pick.length*3) return Object.assign(base,{error:'CONSTRAINTS_CONFLICT'});
+ const per=Math.floor(rem/pick.length);
+ const mins=pick.map((_,i)=>Math.min(45,i===pick.length-1?rem-per*(pick.length-1):per));
+ const phases=[];
+ if(warm) phases.push({drillId:warm.id,minutes:wm});
+ pick.forEach((d,i)=>phases.push({drillId:d.id,minutes:mins[i]}));
+ if(cool) phases.push({drillId:cool.id,minutes:cm});
+ return Object.assign(base,{phases:phases});
+}
+
+function runChecks(s,f){
+ const ph=s.phases.map(p=>({p:p,d:drill(p.drillId)}));
+ const sum=ph.reduce((a,x)=>a+x.p.minutes,0);
+ const out=[];
+ out.push(sum<=f.minutes?{st:'ok',l:t('cTime'),d:t('cTimeOk',{sum:sum,avail:f.minutes})}:{st:'bad',l:t('cTime'),d:t('cTimeBad',{sum:sum,avail:f.minutes,over:sum-f.minutes})});
+ const bp=ph.find(x=>f.players<x.d.min||f.players>x.d.max);
+ out.push(bp?{st:'bad',l:t('cPlayers'),d:t('cPlayersBad',{drill:dl(bp.d.name),min:bp.d.min,max:bp.d.max})}:{st:'ok',l:t('cPlayers'),d:t('cPlayersOk',{n:f.players})});
+ const ba=ph.find(x=>!fitsArea(x.d,f));
+ out.push(ba?{st:'bad',l:t('cArea'),d:t('cAreaBad',{drill:dl(ba.d.name),dl:ba.d.area[0],dw:ba.d.area[1]})}:{st:'ok',l:t('cArea'),d:t('cAreaOk',{l:f.length,w:f.width})});
+ const bk=ph.map(x=>({x:x,m:x.d.equip.filter(e=>f.equipment.indexOf(e)<0)})).find(y=>y.m.length);
+ out.push(bk?{st:'bad',l:t('cKit'),d:t('cKitBad',{drill:dl(bk.x.d.name),items:bk.m.map(e=>lab(EQUIP,e)).join(SEP())})}:{st:'ok',l:t('cKit'),d:t('cKitOk')});
+ const wi=ph.findIndex(x=>x.d.kind==='warmup'),ci=ph.findIndex(x=>x.d.kind==='cooldown');
+ const okO=(wi===-1||wi===0)&&(ci===-1||ci===ph.length-1);
+ out.push(okO?{st:'ok',l:t('cOrder'),d:t('cOrderOk')}:{st:'bad',l:t('cOrder'),d:t('cOrderBad')});
+ const pend=ph.filter(x=>x.d.reviewedBy==='PENDING').length;
+ out.push(pend?{st:'warn',l:t('cReview'),d:t('cReviewBad',{n:pend,total:ph.length})}:{st:'ok',l:t('cReview'),d:''});
+ return out;
+}
+
+function isStale(){
+ const s=state.session,f=state.form,i=s.input;
+ return ['age','players','minutes','length','width','surface','theme','note'].some(k=>f[k]!==i[k])||f.equipment.slice().sort().join()!==i.equipment.slice().sort().join();
+}
+
+function buildJSON(){
+ const s=state.session,inp=s.input,L=state.lang;
+ const prog=[];
+ s.phases.forEach(p=>drill(p.drillId).vars.forEach(v=>prog.push({forPlayers:lab(VARIANT,v.label),change:v.text[L]})));
+ const o={
+  id:s.id,createdAt:s.createdAt,
+  meta:{ageGroup:inp.age,playerCount:inp.players,availableMinutes:inp.minutes,space:{lengthM:inp.length,widthM:inp.width,surface:inp.surface},equipment:inp.equipment,language:L},
+  focus:{theme:inp.theme,sourceNote:inp.note},
+  phases:s.phases.map((p,i)=>{const d=drill(p.drillId);return {order:i+1,kind:d.kind,title:dl(d.name),durationMinutes:p.minutes,drills:[{drillId:d.id,durationMinutes:p.minutes,setup:{groups:[{name:'all',playerCount:inp.players}],areas:[{name:'main',lengthM:d.area[0],widthM:d.area[1]}]},coachingPoints:dl(d.pts).slice(0,ptsLimit(inp.age))}]};}),
+  totalDurationMinutes:s.phases.reduce((a,p)=>a+p.minutes,0),
+  coachingPoints:[],
+  progressions:prog.slice(0,5)
+ };
+ const r=state.reflection;
+ if(r.worked||r.didnt||r.next||r.rating){
+  o.reflection={};
+  if(r.worked) o.reflection.worked=r.worked;
+  if(r.didnt) o.reflection.didNotWork=r.didnt;
+  if(r.next) o.reflection.nextAction=r.next;
+  if(r.rating) o.reflection.rating=r.rating;
+ }
+ return o;
+}
+
+function shareText(){
+ const s=state.session;
+ if(!s||s.error) return '';
+ const inp=s.input;
+ const total=s.phases.reduce((a,p)=>a+p.minutes,0);
+ const lines=[t('shareHead',{age:inp.age==='senior'?t('senior'):inp.age,theme:lab(THEME,inp.theme)}),t('shareMeta',{n:inp.players,m:total}),''];
+ s.phases.forEach((p,i)=>{
+  const d=drill(p.drillId);
+  lines.push((i+1)+'. '+dl(d.name)+' ('+p.minutes+' '+t('min')+')');
+  dl(d.pts).slice(0,ptsLimit(inp.age)).forEach(x=>lines.push('   - '+x));
+ });
+ if(state.userNotes.trim()){lines.push('');lines.push(state.userNotes.trim());}
+ return lines.join('\n');
+}
+const waHref=()=>'https://wa.me/?text='+encodeURIComponent(shareText());
+
+const ICON={
+ ok:'<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.5l2.8 2.8L14.2 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ warn:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5L18.5 17H1.5L10 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 8v4M10 14.4v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+ bad:'<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 7l6 6M13 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+};
+
+function spaceHTML(){
+ const f=state.form,s=state.session;
+ const areas=[];
+ if(s&&s.phases){s.phases.forEach(p=>{const d=drill(p.drillId);if(!areas.some(a=>a.d.id===d.id)){
+  let a=Math.max(d.area[0],d.area[1]),b=Math.min(d.area[0],d.area[1]);
+  if(!(a<=f.length&&b<=f.width)&&(b<=f.length&&a<=f.width)){const x=a;a=b;b=x;}
+  areas.push({d:d,a:a,b:b});}});}
+ const W=240,H=176,pad=12;
+ const ext=areas.reduce((m,x)=>({l:Math.max(m.l,x.a),w:Math.max(m.w,x.b)}),{l:f.length,w:f.width});
+ const sc=Math.min((W-2*pad)/ext.l,(H-2*pad)/ext.w);
+ const rects=areas.map(x=>{
+  const fit=x.a<=f.length&&x.b<=f.width;
+  const col=fit?'var(--'+kg(x.d.kind).replace('k-','k-')+')':'var(--bad)';
+  return '<rect x="'+pad+'" y="'+pad+'" width="'+(x.a*sc).toFixed(1)+'" height="'+(x.b*sc).toFixed(1)+'" fill="none" stroke="'+col+'" stroke-width="1.6" stroke-dasharray="4 3"/>'+
+   '<text x="'+(pad+x.a*sc-4).toFixed(1)+'" y="'+(pad+x.b*sc-4).toFixed(1)+'" font-size="9" text-anchor="end" fill="var(--muted)">'+x.a+'×'+x.b+'</text>';
+ }).join('');
+ return '<div class="space"><h2 class="sec-t">'+esc(t('space'))+'</h2>'+
+  '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(t('space'))+'"><rect x="'+pad+'" y="'+pad+'" width="'+(f.length*sc).toFixed(1)+'" height="'+(f.width*sc).toFixed(1)+'" rx="2" fill="var(--pitch-fill)" stroke="var(--pitch)" stroke-width="2"/>'+rects+'</svg>'+
+  '<div class="dims">'+f.length+' × '+f.width+' m</div><p class="hint">'+esc(t('spaceCap'))+'</p></div>';
+}
+
+function libHTML(s){
+ const chosen=new Set((s.phases||[]).map(p=>p.drillId));
+ const rows=s.elig.map(e=>{
+  const d=e.d,r=e.r;
+  let tag;
+  if(chosen.has(d.id)) tag='<span class="tag sel">'+esc(t('selected'))+'</span>';
+  else if(!r.length) tag='<span class="tag">'+esc(t('notChosen'))+'</span>';
+  else tag=r.map(x=>'<span class="tag no">'+esc(t(x.k,{age:x.age,min:x.min,max:x.max,l:x.l,w:x.w,items:x.items?x.items.map(i=>lab(EQUIP,i)).join(SEP()):''}))+'</span>').join('');
+  return '<li><span>'+esc(dl(d.name))+'</span><span class="tags">'+tag+'</span></li>';
+ }).join('');
+ return '<details data-k="lib"'+(state.open.lib?' open':'')+'><summary>'+esc(t('why'))+'</summary><ul class="lib">'+rows+'</ul></details>';
+}
+
+function staleHTML(){
+ if(!isStale()) return '';
+ return '<div class="stale"><span>'+esc(t('stale'))+'</span><button type="button" class="btn primary" data-act="gen">'+esc(t('generate'))+'</button></div>';
+}
+
+function sheetHTML(s){
+ const f=state.form,inp=s.input;
+ const ageLabel=inp.age==='senior'?t('senior'):inp.age;
+ if(s.error){
+  return '<div class="sheet">'+staleHTML()+'<h2>'+esc(t('err'))+' <code>'+esc(s.error)+'</code></h2><p>'+esc(ERR[s.error][state.lang])+'</p>'+libHTML(s)+'</div>';
+ }
+ const total=s.phases.reduce((a,p)=>a+p.minutes,0);
+ const over=total>f.minutes;
+ const checks=runChecks(s,f);
+ const okN=checks.filter(c=>c.st==='ok').length;
+ const pn=s.phases.length;
+ const stWord={ok:t('stOk'),warn:t('stWarn'),bad:t('stBad')};
+ const bar=s.phases.map(p=>{const d=drill(p.drillId);return '<i class="'+kg(d.kind)+'" style="flex:'+p.minutes+' 1 0" title="'+esc(dl(d.name))+' · '+p.minutes+' '+esc(t('min'))+'"></i>';}).join('');
+ const phases=s.phases.map((p,idx)=>{
+  const d=drill(p.drillId);
+  const pts=dl(d.pts).slice(0,ptsLimit(inp.age));
+  const vars=d.vars.length?'<p class="vars">'+d.vars.map(v=>'<span><b>'+esc(lab(VARIANT,v.label))+'</b> '+esc(v.text[state.lang])+'</span>').join('')+'</p>':'';
+  return '<article class="phase">'+
+   '<div class="time">'+
+    '<button type="button" class="step" data-act="dec" data-i="'+idx+'" aria-label="'+esc(t('shorter'))+'"'+(p.minutes<=3?' disabled':'')+'>−</button>'+
+    '<div class="mins"><span class="n">'+p.minutes+'</span><span class="u">'+esc(t('min'))+'</span></div>'+
+    '<button type="button" class="step" data-act="inc" data-i="'+idx+'" aria-label="'+esc(t('longer'))+'"'+(p.minutes>=45?' disabled':'')+'>+</button>'+
+   '</div>'+
+   '<div class="body">'+
+    '<div class="meta-row"><span class="kind '+kg(d.kind)+'">'+esc(lab(KIND,d.kind))+'</span>'+(d.reviewedBy==='PENDING'?'<span class="badge">'+esc(t('pending'))+'</span>':'')+(d.anim?'<button type="button" class="watch" data-act="anim" data-id="'+d.id+'" aria-expanded="'+(state.animOpen===d.id)+'">'+esc(state.animOpen===d.id?t('aHide'):t('aWatch'))+'</button>':'')+'</div>'+
+    '<h3>'+esc(dl(d.name))+'</h3>'+
+    '<p class="org">'+esc(dl(d.org))+'</p>'+(state.animOpen===d.id?animHTML(d):'')+
+    '<div><div class="mini">'+esc(t('points'))+'</div><ul class="pts">'+pts.map(x=>'<li><span>'+esc(x)+'</span></li>').join('')+'</ul></div>'+
+    vars+
+   '</div>'+
+   '<div class="move">'+
+    '<button type="button" class="step" data-act="up" data-i="'+idx+'" aria-label="'+esc(t('up'))+'"'+(idx===0?' disabled':'')+'>↑</button>'+
+    '<button type="button" class="step" data-act="down" data-i="'+idx+'" aria-label="'+esc(t('down'))+'"'+(idx===pn-1?' disabled':'')+'>↓</button>'+
+   '</div>'+
+  '</article>';
+ }).join('');
+ const r=state.reflection;
+ return '<div class="sheet">'+
+  staleHTML()+
+  '<div class="head">'+
+   '<h2>'+esc(t('sessionFor',{age:ageLabel}))+' · '+esc(lab(THEME,inp.theme))+'</h2>'+
+   '<div class="clock'+(over?' over':'')+'"><span class="clock-n">'+total+'</span><span class="clock-u">'+esc(t('min'))+'</span><span class="clock-of">'+esc(t('of',{n:f.minutes}))+(total<f.minutes?' · '+esc(t('free',{n:f.minutes-total})):'')+'</span></div>'+
+   '<div class="bar">'+bar+'</div>'+
+   '<div class="legend"><span class="k-prep">'+esc(t('gPrep'))+'</span><span class="k-skill">'+esc(t('gSkill'))+'</span><span class="k-game">'+esc(t('gGame'))+'</span></div>'+
+   '<p class="metaline">'+esc(t('metaLine',{n:inp.players,l:inp.length,w:inp.width,surface:lab(SURFACE,inp.surface)}))+'</p>'+
+  '</div>'+
+  '<section class="blk"><div class="blk-h"><h3 class="sec-t">'+esc(t('checks'))+'</h3><span class="sum">'+esc(t('checksSummary',{ok:okN,n:checks.length}))+'</span></div><ul class="checks">'+
+   checks.map(c=>'<li class="chk '+c.st+'">'+ICON[c.st]+'<span class="lbl">'+esc(c.l)+'<span class="sr"> — '+esc(stWord[c.st])+'</span></span><span class="det">'+esc(c.d)+'</span></li>').join('')+
+  '</ul></section>'+
+  '<section class="phases">'+phases+'</section>'+
+  '<section class="blk"><label class="sec-t" for="userNotes">'+esc(t('coachNotes'))+'</label><textarea id="userNotes" placeholder="'+esc(t('coachNotesPh'))+'">'+esc(state.userNotes)+'</textarea></section>'+
+  '<section class="blk"><h3 class="sec-t">'+esc(t('share'))+'</h3><div class="share-row"><a id="wa" class="btn solid" href="'+esc(waHref())+'" target="_blank" rel="noopener noreferrer">'+esc(t('wa'))+'</a><button type="button" class="btn" data-act="copy">'+esc(t('copy'))+'</button></div>'+
+   '<details data-k="share"'+(state.open.share?' open':'')+'><summary>'+esc(t('preview'))+'</summary><div id="bubble" class="bubble">'+esc(shareText())+'</div></details></section>'+
+  '<section class="blk reflect"><h3 class="sec-t">'+esc(t('after'))+'</h3>'+
+   '<div class="field"><label for="r-worked">'+esc(t('worked'))+'</label><textarea id="r-worked" data-ref="worked">'+esc(r.worked)+'</textarea></div>'+
+   '<div class="field"><label for="r-didnt">'+esc(t('didnt'))+'</label><textarea id="r-didnt" data-ref="didnt">'+esc(r.didnt)+'</textarea></div>'+
+   '<div class="field"><label for="r-next">'+esc(t('next'))+'</label><textarea id="r-next" data-ref="next">'+esc(r.next)+'</textarea></div>'+
+   '<div class="field"><span class="lab">'+esc(t('rating'))+'</span><div class="rating" role="group" aria-label="'+esc(t('rating'))+'">'+[1,2,3,4,5].map(n=>'<button type="button" data-act="rate" data-v="'+n+'" aria-pressed="'+(r.rating===n)+'">'+n+'</button>').join('')+'</div></div>'+
+   '<div><button type="button" class="btn" data-act="saveRef">'+esc(t('saveRef'))+'</button></div></section>'+
+  libHTML(s)+
+  '<details data-k="json"'+(state.open.json?' open':'')+'><summary>'+esc(t('data'))+'</summary><pre id="json">'+esc(JSON.stringify(buildJSON(),null,2))+'</pre></details>'+
+ '</div>';
+}
+
+/* Animation engine: timeline from the drill's steps, SVG pitch, rAF playback. */
+const REDUCED=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const anim={t:0,playing:false,speed:1,last:0,raf:0,refs:null,tl:null};
+const SC=10,MG=14;
+const CONE={o:'#F28C28',y:'#F2C230',w:'#F3F3F3',r:'#E5484D'};
+const TLC={};
+const ease=p=>p<0.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+const fmt=s=>{const n=Math.floor(s);return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');};
+const IC={
+ play:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4l10 6-10 6z" fill="currentColor"/></svg>',
+ pause:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 4h3.5v12H5zM11.5 4H15v12h-3.5z" fill="currentColor"/></svg>',
+ prev:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 4h2v12H5zM16 4v12L8 10z" fill="currentColor"/></svg>',
+ next:'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13 4h2v12h-2zM4 4l8 6-8 6z" fill="currentColor"/></svg>'
+};
+
+function buildTL(d){
+ const a=d.anim,objs={},pos={};
+ a.actors.forEach(x=>{objs[x.id]={id:x.id,kind:'actor',team:x.team,n:x.n,x:x.x,y:x.y};pos[x.id]=[x.x,x.y];});
+ a.balls.forEach(x=>{objs[x.id]={id:x.id,kind:'ball',x:x.x,y:x.y};pos[x.id]=[x.x,x.y];});
+ const segs=[];let tm=0;
+ a.steps.forEach(s=>{
+  const paths={};
+  Object.keys(objs).forEach(id=>{
+   const pts=s.mv&&s.mv[id];
+   if(pts&&pts.length){paths[id]=[pos[id]].concat(pts);pos[id]=pts[pts.length-1];}
+  });
+  segs.push({t0:tm,t1:tm+s.d,paths:paths,set:s.set||null,say:s.say});
+  tm+=s.d;
+ });
+ return {segs:segs,total:tm,objs:objs};
+}
+function getTL(d){return TLC[d.id]||(TLC[d.id]=buildTL(d));}
+
+function polyAt(path,p){
+ const L=[];let tot=0;
+ for(let i=1;i<path.length;i++){const l=Math.hypot(path[i][0]-path[i-1][0],path[i][1]-path[i-1][1]);L.push(l);tot+=l;}
+ if(tot===0) return path[path.length-1];
+ let target=p*tot;
+ for(let i=0;i<L.length;i++){
+  if(target<=L[i]||i===L.length-1){
+   const f=L[i]?Math.min(1,target/L[i]):1;
+   return [path[i][0]+(path[i+1][0]-path[i][0])*f,path[i][1]+(path[i+1][1]-path[i][1])*f];
+  }
+  target-=L[i];
+ }
+ return path[path.length-1];
+}
+
+function stateAt(tl,tm){
+ const pos={},team={};
+ for(const id in tl.objs){pos[id]=[tl.objs[id].x,tl.objs[id].y];team[id]=tl.objs[id].team;}
+ let si=0;
+ for(let i=0;i<tl.segs.length;i++){
+  const s=tl.segs[i];
+  if(tm>=s.t1){
+   for(const id in s.paths){const p=s.paths[id];pos[id]=p[p.length-1];}
+   if(s.set){for(const id in s.set) team[id]=s.set[id];}
+   si=Math.min(i+1,tl.segs.length-1);
+  }else{
+   if(tm>s.t0){const pr=ease((tm-s.t0)/(s.t1-s.t0));for(const id in s.paths) pos[id]=polyAt(s.paths[id],pr);}
+   si=i;break;
+  }
+ }
+ return {pos:pos,team:team,si:si};
+}
+
+function animHTML(d){
+ const a=d.anim,w=d.area[0],h=d.area[1],tl=getTL(d);
+ const VW=w*SC+2*MG,VH=h*SC+2*MG,X0=MG,Y0=MG,X1=MG+w*SC,Y1=MG+h*SC,r=10;
+ let g='';
+ const n=Math.max(4,Math.round(w/3)),sw=w*SC/n;
+ for(let i=0;i<n;i++) g+='<rect class="'+(i%2?'tb':'ta')+'" x="'+(MG+i*sw).toFixed(2)+'" y="'+MG+'" width="'+sw.toFixed(2)+'" height="'+(h*SC)+'"/>';
+ g+='<rect class="ln" x="'+X0+'" y="'+Y0+'" width="'+(w*SC)+'" height="'+(h*SC)+'"/>';
+ g+='<path class="mk" d="M'+X0+' '+(Y0+r)+'A'+r+' '+r+' 0 0 0 '+(X0+r)+' '+Y0+'M'+(X1-r)+' '+Y0+'A'+r+' '+r+' 0 0 0 '+X1+' '+(Y0+r)+'M'+X1+' '+(Y1-r)+'A'+r+' '+r+' 0 0 0 '+(X1-r)+' '+Y1+'M'+(X0+r)+' '+Y1+'A'+r+' '+r+' 0 0 0 '+X0+' '+(Y1-r)+'"/>';
+ if(a.halfway){g+='<path class="mk" d="M'+(MG+w*SC/2)+' '+Y0+'V'+Y1+'"/><circle class="mk" cx="'+(MG+w*SC/2)+'" cy="'+(MG+h*SC/2)+'" r="'+(3*SC)+'"/>';}
+ (a.zones||[]).forEach(z=>{
+  const zx=MG+z.x*SC,zy=MG+z.y*SC,txt=z.label[state.lang],tw=txt.length*4.4+10;
+  g+='<rect class="zone" x="'+zx+'" y="'+zy+'" width="'+(z.w*SC)+'" height="'+(z.h*SC)+'"/>'+
+     '<rect class="zbg" x="'+zx+'" y="'+(zy-11)+'" width="'+tw.toFixed(1)+'" height="11" rx="2"/>'+
+     '<text class="zl" x="'+(zx+5)+'" y="'+(zy-3.2)+'">'+esc(txt)+'</text>';
+ });
+ (a.goals||[]).forEach(q=>{g+='<rect class="goal" x="'+(MG+q.x*SC)+'" y="'+(MG+q.y*SC)+'" width="'+(q.w*SC)+'" height="'+(q.h*SC)+'" rx="1"/>';});
+ (a.cones||[]).forEach(c=>{const cx=MG+c.x*SC,cy=MG+c.y*SC;g+='<polygon points="'+cx+','+(cy-6)+' '+(cx-4.5)+','+(cy+4)+' '+(cx+4.5)+','+(cy+4)+'" fill="'+CONE[c.c]+'" stroke="#1B1F23" stroke-width=".8"/>';});
+ a.actors.forEach(x=>{
+  g+='<g data-aid="'+x.id+'" class="actor team-'+x.team+'" transform="translate('+(MG+x.x*SC)+' '+(MG+x.y*SC)+')"><circle class="disc" r="10"/><text class="num'+(x.n.length>1?' sm':'')+'" y="'+(x.n.length>1?2.4:3.4)+'">'+esc(x.n)+'</text></g>';
+ });
+ a.balls.forEach(x=>{g+='<circle data-aid="'+x.id+'" class="ball" r="4.4" cx="'+(MG+x.x*SC)+'" cy="'+(MG+x.y*SC)+'"/>';});
+ return '<div class="anim" id="anim">'+
+  '<div class="anim-head"><span id="a-step"></span><span class="anim-time" id="a-time"></span></div>'+
+  '<svg class="stage" id="a-svg" viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="'+esc(dl(d.name))+' — '+esc(t('aTitle'))+'">'+g+'</svg>'+
+  '<p class="anim-say" id="a-say"></p>'+
+  '<div class="anim-ctl">'+
+   '<button type="button" data-act="aprev" aria-label="'+esc(t('aPrev'))+'">'+IC.prev+'</button>'+
+   '<button type="button" class="pl" id="a-play" data-act="aplay"></button>'+
+   '<button type="button" data-act="anext" aria-label="'+esc(t('aNext'))+'">'+IC.next+'</button>'+
+   '<button type="button" id="a-speed" data-act="aspeed" aria-label="'+esc(t('aSpeed'))+'"></button>'+
+  '</div>'+
+  '<input type="range" id="a-scrub" min="0" max="'+Math.round(tl.total*100)+'" value="0" step="1" aria-label="'+esc(t('aScrub'))+'">'+
+ '</div>';
+}
+
+function animFrame(){
+ const r=anim.refs;
+ if(!r||!anim.tl) return;
+ const tl=anim.tl,tm=Math.max(0,Math.min(tl.total,anim.t));
+ const f=stateAt(tl,tm);
+ for(const id in f.pos){
+  const el=r.nodes[id];
+  if(!el) continue;
+  const x=MG+f.pos[id][0]*SC,y=MG+f.pos[id][1]*SC;
+  if(tl.objs[id].kind==='ball'){el.setAttribute('cx',x.toFixed(2));el.setAttribute('cy',y.toFixed(2));}
+  else{el.setAttribute('transform','translate('+x.toFixed(2)+' '+y.toFixed(2)+')');el.setAttribute('class','actor team-'+f.team[id]);}
+ }
+ r.step.textContent=t('aTitle')+' · '+t('aStep',{n:f.si+1,m:tl.segs.length});
+ r.time.textContent=fmt(tm)+' / '+fmt(tl.total);
+ r.say.textContent=tl.segs[f.si].say[state.lang];
+ if(document.activeElement!==r.scrub) r.scrub.value=Math.round(tm*100);
+}
+
+function updatePlayBtn(){
+ const r=anim.refs;
+ if(!r||!anim.tl) return;
+ const end=anim.t>=anim.tl.total-0.01&&!anim.playing;
+ r.play.innerHTML=(anim.playing?IC.pause:IC.play)+'<span>'+esc(anim.playing?t('aPause'):(end?t('aReplay'):t('aPlay')))+'</span>';
+ r.speed.textContent=anim.speed+'×';
+}
+
+function tick(ts){
+ anim.raf=0;
+ if(!anim.playing||!anim.refs) return;
+ if(!anim.last) anim.last=ts;
+ const dt=Math.min(0.1,(ts-anim.last)/1000);
+ anim.last=ts;
+ anim.t+=dt*anim.speed;
+ if(anim.t>=anim.tl.total){anim.t=anim.tl.total;anim.playing=false;}
+ animFrame();updatePlayBtn();
+ if(anim.playing) anim.raf=requestAnimationFrame(tick);
+}
+function play(){
+ if(!anim.tl) return;
+ if(anim.t>=anim.tl.total-0.01) anim.t=0;
+ anim.playing=true;anim.last=0;
+ if(!anim.raf) anim.raf=requestAnimationFrame(tick);
+ updatePlayBtn();
+}
+function pause(){anim.playing=false;updatePlayBtn();}
+function seek(dir){
+ const tl=anim.tl;
+ if(!tl) return;
+ const f=stateAt(tl,anim.t),cur=tl.segs[f.si];
+ let target;
+ if(dir<0) target=(anim.t-cur.t0>0.7)?cur.t0:tl.segs[Math.max(0,f.si-1)].t0;
+ else target=f.si<tl.segs.length-1?tl.segs[f.si+1].t0:tl.total;
+ anim.t=target;animFrame();updatePlayBtn();
+}
+function openDefaultAnim(){
+ const s=state.session;
+ if(!s||s.error){state.animOpen=null;anim.playing=false;return;}
+ const p=s.phases.find(x=>{const k=drill(x.drillId).kind;return k!=='warmup'&&k!=='cooldown';});
+ state.animOpen=p?p.drillId:null;
+ anim.t=0;anim.last=0;anim.playing=!REDUCED&&!!p;
+}
+function mountAnim(){
+ const root=$('#anim'),svg=$('#a-svg');
+ if(!root||!svg||!state.animOpen){anim.refs=null;anim.playing=false;return;}
+ anim.tl=getTL(drill(state.animOpen));
+ const nodes={};
+ svg.querySelectorAll('[data-aid]').forEach(n=>{nodes[n.getAttribute('data-aid')]=n;});
+ anim.refs={nodes:nodes,step:$('#a-step'),time:$('#a-time'),say:$('#a-say'),play:$('#a-play'),speed:$('#a-speed'),scrub:$('#a-scrub')};
+ animFrame();updatePlayBtn();
+ if(anim.playing&&!anim.raf){anim.last=0;anim.raf=requestAnimationFrame(tick);}
+}
+
+const app=$('#app');
+
+function renderOutput(){
+ const out=$('#output');
+ const sp=$('#spacewrap');
+ if(sp) sp.innerHTML=spaceHTML();
+ if(!out||!state.session) return;
+ out.innerHTML=sheetHTML(state.session);
+ mountAnim();
+}
+
+function renderApp(){
+ const f=state.form,L=state.lang;
+ app.lang=L;app.dir=L==='ar'?'rtl':'ltr';
+ const opt=(v,label,sel)=>'<option value="'+esc(v)+'"'+(sel?' selected':'')+'>'+esc(label)+'</option>';
+ app.innerHTML=
+ '<header class="top"><div class="brand">'+esc(t('brand'))+'</div><div class="lang" role="group" aria-label="Language">'+
+   ['en','fr','ar'].map(l=>'<button type="button" data-lang="'+l+'" aria-pressed="'+(l===L)+'">'+l.toUpperCase()+'</button>').join('')+'</div></header>'+
+ '<div class="intro"><h1>'+esc(t('title'))+'</h1><p>'+esc(t('intro'))+'</p></div>'+
+ '<div class="layout">'+
+  '<section class="form" aria-label="'+esc(t('squad'))+'">'+
+   '<h2 class="sec-t">'+esc(t('squad'))+'</h2>'+
+   '<div class="field"><label for="f-age">'+esc(t('age'))+'</label><select id="f-age">'+AGES.map(a=>opt(a,a==='senior'?t('senior'):a,f.age===a)).join('')+'</select></div>'+
+   '<div class="row2"><div class="field"><label for="f-players">'+esc(t('players'))+'</label><input id="f-players" type="number" inputmode="numeric" min="2" max="60" value="'+f.players+'"></div>'+
+   '<div class="field"><label for="f-minutes">'+esc(t('minutes'))+'</label><input id="f-minutes" type="number" inputmode="numeric" min="30" max="150" value="'+f.minutes+'"></div></div>'+
+   '<div class="row2"><div class="field"><label for="f-len">'+esc(t('len'))+'</label><input id="f-len" type="number" inputmode="numeric" min="5" max="200" value="'+f.length+'"></div>'+
+   '<div class="field"><label for="f-wid">'+esc(t('wid'))+'</label><input id="f-wid" type="number" inputmode="numeric" min="5" max="200" value="'+f.width+'"></div></div>'+
+   '<div class="field"><label for="f-surface">'+esc(t('surface'))+'</label><select id="f-surface">'+SURFACE_KEYS.map(k=>opt(k,lab(SURFACE,k),f.surface===k)).join('')+'</select></div>'+
+   '<div class="field" role="group" aria-labelledby="eq-lab"><span class="lab" id="eq-lab">'+esc(t('equipment'))+'</span><div class="chips">'+
+     EQUIP_KEYS.map(k=>'<label class="chip"><input type="checkbox" id="eq-'+k+'" data-eq="'+k+'"'+(f.equipment.indexOf(k)>=0?' checked':'')+'><span>'+esc(lab(EQUIP,k))+'</span></label>').join('')+'</div></div>'+
+   '<div class="field"><label for="f-theme">'+esc(t('focus'))+'</label><select id="f-theme">'+THEME_KEYS.map(k=>opt(k,lab(THEME,k),f.theme===k)).join('')+'</select></div>'+
+   '<div class="field"><label for="f-note">'+esc(t('note'))+'</label><textarea id="f-note">'+esc(f.note)+'</textarea>'+(f.noteIsDefault?'<span class="hint">'+esc(t('noteHint'))+'</span>':'')+'</div>'+
+   '<button type="button" class="btn primary" data-act="gen">'+esc(t('generate'))+'</button>'+
+   '<div id="spacewrap"></div>'+
+  '</section>'+
+  '<section id="output" aria-live="polite"></section>'+
+ '</div>';
+ renderOutput();
+}
+
+function setLang(l){
+ state.lang=l;
+ if(state.form.noteIsDefault) state.form.note=DEFAULT_NOTE[l];
+ renderApp();
+}
+
+let tt;
+function toast(m){const el=$('#toast');el.textContent=m;el.hidden=false;clearTimeout(tt);tt=setTimeout(()=>{el.hidden=true;},2200);}
+
+function refreshDerived(){
+ const a=$('#wa');if(a) a.href=waHref();
+ const b=$('#bubble');if(b) b.textContent=shareText();
+ const j=$('#json');if(j&&state.session&&!state.session.error) j.textContent=JSON.stringify(buildJSON(),null,2);
+}
+
+function copy(){
+ const text=shareText();
+ const fail=()=>{state.open.share=true;renderOutput();const b=$('#bubble');if(b){const r=document.createRange();r.selectNodeContents(b);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);}toast(t('copyFail'));};
+ try{
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>toast(t('copied')),fail);}
+  else fail();
+ }catch(e){fail();}
+}
+
+function move(i,j){
+ const p=state.session.phases;
+ const x=p[i];p[i]=p[j];p[j]=x;
+}
+
+app.addEventListener('click',e=>{
+ const b=e.target.closest('[data-act],[data-lang]');
+ if(!b||!app.contains(b)) return;
+ if(b.dataset.lang){setLang(b.dataset.lang);return;}
+ const a=b.dataset.act,s=state.session;
+ if(a==='gen'){state.session=generate(state.form);openDefaultAnim();renderOutput();return;}
+ if(a==='aplay'){if(anim.playing) pause(); else play();return;}
+ if(a==='aprev'){seek(-1);return;}
+ if(a==='anext'){seek(1);return;}
+ if(a==='aspeed'){anim.speed=anim.speed===1?0.5:(anim.speed===0.5?2:1);updatePlayBtn();return;}
+ if(a==='anim'){
+  const id=b.dataset.id;
+  if(state.animOpen===id){state.animOpen=null;anim.playing=false;}
+  else{state.animOpen=id;anim.t=0;anim.playing=!REDUCED;anim.last=0;}
+  renderOutput();
+  const nb=$('[data-act="anim"][data-id="'+id+'"]',app);
+  if(nb) nb.focus();
+  return;
+ }
+ if(!s||s.error) return;
+ const i=parseInt(b.dataset.i,10);
+ let refocus=null;
+ if(a==='dec'||a==='inc'){const p=s.phases[i];p.minutes=Math.min(45,Math.max(3,p.minutes+(a==='inc'?1:-1)));refocus={a:a,i:i};}
+ else if(a==='up'&&i>0){move(i,i-1);refocus={a:i-1>0?'up':'down',i:i-1};}
+ else if(a==='down'&&i<s.phases.length-1){move(i,i+1);refocus={a:i+1<s.phases.length-1?'down':'up',i:i+1};}
+ else if(a==='copy'){copy();return;}
+ else if(a==='rate'){state.reflection.rating=parseInt(b.dataset.v,10);refocus={a:'rate',v:b.dataset.v};}
+ else if(a==='saveRef'){state.reflection.saved=true;refreshDerived();toast(t('savedRef'));return;}
+ else return;
+ renderOutput();
+ if(refocus){
+  const sel=refocus.a==='rate'?'[data-act="rate"][data-v="'+refocus.v+'"]':'[data-act="'+refocus.a+'"][data-i="'+refocus.i+'"]';
+  const el=$(sel,app);
+  if(el&&!el.disabled) el.focus();
+ }
+});
+
+function onField(e){
+ const el=e.target,f=state.form;
+ if(el.id==='a-scrub'){anim.t=(parseInt(el.value,10)||0)/100;anim.playing=false;animFrame();updatePlayBtn();return;}
+ if(el.id==='userNotes'){state.userNotes=el.value;refreshDerived();return;}
+ if(el.dataset&&el.dataset.ref){state.reflection[el.dataset.ref]=el.value;refreshDerived();return;}
+ if(el.dataset&&el.dataset.eq){f.equipment=EQUIP_KEYS.filter(k=>{const c=$('#eq-'+k);return c&&c.checked;});}
+ else if(el.id==='f-age') f.age=el.value;
+ else if(el.id==='f-players') f.players=num(el.value,2,60,f.players);
+ else if(el.id==='f-minutes') f.minutes=num(el.value,30,150,f.minutes);
+ else if(el.id==='f-len') f.length=num(el.value,5,200,f.length);
+ else if(el.id==='f-wid') f.width=num(el.value,5,200,f.width);
+ else if(el.id==='f-surface') f.surface=el.value;
+ else if(el.id==='f-theme') f.theme=el.value;
+ else if(el.id==='f-note'){f.note=el.value;f.noteIsDefault=false;}
+ else return;
+ renderOutput();
+}
+app.addEventListener('input',onField);
+app.addEventListener('change',onField);
+app.addEventListener('toggle',e=>{const k=e.target&&e.target.dataset&&e.target.dataset.k;if(k) state.open[k]=e.target.open;},true);
+
+state.session=generate(state.form);
+openDefaultAnim();
+renderApp();
+})();
+</script>
