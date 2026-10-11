@@ -12,7 +12,7 @@ export async function Header({ user }: { user: AppUser | null }) {
   return (
     <header className="border-b border-line bg-bg">
       <div className="wrap flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3">
-        <Link href="/" className="display text-3xl tracking-[0.08em] no-underline">{brand}</Link>
+        <Link href="/" className="display inline-flex min-h-11 min-w-11 items-center text-3xl tracking-[0.08em] no-underline">{brand}</Link>
         <div className="flex items-center gap-2">
           <Suspense fallback={null}>
             <LanguageSwitch />

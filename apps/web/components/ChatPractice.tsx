@@ -68,17 +68,20 @@ export function ChatPractice({ fromLibrary }: Props) {
   // Restore the conversation after a reload (browser storage is a convenience, never required).
   useEffect(() => {
     if (fromLibrary) return;
-    try {
-      const raw = sessionStorage.getItem(KEY);
-      if (!raw) return;
-      const s = JSON.parse(raw) as { versions: Version[]; current: number; lines: Line[]; counter: number };
-      setVersions(s.versions);
-      setCurrent(s.current);
-      setLines(s.lines);
-      counter.current = s.counter;
-    } catch {
-      /* ignore */
-    }
+    // Deferred so the restore is not a synchronous state update inside the effect body.
+    queueMicrotask(() => {
+      try {
+        const raw = sessionStorage.getItem(KEY);
+        if (!raw) return;
+        const s = JSON.parse(raw) as { versions: Version[]; current: number; lines: Line[]; counter: number };
+        setVersions(s.versions);
+        setCurrent(s.current);
+        setLines(s.lines);
+        counter.current = s.counter;
+      } catch {
+        /* ignore */
+      }
+    });
   }, [fromLibrary]);
   useEffect(() => {
     if (fromLibrary || !versions.length) return;

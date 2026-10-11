@@ -98,7 +98,7 @@ export default async function LibraryPage({ searchParams }: { searchParams: Prom
             </fieldset>
             <div className="flex flex-wrap gap-3">
               <button type="submit" className="btn btn-solid">{t("common.apply")}</button>
-              {active && <a href="/library" className="btn">{t("common.reset")}</a>}
+              {active && <Link href="/library" className="btn">{t("common.reset")}</Link>}
             </div>
           </form>
 

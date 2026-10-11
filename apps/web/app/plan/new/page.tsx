@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { SessionRequest } from "@mourabbi/schemas";
+import Link from "next/link";
 import { PlanForm } from "@/components/PlanForm";
+import { ageLabel } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import { requireUser } from "@/lib/server/auth";
 import { getStore } from "@/lib/server/store";
@@ -16,7 +18,11 @@ export default async function NewPlanPage({ searchParams }: { searchParams: Prom
   const user = await requireUser(include ? `/plan/new?include=${encodeURIComponent(include)}` : "/plan/new");
   const t = await getTranslations("plan");
   const locale = (await getLocale()) as Locale;
-  const profile = await (await getStore()).getProfile(user.id);
+  const store = await getStore();
+  const profile = await store.getProfile(user.id);
+  const recent = await store.listSessions(user.id, 5);
+  const tAges = await getTranslations("ages");
+  const tc = await getTranslations("common");
   const tpl = include ? getTemplate(include) : undefined;
 
   // Start from sensible values; a template pre-fills what it needs to fit.
@@ -41,6 +47,23 @@ export default async function NewPlanPage({ searchParams }: { searchParams: Prom
       <div className="card">
         <PlanForm locale={locale} initial={initial} include={tpl?.id} />
       </div>
+      <section className="grid gap-2" aria-labelledby="recent-h">
+        <h2 id="recent-h" className="eyebrow">{t("yourSessions")}</h2>
+        {recent.length === 0 ? (
+          <p className="muted text-sm">{t("noSessions")}</p>
+        ) : (
+          <ul className="grid" data-testid="recent-sessions">
+            {recent.map((r) => (
+              <li key={r.id} className="border-t border-line first:border-t-0">
+                <Link href={`/plan/${r.id}`} className="flex min-h-11 flex-wrap items-center gap-x-3 py-2 no-underline">
+                  <span className="font-semibold">{t("sessionFor", { age: ageLabel(r.data.meta.ageGroup, tAges("senior")) })}</span>
+                  <span className="muted text-sm">{tc("minutes", { n: r.data.totalDurationMinutes })} · {new Date(r.created_at).toLocaleDateString(locale)}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
     </div>
   );
 }

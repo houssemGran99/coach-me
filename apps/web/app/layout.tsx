@@ -49,9 +49,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             {children}
           </main>
           <footer className="wrap flex flex-wrap gap-x-6 gap-y-2 border-t border-line py-6 text-sm muted">
-            <span>{t("brand")}</span>
-            <Link href="/privacy">{legal("privacyTitle")}</Link>
-            <Link href="/terms">{legal("termsTitle")}</Link>
+            <span className="inline-flex min-h-11 items-center">{t("brand")}</span>
+            <Link href="/privacy" className="inline-flex min-h-11 items-center">{legal("privacyTitle")}</Link>
+            <Link href="/terms" className="inline-flex min-h-11 items-center">{legal("termsTitle")}</Link>
           </footer>
         </NextIntlClientProvider>
         </SerwistProvider>

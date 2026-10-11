@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { AGE_GROUPS, EQUIPMENT, PRACTICE_KINDS, THEMES } from "@mourabbi/schemas";
 import { PracticeCard } from "@/components/PracticeCard";
@@ -81,7 +82,7 @@ export default async function TemplatesPage({ searchParams }: { searchParams: Pr
         </div>
         <div className="flex flex-wrap gap-3">
           <button type="submit" className="btn btn-solid">{t("common.apply")}</button>
-          {hasFilters && <a href="/templates" className="btn">{t("common.reset")}</a>}
+          {hasFilters && <Link href="/templates" className="btn">{t("common.reset")}</Link>}
         </div>
       </form>
 

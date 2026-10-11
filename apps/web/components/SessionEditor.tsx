@@ -216,7 +216,7 @@ export function SessionEditor({ session, practices, titles, libraryIds, libraryF
                       <label className="grid justify-items-center">
                         <span className="sr-only-x">{tt("plan.durationOf", { name: nameOf(p) })}</span>
                         <input type="number" inputMode="numeric" min={3} max={45} value={ph.durationMinutes} onChange={(e) => setDuration(i, Number(e.target.value))}
-                          className="display w-16 border-0 bg-transparent text-center text-4xl leading-none tabular-nums" data-testid="duration" />
+                          className="display min-h-11 w-16 border-0 bg-transparent text-center text-4xl leading-none tabular-nums" data-testid="duration" />
                         <span className="muted text-[11px] uppercase tracking-wider">{tt("common.min")}</span>
                       </label>
                       <button type="button" className="btn btn-sm !min-h-11 !px-0" onClick={() => setDuration(i, ph.durationMinutes + 5)} disabled={ph.durationMinutes >= 45} aria-label={`${tt("plan.longer")}: ${nameOf(p)}`}>+</button>

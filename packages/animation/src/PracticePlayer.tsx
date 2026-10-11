@@ -45,7 +45,7 @@ const CSS = `
 .mrb-ctl button{min-height:44px;min-width:44px;padding-inline:14px;border-radius:6px;border:1px solid rgba(233,242,235,.4);background:transparent;color:${STAGE.ink};cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:600}
 .mrb-ctl button:focus-visible{outline:2px solid #E6EFE8;outline-offset:2px}
 .mrb-ctl button.mrb-pl{background:${STAGE.ink};color:${STAGE.bg};border-color:${STAGE.ink}}
-.mrb-scrub{display:block;width:calc(100% - 28px);margin:8px 14px 16px;accent-color:${STAGE.ink};min-height:28px}
+.mrb-scrub{direction:ltr;display:block;width:calc(100% - 28px);margin:8px 14px 16px;accent-color:${STAGE.ink};min-height:44px}
 .mrb-scrub:focus-visible{outline:2px solid #E6EFE8;outline-offset:2px}
 `;
 

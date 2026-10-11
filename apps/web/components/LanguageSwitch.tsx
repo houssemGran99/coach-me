@@ -19,7 +19,6 @@ export function LanguageSwitch() {
     <div role="group" aria-label={t("language")} className="inline-flex overflow-hidden rounded-md border border-line bg-surface">
       {LOCALES.map((l) => (
         // Plain anchors: a full navigation lets the proxy set the cookie and re-render the whole page in the new language/direction.
-        // eslint-disable-next-line @next/next/no-html-link-for-pages
         <a
           key={l}
           href={hrefFor(l)}

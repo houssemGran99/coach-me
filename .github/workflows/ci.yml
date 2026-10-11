@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Templates (schema, animation rules, languages, review guard)
+        run: pnpm templates:validate
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - name: Build (bundles templates, builds the app and the service worker)
+        run: pnpm build
+      - name: Install Playwright browser
+        run: pnpm --filter @mourabbi/web exec playwright install --with-deps chromium
+      - name: End-to-end smoke tests
+        run: pnpm test:e2e

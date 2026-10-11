@@ -33,7 +33,7 @@ export default async function LibraryItemPage({ params }: { params: Promise<{ id
   return (
     <div className="grid gap-4">
       <RememberPractice item={{ id: row.id, title, practice: row.data, notes: row.notes, source: row.source, created_at: row.created_at }} />
-      <Link href="/library" className="text-sm font-semibold">← {t("title")}</Link>
+      <Link href="/library" className="text-sm font-semibold"><span aria-hidden="true" className="inline-block rtl:rotate-180">←</span> {t("title")}</Link>
       <PracticeView practice={row.data} title={title}>
         {row.parent_template_id && <p className="hint">{t("fromTemplate", { id: row.parent_template_id })}</p>}
         <LibraryActions

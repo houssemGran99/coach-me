@@ -150,3 +150,70 @@ test("manifest and offline page are available", async ({ page, request }) => {
   await page.goto("/offline");
   await expect(page.getByTestId("offline-list")).toBeVisible();
 });
+
+test("a saved practice opens offline from the device cache", async ({ page, context }) => {
+  await signIn(page, "coach4@example.com", "/templates/rondo_4v2_u10");
+  await page.getByTestId("save-to-library").click();
+  await expect(page.getByText("Saved to your library.")).toBeVisible();
+
+  // Viewing the library copies it to IndexedDB.
+  await page.goto("/library");
+  const href = await page.getByTestId("library-item").first().getByRole("link").first().getAttribute("href");
+  expect(href).toMatch(/^\/library\/[0-9a-f-]{36}$/);
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          new Promise<number>((resolve) => {
+            const open = indexedDB.open("mourabbi");
+            open.onerror = () => resolve(0);
+            open.onsuccess = () => {
+              const db = open.result;
+              if (!db.objectStoreNames.contains("practices")) return resolve(0);
+              const req = db.transaction("practices").objectStore("practices").count();
+              req.onsuccess = () => resolve(req.result);
+            };
+          }),
+      ),
+    )
+    .toBeGreaterThan(0);
+
+  // The service worker must be active and controlling before we go offline.
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) await new Promise((r) => navigator.serviceWorker.addEventListener("controllerchange", r, { once: true }));
+  });
+
+  await context.setOffline(true);
+  await page.goto(href!).catch(() => undefined);
+  await expect(page.getByTestId("offline-practice")).toBeVisible();
+  await expect(page.locator(".mrb")).toBeVisible();
+  await expect(page.getByText("4v2 rondo").first()).toBeVisible();
+
+  // Generation says it needs a connection.
+  await context.setOffline(false);
+});
+
+test("the player is usable from the keyboard", async ({ page }) => {
+  await page.goto("/templates/rondo_4v2_u10");
+  const player = page.locator(".mrb");
+  await expect(player).toContainText("Step 1 of 5");
+  await player.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(player).toContainText("Step 2 of 5");
+  await page.keyboard.press("ArrowRight");
+  await expect(player).toContainText("Step 3 of 5");
+  await page.keyboard.press("ArrowLeft"); // right at the start of step 3 -> back to step 2
+  await expect(player).toContainText("Step 2 of 5");
+  // Space toggles play and pause
+  await page.keyboard.press("Space");
+  await expect(player.getByRole("button", { name: "Pause" })).toBeVisible();
+  await page.keyboard.press("Space");
+  await expect(player.getByRole("button", { name: "Play" })).toBeVisible();
+  // controls are at least 44 x 44
+  for (const b of await player.getByRole("button").all()) {
+    const box = (await b.boundingBox())!;
+    expect(box.width).toBeGreaterThanOrEqual(43.5);
+    expect(box.height).toBeGreaterThanOrEqual(43.5);
+  }
+});

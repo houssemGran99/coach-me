@@ -32,7 +32,7 @@ export default async function TemplatePage({ params }: Props) {
   return (
     <div className="grid gap-4">
       <RememberPractice item={{ id: practice.id, title: practice.name[locale], practice, notes: "", source: "template", created_at: "" }} />
-      <Link href="/templates" className="text-sm font-semibold">← {t("backToList")}</Link>
+      <Link href="/templates" className="text-sm font-semibold"><span aria-hidden="true" className="inline-block rtl:rotate-180">←</span> {t("backToList")}</Link>
       <PracticeView
         practice={practice}
         actions={
