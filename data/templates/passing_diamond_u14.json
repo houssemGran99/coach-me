@@ -1,0 +1,214 @@
+{
+  "id": "passing_diamond_u14",
+  "kind": "technical",
+  "ageGroups": [
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 25,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "passing",
+    "receiving",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Losange de passes avec appel du troisième homme",
+    "en": "Diamond passing with a third-man run",
+    "ar": "تمرير على شكل معيّن مع ركض اللاعب الثالث"
+  },
+  "organisation": {
+    "fr": "Carré de 25 m avec cinq joueurs : un à chaque pointe d'un losange et un au centre. Le joueur du bas passe au joueur central, qui remet de première. Un troisième joueur parti du haut effectue un appel pour recevoir la passe suivante. Après chaque séquence, les joueurs tournent d'un poste.",
+    "en": "25 m square with five players: one at each point of a diamond and one in the middle. The bottom player passes to the middle player, who lays the ball off first time. A third player from the top makes a run to receive the next pass. After each sequence the players rotate one position.",
+    "ar": "مربع 25 م بخمسة لاعبين: لاعب عند كل رأس من رؤوس المعيّن ولاعب في الوسط. يمرّر اللاعب السفلي إلى لاعب الوسط الذي يعيد الكرة من لمسة واحدة. لاعب ثالث من الأعلى يركض ليستلم التمريرة التالية. بعد كل تسلسل يدور اللاعبون موقعًا واحدًا."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Chronométrer l'appel pour que la passe arrive devant le joueur",
+      "Le joueur central joue de première, tête haute",
+      "Appeler le ballon de la voix et avec le corps"
+    ],
+    "en": [
+      "Time the run so the pass arrives in front of the runner",
+      "The middle player plays first time with his head up",
+      "Call for the ball with your voice and body shape"
+    ],
+    "ar": [
+      "اضبط توقيت الركض لتصل التمريرة أمام اللاعب",
+      "لاعب الوسط يلعب من لمسة واحدة ورأسه مرفوع",
+      "اطلب الكرة بصوتك ووضعية جسمك"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Deux touches pour tous",
+        "en": "Two touches for everyone",
+        "ar": "لمستان للجميع"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un défenseur passif au centre",
+        "en": "Add a passive defender in the middle",
+        "ar": "أضف مدافعًا سلبيًا في الوسط"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 12.5,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 24,
+        "y": 12.5,
+        "color": "o"
+      },
+      {
+        "x": 12.5,
+        "y": 24,
+        "color": "o"
+      },
+      {
+        "x": 1,
+        "y": 12.5,
+        "color": "o"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 12.5,
+        "y": 22
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 12.5,
+        "y": 12.5
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 23,
+        "y": 12.5
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 12.5,
+        "y": 3
+      },
+      {
+        "id": "a5",
+        "team": "a",
+        "label": "5",
+        "x": 2,
+        "y": 12.5
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 13.2,
+        "y": 22.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le joueur du bas passe au joueur central",
+          "en": "The bottom player passes into the middle",
+          "ar": "اللاعب السفلي يمرّر إلى لاعب الوسط"
+        },
+        "moves": {
+          "b": [
+            [13.2, 13]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Remise de première à droite ; le joueur du haut s'élance",
+          "en": "One-touch lay-off right; the top player starts his run",
+          "ar": "إعادة بلمسة واحدة لليمين واللاعب العلوي يبدأ الركض"
+        },
+        "moves": {
+          "a3": [
+            [20, 13]
+          ],
+          "b": [
+            [20.7, 13.5]
+          ],
+          "a4": [
+            [15, 5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Passe de première dans la course du troisième homme",
+          "en": "First-time pass into the third man's run",
+          "ar": "تمريرة من لمسة واحدة في ركض اللاعب الثالث"
+        },
+        "moves": {
+          "a4": [
+            [21, 7]
+          ],
+          "b": [
+            [21.7, 7.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Changement de jeu à gauche et relance du schéma",
+          "en": "Switch to the left side and restart the pattern",
+          "ar": "تحويل إلى اليسار وإعادة التسلسل"
+        },
+        "moves": {
+          "b": [
+            [2.7, 13]
+          ],
+          "a1": [
+            [12.5, 19]
+          ]
+        }
+      }
+    ]
+  }
+}

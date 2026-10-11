@@ -1,0 +1,232 @@
+{
+  "id": "two_v_one_overload_u11",
+  "kind": "game_related",
+  "ageGroups": [
+    "U10",
+    "U11",
+    "U12"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 12,
+  "area": {
+    "lengthM": 20,
+    "widthM": 15
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "mini_goals"
+  ],
+  "themes": [
+    "decision_making",
+    "finishing"
+  ],
+  "name": {
+    "fr": "Supériorité 2 contre 1 vers le but",
+    "en": "2v1 overload to goal",
+    "ar": "التفوق العددي اثنان ضد واحد نحو المرمى"
+  },
+  "organisation": {
+    "fr": "Zone de 20 m sur 15 m avec un mini-but. Deux attaquants partent à 15 m du but face à un défenseur. Ils attaquent ensemble et cherchent à marquer. Après chaque essai, le défenseur rejoint la file des attaquants et le joueur suivant défend. Compter les buts.",
+    "en": "20 m by 15 m area with a mini goal. Two attackers start 15 m from the goal against one defender. They attack together and try to score. After each attempt the defender joins the attackers' line and the next player defends. Count the goals.",
+    "ar": "منطقة 20 × 15 م مع مرمى صغير. يبدأ مهاجمان على بُعد 15 م من المرمى أمام مدافع واحد. يهاجمان معًا ويحاولان التسجيل. بعد كل محاولة ينضم المدافع إلى صف المهاجمين ويدافع اللاعب التالي. عُدّوا الأهداف."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Attaquer vite et rester écartés pour étirer le défenseur",
+      "Le porteur fixe le défenseur puis passe",
+      "Le partenaire fait un appel que le défenseur ne peut pas couvrir"
+    ],
+    "en": [
+      "Attack at speed and stay apart to stretch the defender",
+      "The ball carrier commits the defender, then passes",
+      "The supporting player makes a run the defender cannot cover"
+    ],
+    "ar": [
+      "هاجم بسرعة وابقيا متباعدين لتشتيت المدافع",
+      "حامل الكرة يجذب المدافع ثم يمرّر",
+      "اللاعب المساند يركض بحيث لا يستطيع المدافع تغطيته"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Défenseur passif",
+        "en": "Passive defender",
+        "ar": "مدافع سلبي"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Les attaquants n'ont que 6 secondes pour tirer",
+        "en": "The attackers have only 6 seconds to shoot",
+        "ar": "أمام المهاجمين 6 ثوانٍ فقط للتسديد"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 0.5,
+        "y": 14.5,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 18.9,
+        "y": 6,
+        "w": 0.9,
+        "h": 3
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 4,
+        "y": 5
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 4,
+        "y": 10
+      },
+      {
+        "id": "d1",
+        "team": "b",
+        "label": "3",
+        "x": 11,
+        "y": 7.5
+      },
+      {
+        "id": "q1",
+        "team": "b",
+        "label": "4",
+        "x": 2,
+        "y": 12.5
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 4.7,
+        "y": 5.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Attaquer vite et rester écartés",
+          "en": "Attack at pace and stay apart",
+          "ar": "هاجم بسرعة وابقيا متباعدين"
+        },
+        "moves": {
+          "a1": [
+            [9, 5]
+          ],
+          "b": [
+            [9.7, 5.5]
+          ],
+          "a2": [
+            [9, 10.5]
+          ],
+          "d1": [
+            [12.5, 7]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Fixer le défenseur puis passer dans l'espace",
+          "en": "Commit the defender, then pass across",
+          "ar": "اجذب المدافع ثم مرّر عرضيًا"
+        },
+        "moves": {
+          "a1": [
+            [12, 6]
+          ],
+          "b": [
+            [12.7, 6.5]
+          ],
+          "d1": [
+            [12.8, 6.8]
+          ],
+          "a2": [
+            [14, 10.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "Passe dans la course et finition",
+          "en": "Pass into the run and finish",
+          "ar": "مرّر في الركض وسدّد"
+        },
+        "moves": {
+          "b": [
+            [14.7, 11]
+          ],
+          "a1": [
+            [14.5, 5.5]
+          ]
+        }
+      },
+      {
+        "durationS": 1.5,
+        "caption": {
+          "fr": "Tir au mini-but",
+          "en": "Shoot at the mini goal",
+          "ar": "سدّد على المرمى الصغير"
+        },
+        "moves": {
+          "b": [
+            [19.5, 7.8]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le défenseur rejoint les attaquants ; le suivant défend",
+          "en": "The defender joins the attackers; the next defender starts",
+          "ar": "المدافع ينضم إلى المهاجمين والمدافع التالي يبدأ"
+        },
+        "moves": {
+          "d1": [
+            [4, 8]
+          ],
+          "q1": [
+            [11, 7.5]
+          ]
+        },
+        "setTeam": {
+          "d1": "a",
+          "q1": "b"
+        }
+      }
+    ]
+  }
+}

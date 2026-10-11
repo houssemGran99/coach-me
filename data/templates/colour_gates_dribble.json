@@ -1,0 +1,297 @@
+{
+  "id": "colour_gates_dribble",
+  "kind": "warmup",
+  "ageGroups": [
+    "U6",
+    "U7",
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 24,
+  "area": {
+    "lengthM": 20,
+    "widthM": 20
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "dribbling",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Conduite dans les portes de couleur",
+    "en": "Colour gates dribbling",
+    "ar": "المراوغة عبر البوابات الملونة"
+  },
+  "organisation": {
+    "fr": "Carré de 20 m avec quatre portes, chacune formée de deux plots d'une même couleur. Chaque joueur conduit un ballon à travers n'importe quelle porte. À l'appel de l'entraîneur, tout le monde change de porte. Démarrer tranquillement puis accélérer.",
+    "en": "20 m square with four gates, each made of two cones of one colour. Every player dribbles a ball through any gate. On the coach's call, everyone changes to another gate. Start at an easy pace and build up.",
+    "ar": "مربع 20 م فيه أربع بوابات، كل بوابة من قمعين بلون واحد. يراوغ كل لاعب بكرته عبر أي بوابة. عند نداء المدرّب يغيّر الجميع البوابة. ابدأ بإيقاع هادئ ثم زد السرعة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Tête relevée pour trouver une porte libre",
+      "Petites touches des deux pieds",
+      "Changer de direction vite à l'appel"
+    ],
+    "en": [
+      "Head up to find a free gate",
+      "Small touches with both feet",
+      "Change direction quickly on the call"
+    ],
+    "ar": [
+      "ارفع رأسك لتجد بوابة فارغة",
+      "لمسات صغيرة بالقدمين",
+      "غيّر الاتجاه بسرعة عند النداء"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Portes plus larges et sans appel",
+        "en": "Wider gates and no calls",
+        "ar": "بوابات أوسع دون نداءات"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Utiliser seulement le pied faible",
+        "en": "Use only the weaker foot",
+        "ar": "استعمل القدم الأضعف فقط"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 4,
+        "y": 3.5,
+        "color": "o"
+      },
+      {
+        "x": 7.5,
+        "y": 3.5,
+        "color": "o"
+      },
+      {
+        "x": 12.5,
+        "y": 3.5,
+        "color": "y"
+      },
+      {
+        "x": 16,
+        "y": 3.5,
+        "color": "y"
+      },
+      {
+        "x": 4,
+        "y": 16.5,
+        "color": "w"
+      },
+      {
+        "x": 7.5,
+        "y": 16.5,
+        "color": "w"
+      },
+      {
+        "x": 12.5,
+        "y": 16.5,
+        "color": "r"
+      },
+      {
+        "x": 16,
+        "y": 16.5,
+        "color": "r"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "p1",
+        "team": "a",
+        "label": "1",
+        "x": 3,
+        "y": 9
+      },
+      {
+        "id": "p2",
+        "team": "a",
+        "label": "2",
+        "x": 17,
+        "y": 9
+      },
+      {
+        "id": "p3",
+        "team": "a",
+        "label": "3",
+        "x": 8,
+        "y": 11
+      },
+      {
+        "id": "p4",
+        "team": "a",
+        "label": "4",
+        "x": 13,
+        "y": 11
+      }
+    ],
+    "balls": [
+      {
+        "id": "b1",
+        "x": 3.7,
+        "y": 9.5
+      },
+      {
+        "id": "b2",
+        "x": 17.7,
+        "y": 9.5
+      },
+      {
+        "id": "b3",
+        "x": 8.7,
+        "y": 11.5
+      },
+      {
+        "id": "b4",
+        "x": 13.7,
+        "y": 11.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "Conduire à travers une porte au choix",
+          "en": "Dribble through any gate",
+          "ar": "راوغ عبر أي بوابة"
+        },
+        "moves": {
+          "p1": [
+            [5.75, 6],
+            [5.75, 2]
+          ],
+          "b1": [
+            [6.45, 6.5],
+            [6.45, 2.5]
+          ],
+          "p2": [
+            [14.25, 6],
+            [14.25, 2]
+          ],
+          "b2": [
+            [14.95, 6.5],
+            [14.95, 2.5]
+          ],
+          "p3": [
+            [5.75, 14],
+            [5.75, 18]
+          ],
+          "b3": [
+            [6.45, 14.5],
+            [6.45, 18.5]
+          ],
+          "p4": [
+            [14.25, 14],
+            [14.25, 18]
+          ],
+          "b4": [
+            [14.95, 14.5],
+            [14.95, 18.5]
+          ]
+        }
+      },
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "À l'appel, aller à la porte opposée",
+          "en": "On the call, cross to the opposite gate",
+          "ar": "عند النداء اذهب إلى البوابة المقابلة"
+        },
+        "moves": {
+          "p1": [
+            [9, 9],
+            [14.25, 18]
+          ],
+          "b1": [
+            [9.7, 9.5],
+            [14.95, 18.5]
+          ],
+          "p2": [
+            [11, 9],
+            [5.75, 18]
+          ],
+          "b2": [
+            [11.7, 9.5],
+            [6.45, 18.5]
+          ],
+          "p3": [
+            [11, 11],
+            [14.25, 2]
+          ],
+          "b3": [
+            [11.7, 11.5],
+            [14.95, 2.5]
+          ],
+          "p4": [
+            [9, 11],
+            [5.75, 2]
+          ],
+          "b4": [
+            [9.7, 11.5],
+            [6.45, 2.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Repasser par la nouvelle porte",
+          "en": "Go back through the new gate",
+          "ar": "عُد عبر البوابة الجديدة"
+        },
+        "moves": {
+          "p1": [
+            [14.25, 15]
+          ],
+          "b1": [
+            [14.95, 15.5]
+          ],
+          "p2": [
+            [5.75, 15]
+          ],
+          "b2": [
+            [6.45, 15.5]
+          ],
+          "p3": [
+            [14.25, 5]
+          ],
+          "b3": [
+            [14.95, 5.5]
+          ],
+          "p4": [
+            [5.75, 5]
+          ],
+          "b4": [
+            [6.45, 5.5]
+          ]
+        }
+      }
+    ]
+  }
+}

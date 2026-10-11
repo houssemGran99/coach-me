@@ -1,0 +1,220 @@
+{
+  "id": "crossing_and_finishing_u15",
+  "kind": "technical",
+  "ageGroups": [
+    "U14",
+    "U15",
+    "U16",
+    "U17"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 35,
+    "widthM": 30
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "full_goals"
+  ],
+  "themes": [
+    "finishing",
+    "width_and_support"
+  ],
+  "name": {
+    "fr": "Centres et finition",
+    "en": "Crossing and finishing",
+    "ar": "العرضيات والتسديد"
+  },
+  "organisation": {
+    "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Un joueur de couloir conduit vers la ligne de fond et centre. Deux finisseurs attaquent le premier et le second poteau. Faire tourner joueur de couloir, finisseurs et gardien régulièrement, et utiliser les deux côtés.",
+    "en": "35 m by 30 m area with a full goal and a goalkeeper. A wide player dribbles toward the byline and crosses. Two finishers attack the near post and the far post. Rotate wide player, finishers and goalkeeper every few turns, and use both wings.",
+    "ar": "منطقة 35 × 30 م مع مرمى كبير وحارس. يراوغ لاعب الجناح نحو خط النهاية ثم يعرض الكرة. يهاجم مسدّدان القائم القريب والقائم البعيد. دوّروا لاعب الجناح والمسدّدين والحارس كل بضع محاولات واستعملوا الجناحين."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Centrer tôt, tendu ou au ras du sol, avant que le gardien soit placé",
+      "Le joueur du premier poteau attaque devant le but, celui du second arrive tard",
+      "Chronométrer l'appel pour rencontrer le centre sans l'attendre"
+    ],
+    "en": [
+      "Cross early, low or driven, before the keeper is set",
+      "The near-post runner attacks the front of the goal, the far-post runner arrives late",
+      "Time the run to meet the cross; do not wait for it"
+    ],
+    "ar": [
+      "اعرض الكرة مبكرًا أرضية أو قوية قبل أن يتمركز الحارس",
+      "مهاجم القائم القريب يهاجم مقدمة المرمى والبعيد يصل متأخرًا",
+      "اضبط توقيت الركض لتلاقي العرضية ولا تنتظرها"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Centrer depuis un ballon arrêté",
+        "en": "Cross from a stationary ball",
+        "ar": "اعرض الكرة من وضع ثابت"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un défenseur qui suit le joueur du second poteau",
+        "en": "Add a defender who tracks the far-post runner",
+        "ar": "أضف مدافعًا يراقب مهاجم القائم البعيد"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 22,
+        "y": 2,
+        "color": "o"
+      },
+      {
+        "x": 22,
+        "y": 28,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 33.8,
+        "y": 11.5,
+        "w": 1,
+        "h": 7
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "gk",
+        "team": "k",
+        "label": "GK",
+        "x": 33.5,
+        "y": 15
+      },
+      {
+        "id": "w1",
+        "team": "a",
+        "label": "W",
+        "x": 20,
+        "y": 3
+      },
+      {
+        "id": "f1",
+        "team": "a",
+        "label": "1",
+        "x": 21,
+        "y": 18
+      },
+      {
+        "id": "f2",
+        "team": "a",
+        "label": "2",
+        "x": 19,
+        "y": 12
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 20.7,
+        "y": 3.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le joueur de couloir conduit vers la ligne de fond",
+          "en": "The wide player dribbles toward the byline",
+          "ar": "لاعب الجناح يراوغ نحو خط النهاية"
+        },
+        "moves": {
+          "w1": [
+            [27, 2.5],
+            [31, 5.5]
+          ],
+          "b": [
+            [27.7, 3],
+            [31.7, 6]
+          ],
+          "f1": [
+            [26, 15]
+          ],
+          "f2": [
+            [25, 18.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "Centre tendu vers le second poteau",
+          "en": "Cross early to the far post",
+          "ar": "اعرض الكرة مبكرًا نحو القائم البعيد"
+        },
+        "moves": {
+          "b": [
+            [30.4, 18.2]
+          ],
+          "f1": [
+            [31.5, 13]
+          ],
+          "f2": [
+            [30, 18.4]
+          ]
+        }
+      },
+      {
+        "durationS": 1.5,
+        "caption": {
+          "fr": "Le joueur du second poteau finit de première",
+          "en": "The far-post runner finishes first time",
+          "ar": "مهاجم القائم البعيد يسدّد من لمسة واحدة"
+        },
+        "moves": {
+          "b": [
+            [34.5, 14.4]
+          ],
+          "gk": [
+            [33.6, 14.2]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Remise en place : tourner joueur de couloir, finisseurs et gardien",
+          "en": "Reset: rotate wide player, finishers and keeper",
+          "ar": "إعادة التمركز: دوّروا اللاعبين والحارس"
+        },
+        "moves": {
+          "w1": [
+            [24, 9]
+          ],
+          "f1": [
+            [21, 18]
+          ],
+          "f2": [
+            [19, 12]
+          ],
+          "gk": [
+            [33.5, 15]
+          ]
+        }
+      }
+    ]
+  }
+}

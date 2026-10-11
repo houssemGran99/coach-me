@@ -1,0 +1,250 @@
+{
+  "id": "passing_square_u12",
+  "kind": "technical",
+  "ageGroups": [
+    "U11",
+    "U12",
+    "U13",
+    "U14"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 20,
+    "widthM": 20
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "passing",
+    "receiving"
+  ],
+  "name": {
+    "fr": "Carré passe et suis",
+    "en": "Pass-and-follow square",
+    "ar": "مربع التمرير والمتابعة"
+  },
+  "organisation": {
+    "fr": "Carré de 20 m avec un plot à chaque coin et deux joueurs par coin. Le joueur de tête passe au coin suivant puis court rejoindre cette file. Le ballon tourne dans le sens des aiguilles d'une montre ; après deux minutes, changer de sens.",
+    "en": "20 m square with a cone at each corner and two players at each corner. The player at the front passes to the next corner and runs to join that line. The pass travels clockwise; after two minutes switch direction.",
+    "ar": "مربع 20 م بقمع في كل زاوية ولاعبين اثنين في كل زاوية. يمرّر اللاعب الأمامي إلى الزاوية التالية ثم يركض ليلتحق بذلك الصف. تدور الكرة مع عقارب الساعة، وبعد دقيقتين غيّروا الاتجاه."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Passer fort vers le pied avant du receveur",
+      "Regarder par-dessus l'épaule avant de recevoir",
+      "Courir vite vers la file suivante après la passe"
+    ],
+    "en": [
+      "Pass firmly to the front foot of the receiver",
+      "Check your shoulder before receiving",
+      "Run quickly to the next line after you pass"
+    ],
+    "ar": [
+      "مرّر بقوة نحو القدم الأمامية للمستقبل",
+      "انظر فوق كتفك قبل الاستلام",
+      "اركض بسرعة إلى الصف التالي بعد التمرير"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Contrôler avant de passer et marcher vers la file au début",
+        "en": "Control the ball before passing and walk to the next line at first",
+        "ar": "تحكّم بالكرة قبل التمرير وامشِ إلى الصف في البداية"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un second ballon depuis le coin opposé",
+        "en": "Add a second ball from the opposite corner",
+        "ar": "أضف كرة ثانية من الزاوية المقابلة"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 1,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 19,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 19,
+        "y": 19,
+        "color": "o"
+      },
+      {
+        "x": 1,
+        "y": 19,
+        "color": "o"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "p1",
+        "team": "a",
+        "label": "1",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "id": "p2",
+        "team": "a",
+        "label": "2",
+        "x": 3,
+        "y": 5.4
+      },
+      {
+        "id": "p3",
+        "team": "a",
+        "label": "3",
+        "x": 17,
+        "y": 3
+      },
+      {
+        "id": "p4",
+        "team": "a",
+        "label": "4",
+        "x": 17,
+        "y": 5.4
+      },
+      {
+        "id": "p5",
+        "team": "a",
+        "label": "5",
+        "x": 17,
+        "y": 17
+      },
+      {
+        "id": "p6",
+        "team": "a",
+        "label": "6",
+        "x": 17,
+        "y": 14.6
+      },
+      {
+        "id": "p7",
+        "team": "a",
+        "label": "7",
+        "x": 3,
+        "y": 17
+      },
+      {
+        "id": "p8",
+        "team": "a",
+        "label": "8",
+        "x": 3,
+        "y": 14.6
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 3.7,
+        "y": 3.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Passer au coin suivant et suivre sa passe",
+          "en": "Pass to the next corner and follow your pass",
+          "ar": "مرّر إلى الزاوية التالية واتبع تمريرتك"
+        },
+        "moves": {
+          "b": [
+            [17.7, 3.5]
+          ],
+          "p2": [
+            [3, 3]
+          ],
+          "p1": [
+            [10, 1.6],
+            [15, 6.5],
+            [17, 7.8]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le suivant passe à son tour et suit",
+          "en": "The next player passes on and follows",
+          "ar": "اللاعب التالي يمرّر ويتبع"
+        },
+        "moves": {
+          "b": [
+            [17.7, 17.5]
+          ],
+          "p4": [
+            [17, 3]
+          ],
+          "p3": [
+            [19, 8],
+            [17, 12.4]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Garder la circulation du ballon autour du carré",
+          "en": "Keep the pass moving round the square",
+          "ar": "حافظ على دوران الكرة حول المربع"
+        },
+        "moves": {
+          "b": [
+            [3.7, 17.5]
+          ],
+          "p6": [
+            [17, 17]
+          ],
+          "p5": [
+            [10, 19],
+            [3, 12.4]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Retour au premier coin : la boucle continue",
+          "en": "Back to the first corner: the loop continues",
+          "ar": "العودة إلى الزاوية الأولى: الدورة مستمرة"
+        },
+        "moves": {
+          "b": [
+            [3.7, 3.5]
+          ],
+          "p8": [
+            [3, 17]
+          ],
+          "p7": [
+            [1.6, 12],
+            [3, 8.2]
+          ]
+        }
+      }
+    ]
+  }
+}

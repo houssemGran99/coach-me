@@ -1,0 +1,250 @@
+{
+  "id": "pairs_passing_warmup",
+  "kind": "warmup",
+  "ageGroups": [
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U19",
+    "senior"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 30,
+  "area": {
+    "lengthM": 20,
+    "widthM": 15
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "passing",
+    "receiving"
+  ],
+  "name": {
+    "fr": "Échauffement en passes par deux",
+    "en": "Pairs passing warm-up",
+    "ar": "إحماء بالتمرير ثنائيًا"
+  },
+  "organisation": {
+    "fr": "Les joueurs se placent par deux face à face à 10 m, un ballon par paire. Passer et recevoir avec l'intérieur du pied, puis ajouter un second ballon pour passer en même temps. Changer de partenaire après une minute.",
+    "en": "Pairs face each other 10 m apart, one ball per pair. Pass and receive with the inside of the foot, then add a second ball so both players pass at the same time. After a minute, swap partners.",
+    "ar": "يقف اللاعبون في أزواج متقابلين على بُعد 10 م، وكرة لكل زوج. مرّر واستقبل بباطن القدم، ثم أضف كرة ثانية ليمرّر اللاعبان في الوقت نفسه. بدّل الشريك بعد دقيقة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Passer fort vers le pied avant du partenaire",
+      "Amortir la première touche et relever la tête",
+      "Parler à son partenaire avant le second ballon"
+    ],
+    "en": [
+      "Pass firmly to the partner's front foot",
+      "Cushion the first touch and look up",
+      "Talk to your partner before the second ball"
+    ],
+    "ar": [
+      "مرّر بقوة نحو القدم الأمامية للشريك",
+      "امتص الكرة بلمسة أولى وارفع رأسك",
+      "تحدث مع شريكك قبل الكرة الثانية"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Utiliser d'abord le bon pied, puis le pied faible",
+        "en": "Use the stronger foot first, then the weaker foot",
+        "ar": "استعمل القدم الأقوى أولًا ثم الأضعف"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Deux touches maximum, puis une seule",
+        "en": "Two touches maximum, then one touch",
+        "ar": "لمستان كحد أقصى ثم لمسة واحدة"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "l1",
+        "team": "a",
+        "label": "1",
+        "x": 4,
+        "y": 3
+      },
+      {
+        "id": "r1",
+        "team": "a",
+        "label": "2",
+        "x": 14,
+        "y": 3
+      },
+      {
+        "id": "l2",
+        "team": "a",
+        "label": "3",
+        "x": 4,
+        "y": 7.5
+      },
+      {
+        "id": "r2",
+        "team": "a",
+        "label": "4",
+        "x": 14,
+        "y": 7.5
+      },
+      {
+        "id": "l3",
+        "team": "a",
+        "label": "5",
+        "x": 4,
+        "y": 12
+      },
+      {
+        "id": "r3",
+        "team": "a",
+        "label": "6",
+        "x": 14,
+        "y": 12
+      }
+    ],
+    "balls": [
+      {
+        "id": "b1",
+        "x": 4.7,
+        "y": 3.5
+      },
+      {
+        "id": "b2",
+        "x": 4.7,
+        "y": 8
+      },
+      {
+        "id": "b3",
+        "x": 4.7,
+        "y": 12.5
+      },
+      {
+        "id": "c1",
+        "x": 14.7,
+        "y": 3.5
+      },
+      {
+        "id": "c2",
+        "x": 14.7,
+        "y": 8
+      },
+      {
+        "id": "c3",
+        "x": 14.7,
+        "y": 12.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Passer à son partenaire",
+          "en": "Pass to your partner",
+          "ar": "مرّر إلى شريكك"
+        },
+        "moves": {
+          "b1": [
+            [14.7, 3.5]
+          ],
+          "b2": [
+            [14.7, 8]
+          ],
+          "b3": [
+            [14.7, 12.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Repasser en gardant les appuis actifs",
+          "en": "Pass back and keep moving your feet",
+          "ar": "أعد التمرير وأبقِ قدميك نشطتين"
+        },
+        "moves": {
+          "b1": [
+            [4.7, 3.5]
+          ],
+          "b2": [
+            [4.7, 8]
+          ],
+          "b3": [
+            [4.7, 12.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Second ballon : passer en même temps",
+          "en": "Second ball: both pass at the same time",
+          "ar": "كرة ثانية: يمرّر الاثنان في الوقت نفسه"
+        },
+        "moves": {
+          "b1": [
+            [14.7, 3.5]
+          ],
+          "c1": [
+            [4.7, 3.5]
+          ],
+          "b2": [
+            [14.7, 8]
+          ],
+          "c2": [
+            [4.7, 8]
+          ],
+          "b3": [
+            [14.7, 12.5]
+          ],
+          "c3": [
+            [4.7, 12.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Changer de partenaire : la file de gauche descend d'une rangée",
+          "en": "Change partner: the left line moves down one row",
+          "ar": "تغيير الشريك: صف اليسار ينزل صفًا واحدًا"
+        },
+        "moves": {
+          "l1": [
+            [4, 7.5]
+          ],
+          "l2": [
+            [4, 12]
+          ],
+          "l3": [
+            [4, 3]
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "id": "rondo_3v1_u8",
+  "kind": "technical",
+  "ageGroups": [
+    "U7",
+    "U8",
+    "U9"
+  ],
+  "minPlayers": 4,
+  "maxPlayers": 8,
+  "area": {
+    "lengthM": 10,
+    "widthM": 10
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "possession",
+    "passing"
+  ],
+  "name": {
+    "fr": "Rondo 3 contre 1",
+    "en": "3v1 rondo",
+    "ar": "روندو 3 ضد 1"
+  },
+  "organisation": {
+    "fr": "Carré de 10 m sur 10 m avec des plots. Trois joueurs gardent le ballon face à un défenseur au centre. Le défenseur qui récupère le ballon prend la place du joueur qui l'a perdu. Rester ludique : compter les passes ensemble.",
+    "en": "Square of 10 m by 10 m with cones. Three players keep the ball from one defender in the middle. A defender who wins the ball swaps with the player who lost it. Keep it fun: count passes together.",
+    "ar": "مربع 10 × 10 م بالأقماع. ثلاثة لاعبين يحتفظون بالكرة أمام مدافع واحد في الوسط. المدافع الذي يستخلص الكرة يتبادل المكان مع اللاعب الذي فقدها. اجعلها ممتعة: عُدّوا التمريرات معًا."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Passer puis se déplacer vers un nouvel espace",
+      "Former un triangle pour toujours avoir une passe libre",
+      "Utiliser l'intérieur du pied et garder le ballon au sol"
+    ],
+    "en": [
+      "Pass, then move to a new space",
+      "Make a triangle so there is always a free pass",
+      "Use the inside of the foot and keep the ball on the ground"
+    ],
+    "ar": [
+      "مرّر ثم تحرّك إلى مساحة جديدة",
+      "شكّلوا مثلثًا ليكون هناك دائمًا تمريرة مفتوحة",
+      "استعمل باطن القدم وأبقِ الكرة على الأرض"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Agrandir le carré",
+        "en": "Make the square bigger",
+        "ar": "كبّر المربع"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Deux touches maximum",
+        "en": "Two touches maximum",
+        "ar": "لمستان كحد أقصى"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 0.8,
+        "y": 0.8,
+        "color": "o"
+      },
+      {
+        "x": 9.2,
+        "y": 0.8,
+        "color": "o"
+      },
+      {
+        "x": 9.2,
+        "y": 9.2,
+        "color": "o"
+      },
+      {
+        "x": 0.8,
+        "y": 9.2,
+        "color": "o"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 5,
+        "y": 1.2
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 8.8,
+        "y": 7.5
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 1.2,
+        "y": 7.5
+      },
+      {
+        "id": "d1",
+        "team": "b",
+        "label": "4",
+        "x": 5,
+        "y": 5
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 5.7,
+        "y": 1.7
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le joueur 1 passe au joueur 2",
+          "en": "Player 1 passes to player 2",
+          "ar": "اللاعب 1 يمرّر إلى اللاعب 2"
+        },
+        "moves": {
+          "b": [
+            [9.5, 8]
+          ],
+          "d1": [
+            [6.5, 5.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le joueur 2 passe au joueur 3",
+          "en": "Player 2 passes to player 3",
+          "ar": "اللاعب 2 يمرّر إلى اللاعب 3"
+        },
+        "moves": {
+          "b": [
+            [1.9, 8]
+          ],
+          "d1": [
+            [4, 6.3]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le joueur 3 repasse au joueur 1",
+          "en": "Player 3 passes back to player 1",
+          "ar": "اللاعب 3 يعيد إلى اللاعب 1"
+        },
+        "moves": {
+          "b": [
+            [5.7, 1.7]
+          ],
+          "d1": [
+            [4.5, 3.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le défenseur récupère le ballon et change de place",
+          "en": "The defender wins the ball and swaps places",
+          "ar": "المدافع يستخلص الكرة ويتبادل المكان"
+        },
+        "moves": {
+          "b": [
+            [7.2, 4.2],
+            [5.7, 1.7]
+          ],
+          "d1": [
+            [6.6, 3.8],
+            [5, 1.2]
+          ],
+          "a1": [
+            [5, 5]
+          ]
+        },
+        "setTeam": {
+          "a1": "b",
+          "d1": "a"
+        }
+      }
+    ]
+  }
+}

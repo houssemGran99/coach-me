@@ -1,0 +1,239 @@
+{
+  "id": "two_goal_finishing_race_u13",
+  "kind": "game_related",
+  "ageGroups": [
+    "U12",
+    "U13",
+    "U14",
+    "U15"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 14,
+  "area": {
+    "lengthM": 30,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "mini_goals"
+  ],
+  "themes": [
+    "finishing",
+    "transition",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Course de finition à deux buts",
+    "en": "Two-goal finishing race",
+    "ar": "سباق التسديد بين مرميين"
+  },
+  "organisation": {
+    "fr": "Zone de 30 m sur 25 m avec un mini-but à chaque extrémité et deux petits groupes, un derrière chaque but. L'entraîneur envoie un ballon au centre. Un joueur de chaque groupe court dessus ; le vainqueur attaque le but opposé et l'autre défend. Faire tourner les joueurs après chaque ballon.",
+    "en": "30 m by 25 m area with a mini goal at each end and two small groups, one behind each goal. The coach plays a ball into the middle. One player from each group races for it; the winner attacks the opposite goal and the other defends. Rotate players after every ball.",
+    "ar": "منطقة 30 × 25 م بمرمى صغير في كل طرف ومجموعتين صغيرتين، واحدة خلف كل مرمى. يرسل المدرّب كرة إلى الوسط. يتسابق لاعب من كل مجموعة عليها؛ الفائز يهاجم المرمى المقابل والآخر يدافع. دوّروا اللاعبين بعد كل كرة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Partir vite sur le ballon : la première touche décide qui attaque",
+      "Tirer tôt, le second joueur prêt pour le rebond",
+      "Si on perd la course, défendre et ralentir l'attaque"
+    ],
+    "en": [
+      "Explode to the ball: the first touch decides who attacks",
+      "Shoot early, with the second player ready for the rebound",
+      "If you lose the race, defend and slow the attack"
+    ],
+    "ar": [
+      "انطلق بسرعة نحو الكرة: اللمسة الأولى تحدد من يهاجم",
+      "سدّد مبكرًا واللاعب الثاني جاهز للكرة المرتدة",
+      "إذا خسرت السباق فدافع وأبطئ الهجمة"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Donner 3 m d'avance au groupe le plus faible",
+        "en": "Give the weaker group a 3 m head start",
+        "ar": "امنح المجموعة الأضعف أفضلية 3 م"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Jouer 2 contre 2 pour chaque ballon",
+        "en": "Play 2v2 for each ball",
+        "ar": "العبوا اثنين ضد اثنين لكل كرة"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 29.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 29.5,
+        "y": 24.5,
+        "color": "o"
+      },
+      {
+        "x": 0.5,
+        "y": 24.5,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 11,
+        "w": 0.9,
+        "h": 3
+      },
+      {
+        "x": 28.9,
+        "y": 11,
+        "w": 0.9,
+        "h": 3
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "c",
+        "team": "c",
+        "label": "C",
+        "x": 15,
+        "y": 2
+      },
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 4,
+        "y": 9
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 3,
+        "y": 15
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "3",
+        "x": 26,
+        "y": 16
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "4",
+        "x": 27,
+        "y": 10
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 15.7,
+        "y": 2.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "L'entraîneur envoie un ballon au centre : course",
+          "en": "The coach plays a ball into the middle: race for it",
+          "ar": "المدرّب يرسل كرة إلى الوسط: سباق عليها"
+        },
+        "moves": {
+          "b": [
+            [15.5, 13]
+          ],
+          "a1": [
+            [13, 11.5]
+          ],
+          "b1": [
+            [18.5, 14.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Les bleus gagnent la course et attaquent le but opposé",
+          "en": "Blue wins the race and attacks the opposite goal",
+          "ar": "الأزرق يفوز بالسباق ويهاجم المرمى المقابل"
+        },
+        "moves": {
+          "a1": [
+            [20, 12.5],
+            [24, 12.5]
+          ],
+          "b": [
+            [20.7, 13],
+            [24.7, 13]
+          ],
+          "b1": [
+            [21, 14.5]
+          ]
+        }
+      },
+      {
+        "durationS": 1.5,
+        "caption": {
+          "fr": "Tir",
+          "en": "Shoot",
+          "ar": "سدّد"
+        },
+        "moves": {
+          "b": [
+            [29.4, 12.6]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Les deux coureurs suivants entrent",
+          "en": "The next two racers step in",
+          "ar": "اللاعبان التاليان يدخلان"
+        },
+        "moves": {
+          "a2": [
+            [4, 9]
+          ],
+          "b2": [
+            [26, 16]
+          ],
+          "a1": [
+            [3, 15]
+          ],
+          "b1": [
+            [27, 10]
+          ]
+        }
+      }
+    ]
+  }
+}

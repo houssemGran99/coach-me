@@ -1,0 +1,312 @@
+{
+  "id": "tag_with_ball",
+  "kind": "warmup",
+  "ageGroups": [
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 24,
+  "area": {
+    "lengthM": 20,
+    "widthM": 20
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs"
+  ],
+  "themes": [
+    "dribbling",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Chat avec ballon",
+    "en": "Tag with a ball",
+    "ar": "لعبة المطاردة بالكرة"
+  },
+  "organisation": {
+    "fr": "Carré de 20 m. Tout le monde conduit un ballon. Un ou deux poursuiveurs en chasuble conduisent aussi. Un poursuiveur qui touche un joueur de la main l'envoie faire 5 touches sur place, puis il reprend le jeu. Changer de poursuiveur toutes les minutes.",
+    "en": "20 m square. Everyone dribbles a ball. One or two taggers wear bibs and also dribble. A tagger who touches a player with a hand sends them to do 5 touches on the spot, then they rejoin the game. Change taggers every minute.",
+    "ar": "مربع 20 م. يراوغ الجميع بكراتهم. مطارد أو اثنان يرتديان صدرية ويراوغان أيضًا. إذا لمس المطارد لاعبًا بيده يؤدي اللاعب 5 لمسات في مكانه ثم يعود إلى اللعب. بدّل المطاردين كل دقيقة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Garder le ballon proche en changeant de rythme",
+      "Regarder derrière soi pour repérer le poursuiveur",
+      "Utiliser feintes et demi-tours pour s'échapper"
+    ],
+    "en": [
+      "Keep the ball close while changing speed",
+      "Look over your shoulder for the tagger",
+      "Use feints and quick turns to escape"
+    ],
+    "ar": [
+      "أبقِ الكرة قريبة وغيّر السرعة",
+      "انظر خلفك لتراقب المطارد",
+      "استعمل المراوغات والدوران السريع للإفلات"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Les poursuivants marchent vite au lieu de courir",
+        "en": "Taggers walk fast instead of running",
+        "ar": "يمشي المطاردون بسرعة بدل الجري"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Les joueurs touchés font 5 touches du pied faible",
+        "en": "Tagged players do 5 touches with the weaker foot",
+        "ar": "اللاعب الملموس يؤدي 5 لمسات بالقدم الأضعف"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "t1",
+        "team": "n",
+        "label": "T",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "id": "p1",
+        "team": "a",
+        "label": "1",
+        "x": 9,
+        "y": 9
+      },
+      {
+        "id": "p2",
+        "team": "a",
+        "label": "2",
+        "x": 15,
+        "y": 5
+      },
+      {
+        "id": "p3",
+        "team": "a",
+        "label": "3",
+        "x": 6,
+        "y": 15
+      },
+      {
+        "id": "p4",
+        "team": "a",
+        "label": "4",
+        "x": 14,
+        "y": 15
+      }
+    ],
+    "balls": [
+      {
+        "id": "bt",
+        "x": 3.7,
+        "y": 3.5
+      },
+      {
+        "id": "b1",
+        "x": 9.7,
+        "y": 9.5
+      },
+      {
+        "id": "b2",
+        "x": 15.7,
+        "y": 5.5
+      },
+      {
+        "id": "b3",
+        "x": 6.7,
+        "y": 15.5
+      },
+      {
+        "id": "b4",
+        "x": 14.7,
+        "y": 15.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "Tout le monde conduit ; le poursuiveur chasse",
+          "en": "Everyone dribbles; the tagger chases",
+          "ar": "الجميع يراوغ والمطارد يلاحق"
+        },
+        "moves": {
+          "t1": [
+            [6, 6],
+            [9, 9]
+          ],
+          "bt": [
+            [6.7, 6.5],
+            [9.7, 9.5]
+          ],
+          "p1": [
+            [12, 12]
+          ],
+          "b1": [
+            [12.7, 12.5]
+          ],
+          "p2": [
+            [12, 8]
+          ],
+          "b2": [
+            [12.7, 8.5]
+          ],
+          "p3": [
+            [9, 17]
+          ],
+          "b3": [
+            [9.7, 17.5]
+          ],
+          "p4": [
+            [16, 12]
+          ],
+          "b4": [
+            [16.7, 12.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le poursuiveur rattrape un joueur",
+          "en": "The tagger reaches a player",
+          "ar": "المطارد يدرك لاعبًا"
+        },
+        "moves": {
+          "t1": [
+            [11.3, 11.3]
+          ],
+          "bt": [
+            [12, 11.8]
+          ],
+          "p1": [
+            [12.2, 12.2]
+          ],
+          "b1": [
+            [12.9, 12.7]
+          ],
+          "p2": [
+            [14, 6]
+          ],
+          "b2": [
+            [14.7, 6.5]
+          ],
+          "p3": [
+            [7, 15]
+          ],
+          "b3": [
+            [7.7, 15.5]
+          ],
+          "p4": [
+            [15, 14]
+          ],
+          "b4": [
+            [15.7, 14.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Touché : 5 touches sur place",
+          "en": "Tagged: 5 touches on the spot",
+          "ar": "تم لمسه: 5 لمسات في مكانه"
+        },
+        "moves": {
+          "b1": [
+            [12.6, 12.5],
+            [12.9, 12.7],
+            [12.6, 12.5],
+            [12.9, 12.7]
+          ],
+          "t1": [
+            [9, 13.5]
+          ],
+          "bt": [
+            [9.7, 14]
+          ],
+          "p2": [
+            [16, 8]
+          ],
+          "b2": [
+            [16.7, 8.5]
+          ],
+          "p3": [
+            [5, 12]
+          ],
+          "b3": [
+            [5.7, 12.5]
+          ],
+          "p4": [
+            [12, 16]
+          ],
+          "b4": [
+            [12.7, 16.5]
+          ]
+        }
+      },
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "Retour au jeu ; le poursuiveur choisit un autre joueur",
+          "en": "Back in the game; the tagger picks another player",
+          "ar": "يعود اللاعب إلى اللعب والمطارد يختار غيره"
+        },
+        "moves": {
+          "p1": [
+            [14, 17]
+          ],
+          "b1": [
+            [14.7, 17.5]
+          ],
+          "t1": [
+            [6.5, 12.5]
+          ],
+          "bt": [
+            [7.2, 13]
+          ],
+          "p2": [
+            [13, 4]
+          ],
+          "b2": [
+            [13.7, 4.5]
+          ],
+          "p3": [
+            [3, 9]
+          ],
+          "b3": [
+            [3.7, 9.5]
+          ],
+          "p4": [
+            [17, 17]
+          ],
+          "b4": [
+            [17.7, 17.5]
+          ]
+        }
+      }
+    ]
+  }
+}

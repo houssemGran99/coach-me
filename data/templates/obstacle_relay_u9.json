@@ -1,0 +1,293 @@
+{
+  "id": "obstacle_relay_u9",
+  "kind": "technical",
+  "ageGroups": [
+    "U8",
+    "U9",
+    "U10"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 20,
+  "area": {
+    "lengthM": 25,
+    "widthM": 15
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "dribbling",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Relais de conduite en slalom",
+    "en": "Dribbling slalom relay",
+    "ar": "سباق تتابع المراوغة بين الأقماع"
+  },
+  "organisation": {
+    "fr": "Deux équipes s'affrontent dans deux couloirs d'une zone de 25 m sur 15 m. Chaque joueur conduit entre trois plots de slalom, contourne le plot de fond puis revient, et passe au joueur suivant de son équipe. La première équipe qui termine gagne. Garder le contrôle : un ballon perdu oblige à repartir du dernier plot.",
+    "en": "Two teams race in two lanes of a 25 m by 15 m area. Each player dribbles through three slalom cones, around the end cone and back, then passes to the next player in the team. The first team to finish wins. Keep control: a lost ball means going back to the last cone.",
+    "ar": "يتسابق فريقان في ممرين داخل منطقة 25 × 15 م. يراوغ كل لاعب بين ثلاثة أقماع متعرجة ثم حول القمع الأخير ويعود، ثم يمرّر إلى اللاعب التالي في فريقه. الفريق الذي ينتهي أولًا يفوز. حافظ على التحكم: الكرة الضائعة تعني العودة إلى آخر قمع."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Petites touches près des plots, plus longues en ligne droite",
+      "Utiliser les deux pieds et les deux côtés du pied",
+      "Passer à son coéquipier avant qu'il ne démarre"
+    ],
+    "en": [
+      "Small touches near the cones, longer touches in the straights",
+      "Use both feet and both sides of each foot",
+      "Pass to your teammate before they start"
+    ],
+    "ar": [
+      "لمسات صغيرة قرب الأقماع وأطول في المسافات المستقيمة",
+      "استعمل القدمين وجانبي القدم",
+      "مرّر إلى زميلك قبل أن ينطلق"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Moins de plots, plus espacés",
+        "en": "Fewer cones with wider spacing",
+        "ar": "أقماع أقل ومسافات أوسع"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Utiliser seulement l'extérieur du pied",
+        "en": "Use only the outside of the foot",
+        "ar": "استعمل الجزء الخارجي من القدم فقط"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 7,
+        "y": 4,
+        "color": "o"
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "color": "y"
+      },
+      {
+        "x": 15,
+        "y": 4,
+        "color": "o"
+      },
+      {
+        "x": 21.5,
+        "y": 4,
+        "color": "r"
+      },
+      {
+        "x": 7,
+        "y": 11,
+        "color": "o"
+      },
+      {
+        "x": 11,
+        "y": 11,
+        "color": "y"
+      },
+      {
+        "x": 15,
+        "y": 11,
+        "color": "o"
+      },
+      {
+        "x": 21.5,
+        "y": 11,
+        "color": "r"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 2,
+        "y": 4
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 2,
+        "y": 6.5
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "3",
+        "x": 2,
+        "y": 11
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "4",
+        "x": 2,
+        "y": 13.5
+      }
+    ],
+    "balls": [
+      {
+        "id": "ba1",
+        "x": 2.7,
+        "y": 4.5
+      },
+      {
+        "id": "ba2",
+        "x": 2.7,
+        "y": 7
+      },
+      {
+        "id": "bb1",
+        "x": 2.7,
+        "y": 11.5
+      },
+      {
+        "id": "bb2",
+        "x": 2.7,
+        "y": 14
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "Conduire entre les plots du slalom",
+          "en": "Dribble through the slalom cones",
+          "ar": "راوغ بين أقماع التعرّج"
+        },
+        "moves": {
+          "a1": [
+            [7, 2.8],
+            [11, 5.2],
+            [15, 2.8],
+            [18.5, 4]
+          ],
+          "ba1": [
+            [7.7, 3.3],
+            [11.7, 5.7],
+            [15.7, 3.3],
+            [19.2, 4.5]
+          ],
+          "b1": [
+            [7, 9.8],
+            [11, 12.2],
+            [15, 9.8],
+            [18, 11]
+          ],
+          "bb1": [
+            [7.7, 10.3],
+            [11.7, 12.7],
+            [15.7, 10.3],
+            [18.7, 11.5]
+          ]
+        }
+      },
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "Contourner le plot de fond et revenir en courant",
+          "en": "Round the end cone and race back",
+          "ar": "دُر حول القمع الأخير وعُد بسرعة"
+        },
+        "moves": {
+          "a1": [
+            [21.5, 2.6],
+            [22.5, 4.5],
+            [12, 4.5],
+            [4.5, 4.5]
+          ],
+          "ba1": [
+            [22.2, 3.1],
+            [23.2, 5],
+            [12.7, 5],
+            [5.2, 5]
+          ],
+          "b1": [
+            [21.5, 9.6],
+            [22.5, 11.5],
+            [12, 11.5],
+            [4.5, 11.5]
+          ],
+          "bb1": [
+            [22.2, 10.1],
+            [23.2, 12],
+            [12.7, 12],
+            [5.2, 12]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Passer au joueur suivant de son équipe",
+          "en": "Pass to the next player in your team",
+          "ar": "مرّر إلى اللاعب التالي في فريقك"
+        },
+        "moves": {
+          "ba1": [
+            [2.7, 7]
+          ],
+          "bb1": [
+            [2.7, 14]
+          ]
+        }
+      },
+      {
+        "durationS": 4,
+        "caption": {
+          "fr": "Les joueurs suivants démarrent le slalom",
+          "en": "The next players start the slalom",
+          "ar": "اللاعبان التاليان يبدآن التعرّج"
+        },
+        "moves": {
+          "a2": [
+            [7, 5.4],
+            [11, 3],
+            [15, 5.4],
+            [18, 4.5]
+          ],
+          "ba2": [
+            [7.7, 5.9],
+            [11.7, 3.5],
+            [15.7, 5.9],
+            [18.7, 5]
+          ],
+          "b2": [
+            [7, 12.5],
+            [11, 10],
+            [15, 12.5],
+            [18, 11.5]
+          ],
+          "bb2": [
+            [7.7, 13],
+            [11.7, 10.5],
+            [15.7, 13],
+            [18.7, 12]
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "id": "dribble_gates_u8",
+  "kind": "technical",
+  "ageGroups": [
+    "U7",
+    "U8",
+    "U9",
+    "U10"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 20,
+    "widthM": 20
+  },
+  "equipment": [
+    "balls",
+    "cones"
+  ],
+  "themes": [
+    "dribbling",
+    "1v1_attacking"
+  ],
+  "name": {
+    "fr": "Portes de conduite en 1 contre 1",
+    "en": "1v1 dribbling gates",
+    "ar": "بوابات المراوغة واحد ضد واحد"
+  },
+  "organisation": {
+    "fr": "Deux portes au fond d'une zone de 20 m sur 20 m, avec un défenseur passif devant. Les attaquants conduisent à tour de rôle et cherchent à franchir l'une des portes. Le défenseur accompagne sans tacler. Changer de rôle après chaque essai.",
+    "en": "Two gates at the end of a 20 m by 20 m area, one passive defender in front of them. Attackers dribble in turns and try to cross either gate. The defender only shadows and may not tackle. Swap roles after each attempt.",
+    "ar": "بوابتان في نهاية منطقة 20 × 20 م وأمامهما مدافع سلبي. يراوغ المهاجمون بالتناوب ويحاولون عبور إحدى البوابتين. المدافع يرافق فقط ولا يتدخل. بدّلوا الأدوار بعد كل محاولة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Ballon près du pied et tête relevée",
+      "Changer de rythme et de direction pour passer le défenseur",
+      "Choisir la porte que le défenseur ne couvre pas"
+    ],
+    "en": [
+      "Keep the ball close and your head up",
+      "Change speed and direction to beat the defender",
+      "Choose the gate the defender is not covering"
+    ],
+    "ar": [
+      "أبقِ الكرة قريبة ورأسك مرفوعًا",
+      "غيّر السرعة والاتجاه لتتجاوز المدافع",
+      "اختر البوابة التي لا يغطيها المدافع"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Élargir les portes",
+        "en": "Make the gates wider",
+        "ar": "وسّع البوابات"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Le défenseur peut tacler après la première touche",
+        "en": "The defender may tackle after the first touch",
+        "ar": "يمكن للمدافع التدخل بعد اللمسة الأولى"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 12,
+        "y": 4,
+        "color": "o"
+      },
+      {
+        "x": 12,
+        "y": 7.5,
+        "color": "o"
+      },
+      {
+        "x": 12,
+        "y": 12.5,
+        "color": "y"
+      },
+      {
+        "x": 12,
+        "y": 16,
+        "color": "y"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 3,
+        "y": 8
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 3,
+        "y": 13
+      },
+      {
+        "id": "d1",
+        "team": "b",
+        "label": "D",
+        "x": 11,
+        "y": 10
+      }
+    ],
+    "balls": [
+      {
+        "id": "b1",
+        "x": 3.7,
+        "y": 8.5
+      },
+      {
+        "id": "b2",
+        "x": 3.7,
+        "y": 13.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "L'attaquant conduit vers les portes",
+          "en": "The attacker dribbles at the gates",
+          "ar": "المهاجم يراوغ نحو البوابات"
+        },
+        "moves": {
+          "a1": [
+            [8, 8],
+            [12, 5.7],
+            [15, 5.7]
+          ],
+          "b1": [
+            [8.7, 8.5],
+            [12.7, 6.2],
+            [15.7, 6.2]
+          ],
+          "d1": [
+            [10.5, 8.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le défenseur accompagne seulement ; pas de tacle",
+          "en": "The defender only shadows; no tackling",
+          "ar": "المدافع يرافق فقط دون تدخل"
+        },
+        "moves": {
+          "a2": [
+            [8, 13],
+            [12, 14.2],
+            [15, 14.2]
+          ],
+          "b2": [
+            [8.7, 13.5],
+            [12.7, 14.7],
+            [15.7, 14.7]
+          ],
+          "d1": [
+            [10.5, 12.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Changer de rôle après chaque essai",
+          "en": "Swap roles after each attempt",
+          "ar": "بدّلوا الأدوار بعد كل محاولة"
+        },
+        "moves": {
+          "a1": [
+            [11, 10]
+          ],
+          "d1": [
+            [3, 8.5]
+          ],
+          "a2": [
+            [3, 13.5]
+          ],
+          "b2": [
+            [3.7, 14]
+          ]
+        },
+        "setTeam": {
+          "a1": "b",
+          "d1": "a"
+        }
+      }
+    ]
+  }
+}

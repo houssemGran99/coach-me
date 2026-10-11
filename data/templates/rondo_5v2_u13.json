@@ -1,0 +1,265 @@
+{
+  "id": "rondo_5v2_u13",
+  "kind": "technical",
+  "ageGroups": [
+    "U12",
+    "U13",
+    "U14",
+    "U15"
+  ],
+  "minPlayers": 7,
+  "maxPlayers": 14,
+  "area": {
+    "lengthM": 18,
+    "widthM": 18
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs"
+  ],
+  "themes": [
+    "possession",
+    "passing",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Rondo 5 contre 2, deux touches",
+    "en": "5v2 rondo, two touches",
+    "ar": "روندو 5 ضد 2، لمستان"
+  },
+  "organisation": {
+    "fr": "Carré de 18 m avec cinq joueurs à l'extérieur et deux défenseurs au centre. Les joueurs extérieurs sont limités à deux touches. Le défenseur qui récupère le ballon prend la place du joueur qui l'a perdu. Changer les défenseurs toutes les 90 secondes.",
+    "en": "Square of 18 m with five players on the outside and two defenders inside. The outside players are limited to two touches. A defender who wins the ball swaps with the player who lost it. Rotate the defenders every 90 seconds.",
+    "ar": "مربع 18 م فيه خمسة لاعبين في الخارج ومدافعان في الداخل. يُسمح للاعبين الخارجيين بلمستين فقط. المدافع الذي يستخلص الكرة يتبادل المكان مع اللاعب الذي فقدها. بدّل المدافعين كل 90 ثانية."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Passer tôt avant que les défenseurs ne ferment l'espace",
+      "Orienter la première touche loin de la pression",
+      "Changer le jeu vers le joueur le plus éloigné des défenseurs"
+    ],
+    "en": [
+      "Pass early before the defenders close the gap",
+      "Take the first touch away from pressure",
+      "Switch the play to the player furthest from the defenders"
+    ],
+    "ar": [
+      "مرّر مبكرًا قبل أن يغلق المدافعان المساحة",
+      "وجّه اللمسة الأولى بعيدًا عن الضغط",
+      "حوّل اللعب إلى اللاعب الأبعد عن المدافعين"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Trois touches et une zone plus grande",
+        "en": "Three touches and a bigger area",
+        "ar": "ثلاث لمسات ومساحة أكبر"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Une touche pour les deux joueurs voisins du passeur",
+        "en": "One touch for the two players next to the passer",
+        "ar": "لمسة واحدة للاعبين المجاورين للممرّر"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 1,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 17,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 17,
+        "y": 17,
+        "color": "o"
+      },
+      {
+        "x": 1,
+        "y": 17,
+        "color": "o"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 9,
+        "y": 1.5
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 16.1,
+        "y": 6.7
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 13.4,
+        "y": 15.1
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 4.6,
+        "y": 15.1
+      },
+      {
+        "id": "a5",
+        "team": "a",
+        "label": "5",
+        "x": 1.9,
+        "y": 6.7
+      },
+      {
+        "id": "d1",
+        "team": "b",
+        "label": "6",
+        "x": 8,
+        "y": 8
+      },
+      {
+        "id": "d2",
+        "team": "b",
+        "label": "7",
+        "x": 10,
+        "y": 10
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 9.7,
+        "y": 2
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "1 passe à 2, deux touches maximum",
+          "en": "1 passes to 2, two touches maximum",
+          "ar": "1 يمرّر إلى 2 بلمستين كحد أقصى"
+        },
+        "moves": {
+          "b": [
+            [16.8, 7.2]
+          ],
+          "d1": [
+            [9.5, 6.5]
+          ],
+          "d2": [
+            [11.5, 8.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "2 change le jeu vers 4",
+          "en": "2 switches the play to 4",
+          "ar": "2 يحوّل اللعب إلى 4"
+        },
+        "moves": {
+          "b": [
+            [5.3, 15.6]
+          ],
+          "d1": [
+            [8, 10.5]
+          ],
+          "d2": [
+            [9.5, 12]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "4 trouve 5 de l'autre côté",
+          "en": "4 finds 5 on the other side",
+          "ar": "4 يجد 5 في الجهة الأخرى"
+        },
+        "moves": {
+          "b": [
+            [2.6, 7.2]
+          ],
+          "d1": [
+            [5.5, 10]
+          ],
+          "d2": [
+            [7, 11.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "5 joue vers 1 et les défenseurs se replacent",
+          "en": "5 plays to 1 and the defenders reset",
+          "ar": "5 يمرّر إلى 1 والمدافعان يعيدان التمركز"
+        },
+        "moves": {
+          "b": [
+            [9.7, 2]
+          ],
+          "d1": [
+            [7.5, 6.5]
+          ],
+          "d2": [
+            [8.5, 8]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Passe imprécise : un défenseur la gagne et échange",
+          "en": "A loose pass: a defender wins it and swaps",
+          "ar": "تمريرة غير دقيقة: مدافع يستخلصها ويتبادل"
+        },
+        "moves": {
+          "b": [
+            [11.2, 9.2],
+            [9.7, 2]
+          ],
+          "d2": [
+            [10.5, 8.8],
+            [9, 1.5]
+          ],
+          "a1": [
+            [9, 8.5]
+          ]
+        },
+        "setTeam": {
+          "a1": "b",
+          "d2": "a"
+        }
+      }
+    ]
+  }
+}

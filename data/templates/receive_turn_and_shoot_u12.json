@@ -1,0 +1,219 @@
+{
+  "id": "receive_turn_and_shoot_u12",
+  "kind": "technical",
+  "ageGroups": [
+    "U11",
+    "U12",
+    "U13"
+  ],
+  "minPlayers": 6,
+  "maxPlayers": 14,
+  "area": {
+    "lengthM": 30,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "full_goals"
+  ],
+  "themes": [
+    "receiving",
+    "finishing"
+  ],
+  "name": {
+    "fr": "Recevoir, se retourner et tirer",
+    "en": "Receive, turn and shoot",
+    "ar": "استلم وانعطف وسدّد"
+  },
+  "organisation": {
+    "fr": "Zone de 30 m sur 25 m avec un grand but et un gardien. Un serveur passe à l'attaquant à l'entrée de la zone. L'attaquant se montre, reçoit, se retourne et tire. Rotation : attaquant au service, serveur en fin de file, nouveau gardien tous les 5 tirs.",
+    "en": "30 m by 25 m area with a full goal and a goalkeeper. A server plays the ball to the striker at the edge of the area. The striker shows for the ball, receives, turns and shoots. Rotate: striker to server, server to the queue, a new keeper every 5 shots.",
+    "ar": "منطقة 30 × 25 م مع مرمى كبير وحارس. يمرّر المرسل الكرة إلى المهاجم عند حافة المنطقة. يظهر المهاجم لاستلام الكرة ثم يستقبلها ويدور ويسدّد. التدوير: المهاجم إلى الإرسال، والمرسل إلى آخر الصف، وحارس جديد كل 5 تسديدات."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Faire un contre-appel puis se montrer",
+      "Prendre la première touche dans l'espace de tir",
+      "Frapper à travers le ballon en gardant la tête stable"
+    ],
+    "en": [
+      "Check away, then show for the ball",
+      "Take the first touch into the shooting space",
+      "Strike through the ball and keep your head steady"
+    ],
+    "ar": [
+      "ابتعد ثم اظهر لاستلام الكرة",
+      "خذ اللمسة الأولى نحو مساحة التسديد",
+      "اضرب الكرة بثبات ورأسك ثابت"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "L'attaquant se retourne sans pression",
+        "en": "The striker turns without pressure",
+        "ar": "المهاجم يدور دون ضغط"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un défenseur qui presse après la passe",
+        "en": "Add a defender who closes down after the pass",
+        "ar": "أضف مدافعًا يضغط بعد التمريرة"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 18,
+        "y": 8,
+        "color": "o"
+      },
+      {
+        "x": 18,
+        "y": 17,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 28.8,
+        "y": 9,
+        "w": 1,
+        "h": 7
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "gk",
+        "team": "k",
+        "label": "GK",
+        "x": 28.5,
+        "y": 12.5
+      },
+      {
+        "id": "s1",
+        "team": "n",
+        "label": "S",
+        "x": 12,
+        "y": 4
+      },
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 21,
+        "y": 19
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 23,
+        "y": 21.5
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 12.7,
+        "y": 4.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "L'attaquant fait un contre-appel puis se montre",
+          "en": "The striker checks away, then shows for the ball",
+          "ar": "المهاجم يبتعد ثم يظهر لاستلام الكرة"
+        },
+        "moves": {
+          "a1": [
+            [22, 20.5],
+            [18, 13.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.2,
+        "caption": {
+          "fr": "Le serveur passe à l'attaquant",
+          "en": "The server passes to the striker",
+          "ar": "المرسل يمرّر إلى المهاجم"
+        },
+        "moves": {
+          "b": [
+            [18.7, 14]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "Recevoir et se retourner face au but",
+          "en": "Receive and turn toward goal",
+          "ar": "استلم وانعطف نحو المرمى"
+        },
+        "moves": {
+          "a1": [
+            [21, 12]
+          ],
+          "b": [
+            [21.7, 12.5]
+          ]
+        }
+      },
+      {
+        "durationS": 1.5,
+        "caption": {
+          "fr": "Tir",
+          "en": "Shoot",
+          "ar": "سدّد"
+        },
+        "moves": {
+          "b": [
+            [29.4, 10.8]
+          ],
+          "gk": [
+            [28.6, 10.8]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Rotation : l'attaquant au service, le serveur en fin de file",
+          "en": "Rotate: striker to server, server to the queue",
+          "ar": "التدوير: المهاجم إلى الإرسال والمرسل إلى آخر الصف"
+        },
+        "moves": {
+          "a1": [
+            [12, 6]
+          ],
+          "s1": [
+            [24, 23]
+          ],
+          "a2": [
+            [21, 19]
+          ],
+          "gk": [
+            [28.5, 12.5]
+          ]
+        }
+      }
+    ]
+  }
+}
