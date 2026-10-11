@@ -37,7 +37,7 @@ export default async function PlanPage({ params }: { params: Promise<{ id: strin
     if (p) practices[p.id] = p;
   }
   const mine = await store.listPractices(user.id);
-  const titles = Object.fromEntries(mine.map((r) => [r.id, r.title]));
+  const titles = Object.fromEntries(mine.map((r) => [r.id, r.data.name[locale]]));
   const request = { meta: row.data.meta, focus: row.data.focus };
 
   return (

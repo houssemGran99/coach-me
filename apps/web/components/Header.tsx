@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import type { AppUser } from "@/lib/server/auth";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { NavLinks } from "./NavLinks";
+import { SignOutButton } from "./SignOutButton";
 
 export async function Header({ user }: { user: AppUser | null }) {
   const t = await getTranslations("nav");
@@ -17,9 +18,7 @@ export async function Header({ user }: { user: AppUser | null }) {
             <LanguageSwitch />
           </Suspense>
           {user ? (
-            <form action="/api/auth/logout" method="post">
-              <button type="submit" className="btn btn-sm" title={user.email}>{t("signOut")}</button>
-            </form>
+            <SignOutButton email={user.email} />
           ) : (
             <Link href="/login" className="btn btn-sm">{t("signIn")}</Link>
           )}

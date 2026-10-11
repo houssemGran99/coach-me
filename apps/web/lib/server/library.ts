@@ -5,6 +5,7 @@ import { validateSpec } from "@mourabbi/animation";
 import { getConfig } from "./config";
 import type { PracticeRow, Store } from "./store/types";
 import { getTemplate } from "../templates";
+import { practiceFromShare, readPublicShare } from "./share";
 
 export type SaveResult =
   | { ok: true; row: PracticeRow }
@@ -53,4 +54,33 @@ export async function duplicatePractice(store: Store, owner: string, id: string,
   if (!row) return { ok: false, code: "NOT_FOUND" };
   // A duplicate keeps the trust label of its source.
   return insertCopy(store, owner, row.data, `${row.title} ${suffix}`, row.parent_template_id, row.notes);
+}
+
+export interface LibraryEdit {
+  title?: string;
+  organisation?: string;
+  confirmDraft?: true;
+}
+
+/**
+ * Apply an owner edit to a saved practice. Editing the content, or confirming a draft, makes it the
+ * owner's own (`edited_by_owner`): it is no longer someone else's "reviewed" content nor an unchecked AI draft.
+ * Movement is never changed here. Returns null when the result would be invalid.
+ */
+export function applyLibraryEdit(current: Practice, edit: LibraryEdit, lang: Lang): Practice | null {
+  const data: Practice = structuredClone(current);
+  if (edit.title !== undefined) data.name[lang] = edit.title;
+  if (edit.organisation !== undefined) data.organisation[lang] = edit.organisation;
+  if (edit.title !== undefined || edit.organisation !== undefined || edit.confirmDraft) {
+    data.review = { status: "edited_by_owner", reviewedBy: null, reviewedAt: null };
+  }
+  const checked = PracticeSchema.safeParse(data);
+  return checked.success ? checked.data : null;
+}
+
+/** "Save to my library" on a public page: copies the shared snapshot. */
+export async function saveSharedCopy(store: Store, owner: string, sharedId: string, lang: Lang): Promise<SaveResult> {
+  const snapshot = await readPublicShare(store, sharedId);
+  if (!snapshot) return { ok: false, code: "NOT_FOUND" };
+  return insertCopy(store, owner, practiceFromShare(snapshot), snapshot.name[lang], null);
 }

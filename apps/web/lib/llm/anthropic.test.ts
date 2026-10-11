@@ -45,7 +45,7 @@ describe("createAnthropicLlm", () => {
 
   it("throws LlmUnavailableError without leaking the key on provider errors and network failures", async () => {
     const f = fakeFetch({ error: { message: "bad key sk-secret" } }, 401);
-    const err = await createAnthropicLlm({ apiKey: "sk-secret", model: "m", fetchImpl: f.impl }).completeJson(req).catch((e) => e);
+    const err = (await createAnthropicLlm({ apiKey: "sk-secret", model: "m", fetchImpl: f.impl }).completeJson(req).catch((e: unknown) => e)) as Error;
     expect(err).toBeInstanceOf(LlmUnavailableError);
     expect(String(err.message)).not.toContain("sk-secret");
     const boom = (async () => {
