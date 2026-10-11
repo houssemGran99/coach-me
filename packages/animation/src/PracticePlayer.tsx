@@ -37,6 +37,7 @@ const CSS = `
 .mrb{border:1px solid rgba(233,242,235,.18);border-radius:8px;overflow:hidden;background:${STAGE.bg};color:${STAGE.ink};font-family:inherit;text-align:start}
 .mrb:focus-visible{outline:2px solid #E6EFE8;outline-offset:3px}
 .mrb[lang=ar] *{letter-spacing:0 !important}
+.mrb svg[role=img]{max-height:min(52vh,400px)}
 .mrb-head{display:flex;justify-content:space-between;align-items:center;gap:6px 12px;flex-wrap:wrap;padding:10px 14px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .mrb-time{font-variant-numeric:tabular-nums;letter-spacing:.04em}
 .mrb-badge{padding:2px 8px;border-radius:4px;border:1px solid #E7B04A;color:#E7B04A;font-size:11px;letter-spacing:.04em;text-transform:none}
