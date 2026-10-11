@@ -212,7 +212,7 @@ export function ChatPractice({ fromLibrary }: Props) {
         <div className="field">
           <label htmlFor="chat-input">{cur ? t("chat.refine") : t("chat.title")}</label>
           <textarea
-            id="chat-input" className="textarea" maxLength={MAX_MESSAGE} value={input} dir="auto" disabled={busy}
+            id="chat-input" data-testid="chat-input" className="textarea" maxLength={MAX_MESSAGE} value={input} dir="auto" disabled={busy}
             placeholder={cur ? t("chat.refinePlaceholder") : t("chat.placeholder")}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); void send(input); } }}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
+import { SerwistProvider } from "@serwist/next/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   applicationName: "Mourabbi",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Mourabbi", statusBarStyle: "default" },
-  icons: { icon: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }], apple: "/icons/icon-192.png" },
+  icons: { icon: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }], apple: "/icons/apple-touch-icon.png" },
 };
 
 export const viewport: Viewport = {
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} dir={dirOf(locale)} className={`${barlow.variable} ${barlowCondensed.variable} ${plexArabic.variable}`}>
       <body>
+        <SerwistProvider swUrl="/sw.js" disable={process.env.NODE_ENV === "development"}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <a href="#content" className="sr-only-x focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:bg-surface focus:p-3">
             {t("skipToContent")}
@@ -52,6 +54,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Link href="/terms">{legal("termsTitle")}</Link>
           </footer>
         </NextIntlClientProvider>
+        </SerwistProvider>
       </body>
     </html>
   );

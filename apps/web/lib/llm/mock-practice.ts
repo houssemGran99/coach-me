@@ -2,6 +2,7 @@ import type { Lang, Practice } from "@mourabbi/schemas";
 import type { LlmRequest } from "./types";
 
 interface Ctx {
+  constraints?: { age?: Practice["ageGroups"][number]; players?: number };
   mode: "template" | "freeform" | "refine";
   template?: Practice;
   inspiration?: Practice[];
@@ -37,6 +38,12 @@ export async function mockPracticeReply(req: LlmRequest): Promise<unknown> {
   }
   const base = structuredClone(c.inspiration?.[0]);
   if (!base) return { error: { code: "NO_SUITABLE_DRILLS", message: "No template to start from." } };
+  // Respect what the coach asked for, like a real model would.
+  if (c.constraints?.age) base.ageGroups = [c.constraints.age];
+  if (c.constraints?.players !== undefined) {
+    base.minPlayers = Math.min(base.minPlayers, c.constraints.players);
+    base.maxPlayers = Math.max(base.maxPlayers, c.constraints.players);
+  }
   const label = c.message.trim().slice(0, 40);
   for (const l of ["fr", "en", "ar"] as const) base.name[l] = `${base.name[l]} · ${label}`.slice(0, 80);
   return { mode: "freeform", practice: base };

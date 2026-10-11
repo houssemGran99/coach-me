@@ -17,7 +17,8 @@
     "templates:validate": "tsx scripts/validate-templates.ts",
     "templates:preview": "tsx scripts/preview-templates.ts",
     "templates:bundle": "tsx scripts/bundle-templates.ts",
-    "videos:export": "tsx scripts/export-videos.ts"
+    "videos:export": "tsx scripts/export-videos.ts",
+    "icons": "tsx scripts/make-icons.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
