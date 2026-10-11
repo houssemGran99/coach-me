@@ -11,8 +11,7 @@ describe("template library", () => {
     expect(problems.map((p) => `${p.file}: ${p.message}`)).toEqual([]);
   });
 
-  // TODO(step 11): enable once all 34 templates are authored.
-  it.skip("has the complete set of 34 templates", () => {
+  it("has the complete set of 34 templates", () => {
     const { problems } = validateTemplates();
     expect(problems.filter((p) => p.message.startsWith("missing template")).map((p) => p.file)).toEqual([]);
   });
@@ -34,6 +33,15 @@ describe("template library", () => {
   it("matches the brief's table for ids that exist", () => {
     const ids = new Set(EXPECTED.map((e) => e.id));
     for (const { raw } of loadTemplateFiles()) expect(ids.has((raw as { id: string }).id)).toBe(true);
+  });
+});
+
+describe("generated bundles are up to date", () => {
+  it("apps/web templates.json matches data/templates (run pnpm templates:bundle)", async () => {
+    const { buildBundle, BUNDLE_PATH, buildPromptsBundle, PROMPTS_BUNDLE_PATH } = await import("./bundle-templates");
+    const { readFileSync } = await import("node:fs");
+    expect(readFileSync(BUNDLE_PATH, "utf8")).toBe(buildBundle());
+    expect(readFileSync(PROMPTS_BUNDLE_PATH, "utf8")).toBe(buildPromptsBundle());
   });
 });
 

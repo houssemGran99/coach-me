@@ -1,0 +1,221 @@
+{
+  "id": "goalkeeper_distribution_u14",
+  "kind": "technical",
+  "ageGroups": [
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17"
+  ],
+  "minPlayers": 4,
+  "maxPlayers": 10,
+  "area": {
+    "lengthM": 30,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "full_goals"
+  ],
+  "themes": [
+    "goalkeeping",
+    "passing"
+  ],
+  "name": {
+    "fr": "Relance du gardien",
+    "en": "Goalkeeper distribution",
+    "ar": "توزيع الكرة من الحارس"
+  },
+  "organisation": {
+    "fr": "Zone de 30 m sur 25 m avec un grand but. Le gardien joue vers trois cibles : une passe courte vers un joueur excentré, une relance à la main vers le joueur central et un dégagement long dans une zone cible. Les cibles renvoient le ballon. Changer de gardien toutes les cinq balles.",
+    "en": "30 m by 25 m area with a full goal. The goalkeeper plays to three targets: a short pass to a wide player, an overarm throw to the middle player and a long kick into a target zone. Targets return the ball. Rotate keepers every five balls.",
+    "ar": "منطقة 30 × 25 م مع مرمى كبير. يوزّع الحارس الكرة إلى ثلاثة أهداف: تمريرة قصيرة إلى لاعب على الطرف، ورمية بالذراع إلى لاعب الوسط، وركلة طويلة نحو منطقة هدف. يعيد اللاعبون الكرة. بدّلوا الحارس كل خمس كرات."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Choisir la cible avant de jouer, tête haute",
+      "Lancer le bras tendu en avançant vers la cible",
+      "Passer vers le pied éloigné de la pression"
+    ],
+    "en": [
+      "Choose the target before you play, head up",
+      "Throw with a straight arm and step toward the target",
+      "Pass to the target's far foot, away from pressure"
+    ],
+    "ar": [
+      "اختر الهدف قبل أن تلعب ورأسك مرفوع",
+      "ارمِ بذراع ممدودة وتقدّم نحو الهدف",
+      "مرّر إلى القدم البعيدة عن الضغط"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Jouer seulement des passes courtes au début",
+        "en": "Play only short passes at first",
+        "ar": "العب تمريرات قصيرة فقط في البداية"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un attaquant qui presse après la première passe",
+        "en": "Add an attacker who presses after the first pass",
+        "ar": "أضف مهاجمًا يضغط بعد التمريرة الأولى"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 0.5,
+        "y": 24.5,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 9,
+        "w": 1,
+        "h": 7
+      }
+    ],
+    "zones": [
+      {
+        "x": 23,
+        "y": 8,
+        "w": 6,
+        "h": 9,
+        "label": {
+          "fr": "Zone cible",
+          "en": "Target zone",
+          "ar": "منطقة الهدف"
+        }
+      }
+    ],
+    "actors": [
+      {
+        "id": "gk",
+        "team": "k",
+        "label": "GK",
+        "x": 2.8,
+        "y": 12.5
+      },
+      {
+        "id": "t1",
+        "team": "a",
+        "label": "1",
+        "x": 12,
+        "y": 3.5
+      },
+      {
+        "id": "t2",
+        "team": "a",
+        "label": "2",
+        "x": 12,
+        "y": 21.5
+      },
+      {
+        "id": "t3",
+        "team": "a",
+        "label": "3",
+        "x": 18,
+        "y": 12.5
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 3.5,
+        "y": 13
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Passe courte du plat du pied vers la cible excentrée",
+          "en": "Short pass with the side foot to the wide target",
+          "ar": "تمريرة قصيرة بباطن القدم إلى الهدف على الطرف"
+        },
+        "moves": {
+          "b": [
+            [12.7, 4]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "La cible renvoie le ballon au gardien",
+          "en": "The target returns the ball to the goalkeeper",
+          "ar": "الهدف يعيد الكرة إلى الحارس"
+        },
+        "moves": {
+          "b": [
+            [3.5, 13]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "Lancer à la main vers la cible centrale",
+          "en": "Overarm throw to the middle target",
+          "ar": "رمية بالذراع إلى الهدف الأوسط"
+        },
+        "moves": {
+          "b": [
+            [18.7, 13]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "La cible rejoue en retrait ; le gardien change de côté",
+          "en": "The target plays back; the keeper switches to the far side",
+          "ar": "الهدف يعيد الكرة والحارس ينتقل إلى الجهة الأخرى"
+        },
+        "moves": {
+          "b": [
+            [3.5, 13]
+          ],
+          "gk": [
+            [3, 14]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Dégagement long dans la zone cible",
+          "en": "Long kick into the target zone",
+          "ar": "ركلة طويلة نحو منطقة الهدف"
+        },
+        "moves": {
+          "b": [
+            [26, 12.8]
+          ]
+        }
+      }
+    ]
+  }
+}

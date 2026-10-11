@@ -1,0 +1,285 @@
+{
+  "id": "possession_5v2_zone_u15",
+  "kind": "game_related",
+  "ageGroups": [
+    "U14",
+    "U15",
+    "U16",
+    "U17"
+  ],
+  "minPlayers": 9,
+  "maxPlayers": 14,
+  "area": {
+    "lengthM": 30,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs"
+  ],
+  "themes": [
+    "possession",
+    "passing",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Conservation avec zone cible",
+    "en": "Possession with a target zone",
+    "ar": "الاستحواذ مع منطقة هدف"
+  },
+  "organisation": {
+    "fr": "Zone de 30 m sur 25 m avec une zone cible à une extrémité où se trouvent deux joueurs cibles. Cinq attaquants gardent le ballon face à deux défenseurs. Après cinq passes, ils peuvent jouer dans la zone cible pour marquer un point ; un joueur cible renvoie le ballon et le jeu continue. Les défenseurs ne peuvent pas entrer dans la zone.",
+    "en": "30 m by 25 m area with a target zone at one end holding two target players. Five attackers keep the ball against two defenders. After five passes they may play into the target zone for a point; a target player returns the ball and play continues. Defenders cannot enter the zone.",
+    "ar": "منطقة 30 × 25 م بمنطقة هدف في أحد الطرفين فيها لاعبا هدف. خمسة مهاجمين يحتفظون بالكرة أمام مدافعين. بعد خمس تمريرات يمكنهم التمرير إلى منطقة الهدف لنقطة؛ يعيد لاعب الهدف الكرة ويستمر اللعب. لا يدخل المدافعان المنطقة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Faire circuler vite pour désorganiser les défenseurs",
+      "Chercher la passe dans la zone quand un défenseur sort",
+      "Soutenir en angle pour qu'il y ait toujours une solution"
+    ],
+    "en": [
+      "Move the ball quickly to pull the defenders out of shape",
+      "Look for the pass into the zone when a defender steps forward",
+      "Support at an angle so every pass has an option"
+    ],
+    "ar": [
+      "حرّك الكرة بسرعة لتفكيك تمركز المدافعين",
+      "ابحث عن التمريرة إلى المنطقة عندما يتقدّم مدافع",
+      "ساند بزاوية ليكون لكل تمريرة خيار"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Autoriser trois touches",
+        "en": "Allow three touches",
+        "ar": "اسمح بثلاث لمسات"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Les défenseurs peuvent entrer dans la zone après la deuxième passe",
+        "en": "Defenders may enter the zone after the second pass",
+        "ar": "يمكن للمدافعين دخول المنطقة بعد التمريرة الثانية"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 1,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 29,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 29,
+        "y": 24,
+        "color": "o"
+      },
+      {
+        "x": 1,
+        "y": 24,
+        "color": "o"
+      }
+    ],
+    "goals": [],
+    "zones": [
+      {
+        "x": 24,
+        "y": 6,
+        "w": 5.5,
+        "h": 13,
+        "label": {
+          "fr": "Zone cible",
+          "en": "Target zone",
+          "ar": "منطقة الهدف"
+        }
+      }
+    ],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 6,
+        "y": 12
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 10,
+        "y": 5
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 10,
+        "y": 19
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 16,
+        "y": 12
+      },
+      {
+        "id": "a5",
+        "team": "a",
+        "label": "5",
+        "x": 19,
+        "y": 6
+      },
+      {
+        "id": "d1",
+        "team": "b",
+        "label": "6",
+        "x": 11,
+        "y": 11
+      },
+      {
+        "id": "d2",
+        "team": "b",
+        "label": "7",
+        "x": 14,
+        "y": 15
+      },
+      {
+        "id": "t1",
+        "team": "n",
+        "label": "T",
+        "x": 26.5,
+        "y": 9
+      },
+      {
+        "id": "t2",
+        "team": "n",
+        "label": "T",
+        "x": 26.5,
+        "y": 16
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 6.7,
+        "y": 12.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "1 passe à 2 ; les défenseurs suivent le ballon",
+          "en": "1 passes to 2; the defenders follow the ball",
+          "ar": "1 يمرّر إلى 2 والمدافعان يتبعان الكرة"
+        },
+        "moves": {
+          "b": [
+            [10.7, 5.5]
+          ],
+          "d1": [
+            [10.5, 8.5]
+          ],
+          "d2": [
+            [13, 12]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Changer le jeu de l'autre côté",
+          "en": "Switch the play to the far side",
+          "ar": "حوّل اللعب إلى الجهة الأخرى"
+        },
+        "moves": {
+          "b": [
+            [10.7, 19.5]
+          ],
+          "d1": [
+            [11.5, 13]
+          ],
+          "d2": [
+            [12.5, 17]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Trouver le joueur libre près de la zone",
+          "en": "Find the free player near the zone",
+          "ar": "ابحث عن اللاعب الحر قرب المنطقة"
+        },
+        "moves": {
+          "a4": [
+            [18, 13]
+          ],
+          "b": [
+            [18.7, 13.5]
+          ],
+          "d1": [
+            [14.5, 14]
+          ],
+          "d2": [
+            [15.5, 17.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Passe dans la zone cible pour un point",
+          "en": "Pass into the target zone for a point",
+          "ar": "مرّر إلى منطقة الهدف لنقطة"
+        },
+        "moves": {
+          "b": [
+            [27.2, 9.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le joueur cible renvoie le ballon et le jeu continue",
+          "en": "The target player returns the ball and play continues",
+          "ar": "لاعب الهدف يعيد الكرة ويستمر اللعب"
+        },
+        "moves": {
+          "b": [
+            [19.7, 6.5]
+          ],
+          "a5": [
+            [21, 8]
+          ],
+          "d1": [
+            [17.5, 10]
+          ],
+          "d2": [
+            [19, 14]
+          ]
+        }
+      }
+    ]
+  }
+}

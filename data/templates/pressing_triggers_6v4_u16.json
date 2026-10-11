@@ -1,0 +1,277 @@
+{
+  "id": "pressing_triggers_6v4_u16",
+  "kind": "main",
+  "ageGroups": [
+    "U15",
+    "U16",
+    "U17",
+    "U19",
+    "senior"
+  ],
+  "minPlayers": 10,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 40,
+    "widthM": 30
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "full_goals"
+  ],
+  "themes": [
+    "pressing",
+    "transition",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Déclencheurs de pressing 6 contre 4",
+    "en": "Pressing triggers 6v4",
+    "ar": "إشارات الضغط 6 ضد 4"
+  },
+  "organisation": {
+    "fr": "Terrain de 40 m sur 30 m avec un grand but et un gardien. Six joueurs bleus, gardien compris, construisent face à quatre presseurs. Les presseurs attendent un signal : passe vers la touche, mauvais contrôle ou passe en retrait. Ils pressent alors ensemble et coupent les solutions de passe. Les bleus marquent en jouant dans la zone cible.",
+    "en": "40 m by 30 m pitch with a full goal and a goalkeeper. Six blue players, including the goalkeeper, build up against four pressers. The pressers wait for a trigger: a pass toward the sideline, a bad touch or a back pass. Then they press together and cut the passing options. Blue score by playing into the target zone.",
+    "ar": "ملعب 40 × 30 م مع مرمى كبير وحارس. ستة لاعبين زرق بينهم الحارس يبنون اللعب أمام أربعة لاعبين يضغطون. ينتظر الضاغطون إشارة: تمريرة نحو خط التماس أو لمسة سيئة أو تمريرة للخلف. عندها يضغطون معًا ويقطعون خيارات التمرير. يسجّل الأزرق بالتمرير إلى منطقة الهدف."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Presser sur un signal, pas avant : rester compact d'ici là",
+      "Le premier presseur oriente le ballon, les autres coupent les lignes",
+      "Joueurs de construction : repérer le joueur libre avant de recevoir"
+    ],
+    "en": [
+      "Press on a trigger, not before: stay compact until it happens",
+      "The first presser shows the ball one way, the others cut the lanes",
+      "Build-up players: spot the free player before you receive"
+    ],
+    "ar": [
+      "اضغط عند الإشارة لا قبلها وابقَ متراصًا قبل ذلك",
+      "أول ضاغط يوجّه الكرة والبقية يقطعون الخطوط",
+      "لاعبو البناء: اكتشفوا اللاعب الحر قبل الاستلام"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Les presseurs partent 5 m plus bas",
+        "en": "The pressers start 5 m deeper",
+        "ar": "يبدأ الضاغطون على بُعد 5 م أكثر تراجعًا"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un cinquième presseur après la première passe",
+        "en": "Add a fifth presser after the first pass",
+        "ar": "أضف ضاغطًا خامسًا بعد التمريرة الأولى"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": true,
+    "cones": [],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 11.5,
+        "w": 1,
+        "h": 7
+      }
+    ],
+    "zones": [
+      {
+        "x": 34,
+        "y": 1,
+        "w": 5.5,
+        "h": 28,
+        "label": {
+          "fr": "Zone cible",
+          "en": "Target zone",
+          "ar": "منطقة الهدف"
+        }
+      }
+    ],
+    "actors": [
+      {
+        "id": "gk",
+        "team": "k",
+        "label": "GK",
+        "x": 2.8,
+        "y": 15
+      },
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 8,
+        "y": 5
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 8,
+        "y": 25
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 12,
+        "y": 15
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 20,
+        "y": 9
+      },
+      {
+        "id": "a5",
+        "team": "a",
+        "label": "5",
+        "x": 20,
+        "y": 21
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "6",
+        "x": 24,
+        "y": 13
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "7",
+        "x": 24,
+        "y": 17
+      },
+      {
+        "id": "b3",
+        "team": "b",
+        "label": "8",
+        "x": 28,
+        "y": 10
+      },
+      {
+        "id": "b4",
+        "team": "b",
+        "label": "9",
+        "x": 28,
+        "y": 20
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 3.5,
+        "y": 15.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le gardien passe au défenseur côté : un signal de pressing",
+          "en": "The keeper passes to the wide defender: a pressing trigger",
+          "ar": "الحارس يمرّر إلى المدافع على الطرف: إشارة للضغط"
+        },
+        "moves": {
+          "b": [
+            [8.7, 5.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Presser ensemble : fermer le ballon et couper les lignes de passe",
+          "en": "Press together: close the ball and cut the passing lanes",
+          "ar": "اضغطوا معًا: أغلقوا الكرة واقطعوا خطوط التمرير"
+        },
+        "moves": {
+          "b1": [
+            [13, 8]
+          ],
+          "b2": [
+            [14, 14]
+          ],
+          "b3": [
+            [19, 12]
+          ],
+          "b4": [
+            [19, 19]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Une passe en retrait est un second signal : presser le gardien",
+          "en": "A back pass is a second trigger: press the keeper",
+          "ar": "التمريرة للخلف إشارة ثانية: اضغطوا على الحارس"
+        },
+        "moves": {
+          "b": [
+            [3.5, 15.5]
+          ],
+          "b1": [
+            [8.5, 10]
+          ],
+          "b2": [
+            [13, 15]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le gardien change le jeu et les presseurs coulissent",
+          "en": "The keeper switches the play and the pressers shift",
+          "ar": "الحارس يحوّل اللعب والضاغطون يتحركون"
+        },
+        "moves": {
+          "b": [
+            [8.7, 25.5]
+          ],
+          "b1": [
+            [13, 19]
+          ],
+          "b2": [
+            [15, 22]
+          ],
+          "b3": [
+            [20, 16]
+          ],
+          "b4": [
+            [20, 22]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Si le pressing est battu, jouer long dans la zone cible",
+          "en": "If the press is beaten, play long into the target zone",
+          "ar": "إذا تم تجاوز الضغط العب طويلًا إلى منطقة الهدف"
+        },
+        "moves": {
+          "b": [
+            [35.5, 14.5]
+          ]
+        }
+      }
+    ]
+  }
+}

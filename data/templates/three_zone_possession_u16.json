@@ -1,0 +1,292 @@
+{
+  "id": "three_zone_possession_u16",
+  "kind": "main",
+  "ageGroups": [
+    "U15",
+    "U16",
+    "U17",
+    "U19",
+    "senior"
+  ],
+  "minPlayers": 12,
+  "maxPlayers": 18,
+  "area": {
+    "lengthM": 40,
+    "widthM": 30
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs"
+  ],
+  "themes": [
+    "possession",
+    "width_and_support",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Conservation en trois zones",
+    "en": "Three-zone possession",
+    "ar": "الاستحواذ في ثلاث مناطق"
+  },
+  "organisation": {
+    "fr": "Terrain de 40 m sur 30 m divisé en trois zones. Deux équipes de six. Pas plus de quatre joueurs d'une même équipe dans une zone, et l'équipe en possession doit traverser les trois zones avant de marquer un point en jouant vers un joueur de la dernière zone. Adapter les règles de zone à l'objectif de la séance.",
+    "en": "40 m by 30 m pitch split into three zones. Two teams of six. No more than four players of one team may be in a zone at once, and the team in possession must use all three zones before it scores a point by playing to a player in the end zone. Change the zone rules to match the lesson.",
+    "ar": "ملعب 40 × 30 م مقسّم إلى ثلاث مناطق. فريقان من ستة لاعبين. لا يتجاوز عدد لاعبي الفريق الواحد في منطقة واحدة أربعة، ويجب على الفريق المستحوذ عبور المناطق الثلاث قبل أن يسجّل نقطة بتمريرة إلى لاعب في المنطقة الأخيرة. عدّلوا قواعد المناطق وفق هدف الحصة."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Faire progresser le ballon entre les zones avec des passes rapides puis changer d'angle",
+      "Arriver tard dans la zone suivante pour recevoir dans l'espace",
+      "Quand le ballon avance, l'équipe se resserre derrière"
+    ],
+    "en": [
+      "Move the ball through the zones with quick passes, then change the angle",
+      "Arrive late into the next zone to receive in space",
+      "When the ball goes forward, the team compacts behind it"
+    ],
+    "ar": [
+      "حرّك الكرة بين المناطق بتمريرات سريعة ثم غيّر الزاوية",
+      "اصل متأخرًا إلى المنطقة التالية لتستلم في مساحة",
+      "عندما تتقدم الكرة يتقارب الفريق خلفها"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Autoriser cinq joueurs par zone",
+        "en": "Allow five players per zone",
+        "ar": "اسمح بخمسة لاعبين في كل منطقة"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Deux touches maximum dans la zone centrale",
+        "en": "Two touches maximum in the middle zone",
+        "ar": "لمستان كحد أقصى في المنطقة الوسطى"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [],
+    "goals": [],
+    "zones": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "w": 12.5,
+        "h": 29,
+        "label": {
+          "fr": "Zone 1",
+          "en": "Zone 1",
+          "ar": "المنطقة 1"
+        }
+      },
+      {
+        "x": 13.5,
+        "y": 0.5,
+        "w": 13,
+        "h": 29,
+        "label": {
+          "fr": "Zone 2",
+          "en": "Zone 2",
+          "ar": "المنطقة 2"
+        }
+      },
+      {
+        "x": 27,
+        "y": 0.5,
+        "w": 12.5,
+        "h": 29,
+        "label": {
+          "fr": "Zone 3",
+          "en": "Zone 3",
+          "ar": "المنطقة 3"
+        }
+      }
+    ],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 4,
+        "y": 8
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 4,
+        "y": 22
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 9,
+        "y": 15
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 19,
+        "y": 10
+      },
+      {
+        "id": "a5",
+        "team": "a",
+        "label": "5",
+        "x": 19,
+        "y": 21
+      },
+      {
+        "id": "a6",
+        "team": "a",
+        "label": "6",
+        "x": 33,
+        "y": 14
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "7",
+        "x": 7,
+        "y": 12
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "8",
+        "x": 8,
+        "y": 19
+      },
+      {
+        "id": "b3",
+        "team": "b",
+        "label": "9",
+        "x": 18,
+        "y": 14
+      },
+      {
+        "id": "b4",
+        "team": "b",
+        "label": "10",
+        "x": 22,
+        "y": 18
+      },
+      {
+        "id": "b5",
+        "team": "b",
+        "label": "11",
+        "x": 30,
+        "y": 9
+      },
+      {
+        "id": "b6",
+        "team": "b",
+        "label": "12",
+        "x": 31,
+        "y": 19
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 4.7,
+        "y": 8.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Construire en zone 1 : 1 joue vers 3",
+          "en": "Build in zone 1: 1 plays to 3",
+          "ar": "البناء في المنطقة 1: 1 يمرّر إلى 3"
+        },
+        "moves": {
+          "b": [
+            [9.7, 15.5]
+          ],
+          "b1": [
+            [8, 13.5]
+          ],
+          "b2": [
+            [8.5, 17.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Jouer vers l'avant dans la zone 2",
+          "en": "Play forward into zone 2",
+          "ar": "العب إلى الأمام نحو المنطقة 2"
+        },
+        "moves": {
+          "b": [
+            [19.7, 10.5]
+          ],
+          "b3": [
+            [18.5, 11.5]
+          ],
+          "b1": [
+            [11, 13]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Changer vers le joueur excentré ; un joueur rejoint depuis la zone 1",
+          "en": "Switch to the wide player; a runner joins from zone 1",
+          "ar": "حوّل إلى لاعب الطرف ولاعب ينضم من المنطقة 1"
+        },
+        "moves": {
+          "b": [
+            [19.7, 21.5]
+          ],
+          "a2": [
+            [17, 22]
+          ],
+          "b4": [
+            [21, 20]
+          ],
+          "b3": [
+            [19, 15]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Jouer dans la zone 3 pour finir la séquence",
+          "en": "Play into zone 3 to complete the sequence",
+          "ar": "العب إلى المنطقة 3 لإكمال التسلسل"
+        },
+        "moves": {
+          "b": [
+            [33.7, 14.5]
+          ],
+          "b5": [
+            [31, 11]
+          ],
+          "b6": [
+            [32, 17]
+          ]
+        }
+      }
+    ]
+  }
+}

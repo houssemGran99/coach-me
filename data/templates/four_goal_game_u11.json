@@ -1,0 +1,288 @@
+{
+  "id": "four_goal_game_u11",
+  "kind": "game",
+  "ageGroups": [
+    "U10",
+    "U11",
+    "U12"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 35,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "mini_goals"
+  ],
+  "themes": [
+    "decision_making",
+    "finishing",
+    "width_and_support"
+  ],
+  "name": {
+    "fr": "Jeu à quatre buts",
+    "en": "Four-goal game",
+    "ar": "لعبة المرامي الأربعة"
+  },
+  "organisation": {
+    "fr": "Terrain de 35 m sur 25 m avec deux mini-buts à chaque extrémité. Deux équipes de quatre à huit joueurs jouent un jeu réduit. Chaque équipe défend deux buts et en attaque deux. Jeu libre avec remises en jeu rapides ; l'entraîneur n'arrête le jeu que pour poser une question.",
+    "en": "35 m by 25 m pitch with two mini goals at each end. Two teams of four to eight play a small-sided game. Each team defends two goals and attacks two goals. Free play with quick restarts; the coach only stops the game to ask a question.",
+    "ar": "ملعب 35 × 25 م بمرميين صغيرين في كل طرف. يلعب فريقان من أربعة إلى ثمانية لاعبين لعبة مصغّرة. يدافع كل فريق عن مرميين ويهاجم مرميين. لعب حر مع استئناف سريع؛ لا يوقف المدرّب اللعب إلا ليطرح سؤالًا."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Lever la tête : quel but est libre ?",
+      "Éliminer le défenseur si possible, sinon passer",
+      "Féliciter les bonnes tentatives, même ratées"
+    ],
+    "en": [
+      "Look up: which goal is open?",
+      "Take on the defender when you can, pass when you cannot",
+      "Praise good attempts, even when they fail"
+    ],
+    "ar": [
+      "ارفع رأسك: أي مرمى مفتوح؟",
+      "راوغ المدافع إن استطعت ومرّر إن لم تستطع",
+      "اشكر المحاولات الجيدة حتى لو فشلت"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Ajouter un joueur neutre pour l'équipe en possession",
+        "en": "Add a neutral player for the team in possession",
+        "ar": "أضف لاعبًا محايدًا للفريق المستحوذ"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Les buts comptent double après trois passes",
+        "en": "Goals count double after three passes",
+        "ar": "الأهداف تُحسب مضاعفة بعد ثلاث تمريرات"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 34.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 34.5,
+        "y": 24.5,
+        "color": "o"
+      },
+      {
+        "x": 0.5,
+        "y": 24.5,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 33.9,
+        "y": 5.5,
+        "w": 0.9,
+        "h": 3
+      },
+      {
+        "x": 33.9,
+        "y": 16.5,
+        "w": 0.9,
+        "h": 3
+      },
+      {
+        "x": 0.2,
+        "y": 5.5,
+        "w": 0.9,
+        "h": 3
+      },
+      {
+        "x": 0.2,
+        "y": 16.5,
+        "w": 0.9,
+        "h": 3
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 10,
+        "y": 12
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 14,
+        "y": 6
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 14,
+        "y": 19
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 7,
+        "y": 18
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "5",
+        "x": 20,
+        "y": 9
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "6",
+        "x": 23,
+        "y": 14
+      },
+      {
+        "id": "b3",
+        "team": "b",
+        "label": "7",
+        "x": 28,
+        "y": 19
+      },
+      {
+        "id": "b4",
+        "team": "b",
+        "label": "8",
+        "x": 28,
+        "y": 6
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 10.7,
+        "y": 12.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Jeu libre : lever la tête et trouver le but libre",
+          "en": "Free play: look up and find the open goal",
+          "ar": "لعب حر: ارفع رأسك وابحث عن المرمى الحر"
+        },
+        "moves": {
+          "a1": [
+            [17, 11]
+          ],
+          "b": [
+            [17.7, 11.5]
+          ],
+          "a2": [
+            [22, 6]
+          ],
+          "a3": [
+            [20, 19]
+          ],
+          "b1": [
+            [21, 9.5]
+          ],
+          "b2": [
+            [23.5, 13]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "Passer au joueur libre",
+          "en": "Pass to the player who is free",
+          "ar": "مرّر إلى اللاعب الحر"
+        },
+        "moves": {
+          "b": [
+            [20.7, 19.5]
+          ]
+        }
+      },
+      {
+        "durationS": 1.5,
+        "caption": {
+          "fr": "Tir dans le but libre",
+          "en": "Shoot into the open goal",
+          "ar": "سدّد في المرمى الحر"
+        },
+        "moves": {
+          "b": [
+            [34.4, 18.2]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Remise en jeu rapide de l'autre équipe",
+          "en": "Quick restart by the other team",
+          "ar": "استئناف سريع من الفريق الآخر"
+        },
+        "moves": {
+          "b3": [
+            [33, 17.6]
+          ],
+          "b": [
+            [33.7, 18.1]
+          ],
+          "b2": [
+            [26, 14]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Ressortir le ballon et chercher les buts de l'autre côté",
+          "en": "Play out and look for the goals on the other side",
+          "ar": "اخرجوا بالكرة وابحثوا عن المرميين في الجهة الأخرى"
+        },
+        "moves": {
+          "b": [
+            [26.7, 14.5]
+          ],
+          "a1": [
+            [18, 12]
+          ],
+          "a4": [
+            [12, 17]
+          ]
+        }
+      }
+    ]
+  }
+}

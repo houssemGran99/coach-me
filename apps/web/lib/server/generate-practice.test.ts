@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it } from "vitest";
 import { PracticeSchema, type Practice } from "@mourabbi/schemas";
 import { LlmUnavailableError, type Llm, type LlmRequest } from "../llm/types";
-import { detectLanguage, parseConstraints } from "../practice-search";
+import { detectLanguage, parseConstraints, rankTemplates } from "../practice-search";
 import { getTemplate, getTemplates } from "../templates";
-import { buildPracticePrompt, generatePractice, type PracticeEvent } from "./generate-practice";
+import { assembleAdaptation, buildPracticePrompt, generatePractice, type PracticeEvent } from "./generate-practice";
 import { createMemoryStore } from "./store/memory";
 
 const OWNER = "aaaaaaaa-0000-4000-8000-000000000001";
@@ -51,6 +51,8 @@ const freeform = (over: Partial<Practice> = {}): { mode: "freeform"; practice: P
 });
 
 const FINISHING = "U12, 12 players, finishing after a cutback, half a pitch";
+/** The template the search picks for the finishing request. */
+const A_ID = rankTemplates(getTemplates(), parseConstraints(FINISHING), FINISHING)[0]!.practice.id;
 const NO_TEMPLATE = "U7, 4 players, goalkeeper handling";
 
 describe("language and constraints", () => {
@@ -77,16 +79,16 @@ describe("language and constraints", () => {
 
 describe("Mode A: adapt a template", () => {
   it("streams the stages and returns the template's text rewritten with its own animation unchanged", async () => {
-    const llm = scripted(adaptation("small_sided_game_5v5"));
+    const llm = scripted(adaptation(A_ID));
     const r = await run(llm, FINISHING);
     expect(r.stages).toEqual(["check", "parse", "search", "write", "validate"]);
     expect(r.last.type).toBe("result");
     if (r.last.type !== "result") return;
     expect(r.last.kind).toBe("template_adapted");
-    expect(r.last.templateId).toBe("small_sided_game_5v5");
+    expect(r.last.templateId).toBe(A_ID);
     const p = r.last.practice;
     expect(p.name.en).toBe("Wide finishing");
-    expect(p.animation).toEqual(tpl("small_sided_game_5v5").animation);
+    expect(p.animation).toEqual(tpl(A_ID).animation);
     expect(p.source).toBe("ai");
     expect(p.review).toEqual({ status: "ai_draft", reviewedBy: null, reviewedAt: null });
     expect(p.id).toMatch(/^draft_/);
@@ -95,18 +97,18 @@ describe("Mode A: adapt a template", () => {
     expect(llm.calls[0]!.user).toContain("<mode>template</mode>");
   });
 
-  it("accepts an area change inside the template's own bounds and ignores one outside", async () => {
-    const ok = await run(scripted(adaptation("small_sided_game_5v5", { area: { lengthM: 40, widthM: 30 } })), FINISHING);
-    expect(ok.last.type === "result" && ok.last.practice.area).toEqual({ lengthM: 40, widthM: 30 });
-    const tooBig = await run(scripted(adaptation("small_sided_game_5v5", { area: { lengthM: 60, widthM: 40 } })), FINISHING);
-    expect(tooBig.last.type === "result" && tooBig.last.practice.area).toEqual({ lengthM: 40, widthM: 30 });
-    const tooSmall = await run(scripted(adaptation("small_sided_game_5v5", { area: { lengthM: 10, widthM: 10 } })), FINISHING);
-    expect(tooSmall.last.type === "result" && tooSmall.last.practice.area).toEqual({ lengthM: 40, widthM: 30 });
+  it("accepts an area change inside the template's own bounds and ignores one outside", () => {
+    const t = tpl("cooldown_walk_stretch"); // 15 x 15 m, the animation needs 13 x 13 m
+    const adapt = (area: { lengthM: number; widthM: number }) => assembleAdaptation(t, adaptation("cooldown_walk_stretch", { area }) as never).practice!.area;
+    expect(adapt({ lengthM: 14, widthM: 14 })).toEqual({ lengthM: 14, widthM: 14 });
+    expect(adapt({ lengthM: 20, widthM: 20 })).toEqual({ lengthM: 15, widthM: 15 }); // bigger than the template: ignored
+    expect(adapt({ lengthM: 10, widthM: 10 })).toEqual({ lengthM: 15, widthM: 15 }); // smaller than the animation needs: ignored
+    expect(adapt({ lengthM: 7, widthM: 20 })).toEqual({ lengthM: 15, widthM: 15 });
   });
 
   it("retries once with the errors when the first answer is invalid", async () => {
-    const bad = adaptation("small_sided_game_5v5", { templateId: "something_else" });
-    const llm = scripted(bad, adaptation("small_sided_game_5v5"));
+    const bad = adaptation(A_ID, { templateId: "something_else" });
+    const llm = scripted(bad, adaptation(A_ID));
     const r = await run(llm, FINISHING);
     expect(llm.calls).toHaveLength(2);
     expect(llm.calls[1]!.user).toContain("previous answer was rejected");
@@ -117,7 +119,7 @@ describe("Mode A: adapt a template", () => {
 
   it("rejects text that breaks the limits (too many coaching points, over-long organisation)", async () => {
     const six = Array.from({ length: 6 }, (_, i) => `point ${i}`);
-    const bad = adaptation("small_sided_game_5v5", { coachingPoints: { fr: six, en: six, ar: six } });
+    const bad = adaptation(A_ID, { coachingPoints: { fr: six, en: six, ar: six } });
     const r = await run(scripted(bad, bad), FINISHING);
     expect(r.last.type === "result" && r.last.kind).toBe("closest_template");
   });
@@ -201,7 +203,7 @@ describe("refinement", () => {
 
 describe("scope, limits and safety", () => {
   it("refuses health or diet requests before any model call, in the coach's language", async () => {
-    const llm = scripted(adaptation("small_sided_game_5v5"));
+    const llm = scripted(adaptation(A_ID));
     const r = await run(llm, "Quel régime alimentaire et quel médicament pour mon joueur de 11 ans ?");
     expect(llm.calls).toHaveLength(0);
     expect(r.last).toMatchObject({ type: "error", code: "OUT_OF_SCOPE" });
@@ -218,13 +220,13 @@ describe("scope, limits and safety", () => {
   it("enforces the daily limit per user", async () => {
     process.env.DAILY_GENERATION_LIMIT = "1";
     const store = createMemoryStore();
-    const llm = scripted(adaptation("small_sided_game_5v5"));
+    const llm = scripted(adaptation(A_ID));
     expect((await run(llm, FINISHING, null, store)).last.type).toBe("result");
     expect((await run(llm, FINISHING, null, store)).last).toMatchObject({ type: "error", code: "RATE_LIMITED" });
   });
 
   it("logs the input, raw output, validity and retries of every generation", async () => {
-    const r = await run(scripted(adaptation("small_sided_game_5v5")), FINISHING);
+    const r = await run(scripted(adaptation(A_ID)), FINISHING);
     const g = r.store.state.generations[0]!;
     expect(g).toMatchObject({ owner: OWNER, kind: "practice", valid: true });
     expect((g.input as { message: string }).message).toBe(FINISHING);

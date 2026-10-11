@@ -1,0 +1,296 @@
+{
+  "id": "counter_press_5v5_u15",
+  "kind": "main",
+  "ageGroups": [
+    "U14",
+    "U15",
+    "U16",
+    "U17"
+  ],
+  "minPlayers": 10,
+  "maxPlayers": 16,
+  "area": {
+    "lengthM": 40,
+    "widthM": 30
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "mini_goals"
+  ],
+  "themes": [
+    "pressing",
+    "transition"
+  ],
+  "name": {
+    "fr": "Contre-pressing 5 contre 5",
+    "en": "Counter-press 5v5",
+    "ar": "الضغط المعاكس 5 ضد 5"
+  },
+  "organisation": {
+    "fr": "Terrain de 40 m sur 30 m avec un mini-but à chaque extrémité. Deux équipes de cinq. Quand une équipe perd le ballon, les trois joueurs les plus proches pressent immédiatement pendant cinq secondes pour le récupérer ; sinon tout le monde se replace et défend. Un but marqué dans les cinq secondes après la récupération compte double.",
+    "en": "40 m by 30 m pitch with a mini goal at each end. Two teams of five. When a team loses the ball, the nearest three players press immediately for five seconds to win it back; if they fail, everyone recovers and defends. A goal scored within five seconds of winning the ball back counts double.",
+    "ar": "ملعب 40 × 30 م بمرمى صغير في كل طرف. فريقان من خمسة لاعبين. عند فقدان الكرة يضغط أقرب ثلاثة لاعبين فورًا لمدة خمس ثوانٍ لاستعادتها، وإن فشلوا يعود الجميع ويدافعون. الهدف المسجّل خلال خمس ثوانٍ من استعادة الكرة يُحسب مضاعفًا."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Réagir tout de suite : les plus proches pressent, les autres coupent les passes",
+      "Si le pressing échoue après cinq secondes, se replacer ensemble",
+      "Après récupération, attaquer vite pendant que l'adversaire est désorganisé"
+    ],
+    "en": [
+      "React at once: the nearest players press the ball, the others cut the passes",
+      "If the press fails after five seconds, drop and defend together",
+      "After winning the ball, attack quickly while the opponent is disorganised"
+    ],
+    "ar": [
+      "تفاعل فورًا: الأقرب يضغط والبقية يقطعون التمريرات",
+      "إذا فشل الضغط بعد خمس ثوانٍ فتراجعوا ودافعوا معًا",
+      "بعد استخلاص الكرة هاجم بسرعة والخصم غير منظّم"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Dix secondes pour récupérer le ballon",
+        "en": "Ten seconds to win the ball back",
+        "ar": "عشر ثوانٍ لاستعادة الكرة"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Seuls les deux joueurs les plus proches peuvent presser",
+        "en": "Only the nearest two players may press",
+        "ar": "يُسمح فقط لأقرب لاعبين بالضغط"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": true,
+    "cones": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 39.5,
+        "y": 0.5,
+        "color": "o"
+      },
+      {
+        "x": 39.5,
+        "y": 29.5,
+        "color": "o"
+      },
+      {
+        "x": 0.5,
+        "y": 29.5,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 13.5,
+        "w": 0.9,
+        "h": 3
+      },
+      {
+        "x": 38.9,
+        "y": 13.5,
+        "w": 0.9,
+        "h": 3
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 16,
+        "y": 15
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 13,
+        "y": 8
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 13,
+        "y": 22
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 22,
+        "y": 10
+      },
+      {
+        "id": "a5",
+        "team": "a",
+        "label": "5",
+        "x": 22,
+        "y": 20
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "6",
+        "x": 23,
+        "y": 15
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "7",
+        "x": 26,
+        "y": 8
+      },
+      {
+        "id": "b3",
+        "team": "b",
+        "label": "8",
+        "x": 26,
+        "y": 22
+      },
+      {
+        "id": "b4",
+        "team": "b",
+        "label": "9",
+        "x": 31,
+        "y": 12
+      },
+      {
+        "id": "b5",
+        "team": "b",
+        "label": "10",
+        "x": 31,
+        "y": 18
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 16.7,
+        "y": 15.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Les bleus attaquent et jouent vers l'avant",
+          "en": "Blue attacks and plays forward",
+          "ar": "الأزرق يهاجم ويلعب إلى الأمام"
+        },
+        "moves": {
+          "a1": [
+            [20, 15]
+          ],
+          "b": [
+            [20.7, 15.5]
+          ],
+          "a2": [
+            [18, 9]
+          ],
+          "a3": [
+            [18, 21]
+          ],
+          "a4": [
+            [25, 11]
+          ],
+          "a5": [
+            [25, 19]
+          ]
+        }
+      },
+      {
+        "durationS": 2,
+        "caption": {
+          "fr": "Une touche lourde : les rouges gagnent le ballon",
+          "en": "A heavy touch: red wins the ball",
+          "ar": "لمسة ثقيلة: الأحمر يستخلص الكرة"
+        },
+        "moves": {
+          "b": [
+            [22.2, 15.8]
+          ],
+          "b1": [
+            [21.6, 15.4]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Contre-pressing : les trois plus proches pressent en moins de cinq secondes",
+          "en": "Counter-press: the nearest three press within five seconds",
+          "ar": "الضغط المعاكس: أقرب ثلاثة يضغطون خلال خمس ثوانٍ"
+        },
+        "moves": {
+          "b1": [
+            [19.5, 15.4]
+          ],
+          "b": [
+            [20.2, 15.9]
+          ],
+          "a1": [
+            [20, 14.4]
+          ],
+          "a2": [
+            [18.4, 12.5]
+          ],
+          "a3": [
+            [18.4, 17.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Les bleus récupèrent le ballon près de la moitié rouge",
+          "en": "Blue wins the ball back near the red half",
+          "ar": "الأزرق يستعيد الكرة قرب نصف الأحمر"
+        },
+        "moves": {
+          "b": [
+            [20.6, 14.2]
+          ],
+          "a1": [
+            [20.1, 13.8]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Attaquer vite et tirer avant le repli des rouges",
+          "en": "Attack quickly and shoot before red recovers",
+          "ar": "هاجم بسرعة وسدّد قبل عودة الأحمر"
+        },
+        "moves": {
+          "b": [
+            [39.5, 15.2]
+          ]
+        }
+      }
+    ]
+  }
+}

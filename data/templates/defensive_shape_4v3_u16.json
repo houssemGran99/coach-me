@@ -1,0 +1,274 @@
+{
+  "id": "defensive_shape_4v3_u16",
+  "kind": "main",
+  "ageGroups": [
+    "U15",
+    "U16",
+    "U17",
+    "U19",
+    "senior"
+  ],
+  "minPlayers": 8,
+  "maxPlayers": 14,
+  "area": {
+    "lengthM": 35,
+    "widthM": 30
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs",
+    "full_goals"
+  ],
+  "themes": [
+    "pressing",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "Organisation défensive 4 contre 3",
+    "en": "Defensive shape 4v3",
+    "ar": "التنظيم الدفاعي 4 ضد 3"
+  },
+  "organisation": {
+    "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Quatre défenseurs en ligne compacte défendent face à trois attaquants qui font circuler le ballon. Les défenseurs coulissent ensemble selon le ballon : le plus proche presse, les autres couvrent et gardent leurs distances. Changer les défenseurs après deux minutes.",
+    "en": "35 m by 30 m area with a full goal and a goalkeeper. Four defenders in a compact line defend against three attackers who pass the ball around. The defenders shift together as the ball moves: the nearest presses, the others cover and keep their distances. Rotate defenders after two minutes.",
+    "ar": "منطقة 35 × 30 م مع مرمى كبير وحارس. أربعة مدافعين في خط متراص يدافعون أمام ثلاثة مهاجمين يتبادلون الكرة. يتحرك المدافعون معًا مع الكرة: الأقرب يضغط والبقية يغطون ويحافظون على المسافات. بدّلوا المدافعين بعد دقيقتين."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Rester compacts : les quatre défenseurs à environ 10 m les uns des autres",
+      "Le plus proche presse ; les autres couvrent l'espace derrière",
+      "Coulisser avec le ballon et communiquer sans cesse"
+    ],
+    "en": [
+      "Stay compact: the four defenders within about 10 m of each other",
+      "The nearest defender presses; the others cover the space behind",
+      "Shift as the ball moves and talk constantly"
+    ],
+    "ar": [
+      "ابقوا متراصين: المدافعون الأربعة ضمن نحو 10 م",
+      "الأقرب يضغط والبقية يغطون المساحة خلفه",
+      "تحرّكوا مع الكرة وتواصلوا باستمرار"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Attaquants limités à deux touches",
+        "en": "Attackers limited to two touches",
+        "ar": "المهاجمون محدّدون بلمستين"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Ajouter un quatrième attaquant",
+        "en": "Add a fourth attacker",
+        "ar": "أضف مهاجمًا رابعًا"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 11,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 11,
+        "y": 29,
+        "color": "o"
+      }
+    ],
+    "goals": [
+      {
+        "x": 0.2,
+        "y": 11.5,
+        "w": 1,
+        "h": 7
+      }
+    ],
+    "zones": [],
+    "actors": [
+      {
+        "id": "gk",
+        "team": "k",
+        "label": "GK",
+        "x": 2.8,
+        "y": 15
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "1",
+        "x": 11,
+        "y": 6
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "2",
+        "x": 11,
+        "y": 12
+      },
+      {
+        "id": "b3",
+        "team": "b",
+        "label": "3",
+        "x": 11,
+        "y": 18
+      },
+      {
+        "id": "b4",
+        "team": "b",
+        "label": "4",
+        "x": 11,
+        "y": 24
+      },
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "5",
+        "x": 22,
+        "y": 24
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "6",
+        "x": 22,
+        "y": 15
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "7",
+        "x": 22,
+        "y": 6
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 22.7,
+        "y": 24.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le ballon va au centre : la ligne coulisse et reste compacte",
+          "en": "The ball goes to the middle: the line shifts and stays compact",
+          "ar": "الكرة إلى الوسط: الخط يتحرك ويبقى متراصًا"
+        },
+        "moves": {
+          "b": [
+            [22.7, 15.5]
+          ],
+          "b1": [
+            [11, 8]
+          ],
+          "b2": [
+            [11, 13]
+          ],
+          "b3": [
+            [11, 18]
+          ],
+          "b4": [
+            [11, 23]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le ballon va sur le côté : tous coulissent vers lui",
+          "en": "The ball goes wide: everyone shifts toward it",
+          "ar": "الكرة إلى الطرف: الجميع يتحرك نحوها"
+        },
+        "moves": {
+          "b": [
+            [22.7, 6.5]
+          ],
+          "b1": [
+            [11, 4]
+          ],
+          "b2": [
+            [11, 9]
+          ],
+          "b3": [
+            [11, 14]
+          ],
+          "b4": [
+            [11, 19]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Le défenseur le plus proche presse ; les autres couvrent",
+          "en": "The nearest defender presses; the others cover",
+          "ar": "أقرب مدافع يضغط والبقية يغطون"
+        },
+        "moves": {
+          "a3": [
+            [18, 6],
+            [16.5, 7]
+          ],
+          "b": [
+            [18.7, 6.5],
+            [17.2, 7.5]
+          ],
+          "b1": [
+            [14.5, 6.5]
+          ],
+          "b2": [
+            [12, 10]
+          ],
+          "b3": [
+            [11.5, 14.5]
+          ],
+          "b4": [
+            [11, 19]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Les attaquants changent le jeu ; la ligne coulisse de l'autre côté",
+          "en": "The attackers switch the play; the line shifts across",
+          "ar": "المهاجمون يحوّلون اللعب والخط ينتقل إلى الجهة الأخرى"
+        },
+        "moves": {
+          "b": [
+            [22.7, 24.5]
+          ],
+          "b4": [
+            [14.5, 23]
+          ],
+          "b3": [
+            [12, 20]
+          ],
+          "b2": [
+            [11.5, 15.5]
+          ],
+          "b1": [
+            [11, 11]
+          ]
+        }
+      }
+    ]
+  }
+}

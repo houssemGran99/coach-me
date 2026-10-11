@@ -1,0 +1,264 @@
+{
+  "id": "possession_4v4_plus_2_u14",
+  "kind": "game_related",
+  "ageGroups": [
+    "U13",
+    "U14",
+    "U15",
+    "U16"
+  ],
+  "minPlayers": 10,
+  "maxPlayers": 14,
+  "area": {
+    "lengthM": 35,
+    "widthM": 25
+  },
+  "equipment": [
+    "balls",
+    "cones",
+    "bibs"
+  ],
+  "themes": [
+    "possession",
+    "width_and_support",
+    "decision_making"
+  ],
+  "name": {
+    "fr": "4 contre 4 plus deux joueurs neutres",
+    "en": "4v4 plus two neutral players",
+    "ar": "4 ضد 4 مع لاعبين محايدين"
+  },
+  "organisation": {
+    "fr": "Zone de 35 m sur 25 m avec deux équipes de quatre et deux joueurs neutres sur les côtés qui jouent toujours avec l'équipe en possession. Conserver le ballon par des passes. Après 8 passes consécutives, l'équipe marque un point. Si le ballon est perdu, l'autre équipe conserve avec les neutres.",
+    "en": "35 m by 25 m area with two teams of four and two neutral players on the sides who always play with the team in possession. Keep the ball with passes. After 8 passes in a row, score a point. If the ball is lost, the other team keeps possession with the neutrals.",
+    "ar": "منطقة 35 × 25 م بفريقين من أربعة لاعبين ولاعبين محايدين على الجانبين يلعبان دائمًا مع الفريق المستحوذ. حافظوا على الكرة بالتمرير. بعد 8 تمريرات متتالية يسجّل الفريق نقطة. إذا ضاعت الكرة يحتفظ الفريق الآخر بها مع المحايدين."
+  },
+  "coachingPoints": {
+    "fr": [
+      "Utiliser les neutres pour changer le jeu",
+      "Créer des angles : être à une passe, pas derrière un défenseur",
+      "Après la perte, presser ensemble cinq secondes"
+    ],
+    "en": [
+      "Use the neutral players to switch the play",
+      "Create angles: be a pass away, not behind a defender",
+      "When you lose the ball, press together for five seconds"
+    ],
+    "ar": [
+      "استعمل اللاعبين المحايدين لتحويل اللعب",
+      "اصنع زوايا: كن على بعد تمريرة لا خلف مدافع",
+      "عند فقدان الكرة اضغطوا معًا لمدة خمس ثوانٍ"
+    ]
+  },
+  "variants": [
+    {
+      "label": "easier",
+      "text": {
+        "fr": "Trois touches maximum",
+        "en": "Three touches maximum",
+        "ar": "ثلاث لمسات كحد أقصى"
+      }
+    },
+    {
+      "label": "harder",
+      "text": {
+        "fr": "Deux touches, et une seule pour les neutres",
+        "en": "Two touches, and one touch for the neutral players",
+        "ar": "لمستان ولمسة واحدة للمحايدين"
+      }
+    }
+  ],
+  "source": "template",
+  "review": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "animation": {
+    "halfway": false,
+    "cones": [
+      {
+        "x": 1,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 34,
+        "y": 1,
+        "color": "o"
+      },
+      {
+        "x": 34,
+        "y": 24,
+        "color": "o"
+      },
+      {
+        "x": 1,
+        "y": 24,
+        "color": "o"
+      }
+    ],
+    "goals": [],
+    "zones": [],
+    "actors": [
+      {
+        "id": "a1",
+        "team": "a",
+        "label": "1",
+        "x": 8,
+        "y": 12
+      },
+      {
+        "id": "a2",
+        "team": "a",
+        "label": "2",
+        "x": 14,
+        "y": 6
+      },
+      {
+        "id": "a3",
+        "team": "a",
+        "label": "3",
+        "x": 14,
+        "y": 19
+      },
+      {
+        "id": "a4",
+        "team": "a",
+        "label": "4",
+        "x": 20,
+        "y": 12
+      },
+      {
+        "id": "b1",
+        "team": "b",
+        "label": "5",
+        "x": 12,
+        "y": 12
+      },
+      {
+        "id": "b2",
+        "team": "b",
+        "label": "6",
+        "x": 17,
+        "y": 9
+      },
+      {
+        "id": "b3",
+        "team": "b",
+        "label": "7",
+        "x": 17,
+        "y": 16
+      },
+      {
+        "id": "b4",
+        "team": "b",
+        "label": "8",
+        "x": 22,
+        "y": 15
+      },
+      {
+        "id": "n1",
+        "team": "n",
+        "label": "N",
+        "x": 17,
+        "y": 1.8
+      },
+      {
+        "id": "n2",
+        "team": "n",
+        "label": "N",
+        "x": 17,
+        "y": 23.2
+      }
+    ],
+    "balls": [
+      {
+        "id": "b",
+        "x": 8.7,
+        "y": 12.5
+      }
+    ],
+    "steps": [
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Les bleus gardent le ballon : 1 passe à 2",
+          "en": "Blue keeps the ball: 1 passes to 2",
+          "ar": "الأزرق يحتفظ بالكرة: 1 يمرّر إلى 2"
+        },
+        "moves": {
+          "b": [
+            [14.7, 6.5]
+          ],
+          "b1": [
+            [13, 9]
+          ],
+          "b2": [
+            [16, 7.5]
+          ]
+        }
+      },
+      {
+        "durationS": 2.5,
+        "caption": {
+          "fr": "Utiliser le joueur neutre sur le côté",
+          "en": "Use the neutral player on the side",
+          "ar": "استعمل اللاعب المحايد على الجانب"
+        },
+        "moves": {
+          "b": [
+            [17.7, 2.3]
+          ],
+          "b1": [
+            [14, 7]
+          ],
+          "b3": [
+            [16, 12]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Le neutre change le jeu vers le joueur libre",
+          "en": "The neutral switches the play to the free player",
+          "ar": "المحايد يحوّل اللعب إلى اللاعب الحر"
+        },
+        "moves": {
+          "a3": [
+            [16, 19]
+          ],
+          "b": [
+            [16.7, 19.5]
+          ],
+          "b3": [
+            [16.5, 16.5]
+          ],
+          "b4": [
+            [19, 18.5]
+          ]
+        }
+      },
+      {
+        "durationS": 3,
+        "caption": {
+          "fr": "Les rouges gagnent le ballon et le gardent avec les neutres",
+          "en": "Red wins the ball and keeps it with the neutrals",
+          "ar": "الأحمر يستخلص الكرة ويحتفظ بها مع المحايدين"
+        },
+        "moves": {
+          "b": [
+            [19.2, 18.5]
+          ],
+          "b4": [
+            [18.6, 18.2]
+          ],
+          "b3": [
+            [17, 14]
+          ]
+        }
+      }
+    ]
+  }
+}
