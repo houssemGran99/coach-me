@@ -165,3 +165,20 @@ export function validateSpec(spec: AnimationSpec, area: Area): SpecIssue[] {
 }
 
 export const isValidSpec = (spec: AnimationSpec, area: Area): boolean => validateSpec(spec, area).length === 0;
+
+/** Smallest area (from the origin) that contains every object and waypoint of the animation. */
+export function animationExtent(spec: AnimationSpec): { lengthM: number; widthM: number } {
+  let l = 0;
+  let w = 0;
+  const see = (x: number, y: number) => {
+    l = Math.max(l, x);
+    w = Math.max(w, y);
+  };
+  for (const a of spec.actors) see(a.x, a.y);
+  for (const b of spec.balls) see(b.x, b.y);
+  for (const c of spec.cones) see(c.x, c.y);
+  for (const g of spec.goals) see(g.x + g.w, g.y + g.h);
+  for (const z of spec.zones) see(z.x + z.w, z.y + z.h);
+  for (const s of spec.steps) for (const pts of Object.values(s.moves)) for (const p of pts) see(p[0], p[1]);
+  return { lengthM: l, widthM: w };
+}

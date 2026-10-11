@@ -6,3 +6,4 @@ export * from "./session";
 export * from "./checks";
 export * from "./eligibility";
 export * from "./generate";
+export * from "./practice-llm";

@@ -102,7 +102,9 @@
     "gravel": "Gravel",
     "other": "Other"
   },
-  "ages": { "senior": "Senior" },
+  "ages": {
+    "senior": "Senior"
+  },
   "variants": {
     "easier": "Easier",
     "harder": "Harder",
@@ -205,17 +207,58 @@
     "saveFailed": "Could not save. Your changes are kept on screen.",
     "checks": "Checks",
     "checksSummary": "{ok} of {n} passed",
-    "status": { "pass": "Passed", "warning": "Warning", "problem": "Problem" },
+    "status": {
+      "pass": "Passed",
+      "warning": "Warning",
+      "problem": "Problem"
+    },
     "check": {
-      "time": { "label": "Total time fits", "ok": "{sum} of {avail} min", "bad": "{sum} min is {over} over the {avail} available", "mismatch": "The total ({total} min) does not match the phases ({sum} min)" },
-      "known": { "label": "Practices are available to you", "ok": "All practices found", "bad": "{n} practice not available" },
-      "age": { "label": "Suitable for the age group", "ok": "All suit {age}", "bad": "{drill} is not for {age}" },
-      "players": { "label": "Player numbers fit each drill", "ok": "{n} players", "bad": "{drill} needs {min} to {max}" },
-      "space": { "label": "Drills fit your space", "ok": "Within {l} by {w} m", "bad": "{drill} needs {dl} by {dw} m" },
-      "equipment": { "label": "Equipment is available", "ok": "All drills covered", "bad": "{drill} needs {items}" },
-      "order": { "label": "Warm-up first, cool-down last", "ok": "Order is valid", "bad": "Put the warm-up at the top and the cool-down at the bottom" },
-      "structure": { "label": "Drills and a game phase", "ok": "Includes a drill and a game phase", "bad": "Add a technical or main drill and a game or game-related phase" },
-      "review": { "label": "Drills reviewed by a coach", "ok": "All reviewed", "bad": "{n} of {total} not reviewed yet" }
+      "time": {
+        "label": "Total time fits",
+        "ok": "{sum} of {avail} min",
+        "bad": "{sum} min is {over} over the {avail} available",
+        "mismatch": "The total ({total} min) does not match the phases ({sum} min)"
+      },
+      "known": {
+        "label": "Practices are available to you",
+        "ok": "All practices found",
+        "bad": "{n} practice not available"
+      },
+      "age": {
+        "label": "Suitable for the age group",
+        "ok": "All suit {age}",
+        "bad": "{drill} is not for {age}"
+      },
+      "players": {
+        "label": "Player numbers fit each drill",
+        "ok": "{n} players",
+        "bad": "{drill} needs {min} to {max}"
+      },
+      "space": {
+        "label": "Drills fit your space",
+        "ok": "Within {l} by {w} m",
+        "bad": "{drill} needs {dl} by {dw} m"
+      },
+      "equipment": {
+        "label": "Equipment is available",
+        "ok": "All drills covered",
+        "bad": "{drill} needs {items}"
+      },
+      "order": {
+        "label": "Warm-up first, cool-down last",
+        "ok": "Order is valid",
+        "bad": "Put the warm-up at the top and the cool-down at the bottom"
+      },
+      "structure": {
+        "label": "Drills and a game phase",
+        "ok": "Includes a drill and a game phase",
+        "bad": "Add a technical or main drill and a game or game-related phase"
+      },
+      "review": {
+        "label": "Drills reviewed by a coach",
+        "ok": "All reviewed",
+        "bad": "{n} of {total} not reviewed yet"
+      }
     },
     "share": "Share",
     "whatsapp": "Share on WhatsApp",
@@ -291,7 +334,11 @@
     "newest": "Newest first",
     "name": "Name",
     "source": "Source",
-    "sources": { "template": "Template", "ai": "AI", "user": "Mine" },
+    "sources": {
+      "template": "Template",
+      "ai": "AI",
+      "user": "Mine"
+    },
     "results": "Results: {n}",
     "noResults": "Nothing matches these filters.",
     "editTitle": "Title",
@@ -360,7 +407,8 @@
     "LLM_UNAVAILABLE": "The assistant is not available right now. Try again in a minute.",
     "NOT_FOUND": "We could not find that.",
     "LIBRARY_FULL": "Your library is full.",
-    "SERVER": "Something went wrong on our side. Please try again."
+    "SERVER": "Something went wrong on our side. Please try again.",
+    "REFINE_FAILED": "We could not apply that change. Your current version is unchanged."
   },
   "legal": {
     "draftNotice": "Draft, to be reviewed by a lawyer before launch.",

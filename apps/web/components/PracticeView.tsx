@@ -16,11 +16,14 @@ interface Props {
   maxPoints?: number;
   /** Labels namespace for headings: "templates" or "public". */
   headings?: "templates" | "public";
+  /** Use 2 when the page already has its own h1. */
+  headingLevel?: 1 | 2;
   children?: ReactNode;
 }
 
 /** Full practice: animation player, set-up, coaching points, variants. Used by gallery, library and the public page. */
-export function PracticeView({ practice, title, actions, autoplay, maxPoints, headings = "templates", children }: Props) {
+export function PracticeView({ practice, title, actions, autoplay, maxPoints, headings = "templates", headingLevel = 1, children }: Props) {
+  const Title = headingLevel === 2 ? "h2" : "h1";
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const h = (k: string) => t(`${headings}.${k}`);
@@ -32,7 +35,7 @@ export function PracticeView({ practice, title, actions, autoplay, maxPoints, he
       </div>
       <div className="grid gap-5">
         <header className="grid gap-2">
-          <h1 className="display text-4xl leading-none sm:text-5xl">{title ?? practice.name[locale]}</h1>
+          <Title className="display text-4xl leading-none sm:text-5xl">{title ?? practice.name[locale]}</Title>
           <PracticeMeta practice={practice} />
           <div className="flex flex-wrap items-center gap-2">
             <TrustBadge practice={practice} />

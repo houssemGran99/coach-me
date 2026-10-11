@@ -102,7 +102,9 @@
     "gravel": "Gravier",
     "other": "Autre"
   },
-  "ages": { "senior": "Senior" },
+  "ages": {
+    "senior": "Senior"
+  },
   "variants": {
     "easier": "Plus facile",
     "harder": "Plus difficile",
@@ -205,17 +207,58 @@
     "saveFailed": "Enregistrement impossible. Vos modifications restent à l'écran.",
     "checks": "Contrôles",
     "checksSummary": "{ok} sur {n} réussis",
-    "status": { "pass": "Réussi", "warning": "Attention", "problem": "Problème" },
+    "status": {
+      "pass": "Réussi",
+      "warning": "Attention",
+      "problem": "Problème"
+    },
     "check": {
-      "time": { "label": "Durée totale compatible", "ok": "{sum} sur {avail} min", "bad": "{sum} min dépasse de {over} min les {avail} disponibles", "mismatch": "Le total ({total} min) ne correspond pas aux phases ({sum} min)" },
-      "known": { "label": "Exercices disponibles pour vous", "ok": "Tous les exercices sont trouvés", "bad": "{n} exercice indisponible" },
-      "age": { "label": "Adapté à la catégorie d'âge", "ok": "Tous conviennent aux {age}", "bad": "{drill} n'est pas pour les {age}" },
-      "players": { "label": "Nombre de joueurs adapté à chaque exercice", "ok": "{n} joueurs", "bad": "{drill} nécessite {min} à {max}" },
-      "space": { "label": "Exercices adaptés à votre espace", "ok": "Dans {l} sur {w} m", "bad": "{drill} nécessite {dl} sur {dw} m" },
-      "equipment": { "label": "Matériel disponible", "ok": "Tous les exercices sont couverts", "bad": "{drill} nécessite {items}" },
-      "order": { "label": "Échauffement d'abord, retour au calme à la fin", "ok": "Ordre valide", "bad": "Placez l'échauffement en premier et le retour au calme en dernier" },
-      "structure": { "label": "Exercices et phase de jeu", "ok": "Comprend un exercice et une phase de jeu", "bad": "Ajoutez un exercice technique ou principal et une phase de jeu ou proche du jeu" },
-      "review": { "label": "Exercices validés par un entraîneur", "ok": "Tous validés", "bad": "{n} sur {total} pas encore validés" }
+      "time": {
+        "label": "Durée totale compatible",
+        "ok": "{sum} sur {avail} min",
+        "bad": "{sum} min dépasse de {over} min les {avail} disponibles",
+        "mismatch": "Le total ({total} min) ne correspond pas aux phases ({sum} min)"
+      },
+      "known": {
+        "label": "Exercices disponibles pour vous",
+        "ok": "Tous les exercices sont trouvés",
+        "bad": "{n} exercice indisponible"
+      },
+      "age": {
+        "label": "Adapté à la catégorie d'âge",
+        "ok": "Tous conviennent aux {age}",
+        "bad": "{drill} n'est pas pour les {age}"
+      },
+      "players": {
+        "label": "Nombre de joueurs adapté à chaque exercice",
+        "ok": "{n} joueurs",
+        "bad": "{drill} nécessite {min} à {max}"
+      },
+      "space": {
+        "label": "Exercices adaptés à votre espace",
+        "ok": "Dans {l} sur {w} m",
+        "bad": "{drill} nécessite {dl} sur {dw} m"
+      },
+      "equipment": {
+        "label": "Matériel disponible",
+        "ok": "Tous les exercices sont couverts",
+        "bad": "{drill} nécessite {items}"
+      },
+      "order": {
+        "label": "Échauffement d'abord, retour au calme à la fin",
+        "ok": "Ordre valide",
+        "bad": "Placez l'échauffement en premier et le retour au calme en dernier"
+      },
+      "structure": {
+        "label": "Exercices et phase de jeu",
+        "ok": "Comprend un exercice et une phase de jeu",
+        "bad": "Ajoutez un exercice technique ou principal et une phase de jeu ou proche du jeu"
+      },
+      "review": {
+        "label": "Exercices validés par un entraîneur",
+        "ok": "Tous validés",
+        "bad": "{n} sur {total} pas encore validés"
+      }
     },
     "share": "Partager",
     "whatsapp": "Partager sur WhatsApp",
@@ -291,7 +334,11 @@
     "newest": "Les plus récents",
     "name": "Nom",
     "source": "Origine",
-    "sources": { "template": "Modèle", "ai": "IA", "user": "Le mien" },
+    "sources": {
+      "template": "Modèle",
+      "ai": "IA",
+      "user": "Le mien"
+    },
     "results": "Résultats : {n}",
     "noResults": "Rien ne correspond à ces filtres.",
     "editTitle": "Titre",
@@ -360,7 +407,8 @@
     "LLM_UNAVAILABLE": "L'assistant n'est pas disponible pour le moment. Réessayez dans une minute.",
     "NOT_FOUND": "Impossible de trouver cet élément.",
     "LIBRARY_FULL": "Votre bibliothèque est pleine.",
-    "SERVER": "Un problème est survenu de notre côté. Veuillez réessayer."
+    "SERVER": "Un problème est survenu de notre côté. Veuillez réessayer.",
+    "REFINE_FAILED": "Nous n'avons pas pu appliquer ce changement. Votre version actuelle est inchangée."
   },
   "legal": {
     "draftNotice": "Brouillon, à faire relire par un juriste avant le lancement.",

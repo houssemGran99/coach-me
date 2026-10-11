@@ -4,7 +4,7 @@ import { getUser, type AppUser } from "./auth";
 
 export type ApiErrorCode =
   | "NO_SUITABLE_DRILLS" | "CONSTRAINTS_CONFLICT" | "OUT_OF_SCOPE" | "RATE_LIMITED" | "UNAUTHENTICATED"
-  | "INVALID_INPUT" | "ALREADY_SHARED" | "LLM_UNAVAILABLE" | "NOT_FOUND" | "LIBRARY_FULL" | "SERVER";
+  | "INVALID_INPUT" | "ALREADY_SHARED" | "REFINE_FAILED" | "LLM_UNAVAILABLE" | "NOT_FOUND" | "LIBRARY_FULL" | "SERVER";
 
 /** Uniform error body: the client maps `code` to a message in the coach's language. */
 export function apiError(code: ApiErrorCode, status: number, extra: Record<string, unknown> = {}) {
