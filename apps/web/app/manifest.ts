@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Mourabbi",
-    short_name: "Mourabbi",
+    name: "Coach Me",
+    short_name: "Coach Me",
     description: "Football session planner for coaches: timed sessions, animated practices, a personal library and shareable links.",
     start_url: "/",
     scope: "/",

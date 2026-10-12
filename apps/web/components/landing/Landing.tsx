@@ -20,7 +20,7 @@ export function Landing() {
 
       <nav>
         <div className="wrap">
-          <a className="logo" href="#top" aria-label="Coach"><i><IconBall /></i>Coach</a>
+          <a className="logo" href="#top" aria-label="Coach Me"><i><IconBall /></i>Coach Me</a>
           <div className="links"><a href="#fonctions">Fonctions</a><a href="#comment">Comment ça marche</a><a href="#faq">FAQ</a></div>
           <div className="actions">
             <a className="signin" href="/login">Se connecter</a>
@@ -39,7 +39,7 @@ export function Landing() {
               <Reveal><h1>Votre séance prête <em>en 30 secondes.</em></h1></Reveal>
               <Reveal>
                 <p className="lead">
-                  Décrivez votre effectif et ce qui n&apos;a pas marché la semaine dernière. Coach compose une séance chronométrée avec des exercices que vous <strong>voyez en animation</strong> avant de les installer sur le terrain.
+                  Décrivez votre effectif et ce qui n&apos;a pas marché la semaine dernière. Coach Me compose une séance chronométrée avec des exercices que vous <strong>voyez en animation</strong> avant de les installer sur le terrain.
                 </p>
               </Reveal>
               <Reveal className="cta">
@@ -110,7 +110,7 @@ export function Landing() {
               <div className="ic"><IconShield /></div>
               <h3>Contenu relu et contenu IA toujours séparés</h3>
               <p>
-                Un exercice n&apos;est marqué « Relu » qu&apos;après validation par un entraîneur nommé. Tout ce qui est généré par IA porte la mention « Brouillon IA » jusqu&apos;à votre confirmation. Aucune donnée sur les joueurs n&apos;est collectée, et Coach refuse les demandes de santé ou de traitement concernant un enfant.
+                Un exercice n&apos;est marqué « Relu » qu&apos;après validation par un entraîneur nommé. Tout ce qui est généré par IA porte la mention « Brouillon IA » jusqu&apos;à votre confirmation. Aucune donnée sur les joueurs n&apos;est collectée, et Coach Me refuse les demandes de santé ou de traitement concernant un enfant.
               </p>
               <div className="badges"><span className="badge ok">Relu par un entraîneur</span><span className="badge ai">Brouillon IA</span></div>
             </Reveal>
@@ -139,11 +139,11 @@ export function Landing() {
       <section id="acces">
         <div className="wrap">
           <Reveal className="final">
-            <div className="glow" style={{ width: 380, height: 380, background: "#f2c230", top: -200, left: "50%", marginLeft: -190, opacity: 0.22 }} />
+            <div className="glow" style={{ width: 380, height: 380, background: "#f2c230", top: -200, insetInlineStart: "50%", marginInlineStart: -190, opacity: 0.22 }} />
             <div className="inner">
               <Eyebrow>Accès anticipé</Eyebrow>
               <h2>Construisons-le<br />avec vous.</h2>
-              <p>Nous ouvrons Coach à un petit groupe d&apos;entraîneurs et d&apos;académies. Laissez votre e-mail et nous vous contactons.</p>
+              <p>Nous ouvrons Coach Me à un petit groupe d&apos;entraîneurs et d&apos;académies. Laissez votre e-mail et nous vous contactons.</p>
               <WaitlistForm />
               <div className="fine">Gratuit pendant le lancement · Pas de spam</div>
             </div>
@@ -163,7 +163,7 @@ export function Landing() {
       </section>
 
       <footer>
-        <div className="wrap"><a className="logo" href="#top"><i><IconBall /></i>Coach</a><span>© 2026 Coach · Fait pour les entraîneurs de Tunisie.</span></div>
+        <div className="wrap"><a className="logo" href="#top"><i><IconBall /></i>Coach Me</a><span>© 2026 Coach Me · Fait pour les entraîneurs de Tunisie.</span></div>
       </footer>
     </div>
   );

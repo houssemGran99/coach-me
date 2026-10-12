@@ -22,7 +22,7 @@ import { renderPitchSvgString } from "@mourabbi/animation/static";
 import type { Lang, Practice } from "@mourabbi/schemas";
 import { REPO_ROOT, validateTemplates } from "./lib/templates";
 
-const BRAND = "Coach";
+const BRAND = "Coach Me";
 const FORMATS = {
   vertical: { w: 1080, h: 1920 },
   square: { w: 1080, h: 1080 },

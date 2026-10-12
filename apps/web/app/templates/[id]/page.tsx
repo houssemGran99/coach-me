@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const p = getTemplate(id);
   const locale = (await getLocale()) as Locale;
-  return { title: p ? p.name[locale] : "Mourabbi" };
+  return { title: p ? p.name[locale] : "Coach Me" };
 }
 
 export default async function TemplatePage({ params }: Props) {

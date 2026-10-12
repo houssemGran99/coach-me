@@ -142,7 +142,7 @@ test("manifest and offline page are available", async ({ page, request }) => {
   const res = await request.get("/manifest.webmanifest");
   expect(res.ok()).toBe(true);
   const m = await res.json();
-  expect(m).toMatchObject({ name: "Mourabbi", display: "standalone", theme_color: "#16a34a" });
+  expect(m).toMatchObject({ name: "Coach Me", display: "standalone", theme_color: "#16a34a" });
   const sizes = m.icons.map((i: { sizes: string }) => i.sizes);
   expect(sizes).toEqual(expect.arrayContaining(["192x192", "512x512"]));
   for (const i of m.icons as { src: string }[]) expect((await request.get(i.src)).ok()).toBe(true);

@@ -15,11 +15,11 @@ const barlowCondensed = Barlow_Condensed({ subsets: ["latin", "latin-ext"], weig
 const plexArabic = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600", "700"], variable: "--font-plex-ar", display: "swap" });
 
 export const metadata: Metadata = {
-  title: { default: "Mourabbi", template: "%s · Mourabbi" },
+  title: { default: "Coach Me", template: "%s · Coach Me" },
   description: "Football session planner for coaches: timed sessions, animated practices, a personal library and shareable links.",
-  applicationName: "Mourabbi",
+  applicationName: "Coach Me",
   manifest: "/manifest.webmanifest",
-  appleWebApp: { capable: true, title: "Mourabbi", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "Coach Me", statusBarStyle: "default" },
   icons: { icon: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }], apple: "/icons/apple-touch-icon.png" },
 };
 

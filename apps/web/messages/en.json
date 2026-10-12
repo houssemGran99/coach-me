@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "Mourabbi",
+    "brand": "Coach Me",
     "loading": "Loading…",
     "save": "Save",
     "cancel": "Cancel",
@@ -266,7 +266,7 @@
     "messagePreview": "Message preview",
     "shareHeading": "{age} session: {theme}",
     "shareMeta": "{n} players, {m} min",
-    "shareFooter": "Planned with Mourabbi",
+    "shareFooter": "Planned with Coach Me",
     "after": "After the session",
     "worked": "What worked?",
     "didNotWork": "What did not work?",
@@ -394,7 +394,7 @@
     "variants": "Variants",
     "language": "Language",
     "shared": "Shared practice",
-    "madeWith": "Made with Mourabbi",
+    "madeWith": "Made with Coach Me",
     "openApp": "Plan your own sessions"
   },
   "errors": {
@@ -415,7 +415,7 @@
     "privacyTitle": "Privacy",
     "termsTitle": "Terms of use",
     "privacy": [
-      "Mourabbi helps football coaches plan sessions. It is meant for adults who coach.",
+      "Coach Me helps football coaches plan sessions. It is meant for adults who coach.",
       "We store your email address, your language, your saved practices, your sessions and the links you share.",
       "We do not collect personal data about players. Please do not write names, health information or other details about individual children in your notes.",
       "Texts you type are sent to an AI provider to produce drafts. We do not use them for anything else.",
