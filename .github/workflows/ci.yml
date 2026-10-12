@@ -27,3 +27,10 @@ jobs:
         run: pnpm --filter @mourabbi/web exec playwright install --with-deps chromium
       - name: End-to-end smoke tests
         run: pnpm test:e2e
+      - name: Keep Playwright traces when a test fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: apps/web/test-results
+          retention-days: 7
