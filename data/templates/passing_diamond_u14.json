@@ -27,12 +27,14 @@
   "name": {
     "fr": "Losange de passes avec appel du troisième homme",
     "en": "Diamond passing with a third-man run",
-    "ar": "تمرير على شكل معيّن مع ركض اللاعب الثالث"
+    "ar": "تمرير على شكل معيّن مع ركض اللاعب الثالث",
+    "de": "Passraute mit Lauf des dritten Mannes"
   },
   "organisation": {
     "fr": "Carré de 25 m avec cinq joueurs : un à chaque pointe d'un losange et un au centre. Le joueur du bas passe au joueur central, qui remet de première. Un troisième joueur parti du haut effectue un appel pour recevoir la passe suivante. Après chaque séquence, les joueurs tournent d'un poste.",
     "en": "25 m square with five players: one at each point of a diamond and one in the middle. The bottom player passes to the middle player, who lays the ball off first time. A third player from the top makes a run to receive the next pass. After each sequence the players rotate one position.",
-    "ar": "مربع 25 م بخمسة لاعبين: لاعب عند كل رأس من رؤوس المعيّن ولاعب في الوسط. يمرّر اللاعب السفلي إلى لاعب الوسط الذي يعيد الكرة من لمسة واحدة. لاعب ثالث من الأعلى يركض ليستلم التمريرة التالية. بعد كل تسلسل يدور اللاعبون موقعًا واحدًا."
+    "ar": "مربع 25 م بخمسة لاعبين: لاعب عند كل رأس من رؤوس المعيّن ولاعب في الوسط. يمرّر اللاعب السفلي إلى لاعب الوسط الذي يعيد الكرة من لمسة واحدة. لاعب ثالث من الأعلى يركض ليستلم التمريرة التالية. بعد كل تسلسل يدور اللاعبون موقعًا واحدًا.",
+    "de": "Quadrat von 25 m mit fünf Spielern: einer an jeder Spitze einer Raute und einer in der Mitte. Der untere Spieler passt zum Spieler in der Mitte, der den Ball direkt ablegt. Ein dritter Spieler von oben startet einen Lauf, um den nächsten Pass zu erhalten. Nach jeder Passfolge rotieren die Spieler eine Position weiter."
   },
   "coachingPoints": {
     "fr": [
@@ -49,6 +51,11 @@
       "اضبط توقيت الركض لتصل التمريرة أمام اللاعب",
       "لاعب الوسط يلعب من لمسة واحدة ورأسه مرفوع",
       "اطلب الكرة بصوتك ووضعية جسمك"
+    ],
+    "de": [
+      "Den Lauf so timen, dass der Pass vor dem Läufer ankommt",
+      "Der Spieler in der Mitte spielt direkt mit erhobenem Kopf",
+      "Fordere den Ball mit Stimme und Körperhaltung"
     ]
   },
   "variants": [
@@ -57,7 +64,8 @@
       "text": {
         "fr": "Deux touches pour tous",
         "en": "Two touches for everyone",
-        "ar": "لمستان للجميع"
+        "ar": "لمستان للجميع",
+        "de": "Zwei Ballkontakte für alle"
       }
     },
     {
@@ -65,7 +73,8 @@
       "text": {
         "fr": "Ajouter un défenseur passif au centre",
         "en": "Add a passive defender in the middle",
-        "ar": "أضف مدافعًا سلبيًا في الوسط"
+        "ar": "أضف مدافعًا سلبيًا في الوسط",
+        "de": "Einen passiven Verteidiger in der Mitte hinzufügen"
       }
     }
   ],
@@ -151,7 +160,8 @@
         "caption": {
           "fr": "Le joueur du bas passe au joueur central",
           "en": "The bottom player passes into the middle",
-          "ar": "اللاعب السفلي يمرّر إلى لاعب الوسط"
+          "ar": "اللاعب السفلي يمرّر إلى لاعب الوسط",
+          "de": "Der untere Spieler passt in die Mitte"
         },
         "moves": {
           "b": [
@@ -164,7 +174,8 @@
         "caption": {
           "fr": "Remise de première à droite ; le joueur du haut s'élance",
           "en": "One-touch lay-off right; the top player starts his run",
-          "ar": "إعادة بلمسة واحدة لليمين واللاعب العلوي يبدأ الركض"
+          "ar": "إعادة بلمسة واحدة لليمين واللاعب العلوي يبدأ الركض",
+          "de": "Direktes Ablegen nach rechts; der obere Spieler startet seinen Lauf"
         },
         "moves": {
           "a3": [
@@ -183,7 +194,8 @@
         "caption": {
           "fr": "Passe de première dans la course du troisième homme",
           "en": "First-time pass into the third man's run",
-          "ar": "تمريرة من لمسة واحدة في ركض اللاعب الثالث"
+          "ar": "تمريرة من لمسة واحدة في ركض اللاعب الثالث",
+          "de": "Direkter Pass in den Lauf des dritten Mannes"
         },
         "moves": {
           "a4": [
@@ -199,7 +211,8 @@
         "caption": {
           "fr": "Changement de jeu à gauche et relance du schéma",
           "en": "Switch to the left side and restart the pattern",
-          "ar": "تحويل إلى اليسار وإعادة التسلسل"
+          "ar": "تحويل إلى اليسار وإعادة التسلسل",
+          "de": "Verlagerung nach links und das Muster neu starten"
         },
         "moves": {
           "b": [

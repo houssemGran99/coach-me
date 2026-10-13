@@ -116,7 +116,7 @@ describe("review guard", () => {
 
 describe("JSON Schema derivation", () => {
   it("derives a JSON Schema from the Zod schema for structured output", () => {
-    const js = z.toJSONSchema(PracticeSchema) as { type: string; additionalProperties?: boolean; required?: string[] };
+    const js = z.toJSONSchema(PracticeSchema, { io: "input" }) as { type: string; additionalProperties?: boolean; required?: string[] };
     expect(js.type).toBe("object");
     expect(js.additionalProperties).toBe(false);
     expect(js.required).toContain("animation");

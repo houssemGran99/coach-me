@@ -13,6 +13,10 @@ const PATTERNS: RegExp[] = [
   /(médicament|ordonnance|posologie|diagnostic|antibiotique|paracétamol|ibuprofène|stéroïde|complément(s)? alimentaire|chirurgie|dopage)/i,
   /(soigner|traiter|traitement|guérir|rééducation|récupérer de)\s+(de |d'|du |la |le |l'|une |un |sa |son )*(blessure|entorse|fracture|déchirure|commotion|ligament|claquage)/i,
   /(régime( alimentaire)?|perdre du poids|perte de poids|calories)/i,
+  // German
+  /\b(medikament\w*|tablette\w*|dosierung|rezept|diagnose|antibiotik\w*|paracetamol|ibuprofen|steroid\w*|nahrungsergänzung\w*|operation|doping)\b/i,
+  /\b(verletzung\w*|zerrung\w*|bänderriss\w*|bruch|gehirnerschütterung\w*)\b.{0,30}\b(behandl\w*|heilen|heilung|reha\w*|therapie)|\b(behandl\w*|heilen|reha\w*|therapie)\b.{0,30}\b(verletzung\w*|zerrung\w*|bänderriss\w*|gehirnerschütterung\w*)/i,
+  /\b(diät|abnehmen|gewichtsverlust|kalorien\w*|ernährungsplan)\b/i,
   // Arabic (and darija written in Arabic script)
   /(دواء|دوا\b|أدوية|وصفة طبية|جرعة|مضاد حيوي|باراسيتامول|تشخيص|جراحة|عملية جراحية|منشطات|مكملات|مكمّلات)/,
   /(علاج|معالجة|تأهيل|شفاء)\s+(من\s+|ال)?(إصابة|اصابة|الإصابة|الاصابة|كسر|الكسر|التواء|الالتواء|ارتجاج|تمزق|الرباط)/,

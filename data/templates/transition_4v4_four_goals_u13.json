@@ -28,12 +28,14 @@
   "name": {
     "fr": "Jeu de transition : 4 contre 4 avec quatre buts",
     "en": "Transition game: 4v4 with four goals",
-    "ar": "لعبة التحوّل: 4 ضد 4 مع أربعة مرامٍ"
+    "ar": "لعبة التحوّل: 4 ضد 4 مع أربعة مرامٍ",
+    "de": "Umschaltspiel: 4 gegen 4 auf vier Tore"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 25 m avec deux mini-buts à chaque extrémité. Deux équipes de quatre. Chaque équipe défend deux buts et attaque les deux opposés. Quand une équipe récupère le ballon, elle doit attaquer dans les cinq secondes ; à la perte, le joueur le plus proche presse aussitôt.",
     "en": "35 m by 25 m area with two mini goals at each end. Two teams of four. Each team defends two goals and attacks the two opposite ones. When a team wins the ball it must attack within five seconds, and when it loses the ball the nearest player presses at once.",
-    "ar": "منطقة 35 × 25 م بمرميين صغيرين في كل طرف. فريقان من أربعة لاعبين. يدافع كل فريق عن مرميين ويهاجم المرميين المقابلين. عندما يستخلص فريق الكرة عليه أن يهاجم خلال خمس ثوانٍ، وعند فقدانها يضغط أقرب لاعب فورًا."
+    "ar": "منطقة 35 × 25 م بمرميين صغيرين في كل طرف. فريقان من أربعة لاعبين. يدافع كل فريق عن مرميين ويهاجم المرميين المقابلين. عندما يستخلص فريق الكرة عليه أن يهاجم خلال خمس ثوانٍ، وعند فقدانها يضغط أقرب لاعب فورًا.",
+    "de": "Fläche von 35 m mal 25 m mit zwei Minitoren an jedem Ende. Zwei Teams zu vier Spielern. Jedes Team verteidigt zwei Tore und greift die zwei gegenüberliegenden an. Erobert ein Team den Ball, muss es innerhalb von fünf Sekunden angreifen, und verliert es ihn, presst der nächste Spieler sofort."
   },
   "coachingPoints": {
     "fr": [
@@ -50,6 +52,11 @@
       "اهجم مرتدًا خلال خمس ثوانٍ من استخلاص الكرة",
       "عند فقدان الكرة يضغط الأقرب ويعود البقية",
       "ابحث عن المرمى الحر: حوّل إلى الجهة الأقل دفاعًا"
+    ],
+    "de": [
+      "Innerhalb von fünf Sekunden nach der Balleroberung kontern",
+      "Nach Ballverlust presst der nächste Spieler und die anderen sichern",
+      "Das offene Tor suchen: auf die schwächer verteidigte Seite verlagern"
     ]
   },
   "variants": [
@@ -58,7 +65,8 @@
       "text": {
         "fr": "Ajouter un joueur neutre pour l'équipe en possession",
         "en": "Add a neutral player for the team in possession",
-        "ar": "أضف لاعبًا محايدًا للفريق المستحوذ"
+        "ar": "أضف لاعبًا محايدًا للفريق المستحوذ",
+        "de": "Einen neutralen Spieler für das Team am Ball hinzufügen"
       }
     },
     {
@@ -66,7 +74,8 @@
       "text": {
         "fr": "Deux touches maximum",
         "en": "Two touches maximum",
-        "ar": "لمستان كحد أقصى"
+        "ar": "لمستان كحد أقصى",
+        "de": "Höchstens zwei Ballkontakte"
       }
     }
   ],
@@ -198,7 +207,8 @@
         "caption": {
           "fr": "Les bleus attaquent vers les buts de droite",
           "en": "Blue attacks toward the right-hand goals",
-          "ar": "الأزرق يهاجم نحو مرميَي اليمين"
+          "ar": "الأزرق يهاجم نحو مرميَي اليمين",
+          "de": "Blau greift die rechten Tore an"
         },
         "moves": {
           "a1": [
@@ -229,7 +239,8 @@
         "caption": {
           "fr": "Changer vers le côté libre",
           "en": "Switch to the free side",
-          "ar": "حوّل إلى الجهة الحرة"
+          "ar": "حوّل إلى الجهة الحرة",
+          "de": "Auf die freie Seite verlagern"
         },
         "moves": {
           "b": [
@@ -251,7 +262,8 @@
         "caption": {
           "fr": "Un défenseur contre le tir",
           "en": "A defender blocks the shot",
-          "ar": "مدافع يصدّ التسديدة"
+          "ar": "مدافع يصدّ التسديدة",
+          "de": "Ein Verteidiger blockt den Schuss"
         },
         "moves": {
           "b": [
@@ -267,7 +279,8 @@
         "caption": {
           "fr": "Transition : les rouges contre-attaquent aussitôt vers les buts de gauche",
           "en": "Transition: red counters at once toward the left goals",
-          "ar": "التحوّل: الأحمر يشنّ هجومًا مرتدًا فورًا نحو مرميَي اليسار"
+          "ar": "التحوّل: الأحمر يشنّ هجومًا مرتدًا فورًا نحو مرميَي اليسار",
+          "de": "Umschalten: Rot kontert sofort auf die linken Tore"
         },
         "moves": {
           "b3": [
@@ -297,7 +310,8 @@
         "caption": {
           "fr": "Tir dans le but libre",
           "en": "Shoot at the open goal",
-          "ar": "سدّد في المرمى الحر"
+          "ar": "سدّد في المرمى الحر",
+          "de": "Schuss aufs offene Tor"
         },
         "moves": {
           "b": [

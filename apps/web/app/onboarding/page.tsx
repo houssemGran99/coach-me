@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getTranslations("onboarding"))("title") };
 }
 
-const LANG_NAMES: Record<string, string> = { fr: "Français", ar: "العربية", en: "English" };
+const LANG_NAMES: Record<string, string> = { fr: "Français", ar: "العربية", en: "English", de: "Deutsch" };
 
 export default async function OnboardingPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const { next } = await searchParams;

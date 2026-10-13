@@ -28,12 +28,14 @@
   "name": {
     "fr": "Combinaison du troisième homme et tir",
     "en": "Third-man combination and shot",
-    "ar": "تسلسل اللاعب الثالث والتسديد"
+    "ar": "تسلسل اللاعب الثالث والتسديد",
+    "de": "Kombination über den dritten Mann und Schuss"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Le joueur central passe à l'attaquant, qui remet au troisième joueur arrivant de loin. Celui-ci joue de première dans la course du joueur central, qui tire. Faire tourner les rôles après chaque séquence.",
     "en": "35 m by 30 m area with a full goal and a goalkeeper. The central player passes to the forward, who lays the ball off to the third player arriving from deep. The third player plays first time into the central player's run, and the central player shoots. Rotate roles after each sequence.",
-    "ar": "منطقة 35 × 30 م مع مرمى كبير وحارس. يمرّر اللاعب المركزي إلى المهاجم الذي يعيد الكرة إلى اللاعب الثالث القادم من الخلف. يلعب اللاعب الثالث من لمسة واحدة في ركض اللاعب المركزي الذي يسدّد. دوّروا الأدوار بعد كل تسلسل."
+    "ar": "منطقة 35 × 30 م مع مرمى كبير وحارس. يمرّر اللاعب المركزي إلى المهاجم الذي يعيد الكرة إلى اللاعب الثالث القادم من الخلف. يلعب اللاعب الثالث من لمسة واحدة في ركض اللاعب المركزي الذي يسدّد. دوّروا الأدوار بعد كل تسلسل.",
+    "de": "Fläche von 35 m mal 30 m mit einem großen Tor und einem Torwart. Der zentrale Spieler passt zum Stürmer, der den Ball auf den dritten Spieler ablegt, der aus der Tiefe kommt. Der dritte Spieler spielt direkt in den Lauf des zentralen Spielers, der schießt. Wechsle die Rollen nach jeder Passfolge."
   },
   "coachingPoints": {
     "fr": [
@@ -50,6 +52,11 @@
       "اللاعب الثالث يضبط ركضه ليصل إلى الكرة",
       "الإعادة تذهب في مسار الراكض وعلى القدم الصحيحة",
       "المسدّد يسدّد من لمسة واحدة أو بعد لمسة تحكّم"
+    ],
+    "de": [
+      "Der dritte Spieler timt den Lauf so, dass er zum Ball ankommt",
+      "Das Ablegen kommt in den Laufweg des Läufers, auf den richtigen Fuß",
+      "Der Schütze schießt direkt oder legt sich den Ball mit einem Kontakt zurecht"
     ]
   },
   "variants": [
@@ -58,7 +65,8 @@
       "text": {
         "fr": "Autoriser deux touches pour tous",
         "en": "Allow two touches for everyone",
-        "ar": "اسمح بلمستين للجميع"
+        "ar": "اسمح بلمستين للجميع",
+        "de": "Zwei Ballkontakte für alle erlauben"
       }
     },
     {
@@ -66,7 +74,8 @@
       "text": {
         "fr": "Ajouter un défenseur qui part derrière l'attaquant",
         "en": "Add a defender who starts behind the forward",
-        "ar": "أضف مدافعًا يبدأ خلف المهاجم"
+        "ar": "أضف مدافعًا يبدأ خلف المهاجم",
+        "de": "Einen Verteidiger hinzufügen, der hinter dem Stürmer startet"
       }
     }
   ],
@@ -142,7 +151,8 @@
         "caption": {
           "fr": "Le joueur central passe à l'attaquant",
           "en": "The central player passes to the forward",
-          "ar": "اللاعب المركزي يمرّر إلى المهاجم"
+          "ar": "اللاعب المركزي يمرّر إلى المهاجم",
+          "de": "Der zentrale Spieler passt zum Stürmer"
         },
         "moves": {
           "p2": [
@@ -161,7 +171,8 @@
         "caption": {
           "fr": "L'attaquant remet au troisième joueur",
           "en": "The forward lays off to the third player",
-          "ar": "المهاجم يعيد الكرة إلى اللاعب الثالث"
+          "ar": "المهاجم يعيد الكرة إلى اللاعب الثالث",
+          "de": "Der Stürmer legt auf den dritten Spieler ab"
         },
         "moves": {
           "p3": [
@@ -180,7 +191,8 @@
         "caption": {
           "fr": "Passe de première dans la course du joueur central",
           "en": "First-time pass into the central player's run",
-          "ar": "تمريرة من لمسة واحدة في ركض اللاعب المركزي"
+          "ar": "تمريرة من لمسة واحدة في ركض اللاعب المركزي",
+          "de": "Direkter Pass in den Lauf des zentralen Spielers"
         },
         "moves": {
           "p1": [
@@ -196,7 +208,8 @@
         "caption": {
           "fr": "Tir de première",
           "en": "Shoot first time",
-          "ar": "سدّد من لمسة واحدة"
+          "ar": "سدّد من لمسة واحدة",
+          "de": "Direktschuss"
         },
         "moves": {
           "b": [
@@ -212,7 +225,8 @@
         "caption": {
           "fr": "Remise en place et rotation des rôles",
           "en": "Reset and rotate roles",
-          "ar": "إعادة التمركز وتدوير الأدوار"
+          "ar": "إعادة التمركز وتدوير الأدوار",
+          "de": "Neustart und Rollenwechsel"
         },
         "moves": {
           "p1": [

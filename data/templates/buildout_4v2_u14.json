@@ -29,12 +29,14 @@
   "name": {
     "en": "4v2 build-out",
     "fr": "Construction 4 contre 2",
-    "ar": "بناء اللعب 4 ضد 2"
+    "ar": "بناء اللعب 4 ضد 2",
+    "de": "Spielaufbau 4 gegen 2"
   },
   "organisation": {
     "en": "25 m by 20 m area. The goalkeeper starts play. Four attackers try to play through a gate guarded by two pressing defenders, then pass to a striker beyond it. If the ball is lost, the defenders counter into a full-size goal.",
     "fr": "Zone de 25 m sur 20 m. Le gardien relance. Quatre attaquants cherchent à franchir une porte gardée par deux défenseurs qui pressent, puis à servir un attaquant situé derrière. Si le ballon est perdu, les défenseurs contre-attaquent vers un grand but.",
-    "ar": "منطقة 25 × 20 م. حارس المرمى يبدأ اللعب. أربعة مهاجمين يحاولون تجاوز بوابة يحرسها مدافعان يضغطان، ثم التمرير إلى مهاجم خلفها. إذا ضاعت الكرة يشنّ المدافعان هجومًا مرتدًا نحو مرمى كبير."
+    "ar": "منطقة 25 × 20 م. حارس المرمى يبدأ اللعب. أربعة مهاجمين يحاولون تجاوز بوابة يحرسها مدافعان يضغطان، ثم التمرير إلى مهاجم خلفها. إذا ضاعت الكرة يشنّ المدافعان هجومًا مرتدًا نحو مرمى كبير.",
+    "de": "Fläche von 25 m mal 20 m. Der Torwart eröffnet das Spiel. Vier Angreifer versuchen, durch ein Tor zu spielen, das zwei pressende Verteidiger bewachen, und dann auf einen Stürmer dahinter zu passen. Bei Ballverlust kontern die Verteidiger auf ein großes Tor."
   },
   "coachingPoints": {
     "en": [
@@ -51,6 +53,11 @@
       "ابدأ بتمريرة قصيرة آمنة من الحارس",
       "استخدم اللاعبين على الأطراف لإبعاد المدافعَين عن بعضهما",
       "مرّر عبر البوابة بسرعة عندما يختل توازن المدافعَين"
+    ],
+    "de": [
+      "Beginne mit einem sicheren kurzen Pass des Torwarts",
+      "Nutze die Außenspieler, um die beiden Pressenden auseinanderzuziehen",
+      "Spiele schnell durch das Tor, wenn die Pressenden schlecht stehen"
     ]
   },
   "variants": [
@@ -59,7 +66,8 @@
       "text": {
         "en": "Defenders press only after the first pass",
         "fr": "Les défenseurs ne pressent qu'après la première passe",
-        "ar": "لا يضغط المدافعان إلا بعد التمريرة الأولى"
+        "ar": "لا يضغط المدافعان إلا بعد التمريرة الأولى",
+        "de": "Die Verteidiger pressen erst nach dem ersten Pass"
       }
     },
     {
@@ -67,7 +75,8 @@
       "text": {
         "en": "Defenders may press as soon as the goalkeeper plays",
         "fr": "Les défenseurs peuvent presser dès la relance du gardien",
-        "ar": "يمكن للمدافعَين الضغط منذ لحظة بدء الحارس"
+        "ar": "يمكن للمدافعَين الضغط منذ لحظة بدء الحارس",
+        "de": "Die Verteidiger dürfen pressen, sobald der Torwart spielt"
       }
     }
   ],
@@ -114,7 +123,8 @@
         "label": {
           "en": "Gate",
           "fr": "Porte",
-          "ar": "البوابة"
+          "ar": "البوابة",
+          "de": "Tor"
         }
       }
     ],
@@ -182,7 +192,8 @@
         "caption": {
           "en": "The goalkeeper starts with a short pass",
           "fr": "Le gardien relance court",
-          "ar": "الحارس يبدأ بتمريرة قصيرة"
+          "ar": "الحارس يبدأ بتمريرة قصيرة",
+          "de": "Der Torwart beginnt mit einem kurzen Pass"
         },
         "moves": {
           "b": [
@@ -201,7 +212,8 @@
         "caption": {
           "en": "Pass across to draw the pressers",
           "fr": "Passe latérale pour attirer les presseurs",
-          "ar": "تمريرة عرضية لجذب المدافعَين"
+          "ar": "تمريرة عرضية لجذب المدافعَين",
+          "de": "Quer passen, um die Pressenden herauszulocken"
         },
         "moves": {
           "b": [
@@ -220,7 +232,8 @@
         "caption": {
           "en": "Switch to the wide player",
           "fr": "Changement de jeu vers le joueur côté",
-          "ar": "حوّل اللعب إلى اللاعب على الطرف"
+          "ar": "حوّل اللعب إلى اللاعب على الطرف",
+          "de": "Verlagerung auf den Außenspieler"
         },
         "moves": {
           "b": [
@@ -239,7 +252,8 @@
         "caption": {
           "en": "Play through the gate to the striker",
           "fr": "Franchir la porte vers l'attaquant",
-          "ar": "مرّر عبر البوابة إلى المهاجم"
+          "ar": "مرّر عبر البوابة إلى المهاجم",
+          "de": "Durch das Tor auf den Stürmer spielen"
         },
         "moves": {
           "b": [

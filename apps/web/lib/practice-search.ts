@@ -10,6 +10,8 @@ export interface Constraints {
 
 const ARABIC = /[؀-ۿ]/g;
 const FRENCH_HINT = /[àâçéèêëîïôùûœ]|\b(le|la|les|des|un|une|du|de|pour|avec|sans|sur|après|apres|et|ou|joueurs?|terrain|exercice|séance|seance|passes?|contre|ballon|moins|ans|petit|grand|demi|gardien|ptit|bch|barcha|3la|fi|el|mta3)\b/i;
+const GERMAN_CHARS = /[äöüß]/i;
+const GERMAN_HINT = /\b(der|die|das|und|mit|ohne|für|nach|gegen|spieler|übung|uebung|einheit|tor|torwart|torhüter|abschluss|ballbesitz|halbes|feld|kleines|großes|jahre|jährige)\b/i;
 const ENGLISH_HINT = /\b(the|and|with|without|for|players?|pitch|drill|practice|after|half|small|goal|keeper|under|session|make|add)\b/i;
 
 /**
@@ -21,6 +23,8 @@ export function detectLanguage(text: string, fallback: Lang): Lang {
   if (!letters) return fallback;
   const arabic = (text.match(ARABIC) ?? []).length;
   if (arabic / letters.length > 0.3) return "ar";
+  const de = GERMAN_CHARS.test(text) || GERMAN_HINT.test(text);
+  if (de && !FRENCH_HINT.test(text.replace(GERMAN_CHARS, ""))) return "de";
   const fr = FRENCH_HINT.test(text);
   const en = ENGLISH_HINT.test(text);
   if (fr && !en) return "fr";
@@ -31,21 +35,21 @@ export function detectLanguage(text: string, fallback: Lang): Lang {
 }
 
 const THEME_WORDS: [Theme, RegExp][] = [
-  ["finishing", /finish|shoot|shot|cutback|cut-back|cross|goal ?scor|finition|tir(er|s)?\b|centre|frappe|إنهاء|تسديد|إنهاء الهجمات|ارتدادي/i],
-  ["possession", /possession|keep.?ball|keep the ball|rondo|conservation|garder le ballon|استحواذ|الاحتفاظ بالكرة/i],
-  ["passing", /\bpass|passes?\b|passing|تمرير/i],
-  ["receiving", /receiv|first touch|control|réception|contrôle|استلام/i],
-  ["width_and_support", /width|support|largeur|soutien|عرض|مساندة/i],
+  ["finishing", /finish|shoot|shot|cutback|cut-back|cross|goal ?scor|finition|tir(er|s)?\b|centre|frappe|abschluss|schie(ß|ss)en|flanke|إنهاء|تسديد|إنهاء الهجمات|ارتدادي/i],
+  ["possession", /possession|keep.?ball|keep the ball|rondo|conservation|garder le ballon|ballbesitz|استحواذ|الاحتفاظ بالكرة/i],
+  ["passing", /\bpass|passes?\b|passing|passspiel|تمرير/i],
+  ["receiving", /receiv|first touch|control|réception|contrôle|ballannahme|استلام/i],
+  ["width_and_support", /width|support|largeur|soutien|breite|unterstützung|عرض|مساندة/i],
   ["pressing", /press|pressing|ضغط/i],
-  ["transition", /transition|counter|contre-attaque|après avoir perdu|après une perte|losing the ball|تحول|مرتدة/i],
-  ["decision_making", /decision|décision|choix|قرار/i],
+  ["transition", /transition|counter|contre-attaque|après avoir perdu|après une perte|losing the ball|umschalten|konter|ballverlust|تحول|مرتدة/i],
+  ["decision_making", /decision|décision|choix|entscheidung|قرار/i],
   ["dribbling", /dribbl|conduite de balle|مراوغ/i],
   ["1v1_attacking", /1\s?(v|vs|contre|ضد)\s?1.*(attack|attaque|هجوم)|(attack|attaque|هجوم).*1\s?(v|vs|contre)\s?1/i],
   ["1v1_defending", /1\s?(v|vs|contre|ضد)\s?1.*(defend|défense|دفاع)|(defend|défens|دفاع).*1\s?(v|vs|contre)\s?1/i],
-  ["goalkeeping", /goalkeeper|keeper|gardien|حارس/i],
+  ["goalkeeping", /goalkeeper|keeper|gardien|torwart|torhüter|حارس/i],
 ];
 
-const SIDES = /\b(\d{1,2})\s?(?:v|vs|contre|x|ضد)\s?(\d{1,2})\b/i;
+const SIDES = /\b(\d{1,2})\s?(?:v|vs|contre|gegen|x|ضد)\s?(\d{1,2})\b/i;
 
 /** Heuristic, language-tolerant extraction of the constraints a coach usually gives. */
 export function parseConstraints(message: string): Constraints {

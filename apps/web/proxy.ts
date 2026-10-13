@@ -6,7 +6,7 @@ import {
 } from "./lib/guest";
 
 /**
- * 1. `?lang=fr|ar|en` sets the language cookie and drops the parameter, so shared links can pick a language.
+ * 1. `?lang=fr|ar|en|de` sets the language cookie and drops the parameter, so shared links can pick a language.
  * 2. Refreshes the Supabase session cookies on every request when Supabase is configured.
  * 3. Opening a feature page without an account creates an automatic guest account (no email needed).
  */

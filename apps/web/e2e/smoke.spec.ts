@@ -150,6 +150,10 @@ test("French and Arabic render with the right direction", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
   await expect(page.locator("html")).toHaveAttribute("lang", "fr");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Modèles");
+  await page.goto("/templates?lang=de");
+  await expect(page.locator("html")).toHaveAttribute("lang", "de");
+  await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Übungsvorlagen");
 });
 
 test("manifest and offline page are available", async ({ page, request }) => {

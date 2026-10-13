@@ -27,12 +27,14 @@
   "name": {
     "en": "Corner goals 3v3",
     "fr": "Buts dans les coins 3 contre 3",
-    "ar": "أهداف الزوايا 3 ضد 3"
+    "ar": "أهداف الزوايا 3 ضد 3",
+    "de": "Eckentore 3 gegen 3"
   },
   "organisation": {
     "en": "30 m by 20 m area with a mini goal in each corner. Two teams of three plus three neutral players who support the team in possession. Score by passing or dribbling into a corner goal. The team that loses the ball defends all four goals.",
     "fr": "Zone de 30 m sur 20 m avec un mini-but dans chaque coin. Deux équipes de trois et trois joueurs neutres qui soutiennent l'équipe en possession. On marque en passant ou en conduisant dans un but de coin. L'équipe qui perd le ballon défend les quatre buts.",
-    "ar": "منطقة 30 × 20 م مع مرمى صغير في كل زاوية. فريقان من ثلاثة لاعبين وثلاثة لاعبين محايدين يساندون الفريق المستحوذ. يُسجَّل بالتمرير أو بالمراوغة إلى أحد مرامي الزوايا. الفريق الذي يفقد الكرة يدافع عن المرامي الأربعة."
+    "ar": "منطقة 30 × 20 م مع مرمى صغير في كل زاوية. فريقان من ثلاثة لاعبين وثلاثة لاعبين محايدين يساندون الفريق المستحوذ. يُسجَّل بالتمرير أو بالمراوغة إلى أحد مرامي الزوايا. الفريق الذي يفقد الكرة يدافع عن المرامي الأربعة.",
+    "de": "Fläche von 30 m mal 20 m mit einem Minitor in jeder Ecke. Zwei Teams zu je drei Spielern plus drei neutrale Spieler, die das Team am Ball unterstützen. Ein Tor fällt durch Passen oder Dribbeln in ein Eckentor. Das Team, das den Ball verliert, verteidigt alle vier Tore."
   },
   "coachingPoints": {
     "en": [
@@ -49,6 +51,11 @@
       "أنشئ العرض مبكرًا لتتمكن من تحويل اللعب للجهة الأخرى",
       "ساند حامل الكرة من مسافة 5 إلى 10 م",
       "اختر مرمى الزاوية الأبعد عن أقرب مدافع"
+    ],
+    "de": [
+      "Schaffe früh Breite, damit der Ball die Seite wechseln kann",
+      "Unterstütze den Ballführenden aus 5 bis 10 m",
+      "Wähle das Eckentor, das am weitesten vom nächsten Verteidiger entfernt ist"
     ]
   },
   "variants": [
@@ -57,7 +64,8 @@
       "text": {
         "en": "Remove the neutral players",
         "fr": "Retirer les joueurs neutres",
-        "ar": "أزل اللاعبين المحايدين"
+        "ar": "أزل اللاعبين المحايدين",
+        "de": "Ohne die neutralen Spieler"
       }
     },
     {
@@ -65,7 +73,8 @@
       "text": {
         "en": "Two touches maximum for the neutral players",
         "fr": "Deux touches maximum pour les joueurs neutres",
-        "ar": "لمستان كحد أقصى للاعبين المحايدين"
+        "ar": "لمستان كحد أقصى للاعبين المحايدين",
+        "de": "Höchstens zwei Ballkontakte für die neutralen Spieler"
       }
     }
   ],
@@ -183,7 +192,8 @@
         "caption": {
           "en": "Blue passes wide to a neutral player",
           "fr": "Les bleus passent sur le côté à un joueur neutre",
-          "ar": "الأزرق يمرّر إلى لاعب محايد على الطرف"
+          "ar": "الأزرق يمرّر إلى لاعب محايد على الطرف",
+          "de": "Blau spielt breit auf einen neutralen Spieler"
         },
         "moves": {
           "b": [
@@ -211,7 +221,8 @@
         "caption": {
           "en": "The neutral switches the play",
           "fr": "Le joueur neutre change le jeu de côté",
-          "ar": "اللاعب المحايد يحوّل اللعب"
+          "ar": "اللاعب المحايد يحوّل اللعب",
+          "de": "Der Neutrale verlagert das Spiel"
         },
         "moves": {
           "b": [
@@ -233,7 +244,8 @@
         "caption": {
           "en": "Pass to the player free in space",
           "fr": "Passe vers le joueur libre dans l'espace",
-          "ar": "تمريرة إلى اللاعب الحر في المساحة"
+          "ar": "تمريرة إلى اللاعب الحر في المساحة",
+          "de": "Pass auf den freien Spieler im Raum"
         },
         "moves": {
           "b": [
@@ -249,7 +261,8 @@
         "caption": {
           "en": "Dribble to the open corner goal",
           "fr": "Conduire vers le but de coin libre",
-          "ar": "راوغ نحو مرمى الزاوية المفتوح"
+          "ar": "راوغ نحو مرمى الزاوية المفتوح",
+          "de": "Dribbling zum offenen Eckentor"
         },
         "moves": {
           "a3": [
@@ -276,7 +289,8 @@
         "caption": {
           "en": "Score",
           "fr": "But",
-          "ar": "هدف"
+          "ar": "هدف",
+          "de": "Tor"
         },
         "moves": {
           "b": [

@@ -27,6 +27,11 @@ export const PLAYER_LABELS: Record<Lang, PlayerLabels> = {
     prev: "Étape précédente", next: "Étape suivante", speed: "Vitesse", scrub: "Chronologie",
     aiDraft: "Brouillon IA, non vérifié", pending: "En attente de validation", edited: "Modifié par le propriétaire",
   },
+  de: {
+    title: "Übungsanimation", step: "Schritt {n} von {m}", play: "Abspielen", pause: "Pause", replay: "Nochmal",
+    prev: "Vorheriger Schritt", next: "Nächster Schritt", speed: "Tempo", scrub: "Zeitleiste",
+    aiDraft: "KI-Entwurf, nicht geprüft", pending: "Trainerprüfung ausstehend", edited: "Vom Besitzer bearbeitet",
+  },
   ar: {
     title: "رسم متحرك للتمرين", step: "الخطوة {n} من {m}", play: "تشغيل", pause: "إيقاف مؤقت", replay: "إعادة",
     prev: "الخطوة السابقة", next: "الخطوة التالية", speed: "السرعة", scrub: "المخطط الزمني",

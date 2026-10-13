@@ -6,11 +6,10 @@ import {
 
 const text = (max: number) => z.string().trim().min(1).max(max);
 
-const CoachingPoints = z.strictObject({
-  fr: z.array(text(200)).min(1).max(5),
-  en: z.array(text(200)).min(1).max(5),
-  ar: z.array(text(200)).min(1).max(5),
-});
+const points = z.array(text(200)).min(1).max(5);
+const CoachingPoints = z
+  .strictObject({ fr: points, en: points, ar: points, de: points.optional() })
+  .transform((v) => ({ ...v, de: v.de ?? v.en }));
 
 export const VariantSchema = z.strictObject({
   label: VariantLabelSchema,
@@ -71,12 +70,14 @@ export const PracticeSchema = z
     if (p.source === "ai" && status === "reviewed") {
       ctx.addIssue({ code: "custom", path: ["review", "status"], message: "AI content can never be 'reviewed'" });
     }
-    const lens = [p.coachingPoints.fr.length, p.coachingPoints.en.length, p.coachingPoints.ar.length];
+    // Runs even when a field failed its own check (then the value is still the raw input), so read defensively.
+    const cp = p.coachingPoints as Partial<Record<string, string[]>> | undefined;
+    const lens = [cp?.fr?.length, cp?.en?.length, cp?.ar?.length, cp?.de?.length].filter((n) => n !== undefined);
     if (new Set(lens).size !== 1) {
       ctx.addIssue({
         code: "custom",
         path: ["coachingPoints"],
-        message: "coaching points must have the same count in fr, en and ar",
+        message: "coaching points must have the same count in every language",
       });
     }
   });

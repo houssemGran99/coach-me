@@ -28,12 +28,14 @@
   "name": {
     "fr": "Course de finition à deux buts",
     "en": "Two-goal finishing race",
-    "ar": "سباق التسديد بين مرميين"
+    "ar": "سباق التسديد بين مرميين",
+    "de": "Abschlusswettlauf auf zwei Tore"
   },
   "organisation": {
     "fr": "Zone de 30 m sur 25 m avec un mini-but à chaque extrémité et deux petits groupes, un derrière chaque but. L'entraîneur envoie un ballon au centre. Un joueur de chaque groupe court dessus ; le vainqueur attaque le but opposé et l'autre défend. Faire tourner les joueurs après chaque ballon.",
     "en": "30 m by 25 m area with a mini goal at each end and two small groups, one behind each goal. The coach plays a ball into the middle. One player from each group races for it; the winner attacks the opposite goal and the other defends. Rotate players after every ball.",
-    "ar": "منطقة 30 × 25 م بمرمى صغير في كل طرف ومجموعتين صغيرتين، واحدة خلف كل مرمى. يرسل المدرّب كرة إلى الوسط. يتسابق لاعب من كل مجموعة عليها؛ الفائز يهاجم المرمى المقابل والآخر يدافع. دوّروا اللاعبين بعد كل كرة."
+    "ar": "منطقة 30 × 25 م بمرمى صغير في كل طرف ومجموعتين صغيرتين، واحدة خلف كل مرمى. يرسل المدرّب كرة إلى الوسط. يتسابق لاعب من كل مجموعة عليها؛ الفائز يهاجم المرمى المقابل والآخر يدافع. دوّروا اللاعبين بعد كل كرة.",
+    "de": "Fläche von 30 m mal 25 m mit einem Minitor an jedem Ende und zwei kleinen Gruppen, je eine hinter jedem Tor. Der Trainer spielt einen Ball in die Mitte. Je ein Spieler jeder Gruppe läuft um den Ball; der Sieger greift das gegenüberliegende Tor an, der andere verteidigt. Wechsle die Spieler nach jedem Ball."
   },
   "coachingPoints": {
     "fr": [
@@ -50,6 +52,11 @@
       "انطلق بسرعة نحو الكرة: اللمسة الأولى تحدد من يهاجم",
       "سدّد مبكرًا واللاعب الثاني جاهز للكرة المرتدة",
       "إذا خسرت السباق فدافع وأبطئ الهجمة"
+    ],
+    "de": [
+      "Explosiv zum Ball: Der erste Kontakt entscheidet, wer angreift",
+      "Früh schießen, der zweite Spieler ist für den Abpraller bereit",
+      "Wer das Rennen verliert, verteidigt und bremst den Angriff"
     ]
   },
   "variants": [
@@ -58,7 +65,8 @@
       "text": {
         "fr": "Donner 3 m d'avance au groupe le plus faible",
         "en": "Give the weaker group a 3 m head start",
-        "ar": "امنح المجموعة الأضعف أفضلية 3 م"
+        "ar": "امنح المجموعة الأضعف أفضلية 3 م",
+        "de": "Der schwächeren Gruppe 3 m Vorsprung geben"
       }
     },
     {
@@ -66,7 +74,8 @@
       "text": {
         "fr": "Jouer 2 contre 2 pour chaque ballon",
         "en": "Play 2v2 for each ball",
-        "ar": "العبوا اثنين ضد اثنين لكل كرة"
+        "ar": "العبوا اثنين ضد اثنين لكل كرة",
+        "de": "Für jeden Ball 2 gegen 2 spielen"
       }
     }
   ],
@@ -165,7 +174,8 @@
         "caption": {
           "fr": "L'entraîneur envoie un ballon au centre : course",
           "en": "The coach plays a ball into the middle: race for it",
-          "ar": "المدرّب يرسل كرة إلى الوسط: سباق عليها"
+          "ar": "المدرّب يرسل كرة إلى الوسط: سباق عليها",
+          "de": "Der Trainer spielt einen Ball in die Mitte: Wettlauf um den Ball"
         },
         "moves": {
           "b": [
@@ -184,7 +194,8 @@
         "caption": {
           "fr": "Les bleus gagnent la course et attaquent le but opposé",
           "en": "Blue wins the race and attacks the opposite goal",
-          "ar": "الأزرق يفوز بالسباق ويهاجم المرمى المقابل"
+          "ar": "الأزرق يفوز بالسباق ويهاجم المرمى المقابل",
+          "de": "Blau gewinnt das Rennen und greift das gegenüberliegende Tor an"
         },
         "moves": {
           "a1": [
@@ -205,7 +216,8 @@
         "caption": {
           "fr": "Tir",
           "en": "Shoot",
-          "ar": "سدّد"
+          "ar": "سدّد",
+          "de": "Schuss"
         },
         "moves": {
           "b": [
@@ -218,7 +230,8 @@
         "caption": {
           "fr": "Les deux coureurs suivants entrent",
           "en": "The next two racers step in",
-          "ar": "اللاعبان التاليان يدخلان"
+          "ar": "اللاعبان التاليان يدخلان",
+          "de": "Die nächsten zwei Läufer sind dran"
         },
         "moves": {
           "a2": [

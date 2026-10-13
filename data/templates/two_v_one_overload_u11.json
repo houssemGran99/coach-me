@@ -26,12 +26,14 @@
   "name": {
     "fr": "Supériorité 2 contre 1 vers le but",
     "en": "2v1 overload to goal",
-    "ar": "التفوق العددي اثنان ضد واحد نحو المرمى"
+    "ar": "التفوق العددي اثنان ضد واحد نحو المرمى",
+    "de": "2 gegen 1 in Überzahl aufs Tor"
   },
   "organisation": {
     "fr": "Zone de 20 m sur 15 m avec un mini-but. Deux attaquants partent à 15 m du but face à un défenseur. Ils attaquent ensemble et cherchent à marquer. Après chaque essai, le défenseur rejoint la file des attaquants et le joueur suivant défend. Compter les buts.",
     "en": "20 m by 15 m area with a mini goal. Two attackers start 15 m from the goal against one defender. They attack together and try to score. After each attempt the defender joins the attackers' line and the next player defends. Count the goals.",
-    "ar": "منطقة 20 × 15 م مع مرمى صغير. يبدأ مهاجمان على بُعد 15 م من المرمى أمام مدافع واحد. يهاجمان معًا ويحاولان التسجيل. بعد كل محاولة ينضم المدافع إلى صف المهاجمين ويدافع اللاعب التالي. عُدّوا الأهداف."
+    "ar": "منطقة 20 × 15 م مع مرمى صغير. يبدأ مهاجمان على بُعد 15 م من المرمى أمام مدافع واحد. يهاجمان معًا ويحاولان التسجيل. بعد كل محاولة ينضم المدافع إلى صف المهاجمين ويدافع اللاعب التالي. عُدّوا الأهداف.",
+    "de": "Fläche von 20 m mal 15 m mit einem Minitor. Zwei Angreifer starten 15 m vom Tor entfernt gegen einen Verteidiger. Sie greifen gemeinsam an und versuchen zu treffen. Nach jedem Versuch reiht sich der Verteidiger bei den Angreifern ein und der nächste Spieler verteidigt. Zählt die Tore."
   },
   "coachingPoints": {
     "fr": [
@@ -48,6 +50,11 @@
       "هاجم بسرعة وابقيا متباعدين لتشتيت المدافع",
       "حامل الكرة يجذب المدافع ثم يمرّر",
       "اللاعب المساند يركض بحيث لا يستطيع المدافع تغطيته"
+    ],
+    "de": [
+      "Mit Tempo angreifen und Abstand halten, um den Verteidiger zu dehnen",
+      "Der Ballführende bindet den Verteidiger und passt dann",
+      "Der Mitspieler läuft so, dass der Verteidiger ihn nicht decken kann"
     ]
   },
   "variants": [
@@ -56,7 +63,8 @@
       "text": {
         "fr": "Défenseur passif",
         "en": "Passive defender",
-        "ar": "مدافع سلبي"
+        "ar": "مدافع سلبي",
+        "de": "Passiver Verteidiger"
       }
     },
     {
@@ -64,7 +72,8 @@
       "text": {
         "fr": "Les attaquants n'ont que 6 secondes pour tirer",
         "en": "The attackers have only 6 seconds to shoot",
-        "ar": "أمام المهاجمين 6 ثوانٍ فقط للتسديد"
+        "ar": "أمام المهاجمين 6 ثوانٍ فقط للتسديد",
+        "de": "Die Angreifer haben nur 6 Sekunden zum Schuss"
       }
     }
   ],
@@ -140,7 +149,8 @@
         "caption": {
           "fr": "Attaquer vite et rester écartés",
           "en": "Attack at pace and stay apart",
-          "ar": "هاجم بسرعة وابقيا متباعدين"
+          "ar": "هاجم بسرعة وابقيا متباعدين",
+          "de": "Mit Tempo angreifen und Abstand halten"
         },
         "moves": {
           "a1": [
@@ -162,7 +172,8 @@
         "caption": {
           "fr": "Fixer le défenseur puis passer dans l'espace",
           "en": "Commit the defender, then pass across",
-          "ar": "اجذب المدافع ثم مرّر عرضيًا"
+          "ar": "اجذب المدافع ثم مرّر عرضيًا",
+          "de": "Den Verteidiger binden, dann quer passen"
         },
         "moves": {
           "a1": [
@@ -184,7 +195,8 @@
         "caption": {
           "fr": "Passe dans la course et finition",
           "en": "Pass into the run and finish",
-          "ar": "مرّر في الركض وسدّد"
+          "ar": "مرّر في الركض وسدّد",
+          "de": "In den Lauf passen und abschließen"
         },
         "moves": {
           "b": [
@@ -200,7 +212,8 @@
         "caption": {
           "fr": "Tir au mini-but",
           "en": "Shoot at the mini goal",
-          "ar": "سدّد على المرمى الصغير"
+          "ar": "سدّد على المرمى الصغير",
+          "de": "Schuss aufs Minitor"
         },
         "moves": {
           "b": [
@@ -213,7 +226,8 @@
         "caption": {
           "fr": "Le défenseur rejoint les attaquants ; le suivant défend",
           "en": "The defender joins the attackers; the next defender starts",
-          "ar": "المدافع ينضم إلى المهاجمين والمدافع التالي يبدأ"
+          "ar": "المدافع ينضم إلى المهاجمين والمدافع التالي يبدأ",
+          "de": "Der Verteidiger schließt sich den Angreifern an; der nächste Verteidiger startet"
         },
         "moves": {
           "d1": [
