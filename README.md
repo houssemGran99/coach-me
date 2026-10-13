@@ -46,7 +46,7 @@ Set `MONGODB_URI` (for example a free MongoDB Atlas cluster), `AUTH_SECRET` (a l
 | `MONGODB_URI`, `MONGODB_DB`, `AUTH_SECRET` | MongoDB backend and the guest cookie signature (used instead of Supabase when `MONGODB_URI` is set) |
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase client |
 | `SUPABASE_SERVICE_ROLE_KEY` | server only: public share reads, generation log, reports |
-| `LLM_API_KEY`, `LLM_MODEL` | model provider (Anthropic Messages API; defaults to `claude-sonnet-5-5` if `LLM_MODEL` is empty) |
+| `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL` | model provider: `gemini` (Google generateContent, default model `gemini-2.5-flash`) or `anthropic` (Messages API, default `claude-sonnet-5-5`). The provider is guessed from the key when `LLM_PROVIDER` is empty |
 | `FREE_LIBRARY_LIMIT` (20), `DAILY_GENERATION_LIMIT` (20), `DAILY_SHARE_LIMIT` (30) | limits per user |
 | `NEXT_PUBLIC_SITE_URL` | optional public origin for magic links |
 | `ALLOW_PENDING_TEMPLATES` (1) | see "Open items": set `0` to build sessions only from reviewed templates |

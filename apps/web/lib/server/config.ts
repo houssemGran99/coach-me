@@ -29,6 +29,12 @@ export function getConfig() {
     supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
     supabaseServiceKey: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
     llmApiKey: process.env.LLM_API_KEY ?? "",
+    /** "anthropic" or "gemini"; guessed from the key when LLM_PROVIDER is not set (sk-ant-... is Anthropic, AQ./AIza... is Google). */
+    llmProvider: ((): "anthropic" | "gemini" => {
+      const p = (process.env.LLM_PROVIDER ?? "").toLowerCase();
+      if (p === "gemini" || p === "anthropic") return p;
+      return /^(AQ.|AIza)/.test(process.env.LLM_API_KEY ?? "") ? "gemini" : "anthropic";
+    })(),
     llmModel: process.env.LLM_MODEL ?? "",
     siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
     freeLibraryLimit: int(process.env.FREE_LIBRARY_LIMIT, 20),
