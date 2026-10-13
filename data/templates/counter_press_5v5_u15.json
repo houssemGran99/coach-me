@@ -1,6 +1,7 @@
 {
   "id": "counter_press_5v5_u15",
   "kind": "main",
+  "difficulty": 3,
   "ageGroups": [
     "U14",
     "U15",

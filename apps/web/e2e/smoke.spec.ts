@@ -21,9 +21,12 @@ test("plan a session, watch a practice, save it, share it, read it logged out, s
   await expect(page.locator('[data-check="review"]')).toHaveAttribute("data-status", "warning");
   const phases = page.getByTestId("phase");
   expect(await phases.count()).toBeGreaterThanOrEqual(3);
+  // every exercise shows its animation without a click, and a difficulty level
+  await expect(page.locator(".mrb")).toHaveCount(await phases.count());
+  await expect(page.getByTestId("difficulty")).toHaveCount(await phases.count());
 
   // 2. The first non-warm-up practice opens already playing: pause it, then step forward
-  const player = page.locator(".mrb").first();
+  const player = phases.nth(1).locator(".mrb"); // phase 1 is the first non-warm-up exercise
   await expect(player).toBeVisible();
   const pause = player.getByRole("button", { name: "Pause" });
   await expect(pause).toBeVisible();

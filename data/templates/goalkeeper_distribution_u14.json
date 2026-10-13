@@ -1,6 +1,7 @@
 {
   "id": "goalkeeper_distribution_u14",
   "kind": "technical",
+  "difficulty": 2,
   "ageGroups": [
     "U12",
     "U13",

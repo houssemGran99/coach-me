@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { PracticePlayer } from "@mourabbi/animation";
+import { DifficultyBadge } from "./DifficultyBadge";
 import {
   hasProblem, maxCoachingPoints, runSessionChecks, trustLabel,
   type Practice, type Reflection, type TrainingSession,
@@ -45,7 +46,6 @@ export function SessionEditor({ session, practices, titles, libraryIds, libraryF
     session.phases.map((p) => ({ practiceId: p.practiceId, durationMinutes: p.durationMinutes, note: p.note ?? "" })),
   );
   const firstPlayable = session.phases.find((p) => p.kind !== "warmup" && p.kind !== "cooldown")?.practiceId;
-  const [open, setOpen] = useState<Record<string, boolean>>(() => (firstPlayable ? { [firstPlayable]: true } : {}));
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "failed">("idle");
   const [reflection, setReflection] = useState<Reflection>(
     session.reflection ?? { worked: "", didNotWork: "", nextAction: "", rating: 3 },
@@ -205,7 +205,6 @@ export function SessionEditor({ session, practices, titles, libraryIds, libraryF
             const p = map.get(ph.practiceId);
             if (!p) return null;
             const kindGroup = GROUP[p.kind];
-            const isOpen = !!open[ph.practiceId];
             const label = trustLabel(p);
             return (
               <li key={ph.practiceId} className="grid gap-4 border-t border-line py-6 first:border-t-0 sm:grid-cols-[84px_minmax(0,1fr)]" data-testid="phase" data-practice={ph.practiceId}>
@@ -231,6 +230,7 @@ export function SessionEditor({ session, practices, titles, libraryIds, libraryF
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
                     <span className={`kind font-semibold uppercase tracking-wider ${kindGroup}`}>{tt(`kinds.${p.kind}`)}</span>
                     <span className="muted">{tt("plan.phase", { n: i + 1 })}</span>
+                    <DifficultyBadge level={p.difficulty} />
                     {label === "reviewed" ? <span className="badge badge-ok">{tt("trust.reviewed", { name: p.review.reviewedBy ?? "" })}</span>
                       : label === "ai_draft" ? <span className="badge badge-ai">{tt("trust.aiDraft")}</span>
                       : label === "edited_by_owner" ? <span className="badge">{tt("trust.edited")}</span>
@@ -245,13 +245,10 @@ export function SessionEditor({ session, practices, titles, libraryIds, libraryF
                     </ul>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <button type="button" className="btn btn-sm" aria-expanded={isOpen} onClick={() => setOpen((o) => ({ ...o, [ph.practiceId]: !o[ph.practiceId] }))}>
-                      {isOpen ? tt("plan.hide") : tt("plan.watch")}
-                    </button>
                     <Link className="btn btn-sm" href={libraryIds.includes(p.id) ? `/library/${p.id}` : `/templates/${p.id}`}>{tt("plan.openPractice")}</Link>
                     <SaveToLibraryButton practiceId={p.id} fromLibrary={libraryIds.includes(p.id)} full={libraryFull} />
                   </div>
-                  {isOpen && <PracticePlayer practice={p} lang={locale} autoplay={ph.practiceId === firstPlayable} />}
+                  <PracticePlayer practice={p} lang={locale} autoplay={ph.practiceId === firstPlayable} />
                   <div className="field">
                     <label htmlFor={`note-${i}`}>{tt("plan.notes")}</label>
                     <textarea id={`note-${i}`} className="textarea !min-h-16" maxLength={500} value={ph.note} placeholder={tt("plan.notesPlaceholder")}

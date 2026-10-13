@@ -78,7 +78,7 @@ Database tests: `supabase/tests/rls.test.sql` (pgTAP) proves that one user canno
 3. Every template starts as `review.status: "pending"`. **Only a human marks one reviewed**, by editing the file: `"status": "reviewed"`, `"reviewedBy": "<name>"`, `"reviewedAt": "YYYY-MM-DD"`. A test fails the build if any file says `reviewed` without both, and the schema refuses AI content marked reviewed.
 4. The UI shows "Reviewed by <name>" only for such files. Pending templates show "Pending coach review"; AI drafts show "AI draft, not reviewed" on the card, in the player and on the public page.
 
-The movement of the 28 new templates was written by the assistant using an authoring helper that follows the carry convention; the French and Arabic texts are drafts that need a native-speaking coach.
+The `difficulty` level (1 easy, 2 medium, 3 hard) of every template was set by the assistant and, like the rest, needs a coach's review. The movement of the 28 new templates was written by the assistant using an authoring helper that follows the carry convention; the French and Arabic texts are drafts that need a native-speaking coach.
 
 ## How the pieces fit
 

@@ -65,6 +65,12 @@
     "edited": "Edited by you",
     "aiHelp": "Written by the assistant. Check it before you use it."
   },
+  "difficulty": {
+    "label": "Difficulty",
+    "1": "Easy",
+    "2": "Medium",
+    "3": "Hard"
+  },
   "kinds": {
     "warmup": "Warm-up",
     "technical": "Technical",
@@ -198,8 +204,6 @@
     "phase": "Phase {n}",
     "points": "Coaching points",
     "organisation": "Set-up",
-    "watch": "Watch animation",
-    "hide": "Hide animation",
     "notes": "Your notes",
     "notesPlaceholder": "Add a note for this drill",
     "saving": "Saving…",

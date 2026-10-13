@@ -1,6 +1,7 @@
 {
   "id": "pairs_passing_warmup",
   "kind": "warmup",
+  "difficulty": 1,
   "ageGroups": [
     "U10",
     "U11",
