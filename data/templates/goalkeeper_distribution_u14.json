@@ -27,13 +27,11 @@
   ],
   "name": {
     "fr": "Relance du gardien",
-    "en": "Goalkeeper distribution",
-    "de": "Spieleröffnung des Torwarts"
+    "en": "Goalkeeper distribution"
   },
   "organisation": {
     "fr": "Zone de 30 m sur 25 m avec un grand but. Le gardien joue vers trois cibles : une passe courte vers un joueur excentré, une relance à la main vers le joueur central et un dégagement long dans une zone cible. Les cibles renvoient le ballon. Changer de gardien toutes les cinq balles.",
-    "en": "30 m by 25 m area with a full goal. The goalkeeper plays to three targets: a short pass to a wide player, an overarm throw to the middle player and a long kick into a target zone. Targets return the ball. Rotate keepers every five balls.",
-    "de": "Fläche von 30 m mal 25 m mit einem großen Tor. Der Torwart spielt auf drei Ziele: einen kurzen Pass zu einem Außenspieler, einen Wurf von oben zum Spieler in der Mitte und einen weiten Abstoß in eine Zielzone. Die Ziele spielen den Ball zurück. Wechsle die Torhüter nach jeweils fünf Bällen."
+    "en": "30 m by 25 m area with a full goal. The goalkeeper plays to three targets: a short pass to a wide player, an overarm throw to the middle player and a long kick into a target zone. Targets return the ball. Rotate keepers every five balls."
   },
   "coachingPoints": {
     "fr": [
@@ -45,11 +43,6 @@
       "Choose the target before you play, head up",
       "Throw with a straight arm and step toward the target",
       "Pass to the target's far foot, away from pressure"
-    ],
-    "de": [
-      "Wähle das Ziel vor dem Spiel, Kopf oben",
-      "Mit gestrecktem Arm werfen und einen Schritt zum Ziel machen",
-      "Auf den vom Druck abgewandten Fuß des Mitspielers passen"
     ]
   },
   "variants": [
@@ -57,16 +50,14 @@
       "label": "easier",
       "text": {
         "fr": "Jouer seulement des passes courtes au début",
-        "en": "Play only short passes at first",
-        "de": "Zuerst nur kurze Pässe"
+        "en": "Play only short passes at first"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un attaquant qui presse après la première passe",
-        "en": "Add an attacker who presses after the first pass",
-        "de": "Einen Angreifer hinzufügen, der nach dem ersten Pass presst"
+        "en": "Add an attacker who presses after the first pass"
       }
     }
   ],
@@ -106,8 +97,7 @@
         "h": 9,
         "label": {
           "fr": "Zone cible",
-          "en": "Target zone",
-          "de": "Zielzone"
+          "en": "Target zone"
         }
       }
     ],
@@ -153,8 +143,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Passe courte du plat du pied vers la cible excentrée",
-          "en": "Short pass with the side foot to the wide target",
-          "de": "Kurzer Innenseitpass zum Außenspieler"
+          "en": "Short pass with the side foot to the wide target"
         },
         "moves": {
           "b": [
@@ -166,8 +155,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "La cible renvoie le ballon au gardien",
-          "en": "The target returns the ball to the goalkeeper",
-          "de": "Das Ziel spielt den Ball zum Torwart zurück"
+          "en": "The target returns the ball to the goalkeeper"
         },
         "moves": {
           "b": [
@@ -179,8 +167,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Lancer à la main vers la cible centrale",
-          "en": "Overarm throw to the middle target",
-          "de": "Wurf von oben zum Spieler in der Mitte"
+          "en": "Overarm throw to the middle target"
         },
         "moves": {
           "b": [
@@ -192,8 +179,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "La cible rejoue en retrait ; le gardien change de côté",
-          "en": "The target plays back; the keeper switches to the far side",
-          "de": "Das Ziel spielt zurück; der Torwart verlagert auf die andere Seite"
+          "en": "The target plays back; the keeper switches to the far side"
         },
         "moves": {
           "b": [
@@ -208,8 +194,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Dégagement long dans la zone cible",
-          "en": "Long kick into the target zone",
-          "de": "Weiter Abstoß in die Zielzone"
+          "en": "Long kick into the target zone"
         },
         "moves": {
           "b": [

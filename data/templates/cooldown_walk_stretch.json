@@ -30,13 +30,11 @@
   ],
   "name": {
     "en": "Walk and stretch",
-    "fr": "Marche et étirements",
-    "de": "Gehen und Dehnen"
+    "fr": "Marche et étirements"
   },
   "organisation": {
     "en": "Slow walk around the pitch, then static stretches for the main leg muscles, about 20 seconds each. Finish with a short group talk.",
-    "fr": "Marche lente autour du terrain, puis étirements statiques des principaux muscles des jambes, environ 20 secondes chacun. Terminer par un court échange en groupe.",
-    "de": "Langsam um den Platz gehen, danach die großen Beinmuskeln statisch dehnen, etwa 20 Sekunden pro Dehnung. Zum Abschluss ein kurzes Gespräch in der Gruppe."
+    "fr": "Marche lente autour du terrain, puis étirements statiques des principaux muscles des jambes, environ 20 secondes chacun. Terminer par un court échange en groupe."
   },
   "coachingPoints": {
     "en": [
@@ -46,10 +44,6 @@
     "fr": [
       "Respirer lentement et garder un rythme tranquille",
       "Demander à chaque joueur une chose qu'il a bien faite"
-    ],
-    "de": [
-      "Langsam atmen und das Tempo locker halten",
-      "Frage jeden Spieler nach einer Sache, die er gut gemacht hat"
     ]
   },
   "variants": [],
@@ -107,8 +101,7 @@
         "durationS": 5,
         "caption": {
           "en": "Walk slowly around the pitch",
-          "fr": "Marcher lentement autour du terrain",
-          "de": "Langsam um den Platz gehen"
+          "fr": "Marcher lentement autour du terrain"
         },
         "moves": {
           "p1": [
@@ -129,8 +122,7 @@
         "durationS": 3,
         "caption": {
           "en": "Stretch the main leg muscles",
-          "fr": "Étirer les principaux muscles des jambes",
-          "de": "Die großen Beinmuskeln dehnen"
+          "fr": "Étirer les principaux muscles des jambes"
         },
         "moves": {
           "p1": [
@@ -151,8 +143,7 @@
         "durationS": 2.5,
         "caption": {
           "en": "Gather for a short group talk",
-          "fr": "Se rassembler pour un court échange",
-          "de": "Zu einem kurzen Gruppengespräch zusammenkommen"
+          "fr": "Se rassembler pour un court échange"
         },
         "moves": {
           "p1": [

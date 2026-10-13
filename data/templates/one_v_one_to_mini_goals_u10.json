@@ -26,13 +26,11 @@
   ],
   "name": {
     "fr": "1 contre 1 vers deux mini-buts",
-    "en": "1v1 to two mini goals",
-    "de": "1 gegen 1 auf zwei Minitore"
+    "en": "1v1 to two mini goals"
   },
   "organisation": {
     "fr": "Zone de 20 m sur 15 m avec un mini-but à chaque extrémité. Deux joueurs jouent en 1 contre 1 et marquent dans l'un ou l'autre but. Quand le défenseur gagne le ballon, il attaque le but opposé. Jouer 60 secondes puis faire tourner les paires.",
-    "en": "20 m by 15 m area with a mini goal at each end. Two players play 1v1 and score in either goal. When the defender wins the ball, they attack the opposite goal. Play 60 seconds, then rotate pairs.",
-    "de": "Fläche von 20 m mal 15 m mit einem Minitor an jedem Ende. Zwei Spieler spielen 1 gegen 1 und können in beide Tore treffen. Erobert der Verteidiger den Ball, greift er das gegenüberliegende Tor an. Spielt 60 Sekunden, dann wechseln die Paare."
+    "en": "20 m by 15 m area with a mini goal at each end. Two players play 1v1 and score in either goal. When the defender wins the ball, they attack the opposite goal. Play 60 seconds, then rotate pairs."
   },
   "coachingPoints": {
     "fr": [
@@ -44,11 +42,6 @@
       "Attack the defender's front foot at speed",
       "Use a change of direction, then accelerate",
       "Defenders: stay on your feet and show the attacker one way"
-    ],
-    "de": [
-      "Greife den vorderen Fuß des Verteidigers mit Tempo an",
-      "Richtungswechsel nutzen und dann beschleunigen",
-      "Verteidiger: auf den Füßen bleiben und den Angreifer in eine Richtung lenken"
     ]
   },
   "variants": [
@@ -56,16 +49,14 @@
       "label": "easier",
       "text": {
         "fr": "Défenseur passif pendant la première minute",
-        "en": "Passive defender for the first minute",
-        "de": "In der ersten Minute ein passiver Verteidiger"
+        "en": "Passive defender for the first minute"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Limiter chaque attaque à 8 secondes",
-        "en": "Limit each attack to 8 seconds",
-        "de": "Jeder Angriff ist auf 8 Sekunden begrenzt"
+        "en": "Limit each attack to 8 seconds"
       }
     }
   ],
@@ -142,8 +133,7 @@
         "durationS": 3,
         "caption": {
           "fr": "1 contre 1 : conduire vers le défenseur",
-          "en": "1v1: dribble at the defender",
-          "de": "1 gegen 1: auf den Verteidiger zudribbeln"
+          "en": "1v1: dribble at the defender"
         },
         "moves": {
           "a1": [
@@ -161,8 +151,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Un changement de direction rapide passe le défenseur",
-          "en": "A quick change of direction beats the defender",
-          "de": "Ein schneller Richtungswechsel überspielt den Verteidiger"
+          "en": "A quick change of direction beats the defender"
         },
         "moves": {
           "a1": [
@@ -182,8 +171,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le défenseur gagne le ballon et attaque l'autre but",
-          "en": "The defender wins the ball and attacks the other goal",
-          "de": "Der Verteidiger erobert den Ball und greift das andere Tor an"
+          "en": "The defender wins the ball and attacks the other goal"
         },
         "moves": {
           "d1": [
@@ -203,8 +191,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Tir dans le but opposé",
-          "en": "Shoot into the opposite goal",
-          "de": "Schuss ins gegenüberliegende Tor"
+          "en": "Shoot into the opposite goal"
         },
         "moves": {
           "b": [

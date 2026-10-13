@@ -1,16 +1,13 @@
 import { z } from "zod";
 import { AnimationSpecSchema } from "./animation";
 import {
-  AgeGroupSchema, AreaSchema, EquipmentSchema, PracticeKindSchema, ThemeSchema, VariantLabelSchema, dropAr, i18n,
+  AgeGroupSchema, AreaSchema, EquipmentSchema, PracticeKindSchema, ThemeSchema, VariantLabelSchema, dropRemovedLangs, i18n,
 } from "./common";
 
 const text = (max: number) => z.string().trim().min(1).max(max);
 
 const points = z.array(text(200)).min(1).max(5);
-const CoachingPoints = z.preprocess(
-  dropAr,
-  z.strictObject({ fr: points, en: points, de: points.optional() }).transform((v) => ({ ...v, de: v.de ?? v.en })),
-);
+const CoachingPoints = z.preprocess(dropRemovedLangs, z.strictObject({ fr: points, en: points }));
 
 export const VariantSchema = z.strictObject({
   label: VariantLabelSchema,
@@ -73,12 +70,12 @@ export const PracticeSchema = z
     }
     // Runs even when a field failed its own check (then the value is still the raw input), so read defensively.
     const cp = p.coachingPoints as Partial<Record<string, string[]>> | undefined;
-    const lens = [cp?.fr?.length, cp?.en?.length, cp?.de?.length].filter((n) => n !== undefined);
+    const lens = [cp?.fr?.length, cp?.en?.length].filter((n) => n !== undefined);
     if (new Set(lens).size !== 1) {
       ctx.addIssue({
         code: "custom",
         path: ["coachingPoints"],
-        message: "coaching points must have the same count in every language",
+        message: "coaching points must have the same count in fr and en",
       });
     }
   });

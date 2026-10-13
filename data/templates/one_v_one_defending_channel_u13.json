@@ -24,13 +24,11 @@
   ],
   "name": {
     "fr": "Défendre en 1 contre 1 dans un couloir",
-    "en": "1v1 defending in a channel",
-    "de": "1 gegen 1 verteidigen im Korridor"
+    "en": "1v1 defending in a channel"
   },
   "organisation": {
     "fr": "Couloir de 25 m sur 10 m. L'attaquant conduit vers le défenseur et cherche à franchir la ligne de fond. Le défenseur ferme l'espace, jockey de côté, retarde et pousse l'attaquant vers l'extérieur. S'il récupère le ballon, les rôles s'inversent.",
-    "en": "25 m by 10 m channel. The attacker dribbles at the defender and tries to cross the far end line. The defender closes down, jockeys side-on, delays and forces the attacker wide. Win the ball and the roles swap.",
-    "de": "Korridor von 25 m mal 10 m. Der Angreifer dribbelt auf den Verteidiger zu und versucht, die gegenüberliegende Grundlinie zu überqueren. Der Verteidiger rückt auf, hält seitlich Abstand, verzögert und drängt den Angreifer nach außen. Erobert er den Ball, tauschen die Rollen."
+    "en": "25 m by 10 m channel. The attacker dribbles at the defender and tries to cross the far end line. The defender closes down, jockeys side-on, delays and forces the attacker wide. Win the ball and the roles swap."
   },
   "coachingPoints": {
     "fr": [
@@ -42,11 +40,6 @@
       "Close down quickly, then slow down and stay on your toes",
       "Stand side-on and show the attacker toward the sideline",
       "Tackle only when the ball is away from the attacker's foot"
-    ],
-    "de": [
-      "Schnell herangehen, dann abbremsen und auf den Fußballen bleiben",
-      "Seitlich stehen und den Angreifer zur Seitenlinie lenken",
-      "Nur tackeln, wenn der Ball vom Fuß des Angreifers weg ist"
     ]
   },
   "variants": [
@@ -54,16 +47,14 @@
       "label": "easier",
       "text": {
         "fr": "Élargir le couloir",
-        "en": "Make the channel wider",
-        "de": "Den Korridor breiter machen"
+        "en": "Make the channel wider"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un défenseur qui revient en partant 5 m derrière",
-        "en": "Add a recovering defender who starts 5 m behind",
-        "de": "Einen zurücklaufenden Verteidiger hinzufügen, der 5 m dahinter startet"
+        "en": "Add a recovering defender who starts 5 m behind"
       }
     }
   ],
@@ -106,8 +97,7 @@
         "h": 9,
         "label": {
           "fr": "Ligne de fond",
-          "en": "End line",
-          "de": "Grundlinie"
+          "en": "End line"
         }
       }
     ],
@@ -153,8 +143,7 @@
         "durationS": 3,
         "caption": {
           "fr": "L'attaquant conduit vers le défenseur",
-          "en": "The attacker dribbles at the defender",
-          "de": "Der Angreifer dribbelt auf den Verteidiger zu"
+          "en": "The attacker dribbles at the defender"
         },
         "moves": {
           "a1": [
@@ -172,8 +161,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le défenseur jockey de côté et retarde",
-          "en": "The defender jockeys side-on and delays",
-          "de": "Der Verteidiger hält seitlich Abstand und verzögert"
+          "en": "The defender jockeys side-on and delays"
         },
         "moves": {
           "a1": [
@@ -191,8 +179,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le défenseur pousse l'attaquant vers l'extérieur",
-          "en": "The defender forces the attacker wide",
-          "de": "Der Verteidiger drängt den Angreifer nach außen"
+          "en": "The defender forces the attacker wide"
         },
         "moves": {
           "a1": [
@@ -210,8 +197,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Touche lourde : tacler, gagner le ballon et inverser les rôles",
-          "en": "Heavy touch: tackle, win the ball and swap roles",
-          "de": "Schlechter Kontakt: tackeln, Ball erobern und Rollen tauschen"
+          "en": "Heavy touch: tackle, win the ball and swap roles"
         },
         "moves": {
           "b": [

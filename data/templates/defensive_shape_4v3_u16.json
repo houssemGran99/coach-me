@@ -27,13 +27,11 @@
   ],
   "name": {
     "fr": "Organisation défensive 4 contre 3",
-    "en": "Defensive shape 4v3",
-    "de": "Defensive Ordnung 4 gegen 3"
+    "en": "Defensive shape 4v3"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Quatre défenseurs en ligne compacte défendent face à trois attaquants qui font circuler le ballon. Les défenseurs coulissent ensemble selon le ballon : le plus proche presse, les autres couvrent et gardent leurs distances. Changer les défenseurs après deux minutes.",
-    "en": "35 m by 30 m area with a full goal and a goalkeeper. Four defenders in a compact line defend against three attackers who pass the ball around. The defenders shift together as the ball moves: the nearest presses, the others cover and keep their distances. Rotate defenders after two minutes.",
-    "de": "Fläche von 35 m mal 30 m mit einem großen Tor und einem Torwart. Vier Verteidiger in einer kompakten Kette verteidigen gegen drei Angreifer, die den Ball laufen lassen. Die Verteidiger verschieben gemeinsam mit dem Ball: Der Nächste presst, die anderen sichern und halten die Abstände. Wechsle die Verteidiger nach zwei Minuten."
+    "en": "35 m by 30 m area with a full goal and a goalkeeper. Four defenders in a compact line defend against three attackers who pass the ball around. The defenders shift together as the ball moves: the nearest presses, the others cover and keep their distances. Rotate defenders after two minutes."
   },
   "coachingPoints": {
     "fr": [
@@ -45,11 +43,6 @@
       "Stay compact: the four defenders within about 10 m of each other",
       "The nearest defender presses; the others cover the space behind",
       "Shift as the ball moves and talk constantly"
-    ],
-    "de": [
-      "Kompakt bleiben: Die vier Verteidiger stehen höchstens etwa 10 m auseinander",
-      "Der nächste Verteidiger presst; die anderen sichern den Raum dahinter",
-      "Mit dem Ball verschieben und ständig kommunizieren"
     ]
   },
   "variants": [
@@ -57,16 +50,14 @@
       "label": "easier",
       "text": {
         "fr": "Attaquants limités à deux touches",
-        "en": "Attackers limited to two touches",
-        "de": "Angreifer auf zwei Ballkontakte begrenzt"
+        "en": "Attackers limited to two touches"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un quatrième attaquant",
-        "en": "Add a fourth attacker",
-        "de": "Einen vierten Angreifer hinzufügen"
+        "en": "Add a fourth attacker"
       }
     }
   ],
@@ -169,8 +160,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le ballon va au centre : la ligne coulisse et reste compacte",
-          "en": "The ball goes to the middle: the line shifts and stays compact",
-          "de": "Der Ball geht in die Mitte: Die Kette verschiebt und bleibt kompakt"
+          "en": "The ball goes to the middle: the line shifts and stays compact"
         },
         "moves": {
           "b": [
@@ -194,8 +184,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le ballon va sur le côté : tous coulissent vers lui",
-          "en": "The ball goes wide: everyone shifts toward it",
-          "de": "Der Ball geht nach außen: Alle verschieben zu ihm"
+          "en": "The ball goes wide: everyone shifts toward it"
         },
         "moves": {
           "b": [
@@ -219,8 +208,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le défenseur le plus proche presse ; les autres couvrent",
-          "en": "The nearest defender presses; the others cover",
-          "de": "Der nächste Verteidiger presst; die anderen sichern"
+          "en": "The nearest defender presses; the others cover"
         },
         "moves": {
           "a3": [
@@ -249,8 +237,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Les attaquants changent le jeu ; la ligne coulisse de l'autre côté",
-          "en": "The attackers switch the play; the line shifts across",
-          "de": "Die Angreifer verlagern das Spiel; die Kette verschiebt mit"
+          "en": "The attackers switch the play; the line shifts across"
         },
         "moves": {
           "b": [

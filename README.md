@@ -2,7 +2,7 @@
 
 A mobile-first PWA for football coaches. Describe your squad and what went wrong last week and get a **timed session** built from drills; watch every drill as an **animation**; describe a drill in chat to get a new one; keep a **personal library** (works offline); **share** a drill by link.
 
-French, English and German. Everything generated is a draft the coach can edit, save or discard, and unreviewed content is never shown as reviewed.
+French and English. Everything generated is a draft the coach can edit, save or discard, and unreviewed content is never shown as reviewed.
 
 ## Layout
 
@@ -61,7 +61,7 @@ CI (`.github/workflows/ci.yml`) runs validate, lint, typecheck, unit tests, buil
 
 ## Authoring and reviewing templates
 
-1. Edit or add `data/templates/<id>.json` (fr, en and de text, 2 to 8 steps, an animation that passes `validateSpec`). New templates must be in the brief's table (`scripts/lib/expected.ts`).
+1. Edit or add `data/templates/<id>.json` (fr and en text, 2 to 8 steps, an animation that passes `validateSpec`). New templates must be in the brief's table (`scripts/lib/expected.ts`).
 2. `pnpm templates:validate` until it passes; `pnpm templates:preview` to look at them; `pnpm templates:bundle` to publish them to the app.
 3. Every template starts as `review.status: "pending"`. **Only a human marks one reviewed**, by editing the file: `"status": "reviewed"`, `"reviewedBy": "<name>"`, `"reviewedAt": "YYYY-MM-DD"`. A test fails the build if any file says `reviewed` without both, and the schema refuses AI content marked reviewed.
 4. The UI shows "Reviewed by <name>" only for such files. Pending templates show "Pending coach review"; AI drafts show "AI draft, not reviewed" on the card, in the player and on the public page.
@@ -86,7 +86,7 @@ The `difficulty` level (1 easy, 2 medium, 3 hard) of every template was set by t
 
 ## Open items
 
-- **Content review**: all 34 templates are `pending`; French and German text and the 28 new animations need a native, qualified coach. The German text was written by the assistant. Nothing is marked reviewed.
+- **Content review**: all 34 templates are `pending`; The French text and the 28 new animations need a native, qualified coach. Nothing is marked reviewed.
 - **Not run in this environment**: the MongoDB store against a real database (the contract test runs only with `MONGODB_URI_TEST`),  a real model call (the Anthropic client is covered with a fake `fetch`; the pipeline with scripted models), and the Lighthouse PWA audit (manifest, icons, service worker and offline behaviour are covered by the e2e tests instead).
 - Editing a saved practice in the library changes the set-up text and title in the current UI language only; the other languages keep their text.
 - The offline page uses the language that was active when the service worker installed.

@@ -28,13 +28,11 @@
   ],
   "name": {
     "fr": "Attaque à 3 contre 2, puis repli à 2 contre 3",
-    "en": "3v2 attack, then 2v3 recovery",
-    "de": "Angriff 3 gegen 2, dann Rückzug 2 gegen 3"
+    "en": "3v2 attack, then 2v3 recovery"
   },
   "organisation": {
     "fr": "Zone de 30 m sur 25 m, avec un grand but et un gardien à une extrémité et un mini-but à l'autre. Trois attaquants affrontent deux défenseurs et cherchent à marquer. Quand l'action se termine, le gardien relance vers les défenseurs, qui contre-attaquent à 2 contre 3 pendant que les attaquants reviennent défendre le mini-but.",
-    "en": "30 m by 25 m area, a full goal with a goalkeeper at one end and a mini goal at the other. Three attackers play against two defenders and try to score. When the move ends, the keeper throws to the defenders, who counter-attack 2v3 while the attackers recover and defend the mini goal.",
-    "de": "Fläche von 30 m mal 25 m, an einem Ende ein großes Tor mit Torwart, am anderen ein Minitor. Drei Angreifer spielen gegen zwei Verteidiger und versuchen zu treffen. Ist die Aktion zu Ende, wirft der Torwart zu den Verteidigern, die im 2 gegen 3 kontern, während die Angreifer zurücklaufen und das Minitor verteidigen."
+    "en": "30 m by 25 m area, a full goal with a goalkeeper at one end and a mini goal at the other. Three attackers play against two defenders and try to score. When the move ends, the keeper throws to the defenders, who counter-attack 2v3 while the attackers recover and defend the mini goal."
   },
   "coachingPoints": {
     "fr": [
@@ -46,11 +44,6 @@
       "Attack at speed and use the width to stretch the two defenders",
       "The player in possession decides: dribble, pass or shoot",
       "Attackers who lose the ball recover quickly toward their own goal"
-    ],
-    "de": [
-      "Mit Tempo angreifen und die Breite nutzen, um die zwei Verteidiger auseinanderzuziehen",
-      "Der Spieler am Ball entscheidet: dribbeln, passen oder schießen",
-      "Angreifer, die den Ball verlieren, laufen schnell zum eigenen Tor zurück"
     ]
   },
   "variants": [
@@ -58,16 +51,14 @@
       "label": "easier",
       "text": {
         "fr": "Partir avec les défenseurs plus bas",
-        "en": "Start with the defenders deeper",
-        "de": "Die Verteidiger stehen tiefer"
+        "en": "Start with the defenders deeper"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Donner seulement 6 secondes aux défenseurs pour marquer",
-        "en": "Give the defenders only 6 seconds to score",
-        "de": "Die Verteidiger haben nur 6 Sekunden zum Abschluss"
+        "en": "Give the defenders only 6 seconds to score"
       }
     }
   ],
@@ -162,8 +153,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Trois attaquants avancent en s'écartant",
-          "en": "Three attackers move forward and spread out",
-          "de": "Drei Angreifer rücken vor und fächern auf"
+          "en": "Three attackers move forward and spread out"
         },
         "moves": {
           "a1": [
@@ -190,8 +180,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Passe sur le côté pour étirer les défenseurs",
-          "en": "Pass wide to stretch the defenders",
-          "de": "Breit passen, um die Verteidiger zu dehnen"
+          "en": "Pass wide to stretch the defenders"
         },
         "moves": {
           "b": [
@@ -209,8 +198,7 @@
         "durationS": 1.5,
         "caption": {
           "fr": "Passe dans l'espace vers le joueur libre",
-          "en": "Pass across to the free player",
-          "de": "Quer auf den freien Spieler passen"
+          "en": "Pass across to the free player"
         },
         "moves": {
           "a2": [
@@ -228,8 +216,7 @@
         "durationS": 1.5,
         "caption": {
           "fr": "Tir ; le gardien arrête",
-          "en": "Shoot; the keeper saves",
-          "de": "Schuss; der Torwart hält"
+          "en": "Shoot; the keeper saves"
         },
         "moves": {
           "b": [
@@ -244,8 +231,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Le gardien relance vers les défenseurs",
-          "en": "The keeper throws to the defenders",
-          "de": "Der Torwart wirft zu den Verteidigern"
+          "en": "The keeper throws to the defenders"
         },
         "moves": {
           "b": [
@@ -257,8 +243,7 @@
         "durationS": 3.5,
         "caption": {
           "fr": "Les deux contre-attaquent à 2 contre 3 pendant que les attaquants reviennent",
-          "en": "The two counter 2v3 while the attackers recover",
-          "de": "Die zwei kontern im 2 gegen 3, die Angreifer laufen zurück"
+          "en": "The two counter 2v3 while the attackers recover"
         },
         "moves": {
           "d1": [

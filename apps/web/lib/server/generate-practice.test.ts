@@ -39,7 +39,7 @@ const adaptation = (id: string, over: Record<string, unknown> = {}) => {
   const t = tpl(id);
   return {
     mode: "template", templateId: id,
-    name: { fr: "Finition en largeur", en: "Wide finishing", de: "Abschluss über außen" },
+    name: { fr: "Finition en largeur", en: "Wide finishing" },
     organisation: t.organisation, coachingPoints: t.coachingPoints, variants: t.variants, ...over,
   };
 };
@@ -59,19 +59,15 @@ describe("language and constraints", () => {
   it("detects the language of the message, treating darija mixed with French as French", () => {
     expect(detectLanguage("U12, 12 players, finishing after a cutback", "fr")).toBe("en");
     expect(detectLanguage("U12, 12 joueurs, finition après un centre en retrait", "en")).toBe("fr");
-    expect(detectLanguage("U12, 12 Spieler, Abschluss nach einem Rückpass", "en")).toBe("de");
     expect(detectLanguage("nheb exercice mta3 passes 3la terrain sghir, U10", "en")).toBe("fr");
-    expect(detectLanguage("12345 !!", "de")).toBe("de");
+    expect(detectLanguage("12345 !!", "en")).toBe("en");
   });
 
-  it("parses age, players, space and theme in English, French and German", () => {
+  it("parses age, players, space and theme in English and French", () => {
     expect(parseConstraints(FINISHING)).toMatchObject({ age: "U12", players: 12, area: { lengthM: 50, widthM: 68 }, themes: ["finishing"] });
     const fr = parseConstraints("U10, 8 joueurs, 30 x 20 m, garder le ballon sous pression");
     expect(fr).toMatchObject({ age: "U10", players: 8, area: { lengthM: 30, widthM: 20 } });
     expect(fr.themes).toContain("possession");
-    const de = parseConstraints("U12, 10 Spieler, Passspiel auf einem halben Feld");
-    expect(de).toMatchObject({ age: "U12", players: 10 });
-    expect(de.themes).toContain("passing");
     expect(parseConstraints("4v2 rondo").players).toBe(6);
     expect(parseConstraints("something nice")).toEqual({ themes: [] });
   });
@@ -119,7 +115,7 @@ describe("Mode A: adapt a template", () => {
 
   it("rejects text that breaks the limits (too many coaching points, over-long organisation)", async () => {
     const six = Array.from({ length: 6 }, (_, i) => `point ${i}`);
-    const bad = adaptation(A_ID, { coachingPoints: { fr: six, en: six, de: six } });
+    const bad = adaptation(A_ID, { coachingPoints: { fr: six, en: six } });
     const r = await run(scripted(bad, bad), FINISHING);
     expect(r.last.type === "result" && r.last.kind).toBe("closest_template");
   });
@@ -184,7 +180,7 @@ describe("refinement", () => {
   const previous = (): Practice => ({ ...tpl("rondo_4v2_u10"), id: "draft_prev", source: "ai", review: { status: "ai_draft", reviewedBy: null, reviewedAt: null } });
 
   it("sends the previous version and returns a new version of the same draft", async () => {
-    const refined = { mode: "freeform", practice: { ...previous(), minPlayers: 8, maxPlayers: 14, name: { fr: "Rondo 3v3", en: "3v3 rondo", de: "Rondo 3 gegen 3" } } };
+    const refined = { mode: "freeform", practice: { ...previous(), minPlayers: 8, maxPlayers: 14, name: { fr: "Rondo 3v3", en: "3v3 rondo" } } };
     const llm = scripted(refined);
     const r = await run(llm, "make it 6v6", previous());
     expect(llm.calls[0]!.user).toContain("<mode>refine</mode>");
@@ -208,8 +204,8 @@ describe("scope, limits and safety", () => {
     expect(llm.calls).toHaveLength(0);
     expect(r.last).toMatchObject({ type: "error", code: "OUT_OF_SCOPE" });
     expect(r.last.type === "error" && r.last.message).toContain("Je peux seulement");
-    const de = await run(llm, "Welches Medikament und welche Diät für mein Kind?");
-    expect(de.last.type === "error" && de.last.message).toContain("Ich kann nur");
+    const en = await run(llm, "Which medication and diet for my 11 year old player?");
+    expect(en.last.type === "error" && en.last.message).toContain("I can only help");
   });
 
   it("passes through an OUT_OF_SCOPE error object from the model", async () => {

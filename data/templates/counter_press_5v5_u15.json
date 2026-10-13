@@ -26,13 +26,11 @@
   ],
   "name": {
     "fr": "Contre-pressing 5 contre 5",
-    "en": "Counter-press 5v5",
-    "de": "Gegenpressing 5 gegen 5"
+    "en": "Counter-press 5v5"
   },
   "organisation": {
     "fr": "Terrain de 40 m sur 30 m avec un mini-but à chaque extrémité. Deux équipes de cinq. Quand une équipe perd le ballon, les trois joueurs les plus proches pressent immédiatement pendant cinq secondes pour le récupérer ; sinon tout le monde se replace et défend. Un but marqué dans les cinq secondes après la récupération compte double.",
-    "en": "40 m by 30 m pitch with a mini goal at each end. Two teams of five. When a team loses the ball, the nearest three players press immediately for five seconds to win it back; if they fail, everyone recovers and defends. A goal scored within five seconds of winning the ball back counts double.",
-    "de": "Feld von 40 m mal 30 m mit einem Minitor an jedem Ende. Zwei Teams zu je fünf Spielern. Verliert ein Team den Ball, pressen die drei nächsten Spieler sofort fünf Sekunden lang, um ihn zurückzuerobern; gelingt das nicht, fallen alle zurück und verteidigen. Ein Tor innerhalb von fünf Sekunden nach der Balleroberung zählt doppelt."
+    "en": "40 m by 30 m pitch with a mini goal at each end. Two teams of five. When a team loses the ball, the nearest three players press immediately for five seconds to win it back; if they fail, everyone recovers and defends. A goal scored within five seconds of winning the ball back counts double."
   },
   "coachingPoints": {
     "fr": [
@@ -44,11 +42,6 @@
       "React at once: the nearest players press the ball, the others cut the passes",
       "If the press fails after five seconds, drop and defend together",
       "After winning the ball, attack quickly while the opponent is disorganised"
-    ],
-    "de": [
-      "Sofort reagieren: Die nächsten Spieler pressen den Ball, die anderen schneiden die Passwege ab",
-      "Scheitert das Pressing nach fünf Sekunden, gemeinsam zurückfallen und verteidigen",
-      "Nach der Balleroberung schnell angreifen, solange der Gegner unorganisiert ist"
     ]
   },
   "variants": [
@@ -56,16 +49,14 @@
       "label": "easier",
       "text": {
         "fr": "Dix secondes pour récupérer le ballon",
-        "en": "Ten seconds to win the ball back",
-        "de": "Zehn Sekunden Zeit zur Balleroberung"
+        "en": "Ten seconds to win the ball back"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Seuls les deux joueurs les plus proches peuvent presser",
-        "en": "Only the nearest two players may press",
-        "de": "Nur die zwei nächsten Spieler dürfen pressen"
+        "en": "Only the nearest two players may press"
       }
     }
   ],
@@ -198,8 +189,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Les bleus attaquent et jouent vers l'avant",
-          "en": "Blue attacks and plays forward",
-          "de": "Blau greift an und spielt nach vorn"
+          "en": "Blue attacks and plays forward"
         },
         "moves": {
           "a1": [
@@ -226,8 +216,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Une touche lourde : les rouges gagnent le ballon",
-          "en": "A heavy touch: red wins the ball",
-          "de": "Schlechte Ballmitnahme: Rot erobert den Ball"
+          "en": "A heavy touch: red wins the ball"
         },
         "moves": {
           "b": [
@@ -242,8 +231,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Contre-pressing : les trois plus proches pressent en moins de cinq secondes",
-          "en": "Counter-press: the nearest three press within five seconds",
-          "de": "Gegenpressing: Die drei nächsten pressen innerhalb von fünf Sekunden"
+          "en": "Counter-press: the nearest three press within five seconds"
         },
         "moves": {
           "b1": [
@@ -267,8 +255,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Les bleus récupèrent le ballon près de la moitié rouge",
-          "en": "Blue wins the ball back near the red half",
-          "de": "Blau erobert den Ball in der roten Hälfte zurück"
+          "en": "Blue wins the ball back near the red half"
         },
         "moves": {
           "b": [
@@ -283,8 +270,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Attaquer vite et tirer avant le repli des rouges",
-          "en": "Attack quickly and shoot before red recovers",
-          "de": "Schnell angreifen und abschließen, bevor Rot zurück ist"
+          "en": "Attack quickly and shoot before red recovers"
         },
         "moves": {
           "b": [

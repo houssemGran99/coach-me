@@ -74,17 +74,14 @@ const FALLBACK_MESSAGES = {
   NO_SUITABLE_DRILLS: {
     en: "No drill fits these constraints yet. Try another age group, more players, a bigger space or more equipment.",
     fr: "Aucun exercice ne convient à ces contraintes pour l'instant. Essayez une autre catégorie, plus de joueurs, un espace plus grand ou plus de matériel.",
-    de: "Im Moment passt keine Übung zu diesen Vorgaben. Versuche eine andere Altersklasse, mehr Spieler, eine größere Fläche oder mehr Material.",
   },
   CONSTRAINTS_CONFLICT: {
     en: "The time is too short to fit a warm-up, the drills and a cool-down.",
     fr: "Le temps est trop court pour un échauffement, les exercices et un retour au calme.",
-    de: "Die Zeit ist zu kurz für Aufwärmen, Übungen und Abwärmen.",
   },
   OUT_OF_SCOPE: {
     en: "I can only help with coaching a squad: sessions and practices.",
     fr: "Je peux seulement aider à entraîner une équipe : séances et exercices.",
-    de: "Ich kann nur beim Training einer Mannschaft helfen: Einheiten und Übungen.",
   },
 } as const;
 

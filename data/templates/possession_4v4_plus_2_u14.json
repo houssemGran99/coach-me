@@ -26,13 +26,11 @@
   ],
   "name": {
     "fr": "4 contre 4 plus deux joueurs neutres",
-    "en": "4v4 plus two neutral players",
-    "de": "4 gegen 4 plus zwei neutrale Spieler"
+    "en": "4v4 plus two neutral players"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 25 m avec deux équipes de quatre et deux joueurs neutres sur les côtés qui jouent toujours avec l'équipe en possession. Conserver le ballon par des passes. Après 8 passes consécutives, l'équipe marque un point. Si le ballon est perdu, l'autre équipe conserve avec les neutres.",
-    "en": "35 m by 25 m area with two teams of four and two neutral players on the sides who always play with the team in possession. Keep the ball with passes. After 8 passes in a row, score a point. If the ball is lost, the other team keeps possession with the neutrals.",
-    "de": "Fläche von 35 m mal 25 m mit zwei Teams zu vier Spielern und zwei neutralen Spielern an den Seiten, die immer mit dem Team am Ball spielen. Haltet den Ball durch Pässe. Nach 8 Pässen in Folge gibt es einen Punkt. Bei Ballverlust behält das andere Team den Ball mit den Neutralen."
+    "en": "35 m by 25 m area with two teams of four and two neutral players on the sides who always play with the team in possession. Keep the ball with passes. After 8 passes in a row, score a point. If the ball is lost, the other team keeps possession with the neutrals."
   },
   "coachingPoints": {
     "fr": [
@@ -44,11 +42,6 @@
       "Use the neutral players to switch the play",
       "Create angles: be a pass away, not behind a defender",
       "When you lose the ball, press together for five seconds"
-    ],
-    "de": [
-      "Nutze die neutralen Spieler, um das Spiel zu verlagern",
-      "Schaffe Winkel: einen Pass entfernt sein, nicht hinter einem Verteidiger",
-      "Nach Ballverlust fünf Sekunden lang gemeinsam pressen"
     ]
   },
   "variants": [
@@ -56,16 +49,14 @@
       "label": "easier",
       "text": {
         "fr": "Trois touches maximum",
-        "en": "Three touches maximum",
-        "de": "Höchstens drei Ballkontakte"
+        "en": "Three touches maximum"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Deux touches, et une seule pour les neutres",
-        "en": "Two touches, and one touch for the neutral players",
-        "de": "Zwei Kontakte, für die neutralen Spieler einen"
+        "en": "Two touches, and one touch for the neutral players"
       }
     }
   ],
@@ -185,8 +176,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Les bleus gardent le ballon : 1 passe à 2",
-          "en": "Blue keeps the ball: 1 passes to 2",
-          "de": "Blau hält den Ball: 1 passt zu 2"
+          "en": "Blue keeps the ball: 1 passes to 2"
         },
         "moves": {
           "b": [
@@ -204,8 +194,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Utiliser le joueur neutre sur le côté",
-          "en": "Use the neutral player on the side",
-          "de": "Den neutralen Spieler an der Seite einbinden"
+          "en": "Use the neutral player on the side"
         },
         "moves": {
           "b": [
@@ -223,8 +212,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le neutre change le jeu vers le joueur libre",
-          "en": "The neutral switches the play to the free player",
-          "de": "Der Neutrale verlagert auf den freien Spieler"
+          "en": "The neutral switches the play to the free player"
         },
         "moves": {
           "a3": [
@@ -245,8 +233,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Les rouges gagnent le ballon et le gardent avec les neutres",
-          "en": "Red wins the ball and keeps it with the neutrals",
-          "de": "Rot erobert den Ball und behält ihn mit den Neutralen"
+          "en": "Red wins the ball and keeps it with the neutrals"
         },
         "moves": {
           "b": [

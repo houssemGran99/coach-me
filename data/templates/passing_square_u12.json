@@ -24,13 +24,11 @@
   ],
   "name": {
     "fr": "Carré passe et suis",
-    "en": "Pass-and-follow square",
-    "de": "Passen und nachlaufen im Quadrat"
+    "en": "Pass-and-follow square"
   },
   "organisation": {
     "fr": "Carré de 20 m avec un plot à chaque coin et deux joueurs par coin. Le joueur de tête passe au coin suivant puis court rejoindre cette file. Le ballon tourne dans le sens des aiguilles d'une montre ; après deux minutes, changer de sens.",
-    "en": "20 m square with a cone at each corner and two players at each corner. The player at the front passes to the next corner and runs to join that line. The pass travels clockwise; after two minutes switch direction.",
-    "de": "Quadrat von 20 m mit einem Hütchen an jeder Ecke und zwei Spielern an jeder Ecke. Der vorderste Spieler passt zur nächsten Ecke und läuft zu dieser Reihe. Der Pass läuft im Uhrzeigersinn; nach zwei Minuten wird die Richtung gewechselt."
+    "en": "20 m square with a cone at each corner and two players at each corner. The player at the front passes to the next corner and runs to join that line. The pass travels clockwise; after two minutes switch direction."
   },
   "coachingPoints": {
     "fr": [
@@ -42,11 +40,6 @@
       "Pass firmly to the front foot of the receiver",
       "Check your shoulder before receiving",
       "Run quickly to the next line after you pass"
-    ],
-    "de": [
-      "Fest auf den vorderen Fuß des Empfängers passen",
-      "Vor der Ballannahme über die Schulter schauen",
-      "Nach dem Pass schnell zur nächsten Reihe laufen"
     ]
   },
   "variants": [
@@ -54,16 +47,14 @@
       "label": "easier",
       "text": {
         "fr": "Contrôler avant de passer et marcher vers la file au début",
-        "en": "Control the ball before passing and walk to the next line at first",
-        "de": "Den Ball vor dem Pass kontrollieren und zuerst zur nächsten Reihe gehen"
+        "en": "Control the ball before passing and walk to the next line at first"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un second ballon depuis le coin opposé",
-        "en": "Add a second ball from the opposite corner",
-        "de": "Einen zweiten Ball von der gegenüberliegenden Ecke hinzufügen"
+        "en": "Add a second ball from the opposite corner"
       }
     }
   ],
@@ -169,8 +160,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Passer au coin suivant et suivre sa passe",
-          "en": "Pass to the next corner and follow your pass",
-          "de": "Zur nächsten Ecke passen und dem Pass folgen"
+          "en": "Pass to the next corner and follow your pass"
         },
         "moves": {
           "b": [
@@ -190,8 +180,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le suivant passe à son tour et suit",
-          "en": "The next player passes on and follows",
-          "de": "Der nächste Spieler passt weiter und folgt"
+          "en": "The next player passes on and follows"
         },
         "moves": {
           "b": [
@@ -210,8 +199,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Garder la circulation du ballon autour du carré",
-          "en": "Keep the pass moving round the square",
-          "de": "Den Pass im Quadrat weiterlaufen lassen"
+          "en": "Keep the pass moving round the square"
         },
         "moves": {
           "b": [
@@ -230,8 +218,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Retour au premier coin : la boucle continue",
-          "en": "Back to the first corner: the loop continues",
-          "de": "Zurück an der ersten Ecke: Der Kreislauf geht weiter"
+          "en": "Back to the first corner: the loop continues"
         },
         "moves": {
           "b": [

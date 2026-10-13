@@ -31,6 +31,6 @@ export default defineConfig({
     url: `http://localhost:${PORT}/templates`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
-    env: { NEGOTIATE_LANGUAGE: "1", MOCK_BACKEND: "1", MOCK_BACKEND_ALLOW_PRODUCTION: "1", NODE_ENV: "production" },
+    env: { MOCK_BACKEND: "1", MOCK_BACKEND_ALLOW_PRODUCTION: "1", NODE_ENV: "production" },
   },
 });

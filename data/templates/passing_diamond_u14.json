@@ -26,13 +26,11 @@
   ],
   "name": {
     "fr": "Losange de passes avec appel du troisième homme",
-    "en": "Diamond passing with a third-man run",
-    "de": "Passraute mit Lauf des dritten Mannes"
+    "en": "Diamond passing with a third-man run"
   },
   "organisation": {
     "fr": "Carré de 25 m avec cinq joueurs : un à chaque pointe d'un losange et un au centre. Le joueur du bas passe au joueur central, qui remet de première. Un troisième joueur parti du haut effectue un appel pour recevoir la passe suivante. Après chaque séquence, les joueurs tournent d'un poste.",
-    "en": "25 m square with five players: one at each point of a diamond and one in the middle. The bottom player passes to the middle player, who lays the ball off first time. A third player from the top makes a run to receive the next pass. After each sequence the players rotate one position.",
-    "de": "Quadrat von 25 m mit fünf Spielern: einer an jeder Spitze einer Raute und einer in der Mitte. Der untere Spieler passt zum Spieler in der Mitte, der den Ball direkt ablegt. Ein dritter Spieler von oben startet einen Lauf, um den nächsten Pass zu erhalten. Nach jeder Passfolge rotieren die Spieler eine Position weiter."
+    "en": "25 m square with five players: one at each point of a diamond and one in the middle. The bottom player passes to the middle player, who lays the ball off first time. A third player from the top makes a run to receive the next pass. After each sequence the players rotate one position."
   },
   "coachingPoints": {
     "fr": [
@@ -44,11 +42,6 @@
       "Time the run so the pass arrives in front of the runner",
       "The middle player plays first time with his head up",
       "Call for the ball with your voice and body shape"
-    ],
-    "de": [
-      "Den Lauf so timen, dass der Pass vor dem Läufer ankommt",
-      "Der Spieler in der Mitte spielt direkt mit erhobenem Kopf",
-      "Fordere den Ball mit Stimme und Körperhaltung"
     ]
   },
   "variants": [
@@ -56,16 +49,14 @@
       "label": "easier",
       "text": {
         "fr": "Deux touches pour tous",
-        "en": "Two touches for everyone",
-        "de": "Zwei Ballkontakte für alle"
+        "en": "Two touches for everyone"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un défenseur passif au centre",
-        "en": "Add a passive defender in the middle",
-        "de": "Einen passiven Verteidiger in der Mitte hinzufügen"
+        "en": "Add a passive defender in the middle"
       }
     }
   ],
@@ -150,8 +141,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le joueur du bas passe au joueur central",
-          "en": "The bottom player passes into the middle",
-          "de": "Der untere Spieler passt in die Mitte"
+          "en": "The bottom player passes into the middle"
         },
         "moves": {
           "b": [
@@ -163,8 +153,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Remise de première à droite ; le joueur du haut s'élance",
-          "en": "One-touch lay-off right; the top player starts his run",
-          "de": "Direktes Ablegen nach rechts; der obere Spieler startet seinen Lauf"
+          "en": "One-touch lay-off right; the top player starts his run"
         },
         "moves": {
           "a3": [
@@ -182,8 +171,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Passe de première dans la course du troisième homme",
-          "en": "First-time pass into the third man's run",
-          "de": "Direkter Pass in den Lauf des dritten Mannes"
+          "en": "First-time pass into the third man's run"
         },
         "moves": {
           "a4": [
@@ -198,8 +186,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Changement de jeu à gauche et relance du schéma",
-          "en": "Switch to the left side and restart the pattern",
-          "de": "Verlagerung nach links und das Muster neu starten"
+          "en": "Switch to the left side and restart the pattern"
         },
         "moves": {
           "b": [

@@ -28,13 +28,11 @@
   ],
   "name": {
     "en": "4v2 build-out",
-    "fr": "Construction 4 contre 2",
-    "de": "Spielaufbau 4 gegen 2"
+    "fr": "Construction 4 contre 2"
   },
   "organisation": {
     "en": "25 m by 20 m area. The goalkeeper starts play. Four attackers try to play through a gate guarded by two pressing defenders, then pass to a striker beyond it. If the ball is lost, the defenders counter into a full-size goal.",
-    "fr": "Zone de 25 m sur 20 m. Le gardien relance. Quatre attaquants cherchent à franchir une porte gardée par deux défenseurs qui pressent, puis à servir un attaquant situé derrière. Si le ballon est perdu, les défenseurs contre-attaquent vers un grand but.",
-    "de": "Fläche von 25 m mal 20 m. Der Torwart eröffnet das Spiel. Vier Angreifer versuchen, durch ein Tor zu spielen, das zwei pressende Verteidiger bewachen, und dann auf einen Stürmer dahinter zu passen. Bei Ballverlust kontern die Verteidiger auf ein großes Tor."
+    "fr": "Zone de 25 m sur 20 m. Le gardien relance. Quatre attaquants cherchent à franchir une porte gardée par deux défenseurs qui pressent, puis à servir un attaquant situé derrière. Si le ballon est perdu, les défenseurs contre-attaquent vers un grand but."
   },
   "coachingPoints": {
     "en": [
@@ -46,11 +44,6 @@
       "Commencer par une courte passe sûre du gardien",
       "Utiliser les joueurs larges pour étirer les deux presseurs",
       "Franchir la porte vite quand les presseurs sont désorganisés"
-    ],
-    "de": [
-      "Beginne mit einem sicheren kurzen Pass des Torwarts",
-      "Nutze die Außenspieler, um die beiden Pressenden auseinanderzuziehen",
-      "Spiele schnell durch das Tor, wenn die Pressenden schlecht stehen"
     ]
   },
   "variants": [
@@ -58,16 +51,14 @@
       "label": "easier",
       "text": {
         "en": "Defenders press only after the first pass",
-        "fr": "Les défenseurs ne pressent qu'après la première passe",
-        "de": "Die Verteidiger pressen erst nach dem ersten Pass"
+        "fr": "Les défenseurs ne pressent qu'après la première passe"
       }
     },
     {
       "label": "harder",
       "text": {
         "en": "Defenders may press as soon as the goalkeeper plays",
-        "fr": "Les défenseurs peuvent presser dès la relance du gardien",
-        "de": "Die Verteidiger dürfen pressen, sobald der Torwart spielt"
+        "fr": "Les défenseurs peuvent presser dès la relance du gardien"
       }
     }
   ],
@@ -113,8 +104,7 @@
         "h": 10,
         "label": {
           "en": "Gate",
-          "fr": "Porte",
-          "de": "Tor"
+          "fr": "Porte"
         }
       }
     ],
@@ -181,8 +171,7 @@
         "durationS": 2.5,
         "caption": {
           "en": "The goalkeeper starts with a short pass",
-          "fr": "Le gardien relance court",
-          "de": "Der Torwart beginnt mit einem kurzen Pass"
+          "fr": "Le gardien relance court"
         },
         "moves": {
           "b": [
@@ -200,8 +189,7 @@
         "durationS": 2.5,
         "caption": {
           "en": "Pass across to draw the pressers",
-          "fr": "Passe latérale pour attirer les presseurs",
-          "de": "Quer passen, um die Pressenden herauszulocken"
+          "fr": "Passe latérale pour attirer les presseurs"
         },
         "moves": {
           "b": [
@@ -219,8 +207,7 @@
         "durationS": 2.5,
         "caption": {
           "en": "Switch to the wide player",
-          "fr": "Changement de jeu vers le joueur côté",
-          "de": "Verlagerung auf den Außenspieler"
+          "fr": "Changement de jeu vers le joueur côté"
         },
         "moves": {
           "b": [
@@ -238,8 +225,7 @@
         "durationS": 2.5,
         "caption": {
           "en": "Play through the gate to the striker",
-          "fr": "Franchir la porte vers l'attaquant",
-          "de": "Durch das Tor auf den Stürmer spielen"
+          "fr": "Franchir la porte vers l'attaquant"
         },
         "moves": {
           "b": [

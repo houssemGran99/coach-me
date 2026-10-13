@@ -28,13 +28,11 @@
   ],
   "name": {
     "fr": "Déclencheurs de pressing 6 contre 4",
-    "en": "Pressing triggers 6v4",
-    "de": "Pressingauslöser 6 gegen 4"
+    "en": "Pressing triggers 6v4"
   },
   "organisation": {
     "fr": "Terrain de 40 m sur 30 m avec un grand but et un gardien. Six joueurs bleus, gardien compris, construisent face à quatre presseurs. Les presseurs attendent un signal : passe vers la touche, mauvais contrôle ou passe en retrait. Ils pressent alors ensemble et coupent les solutions de passe. Les bleus marquent en jouant dans la zone cible.",
-    "en": "40 m by 30 m pitch with a full goal and a goalkeeper. Six blue players, including the goalkeeper, build up against four pressers. The pressers wait for a trigger: a pass toward the sideline, a bad touch or a back pass. Then they press together and cut the passing options. Blue score by playing into the target zone.",
-    "de": "Feld von 40 m mal 30 m mit einem großen Tor und einem Torwart. Sechs blaue Spieler, den Torwart eingeschlossen, bauen gegen vier Pressende auf. Die Pressenden warten auf einen Auslöser: einen Pass zur Seitenlinie, eine schlechte Ballannahme oder einen Rückpass. Dann pressen sie gemeinsam und schneiden die Passwege ab. Blau punktet durch einen Pass in die Zielzone."
+    "en": "40 m by 30 m pitch with a full goal and a goalkeeper. Six blue players, including the goalkeeper, build up against four pressers. The pressers wait for a trigger: a pass toward the sideline, a bad touch or a back pass. Then they press together and cut the passing options. Blue score by playing into the target zone."
   },
   "coachingPoints": {
     "fr": [
@@ -46,11 +44,6 @@
       "Press on a trigger, not before: stay compact until it happens",
       "The first presser shows the ball one way, the others cut the lanes",
       "Build-up players: spot the free player before you receive"
-    ],
-    "de": [
-      "Erst auf den Auslöser pressen, nicht früher: bis dahin kompakt bleiben",
-      "Der erste Pressende lenkt den Ball in eine Richtung, die anderen schneiden die Passwege ab",
-      "Aufbauspieler: den freien Mitspieler erkennen, bevor du den Ball bekommst"
     ]
   },
   "variants": [
@@ -58,16 +51,14 @@
       "label": "easier",
       "text": {
         "fr": "Les presseurs partent 5 m plus bas",
-        "en": "The pressers start 5 m deeper",
-        "de": "Die Pressenden starten 5 m tiefer"
+        "en": "The pressers start 5 m deeper"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un cinquième presseur après la première passe",
-        "en": "Add a fifth presser after the first pass",
-        "de": "Nach dem ersten Pass einen fünften Pressenden hinzufügen"
+        "en": "Add a fifth presser after the first pass"
       }
     }
   ],
@@ -96,8 +87,7 @@
         "h": 28,
         "label": {
           "fr": "Zone cible",
-          "en": "Target zone",
-          "de": "Zielzone"
+          "en": "Target zone"
         }
       }
     ],
@@ -185,8 +175,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le gardien passe au défenseur côté : un signal de pressing",
-          "en": "The keeper passes to the wide defender: a pressing trigger",
-          "de": "Der Torwart passt zum Außenverteidiger: ein Pressingauslöser"
+          "en": "The keeper passes to the wide defender: a pressing trigger"
         },
         "moves": {
           "b": [
@@ -198,8 +187,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Presser ensemble : fermer le ballon et couper les lignes de passe",
-          "en": "Press together: close the ball and cut the passing lanes",
-          "de": "Gemeinsam pressen: den Ball zustellen und die Passwege schließen"
+          "en": "Press together: close the ball and cut the passing lanes"
         },
         "moves": {
           "b1": [
@@ -220,8 +208,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Une passe en retrait est un second signal : presser le gardien",
-          "en": "A back pass is a second trigger: press the keeper",
-          "de": "Ein Rückpass ist ein zweiter Auslöser: den Torwart anlaufen"
+          "en": "A back pass is a second trigger: press the keeper"
         },
         "moves": {
           "b": [
@@ -239,8 +226,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le gardien change le jeu et les presseurs coulissent",
-          "en": "The keeper switches the play and the pressers shift",
-          "de": "Der Torwart verlagert das Spiel und die Pressenden verschieben"
+          "en": "The keeper switches the play and the pressers shift"
         },
         "moves": {
           "b": [
@@ -264,8 +250,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Si le pressing est battu, jouer long dans la zone cible",
-          "en": "If the press is beaten, play long into the target zone",
-          "de": "Wird das Pressing überspielt, weit in die Zielzone spielen"
+          "en": "If the press is beaten, play long into the target zone"
         },
         "moves": {
           "b": [
