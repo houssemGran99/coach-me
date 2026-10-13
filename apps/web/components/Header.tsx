@@ -6,7 +6,7 @@ import { LanguageSwitch } from "./LanguageSwitch";
 import { NavLinks } from "./NavLinks";
 import { SignOutButton } from "./SignOutButton";
 
-export async function Header({ user }: { user: AppUser | null }) {
+export async function Header({ user, emailSignIn = true }: { user: AppUser | null; emailSignIn?: boolean }) {
   const t = await getTranslations("nav");
   const brand = (await getTranslations("common"))("brand");
   return (
@@ -19,9 +19,9 @@ export async function Header({ user }: { user: AppUser | null }) {
           </Suspense>
           {user && !user.isGuest ? (
             <SignOutButton email={user.email} />
-          ) : (
+          ) : emailSignIn ? (
             <Link href="/login" className="btn btn-sm">{t("signIn")}</Link>
-          )}
+          ) : null}
         </div>
         <div className="w-full">
           <NavLinks />

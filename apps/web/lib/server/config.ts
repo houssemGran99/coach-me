@@ -14,7 +14,15 @@ export function getConfig() {
   const mockRequested = process.env.MOCK_BACKEND === "1";
   // The in-memory backend has no real auth, so it is refused in production builds unless explicitly allowed (e2e).
   const mockBackend = mockRequested && (!production || process.env.MOCK_BACKEND_ALLOW_PRODUCTION === "1");
+  const mongoUri = process.env.MONGODB_URI ?? "";
+  const backend = mockBackend ? "mock" : mongoUri ? "mongo" : process.env.NEXT_PUBLIC_SUPABASE_URL ? "supabase" : "none";
   return {
+    /** Which persistence layer is active: in-memory mock, MongoDB, Supabase, or none configured. */
+    backend: backend as "mock" | "mongo" | "supabase" | "none",
+    mongoUri,
+    mongoDb: process.env.MONGODB_DB ?? "coach",
+    /** Signs the guest cookie in MongoDB mode. Set a long random value. */
+    authSecret: process.env.AUTH_SECRET ?? "",
     mockBackend,
     mockLlm: process.env.LLM_PROVIDER === "mock" || (mockBackend && !process.env.LLM_API_KEY),
     supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",

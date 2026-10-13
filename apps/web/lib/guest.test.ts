@@ -19,3 +19,27 @@ describe("guest accounts", () => {
     expect(needsAccount("/plan/new", "POST")).toBe(false);
   });
 });
+
+import { newGuestCookie, verifyGuestCookie } from "./guest";
+
+describe("signed guest cookie (MongoDB mode)", () => {
+  const secret = "test-secret-with-enough-length";
+
+  it("accepts its own cookie and returns the id", () => {
+    const { id, value } = newGuestCookie(secret);
+    expect(verifyGuestCookie(value, secret)).toBe(id);
+  });
+
+  it("rejects a changed id, a changed signature, another secret and garbage", () => {
+    const a = newGuestCookie(secret);
+    const b = newGuestCookie(secret);
+    const sigA = a.value.slice(a.value.indexOf(".") + 1);
+    expect(verifyGuestCookie(`${b.id}.${sigA}`, secret)).toBeNull();
+    expect(verifyGuestCookie(`${a.id}.${sigA.slice(1)}x`, secret)).toBeNull();
+    expect(verifyGuestCookie(a.value, "another-secret")).toBeNull();
+    expect(verifyGuestCookie(a.value, "")).toBeNull();
+    expect(verifyGuestCookie("not-a-cookie", secret)).toBeNull();
+    expect(verifyGuestCookie(undefined, secret)).toBeNull();
+    expect(verifyGuestCookie(`../../etc.${sigA}`, secret)).toBeNull();
+  });
+});

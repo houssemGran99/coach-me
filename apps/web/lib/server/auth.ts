@@ -2,7 +2,7 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { MOCK_COOKIE, isGuestEmail } from "../guest";
+import { GUEST_COOKIE, MOCK_COOKIE, isGuestEmail, verifyGuestCookie } from "../guest";
 import { getConfig } from "./config";
 import { supabaseUser } from "./supabase";
 
@@ -41,6 +41,10 @@ export function decodeMockCookie(value: string | undefined): AppUser | null {
 export async function getUser(): Promise<AppUser | null> {
   const cfg = getConfig();
   if (cfg.mockBackend) return decodeMockCookie((await cookies()).get(MOCK_COOKIE)?.value);
+  if (cfg.backend === "mongo") {
+    const id = verifyGuestCookie((await cookies()).get(GUEST_COOKIE)?.value, cfg.authSecret);
+    return id ? { id, email: "", isGuest: true } : null;
+  }
   if (!cfg.supabaseUrl) return null;
   const sb = await supabaseUser();
   const { data } = await sb.auth.getUser();

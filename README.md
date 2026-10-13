@@ -31,7 +31,11 @@ pnpm dev                                        # bundles templates, then starts
 
 Put `MOCK_BACKEND=1` in `apps/web/.env.local`. You get an in-memory database, "sign in with any email" and a deterministic stand-in for the model. This is what the end-to-end tests use. It is **refused in production builds** unless `MOCK_BACKEND_ALLOW_PRODUCTION=1` is also set (only the e2e config does that).
 
-### Run for real
+### Run for real with MongoDB
+
+Set `MONGODB_URI` (for example a free MongoDB Atlas cluster), `AUTH_SECRET` (a long random string) and `LLM_API_KEY`, then `pnpm build && pnpm --filter @mourabbi/web start`. There are no accounts or emails: opening a feature gives the visitor a guest identity in a signed cookie, and everything they save belongs to that cookie. Data access control lives in code (every query filters on the owner); collections and indexes are created on first use. Run the store tests against a real database with `MONGODB_URI_TEST=mongodb://... pnpm test`.
+
+### Run for real with Supabase (alternative)
 
 1. Create a Supabase project (email magic-link auth only). Run `supabase/migrations/0001_init.sql` (e.g. `supabase db push`). In Auth settings, add your site URL and `<site>/auth/callback` as a redirect URL.
 2. Set the environment variables below.
@@ -39,6 +43,7 @@ Put `MOCK_BACKEND=1` in `apps/web/.env.local`. You get an in-memory database, "s
 
 | Variable | Purpose |
 |---|---|
+| `MONGODB_URI`, `MONGODB_DB`, `AUTH_SECRET` | MongoDB backend and the guest cookie signature (used instead of Supabase when `MONGODB_URI` is set) |
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase client |
 | `SUPABASE_SERVICE_ROLE_KEY` | server only: public share reads, generation log, reports |
 | `LLM_API_KEY`, `LLM_MODEL` | model provider (Anthropic Messages API; defaults to `claude-sonnet-5-5` if `LLM_MODEL` is empty) |
@@ -94,7 +99,7 @@ The movement of the 28 new templates was written by the assistant using an autho
 ## Open items
 
 - **Content review**: all 34 templates are `pending`; French and Arabic text and the 28 new animations need a native, qualified coach. Nothing is marked reviewed.
-- **Not run in this environment**: the pgTAP RLS test (Docker was not running), a real Supabase project (magic link and RLS were only exercised through the in-memory store), a real model call (the Anthropic client is covered with a fake `fetch`; the pipeline with scripted models), and the Lighthouse PWA audit (manifest, icons, service worker and offline behaviour are covered by the e2e tests instead).
+- **Not run in this environment**: the MongoDB store against a real database (the contract test runs only with `MONGODB_URI_TEST`),  the pgTAP RLS test (Docker was not running), a real Supabase project (magic link and RLS were only exercised through the in-memory store), a real model call (the Anthropic client is covered with a fake `fetch`; the pipeline with scripted models), and the Lighthouse PWA audit (manifest, icons, service worker and offline behaviour are covered by the e2e tests instead).
 - Editing a saved practice in the library changes the set-up text and title in the current UI language only; the other languages keep their text.
 - The offline page uses the language that was active when the service worker installed.
 - Report throttling is per server process; generation and share limits use database counts per UTC day.

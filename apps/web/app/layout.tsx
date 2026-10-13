@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import { OfflineBanner } from "@/components/OfflineBanner";
 import { dirOf, type Locale } from "@/i18n/config";
 import { getUser } from "@/lib/server/auth";
+import { getConfig } from "@/lib/server/config";
 import "./globals.css";
 
 const barlow = Barlow({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], variable: "--font-barlow", display: "swap" });
@@ -43,7 +44,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <a href="#content" className="sr-only-x focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:bg-surface focus:p-3">
             {t("skipToContent")}
           </a>
-          <Header user={user} />
+          <Header user={user} emailSignIn={getConfig().backend !== "mongo"} />
           <OfflineBanner />
           <main id="content" className="wrap py-6 sm:py-8">
             {children}
