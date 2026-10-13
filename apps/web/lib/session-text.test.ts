@@ -94,7 +94,7 @@ describe("template filters", () => {
   });
   it("searches names in any language, ignoring accents", () => {
     expect(filterPractices(all, { q: "ECHAUFFEMENT" }).map((p) => p.id)).toContain("dynamic_warmup_ball");
-    expect(filterPractices(all, { q: "RONDO 4 GEGEN 2" }).map((p) => p.id)).toContain("rondo_4v2_u10");
+    expect(filterPractices(all, { q: "RONDO 4V2" }).map((p) => p.id)).toContain("rondo_4v2_u10");
   });
   it("parses search params defensively", () => {
     const f = parseFilters({ kind: "nope", age: "U10", players: "abc", equip: ["balls", "lasers"], l: "30", w: "-4" });

@@ -24,13 +24,11 @@
   ],
   "name": {
     "fr": "Portes de conduite en 1 contre 1",
-    "en": "1v1 dribbling gates",
-    "de": "1 gegen 1 Dribbeltore"
+    "en": "1v1 dribbling gates"
   },
   "organisation": {
     "fr": "Deux portes au fond d'une zone de 20 m sur 20 m, avec un défenseur passif devant. Les attaquants conduisent à tour de rôle et cherchent à franchir l'une des portes. Le défenseur accompagne sans tacler. Changer de rôle après chaque essai.",
-    "en": "Two gates at the end of a 20 m by 20 m area, one passive defender in front of them. Attackers dribble in turns and try to cross either gate. The defender only shadows and may not tackle. Swap roles after each attempt.",
-    "de": "Zwei Tore am Ende einer Fläche von 20 m mal 20 m, davor ein passiver Verteidiger. Die Angreifer dribbeln nacheinander und versuchen, durch eines der Tore zu kommen. Der Verteidiger begleitet nur und darf nicht tackeln. Nach jedem Versuch werden die Rollen getauscht."
+    "en": "Two gates at the end of a 20 m by 20 m area, one passive defender in front of them. Attackers dribble in turns and try to cross either gate. The defender only shadows and may not tackle. Swap roles after each attempt."
   },
   "coachingPoints": {
     "fr": [
@@ -42,11 +40,6 @@
       "Keep the ball close and your head up",
       "Change speed and direction to beat the defender",
       "Choose the gate the defender is not covering"
-    ],
-    "de": [
-      "Den Ball nah führen und den Kopf oben halten",
-      "Tempo und Richtung wechseln, um den Verteidiger zu überspielen",
-      "Das Tor wählen, das der Verteidiger nicht deckt"
     ]
   },
   "variants": [
@@ -54,16 +47,14 @@
       "label": "easier",
       "text": {
         "fr": "Élargir les portes",
-        "en": "Make the gates wider",
-        "de": "Die Tore breiter machen"
+        "en": "Make the gates wider"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Le défenseur peut tacler après la première touche",
-        "en": "The defender may tackle after the first touch",
-        "de": "Der Verteidiger darf nach dem ersten Kontakt tackeln"
+        "en": "The defender may tackle after the first touch"
       }
     }
   ],
@@ -139,8 +130,7 @@
         "durationS": 3,
         "caption": {
           "fr": "L'attaquant conduit vers les portes",
-          "en": "The attacker dribbles at the gates",
-          "de": "Der Angreifer dribbelt auf die Tore zu"
+          "en": "The attacker dribbles at the gates"
         },
         "moves": {
           "a1": [
@@ -162,8 +152,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le défenseur accompagne seulement ; pas de tacle",
-          "en": "The defender only shadows; no tackling",
-          "de": "Der Verteidiger begleitet nur; kein Tackling"
+          "en": "The defender only shadows; no tackling"
         },
         "moves": {
           "a2": [
@@ -185,8 +174,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Changer de rôle après chaque essai",
-          "en": "Swap roles after each attempt",
-          "de": "Nach jedem Versuch die Rollen tauschen"
+          "en": "Swap roles after each attempt"
         },
         "moves": {
           "a1": [

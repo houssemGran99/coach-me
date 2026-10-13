@@ -27,13 +27,11 @@
   ],
   "name": {
     "fr": "Combinaison du troisième homme et tir",
-    "en": "Third-man combination and shot",
-    "de": "Kombination über den dritten Mann und Schuss"
+    "en": "Third-man combination and shot"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Le joueur central passe à l'attaquant, qui remet au troisième joueur arrivant de loin. Celui-ci joue de première dans la course du joueur central, qui tire. Faire tourner les rôles après chaque séquence.",
-    "en": "35 m by 30 m area with a full goal and a goalkeeper. The central player passes to the forward, who lays the ball off to the third player arriving from deep. The third player plays first time into the central player's run, and the central player shoots. Rotate roles after each sequence.",
-    "de": "Fläche von 35 m mal 30 m mit einem großen Tor und einem Torwart. Der zentrale Spieler passt zum Stürmer, der den Ball auf den dritten Spieler ablegt, der aus der Tiefe kommt. Der dritte Spieler spielt direkt in den Lauf des zentralen Spielers, der schießt. Wechsle die Rollen nach jeder Passfolge."
+    "en": "35 m by 30 m area with a full goal and a goalkeeper. The central player passes to the forward, who lays the ball off to the third player arriving from deep. The third player plays first time into the central player's run, and the central player shoots. Rotate roles after each sequence."
   },
   "coachingPoints": {
     "fr": [
@@ -45,11 +43,6 @@
       "The third player times the run to arrive on the ball",
       "The lay-off goes into the runner's path, on the correct foot",
       "The finisher shoots first time or with one touch to settle"
-    ],
-    "de": [
-      "Der dritte Spieler timt den Lauf so, dass er zum Ball ankommt",
-      "Das Ablegen kommt in den Laufweg des Läufers, auf den richtigen Fuß",
-      "Der Schütze schießt direkt oder legt sich den Ball mit einem Kontakt zurecht"
     ]
   },
   "variants": [
@@ -57,16 +50,14 @@
       "label": "easier",
       "text": {
         "fr": "Autoriser deux touches pour tous",
-        "en": "Allow two touches for everyone",
-        "de": "Zwei Ballkontakte für alle erlauben"
+        "en": "Allow two touches for everyone"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un défenseur qui part derrière l'attaquant",
-        "en": "Add a defender who starts behind the forward",
-        "de": "Einen Verteidiger hinzufügen, der hinter dem Stürmer startet"
+        "en": "Add a defender who starts behind the forward"
       }
     }
   ],
@@ -141,8 +132,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Le joueur central passe à l'attaquant",
-          "en": "The central player passes to the forward",
-          "de": "Der zentrale Spieler passt zum Stürmer"
+          "en": "The central player passes to the forward"
         },
         "moves": {
           "p2": [
@@ -160,8 +150,7 @@
         "durationS": 2,
         "caption": {
           "fr": "L'attaquant remet au troisième joueur",
-          "en": "The forward lays off to the third player",
-          "de": "Der Stürmer legt auf den dritten Spieler ab"
+          "en": "The forward lays off to the third player"
         },
         "moves": {
           "p3": [
@@ -179,8 +168,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Passe de première dans la course du joueur central",
-          "en": "First-time pass into the central player's run",
-          "de": "Direkter Pass in den Lauf des zentralen Spielers"
+          "en": "First-time pass into the central player's run"
         },
         "moves": {
           "p1": [
@@ -195,8 +183,7 @@
         "durationS": 1.5,
         "caption": {
           "fr": "Tir de première",
-          "en": "Shoot first time",
-          "de": "Direktschuss"
+          "en": "Shoot first time"
         },
         "moves": {
           "b": [
@@ -211,8 +198,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Remise en place et rotation des rôles",
-          "en": "Reset and rotate roles",
-          "de": "Neustart und Rollenwechsel"
+          "en": "Reset and rotate roles"
         },
         "moves": {
           "p1": [

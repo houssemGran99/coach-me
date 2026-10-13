@@ -88,8 +88,8 @@ describe.each(stores)("store contract: %s", (_name, make) => {
     const a = uid();
     expect(await s.getProfile(a)).toBeNull();
     await s.upsertProfile({ id: a, language: "fr", default_age_group: "U12" });
-    await s.upsertProfile({ id: a, language: "de", default_age_group: null });
-    expect(await s.getProfile(a)).toEqual({ id: a, language: "de", default_age_group: null });
+    await s.upsertProfile({ id: a, language: "en", default_age_group: null });
+    expect(await s.getProfile(a)).toEqual({ id: a, language: "en", default_age_group: null });
     await s.logGeneration({ owner: a, kind: "session", input: {}, output: {}, valid: true, retries: 0 });
     expect(await s.countGenerationsSince(a, "2000-01-01T00:00:00.000Z")).toBe(1);
     expect(await s.countGenerationsSince(uid(), "2000-01-01T00:00:00.000Z")).toBe(0);

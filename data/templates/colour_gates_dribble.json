@@ -27,13 +27,11 @@
   ],
   "name": {
     "fr": "Conduite dans les portes de couleur",
-    "en": "Colour gates dribbling",
-    "de": "Dribbling durch Farbtore"
+    "en": "Colour gates dribbling"
   },
   "organisation": {
     "fr": "Carré de 20 m avec quatre portes, chacune formée de deux plots d'une même couleur. Chaque joueur conduit un ballon à travers n'importe quelle porte. À l'appel de l'entraîneur, tout le monde change de porte. Démarrer tranquillement puis accélérer.",
-    "en": "20 m square with four gates, each made of two cones of one colour. Every player dribbles a ball through any gate. On the coach's call, everyone changes to another gate. Start at an easy pace and build up.",
-    "de": "Quadrat von 20 m mit vier Toren, jedes aus zwei Hütchen einer Farbe. Jeder Spieler dribbelt mit einem Ball durch ein beliebiges Tor. Auf Ruf des Trainers wechseln alle zu einem anderen Tor. Beginne in lockerem Tempo und steigere dich."
+    "en": "20 m square with four gates, each made of two cones of one colour. Every player dribbles a ball through any gate. On the coach's call, everyone changes to another gate. Start at an easy pace and build up."
   },
   "coachingPoints": {
     "fr": [
@@ -45,11 +43,6 @@
       "Head up to find a free gate",
       "Small touches with both feet",
       "Change direction quickly on the call"
-    ],
-    "de": [
-      "Kopf hoch, um ein freies Tor zu finden",
-      "Kleine Berührungen mit beiden Füßen",
-      "Beim Ruf schnell die Richtung wechseln"
     ]
   },
   "variants": [
@@ -57,16 +50,14 @@
       "label": "easier",
       "text": {
         "fr": "Portes plus larges et sans appel",
-        "en": "Wider gates and no calls",
-        "de": "Breitere Tore und keine Rufe"
+        "en": "Wider gates and no calls"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Utiliser seulement le pied faible",
-        "en": "Use only the weaker foot",
-        "de": "Nur mit dem schwächeren Fuß"
+        "en": "Use only the weaker foot"
       }
     }
   ],
@@ -179,8 +170,7 @@
         "durationS": 4,
         "caption": {
           "fr": "Conduire à travers une porte au choix",
-          "en": "Dribble through any gate",
-          "de": "Dribbele durch ein beliebiges Tor"
+          "en": "Dribble through any gate"
         },
         "moves": {
           "p1": [
@@ -221,8 +211,7 @@
         "durationS": 4,
         "caption": {
           "fr": "À l'appel, aller à la porte opposée",
-          "en": "On the call, cross to the opposite gate",
-          "de": "Auf den Ruf zum gegenüberliegenden Tor wechseln"
+          "en": "On the call, cross to the opposite gate"
         },
         "moves": {
           "p1": [
@@ -263,8 +252,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Repasser par la nouvelle porte",
-          "en": "Go back through the new gate",
-          "de": "Durch das neue Tor zurückdribbeln"
+          "en": "Go back through the new gate"
         },
         "moves": {
           "p1": [

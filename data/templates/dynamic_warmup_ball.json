@@ -31,13 +31,11 @@
   ],
   "name": {
     "en": "Dynamic warm-up with a ball",
-    "fr": "Échauffement dynamique avec ballon",
-    "de": "Dynamisches Aufwärmen mit Ball"
+    "fr": "Échauffement dynamique avec ballon"
   },
   "organisation": {
     "en": "Each player has a ball inside a 20 m square. On the coach's call: change direction, swap balls with a partner, dribble to a coloured cone. Build from walking pace to match pace.",
-    "fr": "Chaque joueur a un ballon dans un carré de 20 m. À l'appel de l'entraîneur : changer de direction, échanger de ballon avec un partenaire, conduire jusqu'à un plot de couleur. Montée en intensité progressive, de la marche au rythme de match.",
-    "de": "Jeder Spieler hat einen Ball in einem Quadrat von 20 m. Auf Ruf des Trainers: Richtung wechseln, mit einem Partner die Bälle tauschen, zu einem farbigen Hütchen dribbeln. Steigere dich vom Gehtempo bis zum Spieltempo."
+    "fr": "Chaque joueur a un ballon dans un carré de 20 m. À l'appel de l'entraîneur : changer de direction, échanger de ballon avec un partenaire, conduire jusqu'à un plot de couleur. Montée en intensité progressive, de la marche au rythme de match."
   },
   "coachingPoints": {
     "en": [
@@ -49,11 +47,6 @@
       "Tête relevée en conduisant",
       "Touches courtes, ballon près des pieds",
       "Augmenter l'intensité progressivement"
-    ],
-    "de": [
-      "Beim Dribbeln den Kopf oben halten",
-      "Kurze Berührungen, der Ball bleibt nah am Fuß",
-      "Die Intensität Schritt für Schritt steigern"
     ]
   },
   "variants": [],
@@ -146,8 +139,7 @@
         "durationS": 4,
         "caption": {
           "en": "Dribble freely with your head up",
-          "fr": "Conduire librement, tête relevée",
-          "de": "Frei dribbeln mit erhobenem Kopf"
+          "fr": "Conduire librement, tête relevée"
         },
         "moves": {
           "p1": [
@@ -188,8 +180,7 @@
         "durationS": 3,
         "caption": {
           "en": "On the coach's call, change direction",
-          "fr": "À l'appel de l'entraîneur, changer de direction",
-          "de": "Auf Ruf des Trainers die Richtung wechseln"
+          "fr": "À l'appel de l'entraîneur, changer de direction"
         },
         "moves": {
           "p1": [
@@ -222,8 +213,7 @@
         "durationS": 3,
         "caption": {
           "en": "Find a partner",
-          "fr": "Trouver un partenaire",
-          "de": "Einen Partner suchen"
+          "fr": "Trouver un partenaire"
         },
         "moves": {
           "p1": [
@@ -256,8 +246,7 @@
         "durationS": 2,
         "caption": {
           "en": "Swap balls",
-          "fr": "Échanger les ballons",
-          "de": "Die Bälle tauschen"
+          "fr": "Échanger les ballons"
         },
         "moves": {
           "b1": [
@@ -278,8 +267,7 @@
         "durationS": 4,
         "caption": {
           "en": "Dribble to a coloured cone",
-          "fr": "Conduire jusqu'à un plot de couleur",
-          "de": "Zu einem farbigen Hütchen dribbeln"
+          "fr": "Conduire jusqu'à un plot de couleur"
         },
         "moves": {
           "p1": [

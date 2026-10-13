@@ -1,14 +1,15 @@
 import { z } from "zod";
 
-export const LANGS = ["fr", "en", "de"] as const;
+export const LANGS = ["fr", "en"] as const;
 export type Lang = (typeof LANGS)[number];
-/** Arabic was removed: an old "ar" from stored data or an old client reads as German (the default). */
-export const LangSchema = z.preprocess((v) => (v === "ar" ? "de" : v), z.enum(LANGS));
+/** Arabic and German were removed: an old "ar" or "de" from stored data or an old client reads as French (the default). */
+export const LangSchema = z.preprocess((v) => (v === "ar" || v === "de" ? "fr" : v), z.enum(LANGS));
 
-/** Drops the "ar" key that practices saved while Arabic existed still carry. */
-export const dropAr = (v: unknown): unknown =>
-  v && typeof v === "object" && !Array.isArray(v) && "ar" in v
-    ? Object.fromEntries(Object.entries(v).filter(([k]) => k !== "ar"))
+const REMOVED_LANGS = ["ar", "de"];
+/** Drops the keys of removed languages that practices saved earlier still carry. */
+export const dropRemovedLangs = (v: unknown): unknown =>
+  v && typeof v === "object" && !Array.isArray(v) && REMOVED_LANGS.some((k) => k in v)
+    ? Object.fromEntries(Object.entries(v).filter(([k]) => !REMOVED_LANGS.includes(k)))
     : v;
 
 export const AGE_GROUPS = [
@@ -59,15 +60,12 @@ export const REVIEW_STATUSES = ["pending", "reviewed", "ai_draft", "edited_by_ow
 export type ReviewStatus = (typeof REVIEW_STATUSES)[number];
 
 /**
- * A string in each supported language. fr and en are required and non-empty. German is optional so practices
- * saved before it existed stay valid: a missing "de" reads as the English text. A leftover "ar" is ignored.
+ * A string in each supported language. Every field is required and non-empty. Leftover text of removed languages
+ * ("ar", "de") in stored practices is ignored.
  */
 export function i18n(max: number) {
   const s = z.string().trim().min(1).max(max);
-  return z.preprocess(
-    dropAr,
-    z.strictObject({ fr: s, en: s, de: s.optional() }).transform((v) => ({ ...v, de: v.de ?? v.en })),
-  );
+  return z.preprocess(dropRemovedLangs, z.strictObject({ fr: s, en: s }));
 }
 export type I18n = Record<Lang, string>;
 

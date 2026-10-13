@@ -26,13 +26,11 @@
   ],
   "name": {
     "fr": "Jeu à quatre buts",
-    "en": "Four-goal game",
-    "de": "Spiel auf vier Tore"
+    "en": "Four-goal game"
   },
   "organisation": {
     "fr": "Terrain de 35 m sur 25 m avec deux mini-buts à chaque extrémité. Deux équipes de quatre à huit joueurs jouent un jeu réduit. Chaque équipe défend deux buts et en attaque deux. Jeu libre avec remises en jeu rapides ; l'entraîneur n'arrête le jeu que pour poser une question.",
-    "en": "35 m by 25 m pitch with two mini goals at each end. Two teams of four to eight play a small-sided game. Each team defends two goals and attacks two goals. Free play with quick restarts; the coach only stops the game to ask a question.",
-    "de": "Feld von 35 m mal 25 m mit zwei Minitoren an jedem Ende. Zwei Teams zu vier bis acht Spielern spielen eine Spielform. Jedes Team verteidigt zwei Tore und greift zwei Tore an. Freies Spiel mit schnellen Neustarts; der Trainer unterbricht nur, um eine Frage zu stellen."
+    "en": "35 m by 25 m pitch with two mini goals at each end. Two teams of four to eight play a small-sided game. Each team defends two goals and attacks two goals. Free play with quick restarts; the coach only stops the game to ask a question."
   },
   "coachingPoints": {
     "fr": [
@@ -44,11 +42,6 @@
       "Look up: which goal is open?",
       "Take on the defender when you can, pass when you cannot",
       "Praise good attempts, even when they fail"
-    ],
-    "de": [
-      "Schau auf: Welches Tor ist offen?",
-      "Geh ins Dribbling, wenn du kannst, und passe, wenn nicht",
-      "Lobe gute Versuche, auch wenn sie scheitern"
     ]
   },
   "variants": [
@@ -56,16 +49,14 @@
       "label": "easier",
       "text": {
         "fr": "Ajouter un joueur neutre pour l'équipe en possession",
-        "en": "Add a neutral player for the team in possession",
-        "de": "Einen neutralen Spieler für das Team am Ball hinzufügen"
+        "en": "Add a neutral player for the team in possession"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Les buts comptent double après trois passes",
-        "en": "Goals count double after three passes",
-        "de": "Tore zählen nach drei Pässen doppelt"
+        "en": "Goals count double after three passes"
       }
     }
   ],
@@ -196,8 +187,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Jeu libre : lever la tête et trouver le but libre",
-          "en": "Free play: look up and find the open goal",
-          "de": "Freies Spiel: Kopf hoch und das offene Tor finden"
+          "en": "Free play: look up and find the open goal"
         },
         "moves": {
           "a1": [
@@ -224,8 +214,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Passer au joueur libre",
-          "en": "Pass to the player who is free",
-          "de": "Pass auf den freien Spieler"
+          "en": "Pass to the player who is free"
         },
         "moves": {
           "b": [
@@ -237,8 +226,7 @@
         "durationS": 1.5,
         "caption": {
           "fr": "Tir dans le but libre",
-          "en": "Shoot into the open goal",
-          "de": "Schuss ins offene Tor"
+          "en": "Shoot into the open goal"
         },
         "moves": {
           "b": [
@@ -250,8 +238,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Remise en jeu rapide de l'autre équipe",
-          "en": "Quick restart by the other team",
-          "de": "Schneller Neustart durch das andere Team"
+          "en": "Quick restart by the other team"
         },
         "moves": {
           "b3": [
@@ -269,8 +256,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Ressortir le ballon et chercher les buts de l'autre côté",
-          "en": "Play out and look for the goals on the other side",
-          "de": "Herausspielen und die Tore auf der anderen Seite suchen"
+          "en": "Play out and look for the goals on the other side"
         },
         "moves": {
           "b": [

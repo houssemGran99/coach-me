@@ -26,13 +26,11 @@
   ],
   "name": {
     "en": "Corner goals 3v3",
-    "fr": "Buts dans les coins 3 contre 3",
-    "de": "Eckentore 3 gegen 3"
+    "fr": "Buts dans les coins 3 contre 3"
   },
   "organisation": {
     "en": "30 m by 20 m area with a mini goal in each corner. Two teams of three plus three neutral players who support the team in possession. Score by passing or dribbling into a corner goal. The team that loses the ball defends all four goals.",
-    "fr": "Zone de 30 m sur 20 m avec un mini-but dans chaque coin. Deux équipes de trois et trois joueurs neutres qui soutiennent l'équipe en possession. On marque en passant ou en conduisant dans un but de coin. L'équipe qui perd le ballon défend les quatre buts.",
-    "de": "Fläche von 30 m mal 20 m mit einem Minitor in jeder Ecke. Zwei Teams zu je drei Spielern plus drei neutrale Spieler, die das Team am Ball unterstützen. Ein Tor fällt durch Passen oder Dribbeln in ein Eckentor. Das Team, das den Ball verliert, verteidigt alle vier Tore."
+    "fr": "Zone de 30 m sur 20 m avec un mini-but dans chaque coin. Deux équipes de trois et trois joueurs neutres qui soutiennent l'équipe en possession. On marque en passant ou en conduisant dans un but de coin. L'équipe qui perd le ballon défend les quatre buts."
   },
   "coachingPoints": {
     "en": [
@@ -44,11 +42,6 @@
       "Créer de la largeur tôt pour pouvoir changer de côté",
       "Soutenir le porteur à 5-10 m",
       "Choisir le but de coin le plus éloigné du défenseur le plus proche"
-    ],
-    "de": [
-      "Schaffe früh Breite, damit der Ball die Seite wechseln kann",
-      "Unterstütze den Ballführenden aus 5 bis 10 m",
-      "Wähle das Eckentor, das am weitesten vom nächsten Verteidiger entfernt ist"
     ]
   },
   "variants": [
@@ -56,16 +49,14 @@
       "label": "easier",
       "text": {
         "en": "Remove the neutral players",
-        "fr": "Retirer les joueurs neutres",
-        "de": "Ohne die neutralen Spieler"
+        "fr": "Retirer les joueurs neutres"
       }
     },
     {
       "label": "progression_for_stronger_players",
       "text": {
         "en": "Two touches maximum for the neutral players",
-        "fr": "Deux touches maximum pour les joueurs neutres",
-        "de": "Höchstens zwei Ballkontakte für die neutralen Spieler"
+        "fr": "Deux touches maximum pour les joueurs neutres"
       }
     }
   ],
@@ -182,8 +173,7 @@
         "durationS": 3,
         "caption": {
           "en": "Blue passes wide to a neutral player",
-          "fr": "Les bleus passent sur le côté à un joueur neutre",
-          "de": "Blau spielt breit auf einen neutralen Spieler"
+          "fr": "Les bleus passent sur le côté à un joueur neutre"
         },
         "moves": {
           "b": [
@@ -210,8 +200,7 @@
         "durationS": 3,
         "caption": {
           "en": "The neutral switches the play",
-          "fr": "Le joueur neutre change le jeu de côté",
-          "de": "Der Neutrale verlagert das Spiel"
+          "fr": "Le joueur neutre change le jeu de côté"
         },
         "moves": {
           "b": [
@@ -232,8 +221,7 @@
         "durationS": 2.5,
         "caption": {
           "en": "Pass to the player free in space",
-          "fr": "Passe vers le joueur libre dans l'espace",
-          "de": "Pass auf den freien Spieler im Raum"
+          "fr": "Passe vers le joueur libre dans l'espace"
         },
         "moves": {
           "b": [
@@ -248,8 +236,7 @@
         "durationS": 3.5,
         "caption": {
           "en": "Dribble to the open corner goal",
-          "fr": "Conduire vers le but de coin libre",
-          "de": "Dribbling zum offenen Eckentor"
+          "fr": "Conduire vers le but de coin libre"
         },
         "moves": {
           "a3": [
@@ -275,8 +262,7 @@
         "durationS": 1.2,
         "caption": {
           "en": "Score",
-          "fr": "But",
-          "de": "Tor"
+          "fr": "But"
         },
         "moves": {
           "b": [

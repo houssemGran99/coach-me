@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-import de from "./de.json";
 import en from "./en.json";
 import fr from "./fr.json";
 
@@ -20,7 +19,7 @@ const vars = (s: string) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort(
 const E = flatten(en as Tree);
 
 describe("message catalogues", () => {
-  for (const [name, cat] of [["fr", fr], ["de", de]] as const) {
+  for (const [name, cat] of [["fr", fr]] as const) {
     const C = flatten(cat as Tree);
     it(`${name} has exactly the keys of en`, () => {
       expect(Object.keys(C).sort()).toEqual(Object.keys(E).sort());

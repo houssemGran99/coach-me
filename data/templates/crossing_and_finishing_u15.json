@@ -25,13 +25,11 @@
   ],
   "name": {
     "fr": "Centres et finition",
-    "en": "Crossing and finishing",
-    "de": "Flanken und Abschluss"
+    "en": "Crossing and finishing"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Un joueur de couloir conduit vers la ligne de fond et centre. Deux finisseurs attaquent le premier et le second poteau. Faire tourner joueur de couloir, finisseurs et gardien régulièrement, et utiliser les deux côtés.",
-    "en": "35 m by 30 m area with a full goal and a goalkeeper. A wide player dribbles toward the byline and crosses. Two finishers attack the near post and the far post. Rotate wide player, finishers and goalkeeper every few turns, and use both wings.",
-    "de": "Fläche von 35 m mal 30 m mit einem großen Tor und einem Torwart. Ein Außenspieler dribbelt zur Grundlinie und flankt. Zwei Abschlussspieler laufen auf den kurzen und den langen Pfosten. Wechsle Außenspieler, Abschlussspieler und Torwart nach einigen Durchgängen und nutze beide Seiten."
+    "en": "35 m by 30 m area with a full goal and a goalkeeper. A wide player dribbles toward the byline and crosses. Two finishers attack the near post and the far post. Rotate wide player, finishers and goalkeeper every few turns, and use both wings."
   },
   "coachingPoints": {
     "fr": [
@@ -43,11 +41,6 @@
       "Cross early, low or driven, before the keeper is set",
       "The near-post runner attacks the front of the goal, the far-post runner arrives late",
       "Time the run to meet the cross; do not wait for it"
-    ],
-    "de": [
-      "Früh flanken, flach oder hart, bevor der Torwart sicher steht",
-      "Der Läufer am kurzen Pfosten läuft in den Torraum, der am langen Pfosten kommt spät",
-      "Den Lauf auf die Flanke abstimmen; nicht auf sie warten"
     ]
   },
   "variants": [
@@ -55,16 +48,14 @@
       "label": "easier",
       "text": {
         "fr": "Centrer depuis un ballon arrêté",
-        "en": "Cross from a stationary ball",
-        "de": "Flanke aus dem ruhenden Ball"
+        "en": "Cross from a stationary ball"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un défenseur qui suit le joueur du second poteau",
-        "en": "Add a defender who tracks the far-post runner",
-        "de": "Ein Verteidiger deckt den Läufer am langen Pfosten"
+        "en": "Add a defender who tracks the far-post runner"
       }
     }
   ],
@@ -139,8 +130,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le joueur de couloir conduit vers la ligne de fond",
-          "en": "The wide player dribbles toward the byline",
-          "de": "Der Außenspieler dribbelt zur Grundlinie"
+          "en": "The wide player dribbles toward the byline"
         },
         "moves": {
           "w1": [
@@ -163,8 +153,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Centre tendu vers le second poteau",
-          "en": "Cross early to the far post",
-          "de": "Früh auf den langen Pfosten flanken"
+          "en": "Cross early to the far post"
         },
         "moves": {
           "b": [
@@ -182,8 +171,7 @@
         "durationS": 1.5,
         "caption": {
           "fr": "Le joueur du second poteau finit de première",
-          "en": "The far-post runner finishes first time",
-          "de": "Der Läufer am langen Pfosten schließt direkt ab"
+          "en": "The far-post runner finishes first time"
         },
         "moves": {
           "b": [
@@ -198,8 +186,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Remise en place : tourner joueur de couloir, finisseurs et gardien",
-          "en": "Reset: rotate wide player, finishers and keeper",
-          "de": "Neustart: Außenspieler, Abschlussspieler und Torwart wechseln"
+          "en": "Reset: rotate wide player, finishers and keeper"
         },
         "moves": {
           "w1": [

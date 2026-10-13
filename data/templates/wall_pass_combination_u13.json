@@ -25,13 +25,11 @@
   ],
   "name": {
     "fr": "Une-deux et finition",
-    "en": "One-two combination and finish",
-    "de": "Doppelpass und Abschluss"
+    "en": "One-two combination and finish"
   },
   "organisation": {
     "fr": "Les attaquants partent à 15 m d'un mini-but. Ils conduisent, font un une-deux avec le joueur-mur puis finissent au mini-but. Le joueur-mur remet de première dans la course de l'attaquant. Rotation : l'attaquant devient mur, le mur va en fin de file.",
-    "en": "Attackers start 15 m from a mini goal. They dribble, play a one-two with the wall player and finish at the mini goal. The wall player returns the ball into the attacker's path with one touch. Rotate: attacker to wall, wall to the back of the line.",
-    "de": "Die Angreifer starten 15 m vor einem Minitor. Sie dribbeln, spielen einen Doppelpass mit dem Wandspieler und schließen aufs Minitor ab. Der Wandspieler spielt den Ball mit einem Kontakt in den Laufweg des Angreifers zurück. Rotation: Angreifer zur Wand, Wand ans Ende der Schlange."
+    "en": "Attackers start 15 m from a mini goal. They dribble, play a one-two with the wall player and finish at the mini goal. The wall player returns the ball into the attacker's path with one touch. Rotate: attacker to wall, wall to the back of the line."
   },
   "coachingPoints": {
     "fr": [
@@ -43,11 +41,6 @@
       "Pass firmly and run immediately into the space",
       "The wall player plays first time into the runner's path",
       "Finish low and across the goal"
-    ],
-    "de": [
-      "Fest passen und sofort in den freien Raum laufen",
-      "Der Wandspieler spielt direkt in den Laufweg des Läufers",
-      "Flach und quer über das Tor abschließen"
     ]
   },
   "variants": [
@@ -55,16 +48,14 @@
       "label": "easier",
       "text": {
         "fr": "Partir plus près du but",
-        "en": "Start closer to the goal",
-        "de": "Näher am Tor starten"
+        "en": "Start closer to the goal"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un défenseur passif",
-        "en": "Add a passive defender",
-        "de": "Einen passiven Verteidiger hinzufügen"
+        "en": "Add a passive defender"
       }
     }
   ],
@@ -132,8 +123,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "L'attaquant conduit vers le joueur-mur",
-          "en": "The attacker dribbles toward the wall player",
-          "de": "Der Angreifer dribbelt zum Wandspieler"
+          "en": "The attacker dribbles toward the wall player"
         },
         "moves": {
           "a1": [
@@ -148,8 +138,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Passe au mur et appel dans l'espace",
-          "en": "Pass to the wall and run into space",
-          "de": "Zur Wand passen und in den Raum laufen"
+          "en": "Pass to the wall and run into space"
         },
         "moves": {
           "b": [
@@ -164,8 +153,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Le mur remet de première dans la course",
-          "en": "The wall returns the ball first time into the run",
-          "de": "Die Wand spielt den Ball direkt in den Lauf zurück"
+          "en": "The wall returns the ball first time into the run"
         },
         "moves": {
           "a1": [
@@ -180,8 +168,7 @@
         "durationS": 2,
         "caption": {
           "fr": "Finition au mini-but",
-          "en": "Finish at the mini goal",
-          "de": "Abschluss aufs Minitor"
+          "en": "Finish at the mini goal"
         },
         "moves": {
           "b": [

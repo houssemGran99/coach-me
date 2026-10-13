@@ -27,13 +27,11 @@
   ],
   "name": {
     "fr": "Conservation en trois zones",
-    "en": "Three-zone possession",
-    "de": "Ballbesitz in drei Zonen"
+    "en": "Three-zone possession"
   },
   "organisation": {
     "fr": "Terrain de 40 m sur 30 m divisé en trois zones. Deux équipes de six. Pas plus de quatre joueurs d'une même équipe dans une zone, et l'équipe en possession doit traverser les trois zones avant de marquer un point en jouant vers un joueur de la dernière zone. Adapter les règles de zone à l'objectif de la séance.",
-    "en": "40 m by 30 m pitch split into three zones. Two teams of six. No more than four players of one team may be in a zone at once, and the team in possession must use all three zones before it scores a point by playing to a player in the end zone. Change the zone rules to match the lesson.",
-    "de": "Feld von 40 m mal 30 m, in drei Zonen geteilt. Zwei Teams zu sechs Spielern. Höchstens vier Spieler eines Teams dürfen gleichzeitig in einer Zone sein, und das Team am Ball muss alle drei Zonen nutzen, bevor es einen Punkt erzielt, indem es auf einen Spieler in der Endzone spielt. Ändere die Zonenregeln passend zum Lernziel."
+    "en": "40 m by 30 m pitch split into three zones. Two teams of six. No more than four players of one team may be in a zone at once, and the team in possession must use all three zones before it scores a point by playing to a player in the end zone. Change the zone rules to match the lesson."
   },
   "coachingPoints": {
     "fr": [
@@ -45,11 +43,6 @@
       "Move the ball through the zones with quick passes, then change the angle",
       "Arrive late into the next zone to receive in space",
       "When the ball goes forward, the team compacts behind it"
-    ],
-    "de": [
-      "Den Ball mit schnellen Pässen durch die Zonen bewegen, dann den Winkel ändern",
-      "Spät in die nächste Zone kommen, um im freien Raum anzunehmen",
-      "Geht der Ball nach vorn, rückt die Mannschaft dahinter zusammen"
     ]
   },
   "variants": [
@@ -57,16 +50,14 @@
       "label": "easier",
       "text": {
         "fr": "Autoriser cinq joueurs par zone",
-        "en": "Allow five players per zone",
-        "de": "Fünf Spieler pro Zone erlauben"
+        "en": "Allow five players per zone"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Deux touches maximum dans la zone centrale",
-        "en": "Two touches maximum in the middle zone",
-        "de": "Höchstens zwei Ballkontakte in der mittleren Zone"
+        "en": "Two touches maximum in the middle zone"
       }
     }
   ],
@@ -88,8 +79,7 @@
         "h": 29,
         "label": {
           "fr": "Zone 1",
-          "en": "Zone 1",
-          "de": "Zone 1"
+          "en": "Zone 1"
         }
       },
       {
@@ -99,8 +89,7 @@
         "h": 29,
         "label": {
           "fr": "Zone 2",
-          "en": "Zone 2",
-          "de": "Zone 2"
+          "en": "Zone 2"
         }
       },
       {
@@ -110,8 +99,7 @@
         "h": 29,
         "label": {
           "fr": "Zone 3",
-          "en": "Zone 3",
-          "de": "Zone 3"
+          "en": "Zone 3"
         }
       }
     ],
@@ -213,8 +201,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Construire en zone 1 : 1 joue vers 3",
-          "en": "Build in zone 1: 1 plays to 3",
-          "de": "Aufbau in Zone 1: 1 spielt zu 3"
+          "en": "Build in zone 1: 1 plays to 3"
         },
         "moves": {
           "b": [
@@ -232,8 +219,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Jouer vers l'avant dans la zone 2",
-          "en": "Play forward into zone 2",
-          "de": "Nach vorn in Zone 2 spielen"
+          "en": "Play forward into zone 2"
         },
         "moves": {
           "b": [
@@ -251,8 +237,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Changer vers le joueur excentré ; un joueur rejoint depuis la zone 1",
-          "en": "Switch to the wide player; a runner joins from zone 1",
-          "de": "Auf den Außenspieler verlagern; ein Läufer kommt aus Zone 1 dazu"
+          "en": "Switch to the wide player; a runner joins from zone 1"
         },
         "moves": {
           "b": [
@@ -273,8 +258,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Jouer dans la zone 3 pour finir la séquence",
-          "en": "Play into zone 3 to complete the sequence",
-          "de": "In Zone 3 spielen, um die Passfolge abzuschließen"
+          "en": "Play into zone 3 to complete the sequence"
         },
         "moves": {
           "b": [

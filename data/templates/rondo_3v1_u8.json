@@ -23,13 +23,11 @@
   ],
   "name": {
     "fr": "Rondo 3 contre 1",
-    "en": "3v1 rondo",
-    "de": "Rondo 3 gegen 1"
+    "en": "3v1 rondo"
   },
   "organisation": {
     "fr": "Carré de 10 m sur 10 m avec des plots. Trois joueurs gardent le ballon face à un défenseur au centre. Le défenseur qui récupère le ballon prend la place du joueur qui l'a perdu. Rester ludique : compter les passes ensemble.",
-    "en": "Square of 10 m by 10 m with cones. Three players keep the ball from one defender in the middle. A defender who wins the ball swaps with the player who lost it. Keep it fun: count passes together.",
-    "de": "Quadrat von 10 m mal 10 m mit Hütchen. Drei Spieler halten den Ball gegen einen Verteidiger in der Mitte. Ein Verteidiger, der den Ball erobert, tauscht mit dem Spieler, der ihn verloren hat. Mit Spaß dabei: Zählt die Pässe gemeinsam."
+    "en": "Square of 10 m by 10 m with cones. Three players keep the ball from one defender in the middle. A defender who wins the ball swaps with the player who lost it. Keep it fun: count passes together."
   },
   "coachingPoints": {
     "fr": [
@@ -41,11 +39,6 @@
       "Pass, then move to a new space",
       "Make a triangle so there is always a free pass",
       "Use the inside of the foot and keep the ball on the ground"
-    ],
-    "de": [
-      "Passen, dann in einen neuen Raum laufen",
-      "Ein Dreieck bilden, sodass immer ein freier Pass möglich ist",
-      "Mit der Innenseite spielen und den Ball am Boden halten"
     ]
   },
   "variants": [
@@ -53,16 +46,14 @@
       "label": "easier",
       "text": {
         "fr": "Agrandir le carré",
-        "en": "Make the square bigger",
-        "de": "Das Quadrat größer machen"
+        "en": "Make the square bigger"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Deux touches maximum",
-        "en": "Two touches maximum",
-        "de": "Höchstens zwei Ballkontakte"
+        "en": "Two touches maximum"
       }
     }
   ],
@@ -140,8 +131,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le joueur 1 passe au joueur 2",
-          "en": "Player 1 passes to player 2",
-          "de": "Spieler 1 passt zu Spieler 2"
+          "en": "Player 1 passes to player 2"
         },
         "moves": {
           "b": [
@@ -156,8 +146,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le joueur 2 passe au joueur 3",
-          "en": "Player 2 passes to player 3",
-          "de": "Spieler 2 passt zu Spieler 3"
+          "en": "Player 2 passes to player 3"
         },
         "moves": {
           "b": [
@@ -172,8 +161,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le joueur 3 repasse au joueur 1",
-          "en": "Player 3 passes back to player 1",
-          "de": "Spieler 3 passt zurück zu Spieler 1"
+          "en": "Player 3 passes back to player 1"
         },
         "moves": {
           "b": [
@@ -188,8 +176,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Le défenseur récupère le ballon et change de place",
-          "en": "The defender wins the ball and swaps places",
-          "de": "Der Verteidiger erobert den Ball und tauscht den Platz"
+          "en": "The defender wins the ball and swaps places"
         },
         "moves": {
           "b": [

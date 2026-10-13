@@ -24,13 +24,11 @@
   ],
   "name": {
     "fr": "Recevoir, se retourner et sortir par une porte",
-    "en": "Receive, turn and exit through a gate",
-    "de": "Annehmen, drehen und durch ein Tor spielen"
+    "en": "Receive, turn and exit through a gate"
   },
   "organisation": {
     "fr": "Deux serveurs passent à un receveur placé au centre d'une zone de 20 m sur 15 m. Le receveur contrôle en orientant son corps vers les portes puis sort en conduite par l'une d'elles. Le receveur suivant prend sa place. Changer les rôles toutes les 2 minutes.",
-    "en": "Two servers pass to a receiver in the middle of a 20 m by 15 m area. The receiver controls on the half-turn, looking at the gates, and dribbles out through one of them. Then the next receiver steps in. Rotate roles every 2 minutes.",
-    "de": "Zwei Zuspieler passen zu einem Empfänger in der Mitte einer Fläche von 20 m mal 15 m. Der Empfänger nimmt den Ball in der Halbdrehung an, mit Blick auf die Tore, und dribbelt durch eines davon hinaus. Dann ist der nächste Empfänger dran. Wechsle die Rollen alle 2 Minuten."
+    "en": "Two servers pass to a receiver in the middle of a 20 m by 15 m area. The receiver controls on the half-turn, looking at the gates, and dribbles out through one of them. Then the next receiver steps in. Rotate roles every 2 minutes."
   },
   "coachingPoints": {
     "fr": [
@@ -42,11 +40,6 @@
       "Check over your shoulder before the ball arrives",
       "Take the first touch toward the gate you chose",
       "Accelerate out of the turn"
-    ],
-    "de": [
-      "Vor dem Ballerhalt über die Schulter schauen",
-      "Den ersten Kontakt in Richtung des gewählten Tors nehmen",
-      "Aus der Drehung heraus beschleunigen"
     ]
   },
   "variants": [
@@ -54,16 +47,14 @@
       "label": "easier",
       "text": {
         "fr": "Le receveur choisit la porte à l'avance",
-        "en": "The receiver picks a gate in advance",
-        "de": "Der Empfänger wählt das Tor vorher"
+        "en": "The receiver picks a gate in advance"
       }
     },
     {
       "label": "harder",
       "text": {
         "fr": "Ajouter un défenseur passif derrière le receveur",
-        "en": "Add a passive defender behind the receiver",
-        "de": "Einen passiven Verteidiger hinter dem Empfänger hinzufügen"
+        "en": "Add a passive defender behind the receiver"
       }
     }
   ],
@@ -146,8 +137,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le serveur passe au receveur",
-          "en": "The server passes to the receiver",
-          "de": "Der Zuspieler passt zum Empfänger"
+          "en": "The server passes to the receiver"
         },
         "moves": {
           "b1": [
@@ -159,8 +149,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Contrôle orienté et sortie par une porte",
-          "en": "Receive on the half-turn and exit through a gate",
-          "de": "In der Halbdrehung annehmen und durch ein Tor hinausspielen"
+          "en": "Receive on the half-turn and exit through a gate"
         },
         "moves": {
           "r1": [
@@ -177,8 +166,7 @@
         "durationS": 2.5,
         "caption": {
           "fr": "Le receveur suivant entre ; le second serveur passe",
-          "en": "The next receiver steps in; the second server passes",
-          "de": "Der nächste Empfänger ist dran; der zweite Zuspieler passt"
+          "en": "The next receiver steps in; the second server passes"
         },
         "moves": {
           "r2": [
@@ -193,8 +181,7 @@
         "durationS": 3,
         "caption": {
           "fr": "Se retourner à l'opposé de la pression et prendre l'autre porte",
-          "en": "Turn away from pressure and use the other gate",
-          "de": "Vom Druck wegdrehen und das andere Tor nutzen"
+          "en": "Turn away from pressure and use the other gate"
         },
         "moves": {
           "r2": [

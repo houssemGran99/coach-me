@@ -71,7 +71,7 @@ describe("validateSpec", () => {
     goals.animation.goals = mk(7, () => ({ x: 1, y: 1, w: 1, h: 1 })) as AnimationSpec["goals"];
     only(goals, "TOO_MANY");
     const zones = base();
-    const label = { fr: "z", en: "z", de: "z" };
+    const label = { fr: "z", en: "z" };
     zones.animation.zones = mk(5, () => ({ x: 1, y: 1, w: 2, h: 2, label })) as AnimationSpec["zones"];
     only(zones, "TOO_MANY");
   });

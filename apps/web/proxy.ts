@@ -5,7 +5,7 @@ import {
 } from "./lib/guest";
 
 /**
- * 1. `?lang=fr|en|de` sets the language cookie and drops the parameter, so shared links can pick a language.
+ * 1. `?lang=fr|en` sets the language cookie and drops the parameter, so shared links can pick a language.
  * 2. Opening a feature page without an account creates an automatic guest account (no email needed).
  */
 export async function proxy(request: NextRequest) {

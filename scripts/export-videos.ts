@@ -3,9 +3,9 @@
  *
  *   pnpm videos:export                          # every template, French, 9:16
  *   pnpm videos:export --id rondo_4v2_u10       # one template (repeatable, or comma-separated)
- *   pnpm videos:export --lang de --format square
+ *   pnpm videos:export --lang en --format square
  *
- * Options: --id <id[,id]>  --lang fr|en|de  --format vertical|square|landscape
+ * Options: --id <id[,id]>  --lang fr|en  --format vertical|square|landscape
  *          --fps <n> (default 30)  --out <dir> (default out/videos)  --partial (skip validation failures)
  *
  * Frames are drawn with the same core and pitch as the app (buildTimeline/stateAt/PitchSvg),
@@ -49,15 +49,6 @@ const UI: Record<Lang, { kind: Record<string, string>; reviewedBy: (n: string) =
     outroSub: "Animated drills · timed session · shareable link",
     step: "Step",
   },
-  de: {
-    kind: { warmup: "Aufwärmen", technical: "Technik", game_related: "Spielform", main: "Hauptübung", game: "Spiel", cooldown: "Abwärmen" },
-    reviewedBy: (n) => `Geprüft von ${n}`,
-    aiDraft: "KI-Entwurf",
-    players: "Spieler",
-    outro: "Plane dein Training in 30 Sekunden",
-    outroSub: "Animierte Übungen · Trainingseinheit mit Zeitplan · Link zum Teilen",
-    step: "Schritt",
-  },
 };
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -76,7 +67,7 @@ function parseArgs(argv: string[]) {
     if (f === "--id") a.ids.push(...need(i++, f).split(",").filter(Boolean));
     else if (f === "--lang") {
       const v = need(i++, f);
-      if (v !== "fr" && v !== "en" && v !== "de") throw new Error("--lang must be fr, en or de");
+      if (v !== "fr" && v !== "en") throw new Error("--lang must be fr or en");
       a.lang = v;
     } else if (f === "--format") {
       const v = need(i++, f);

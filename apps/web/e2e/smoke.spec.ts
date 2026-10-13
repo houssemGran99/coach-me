@@ -140,15 +140,15 @@ test("scope: health and diet requests are refused in the coach's language", asyn
   await expect(page.getByTestId("chat-error")).toBeVisible();
 });
 
-test("French and German render in their own language", async ({ page }) => {
+test("French and English render in their own language", async ({ page }) => {
   await page.goto("/templates?lang=fr");
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
   await expect(page.locator("html")).toHaveAttribute("lang", "fr");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Modèles");
-  await page.goto("/templates?lang=de");
-  await expect(page.locator("html")).toHaveAttribute("lang", "de");
+  await page.goto("/templates?lang=en");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Übungsvorlagen");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Practice templates");
 });
 
 test("manifest and offline page are available", async ({ page, request }) => {
