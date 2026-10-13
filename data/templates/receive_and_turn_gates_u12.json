@@ -1,6 +1,7 @@
 {
   "id": "receive_and_turn_gates_u12",
   "kind": "technical",
+  "difficulty": 2,
   "ageGroups": [
     "U10",
     "U11",

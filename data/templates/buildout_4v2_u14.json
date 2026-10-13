@@ -1,6 +1,7 @@
 {
   "id": "buildout_4v2_u14",
   "kind": "main",
+  "difficulty": 3,
   "ageGroups": [
     "U13",
     "U14",

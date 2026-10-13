@@ -122,3 +122,11 @@ describe("JSON Schema derivation", () => {
     expect(js.required).toContain("animation");
   });
 });
+
+describe("difficulty", () => {
+  it("accepts 1 to 3 and rejects anything else", () => {
+    const base = seed("rondo_4v2_u10");
+    for (const ok of [1, 2, 3, undefined]) expect(PracticeSchema.safeParse({ ...base, difficulty: ok }).success, String(ok)).toBe(true);
+    for (const bad of [0, 4, 1.5, "2", null]) expect(PracticeSchema.safeParse({ ...base, difficulty: bad }).success, String(bad)).toBe(false);
+  });
+});

@@ -102,6 +102,7 @@ export function validateTemplates(opts: ValidateOptions = {}): { problems: Probl
       if (sorted[k]! - sorted[k - 1]! !== 1) add(file, "ageGroups must be one contiguous range");
     }
     if (p.minPlayers > p.maxPlayers) add(file, "minPlayers exceeds maxPlayers");
+    if (p.difficulty === undefined) add(file, "difficulty (1-3) is missing");
 
     // Area vs actors: each player disc is ~3 m^2; require at least 4 m^2 of pitch per actor.
     const actors = p.animation.actors.length;

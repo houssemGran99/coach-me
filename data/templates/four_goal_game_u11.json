@@ -1,6 +1,7 @@
 {
   "id": "four_goal_game_u11",
   "kind": "game",
+  "difficulty": 2,
   "ageGroups": [
     "U10",
     "U11",

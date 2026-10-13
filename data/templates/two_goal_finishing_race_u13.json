@@ -1,6 +1,7 @@
 {
   "id": "two_goal_finishing_race_u13",
   "kind": "game_related",
+  "difficulty": 2,
   "ageGroups": [
     "U12",
     "U13",

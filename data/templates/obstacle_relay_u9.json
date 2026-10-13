@@ -1,6 +1,7 @@
 {
   "id": "obstacle_relay_u9",
   "kind": "technical",
+  "difficulty": 1,
   "ageGroups": [
     "U8",
     "U9",

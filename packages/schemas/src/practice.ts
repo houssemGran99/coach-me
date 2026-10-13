@@ -27,6 +27,8 @@ export const PracticeSchema = z
   .strictObject({
     id: z.string().regex(/^[A-Za-z0-9_-]{1,64}$/, "id must be snake_case or a uuid"),
     kind: PracticeKindSchema,
+    /** 1 = easy, 2 = medium, 3 = hard for the age group. Optional so practices saved before this field existed stay valid. */
+    difficulty: z.number().int().min(1).max(3).optional(),
     ageGroups: z.array(AgeGroupSchema).min(1),
     minPlayers: z.number().int().min(1).max(60),
     maxPlayers: z.number().int().min(1).max(60),

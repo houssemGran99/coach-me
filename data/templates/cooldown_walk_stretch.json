@@ -1,6 +1,7 @@
 {
   "id": "cooldown_walk_stretch",
   "kind": "cooldown",
+  "difficulty": 1,
   "ageGroups": [
     "U6",
     "U7",

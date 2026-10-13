@@ -1,6 +1,7 @@
 {
   "id": "three_zone_possession_u16",
   "kind": "main",
+  "difficulty": 3,
   "ageGroups": [
     "U15",
     "U16",

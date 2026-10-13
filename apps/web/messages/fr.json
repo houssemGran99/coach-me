@@ -65,6 +65,12 @@
     "edited": "Modifié par vous",
     "aiHelp": "Rédigé par l'assistant. Vérifiez-le avant de l'utiliser."
   },
+  "difficulty": {
+    "label": "Difficulté",
+    "1": "Facile",
+    "2": "Moyen",
+    "3": "Difficile"
+  },
   "kinds": {
     "warmup": "Échauffement",
     "technical": "Technique",
@@ -198,8 +204,6 @@
     "phase": "Phase {n}",
     "points": "Points de coaching",
     "organisation": "Mise en place",
-    "watch": "Voir l'animation",
-    "hide": "Masquer l'animation",
     "notes": "Vos notes",
     "notesPlaceholder": "Ajoutez une note pour cet exercice",
     "saving": "Enregistrement…",

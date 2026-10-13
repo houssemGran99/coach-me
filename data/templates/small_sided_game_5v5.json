@@ -1,6 +1,7 @@
 {
   "id": "small_sided_game_5v5",
   "kind": "game",
+  "difficulty": 2,
   "ageGroups": [
     "U9",
     "U10",

@@ -1,6 +1,7 @@
 {
   "id": "receive_turn_and_shoot_u12",
   "kind": "technical",
+  "difficulty": 2,
   "ageGroups": [
     "U11",
     "U12",
