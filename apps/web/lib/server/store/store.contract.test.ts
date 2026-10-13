@@ -6,7 +6,7 @@ import type { NewPractice, Store } from "./types";
 
 /**
  * The same behaviour is required of every store. The MongoDB run needs a real database:
- * MONGODB_URI_TEST=mongodb://... pnpm test (a throwaway database named coach_test_<random> is used and dropped).
+ * MONGODB_URI_TEST=mongodb://... pnpm test (a throwaway database named coach_test_<random> is used and its collections are dropped).
  */
 const mongoUri = process.env.MONGODB_URI_TEST;
 const dbName = `coach_test_${Math.random().toString(36).slice(2, 10)}`;
@@ -15,7 +15,10 @@ const stores: [string, () => Store][] = [["memory", () => createMemoryStore()]];
 if (mongoUri) stores.push(["mongodb", () => createMongoStore(connectMongo(mongoUri, dbName))]);
 
 afterAll(async () => {
-  if (mongoUri) await (await connectMongo(mongoUri, dbName)).dropDatabase();
+  if (!mongoUri) return;
+  // Drop collections, not the database: a readWrite user may not run dropDatabase.
+  const db = await connectMongo(mongoUri, dbName);
+  for (const c of await db.listCollections().toArray()) await db.dropCollection(c.name);
 });
 
 const uid = () => crypto.randomUUID();
