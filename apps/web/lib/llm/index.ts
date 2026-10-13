@@ -1,6 +1,7 @@
 import "server-only";
 import { getConfig } from "../server/config";
 import { createAnthropicLlm } from "./anthropic";
+import { createGeminiLlm } from "./gemini";
 import { createMockLlm } from "./mock";
 import { LlmUnavailableError, type Llm } from "./types";
 
@@ -17,5 +18,6 @@ export function getLlm(): Llm {
       },
     };
   }
+  if (cfg.llmProvider === "gemini") return createGeminiLlm({ apiKey: cfg.llmApiKey, model: cfg.llmModel || "gemini-2.5-flash" });
   return createAnthropicLlm({ apiKey: cfg.llmApiKey, model: cfg.llmModel || "claude-sonnet-5-5" });
 }
