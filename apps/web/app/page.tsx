@@ -1,30 +1,7 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { Landing } from "@/components/landing/Landing";
-import { getUser } from "@/lib/server/auth";
-
-const TITLE = "Coach Me – Votre séance d'entraînement en 30 secondes";
-
-/** Visitors who are not signed in see the marketing page; signed-in coaches get the app home. */
-export async function generateMetadata(): Promise<Metadata> {
-  if (await getUser()) return {};
-  return {
-    title: { absolute: TITLE },
-    description:
-      "Coach Me aide les entraîneurs de football de Tunisie à préparer une séance chronométrée à partir d'exercices relus, à les visionner en animation et à les partager par lien.",
-    openGraph: {
-      title: TITLE,
-      description: "Des exercices animés, une séance chronométrée, un lien à partager. Pour les entraîneurs d'académies de football.",
-      type: "website",
-      locale: "fr_FR",
-    },
-  };
-}
 
 export default async function Home() {
-  if (!(await getUser())) return <Landing />;
-
   const t = await getTranslations("home");
   return (
     <div className="grid gap-10">
