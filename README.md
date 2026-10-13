@@ -1,4 +1,4 @@
-# Coach Me (formerly working name: Mourabbi)
+# Coach Me
 
 A mobile-first PWA for football academy coaches in Tunisia. Describe your squad and what went wrong last week and get a **timed session** built from drills; watch every drill as an **animation**; describe a drill in chat to get a new one; keep a **personal library** (works offline); **share** a drill by link.
 
