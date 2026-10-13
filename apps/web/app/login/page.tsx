@@ -12,7 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string; error?: string }> }) {
   const { next, error } = await searchParams;
   const dest = safeNext(next);
-  if (await getUser()) redirect(dest);
+  // MongoDB mode has no email sign-in: visitors are guests, so send them straight to the feature.
+  if ((await getUser()) || getConfig().backend === "mongo") redirect(dest);
   const t = await getTranslations("auth");
   return (
     <div className="grid gap-4">

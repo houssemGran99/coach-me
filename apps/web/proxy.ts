@@ -1,7 +1,9 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_COOKIE, isLocale } from "./i18n/config";
-import { MOCK_COOKIE, needsAccount, newGuestEmail } from "./lib/guest";
+import {
+  GUEST_COOKIE, GUEST_COOKIE_MAX_AGE, MOCK_COOKIE, needsAccount, newGuestCookie, newGuestEmail, verifyGuestCookie,
+} from "./lib/guest";
 
 /**
  * 1. `?lang=fr|ar|en` sets the language cookie and drops the parameter, so shared links can pick a language.
@@ -29,6 +31,16 @@ export async function proxy(request: NextRequest) {
       request.cookies.set(MOCK_COOKIE, value);
       response = NextResponse.next({ request });
       response.cookies.set(MOCK_COOKIE, value, { httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 365 });
+    }
+    return response;
+  }
+  if (process.env.MONGODB_URI) {
+    const secret = process.env.AUTH_SECRET ?? "";
+    if (wantsAccount && secret && !verifyGuestCookie(request.cookies.get(GUEST_COOKIE)?.value, secret)) {
+      const { value } = newGuestCookie(secret);
+      request.cookies.set(GUEST_COOKIE, value);
+      response = NextResponse.next({ request });
+      response.cookies.set(GUEST_COOKIE, value, { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: GUEST_COOKIE_MAX_AGE });
     }
     return response;
   }
