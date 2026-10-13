@@ -28,12 +28,14 @@
   "name": {
     "fr": "Chat avec ballon",
     "en": "Tag with a ball",
-    "ar": "لعبة المطاردة بالكرة"
+    "ar": "لعبة المطاردة بالكرة",
+    "de": "Fangspiel mit Ball"
   },
   "organisation": {
     "fr": "Carré de 20 m. Tout le monde conduit un ballon. Un ou deux poursuiveurs en chasuble conduisent aussi. Un poursuiveur qui touche un joueur de la main l'envoie faire 5 touches sur place, puis il reprend le jeu. Changer de poursuiveur toutes les minutes.",
     "en": "20 m square. Everyone dribbles a ball. One or two taggers wear bibs and also dribble. A tagger who touches a player with a hand sends them to do 5 touches on the spot, then they rejoin the game. Change taggers every minute.",
-    "ar": "مربع 20 م. يراوغ الجميع بكراتهم. مطارد أو اثنان يرتديان صدرية ويراوغان أيضًا. إذا لمس المطارد لاعبًا بيده يؤدي اللاعب 5 لمسات في مكانه ثم يعود إلى اللعب. بدّل المطاردين كل دقيقة."
+    "ar": "مربع 20 م. يراوغ الجميع بكراتهم. مطارد أو اثنان يرتديان صدرية ويراوغان أيضًا. إذا لمس المطارد لاعبًا بيده يؤدي اللاعب 5 لمسات في مكانه ثم يعود إلى اللعب. بدّل المطاردين كل دقيقة.",
+    "de": "Quadrat von 20 m. Alle dribbeln einen Ball. Ein oder zwei Fänger tragen Leibchen und dribbeln ebenfalls. Berührt ein Fänger einen Spieler mit der Hand, macht dieser 5 Ballkontakte auf der Stelle und steigt dann wieder ins Spiel ein. Wechsle die Fänger jede Minute."
   },
   "coachingPoints": {
     "fr": [
@@ -50,6 +52,11 @@
       "أبقِ الكرة قريبة وغيّر السرعة",
       "انظر خلفك لتراقب المطارد",
       "استعمل المراوغات والدوران السريع للإفلات"
+    ],
+    "de": [
+      "Den Ball nah halten und dabei das Tempo wechseln",
+      "Über die Schulter nach dem Fänger schauen",
+      "Mit Finten und schnellen Drehungen entkommen"
     ]
   },
   "variants": [
@@ -58,7 +65,8 @@
       "text": {
         "fr": "Les poursuivants marchent vite au lieu de courir",
         "en": "Taggers walk fast instead of running",
-        "ar": "يمشي المطاردون بسرعة بدل الجري"
+        "ar": "يمشي المطاردون بسرعة بدل الجري",
+        "de": "Die Fänger gehen schnell, statt zu laufen"
       }
     },
     {
@@ -66,7 +74,8 @@
       "text": {
         "fr": "Les joueurs touchés font 5 touches du pied faible",
         "en": "Tagged players do 5 touches with the weaker foot",
-        "ar": "اللاعب الملموس يؤدي 5 لمسات بالقدم الأضعف"
+        "ar": "اللاعب الملموس يؤدي 5 لمسات بالقدم الأضعف",
+        "de": "Abgeschlagene Spieler machen 5 Kontakte mit dem schwächeren Fuß"
       }
     }
   ],
@@ -151,7 +160,8 @@
         "caption": {
           "fr": "Tout le monde conduit ; le poursuiveur chasse",
           "en": "Everyone dribbles; the tagger chases",
-          "ar": "الجميع يراوغ والمطارد يلاحق"
+          "ar": "الجميع يراوغ والمطارد يلاحق",
+          "de": "Alle dribbeln; der Fänger jagt"
         },
         "moves": {
           "t1": [
@@ -193,7 +203,8 @@
         "caption": {
           "fr": "Le poursuiveur rattrape un joueur",
           "en": "The tagger reaches a player",
-          "ar": "المطارد يدرك لاعبًا"
+          "ar": "المطارد يدرك لاعبًا",
+          "de": "Der Fänger erreicht einen Spieler"
         },
         "moves": {
           "t1": [
@@ -233,7 +244,8 @@
         "caption": {
           "fr": "Touché : 5 touches sur place",
           "en": "Tagged: 5 touches on the spot",
-          "ar": "تم لمسه: 5 لمسات في مكانه"
+          "ar": "تم لمسه: 5 لمسات في مكانه",
+          "de": "Abgeschlagen: 5 Kontakte auf der Stelle"
         },
         "moves": {
           "b1": [
@@ -273,7 +285,8 @@
         "caption": {
           "fr": "Retour au jeu ; le poursuiveur choisit un autre joueur",
           "en": "Back in the game; the tagger picks another player",
-          "ar": "يعود اللاعب إلى اللعب والمطارد يختار غيره"
+          "ar": "يعود اللاعب إلى اللعب والمطارد يختار غيره",
+          "de": "Zurück im Spiel; der Fänger sucht sich den nächsten Spieler"
         },
         "moves": {
           "p1": [

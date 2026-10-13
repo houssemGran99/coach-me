@@ -26,12 +26,14 @@
   "name": {
     "fr": "Une-deux et finition",
     "en": "One-two combination and finish",
-    "ar": "تمريرة حائط وتسديدة"
+    "ar": "تمريرة حائط وتسديدة",
+    "de": "Doppelpass und Abschluss"
   },
   "organisation": {
     "fr": "Les attaquants partent à 15 m d'un mini-but. Ils conduisent, font un une-deux avec le joueur-mur puis finissent au mini-but. Le joueur-mur remet de première dans la course de l'attaquant. Rotation : l'attaquant devient mur, le mur va en fin de file.",
     "en": "Attackers start 15 m from a mini goal. They dribble, play a one-two with the wall player and finish at the mini goal. The wall player returns the ball into the attacker's path with one touch. Rotate: attacker to wall, wall to the back of the line.",
-    "ar": "ينطلق المهاجمون على بُعد 15 م من مرمى صغير. يراوغون ثم يلعبون تمريرة حائط مع لاعب الحائط ثم يسدّدون على المرمى. يعيد لاعب الحائط الكرة بلمسة واحدة في مسار المهاجم. التدوير: المهاجم يصبح الحائط، والحائط يذهب إلى آخر الصف."
+    "ar": "ينطلق المهاجمون على بُعد 15 م من مرمى صغير. يراوغون ثم يلعبون تمريرة حائط مع لاعب الحائط ثم يسدّدون على المرمى. يعيد لاعب الحائط الكرة بلمسة واحدة في مسار المهاجم. التدوير: المهاجم يصبح الحائط، والحائط يذهب إلى آخر الصف.",
+    "de": "Die Angreifer starten 15 m vor einem Minitor. Sie dribbeln, spielen einen Doppelpass mit dem Wandspieler und schließen aufs Minitor ab. Der Wandspieler spielt den Ball mit einem Kontakt in den Laufweg des Angreifers zurück. Rotation: Angreifer zur Wand, Wand ans Ende der Schlange."
   },
   "coachingPoints": {
     "fr": [
@@ -48,6 +50,11 @@
       "مرّر بقوة واركض فورًا نحو المساحة",
       "لاعب الحائط يلعب من لمسة واحدة في مسار الراكض",
       "سدّد أرضية ومائلة"
+    ],
+    "de": [
+      "Fest passen und sofort in den freien Raum laufen",
+      "Der Wandspieler spielt direkt in den Laufweg des Läufers",
+      "Flach und quer über das Tor abschließen"
     ]
   },
   "variants": [
@@ -56,7 +63,8 @@
       "text": {
         "fr": "Partir plus près du but",
         "en": "Start closer to the goal",
-        "ar": "ابدأ أقرب إلى المرمى"
+        "ar": "ابدأ أقرب إلى المرمى",
+        "de": "Näher am Tor starten"
       }
     },
     {
@@ -64,7 +72,8 @@
       "text": {
         "fr": "Ajouter un défenseur passif",
         "en": "Add a passive defender",
-        "ar": "أضف مدافعًا سلبيًا"
+        "ar": "أضف مدافعًا سلبيًا",
+        "de": "Einen passiven Verteidiger hinzufügen"
       }
     }
   ],
@@ -133,7 +142,8 @@
         "caption": {
           "fr": "L'attaquant conduit vers le joueur-mur",
           "en": "The attacker dribbles toward the wall player",
-          "ar": "المهاجم يراوغ نحو لاعب الحائط"
+          "ar": "المهاجم يراوغ نحو لاعب الحائط",
+          "de": "Der Angreifer dribbelt zum Wandspieler"
         },
         "moves": {
           "a1": [
@@ -149,7 +159,8 @@
         "caption": {
           "fr": "Passe au mur et appel dans l'espace",
           "en": "Pass to the wall and run into space",
-          "ar": "مرّر إلى الحائط واركض نحو المساحة"
+          "ar": "مرّر إلى الحائط واركض نحو المساحة",
+          "de": "Zur Wand passen und in den Raum laufen"
         },
         "moves": {
           "b": [
@@ -165,7 +176,8 @@
         "caption": {
           "fr": "Le mur remet de première dans la course",
           "en": "The wall returns the ball first time into the run",
-          "ar": "الحائط يعيد الكرة بلمسة واحدة في الركض"
+          "ar": "الحائط يعيد الكرة بلمسة واحدة في الركض",
+          "de": "Die Wand spielt den Ball direkt in den Lauf zurück"
         },
         "moves": {
           "a1": [
@@ -181,7 +193,8 @@
         "caption": {
           "fr": "Finition au mini-but",
           "en": "Finish at the mini goal",
-          "ar": "سدّد على المرمى الصغير"
+          "ar": "سدّد على المرمى الصغير",
+          "de": "Abschluss aufs Minitor"
         },
         "moves": {
           "b": [

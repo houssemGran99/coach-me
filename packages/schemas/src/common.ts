@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const LANGS = ["fr", "ar", "en"] as const;
+export const LANGS = ["fr", "ar", "en", "de"] as const;
 export type Lang = (typeof LANGS)[number];
 export const LangSchema = z.enum(LANGS);
 
@@ -51,10 +51,13 @@ export type Source = (typeof SOURCES)[number];
 export const REVIEW_STATUSES = ["pending", "reviewed", "ai_draft", "edited_by_owner"] as const;
 export type ReviewStatus = (typeof REVIEW_STATUSES)[number];
 
-/** A string in each supported language. Every field is required and non-empty. */
+/**
+ * A string in each supported language. fr, en and ar are required and non-empty. German is optional so practices
+ * saved before it existed stay valid: a missing "de" reads as the English text.
+ */
 export function i18n(max: number) {
   const s = z.string().trim().min(1).max(max);
-  return z.strictObject({ fr: s, en: s, ar: s });
+  return z.strictObject({ fr: s, en: s, ar: s, de: s.optional() }).transform((v) => ({ ...v, de: v.de ?? v.en }));
 }
 export type I18n = Record<Lang, string>;
 

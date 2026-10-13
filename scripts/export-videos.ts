@@ -58,6 +58,15 @@ const UI: Record<Lang, { kind: Record<string, string>; reviewedBy: (n: string) =
     outroSub: "تمارين متحركة · حصة مؤقتة · رابط للمشاركة",
     step: "المرحلة",
   },
+  de: {
+    kind: { warmup: "Aufwärmen", technical: "Technik", game_related: "Spielform", main: "Hauptübung", game: "Spiel", cooldown: "Abwärmen" },
+    reviewedBy: (n) => `Geprüft von ${n}`,
+    aiDraft: "KI-Entwurf",
+    players: "Spieler",
+    outro: "Plane dein Training in 30 Sekunden",
+    outroSub: "Animierte Übungen · Trainingseinheit mit Zeitplan · Link zum Teilen",
+    step: "Schritt",
+  },
 };
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);

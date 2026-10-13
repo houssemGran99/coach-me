@@ -181,7 +181,7 @@
     "equipment": "Equipment",
     "focus": "Focus",
     "note": "What happened last week?",
-    "noteHint": "Describe it in French, Arabic or English. Do not include names or details about individual players.",
+    "noteHint": "Describe it in French, Arabic, English or German. Do not include names or details about individual players.",
     "notePlaceholder": "e.g. We lost our width and support after the first pass.",
     "generate": "Generate session",
     "generating": "Building your session…",

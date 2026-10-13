@@ -27,12 +27,14 @@
   "name": {
     "fr": "Conservation avec zone cible",
     "en": "Possession with a target zone",
-    "ar": "الاستحواذ مع منطقة هدف"
+    "ar": "الاستحواذ مع منطقة هدف",
+    "de": "Ballbesitz mit Zielzone"
   },
   "organisation": {
     "fr": "Zone de 30 m sur 25 m avec une zone cible à une extrémité où se trouvent deux joueurs cibles. Cinq attaquants gardent le ballon face à deux défenseurs. Après cinq passes, ils peuvent jouer dans la zone cible pour marquer un point ; un joueur cible renvoie le ballon et le jeu continue. Les défenseurs ne peuvent pas entrer dans la zone.",
     "en": "30 m by 25 m area with a target zone at one end holding two target players. Five attackers keep the ball against two defenders. After five passes they may play into the target zone for a point; a target player returns the ball and play continues. Defenders cannot enter the zone.",
-    "ar": "منطقة 30 × 25 م بمنطقة هدف في أحد الطرفين فيها لاعبا هدف. خمسة مهاجمين يحتفظون بالكرة أمام مدافعين. بعد خمس تمريرات يمكنهم التمرير إلى منطقة الهدف لنقطة؛ يعيد لاعب الهدف الكرة ويستمر اللعب. لا يدخل المدافعان المنطقة."
+    "ar": "منطقة 30 × 25 م بمنطقة هدف في أحد الطرفين فيها لاعبا هدف. خمسة مهاجمين يحتفظون بالكرة أمام مدافعين. بعد خمس تمريرات يمكنهم التمرير إلى منطقة الهدف لنقطة؛ يعيد لاعب الهدف الكرة ويستمر اللعب. لا يدخل المدافعان المنطقة.",
+    "de": "Fläche von 30 m mal 25 m mit einer Zielzone an einem Ende, in der zwei Zielspieler stehen. Fünf Angreifer halten den Ball gegen zwei Verteidiger. Nach fünf Pässen dürfen sie für einen Punkt in die Zielzone spielen; ein Zielspieler gibt den Ball zurück und das Spiel läuft weiter. Die Verteidiger dürfen die Zone nicht betreten."
   },
   "coachingPoints": {
     "fr": [
@@ -49,6 +51,11 @@
       "حرّك الكرة بسرعة لتفكيك تمركز المدافعين",
       "ابحث عن التمريرة إلى المنطقة عندما يتقدّم مدافع",
       "ساند بزاوية ليكون لكل تمريرة خيار"
+    ],
+    "de": [
+      "Bewege den Ball schnell, um die Verteidiger aus der Ordnung zu ziehen",
+      "Suche den Pass in die Zone, wenn ein Verteidiger herausrückt",
+      "Unterstütze im Winkel, damit jeder Pass eine Anspielstation hat"
     ]
   },
   "variants": [
@@ -57,7 +64,8 @@
       "text": {
         "fr": "Autoriser trois touches",
         "en": "Allow three touches",
-        "ar": "اسمح بثلاث لمسات"
+        "ar": "اسمح بثلاث لمسات",
+        "de": "Drei Ballkontakte erlauben"
       }
     },
     {
@@ -65,7 +73,8 @@
       "text": {
         "fr": "Les défenseurs peuvent entrer dans la zone après la deuxième passe",
         "en": "Defenders may enter the zone after the second pass",
-        "ar": "يمكن للمدافعين دخول المنطقة بعد التمريرة الثانية"
+        "ar": "يمكن للمدافعين دخول المنطقة بعد التمريرة الثانية",
+        "de": "Die Verteidiger dürfen die Zone nach dem zweiten Pass betreten"
       }
     }
   ],
@@ -109,7 +118,8 @@
         "label": {
           "fr": "Zone cible",
           "en": "Target zone",
-          "ar": "منطقة الهدف"
+          "ar": "منطقة الهدف",
+          "de": "Zielzone"
         }
       }
     ],
@@ -191,7 +201,8 @@
         "caption": {
           "fr": "1 passe à 2 ; les défenseurs suivent le ballon",
           "en": "1 passes to 2; the defenders follow the ball",
-          "ar": "1 يمرّر إلى 2 والمدافعان يتبعان الكرة"
+          "ar": "1 يمرّر إلى 2 والمدافعان يتبعان الكرة",
+          "de": "1 passt zu 2; die Verteidiger folgen dem Ball"
         },
         "moves": {
           "b": [
@@ -210,7 +221,8 @@
         "caption": {
           "fr": "Changer le jeu de l'autre côté",
           "en": "Switch the play to the far side",
-          "ar": "حوّل اللعب إلى الجهة الأخرى"
+          "ar": "حوّل اللعب إلى الجهة الأخرى",
+          "de": "Auf die andere Seite verlagern"
         },
         "moves": {
           "b": [
@@ -229,7 +241,8 @@
         "caption": {
           "fr": "Trouver le joueur libre près de la zone",
           "en": "Find the free player near the zone",
-          "ar": "ابحث عن اللاعب الحر قرب المنطقة"
+          "ar": "ابحث عن اللاعب الحر قرب المنطقة",
+          "de": "Den freien Spieler nahe der Zone finden"
         },
         "moves": {
           "a4": [
@@ -251,7 +264,8 @@
         "caption": {
           "fr": "Passe dans la zone cible pour un point",
           "en": "Pass into the target zone for a point",
-          "ar": "مرّر إلى منطقة الهدف لنقطة"
+          "ar": "مرّر إلى منطقة الهدف لنقطة",
+          "de": "Pass in die Zielzone für einen Punkt"
         },
         "moves": {
           "b": [
@@ -264,7 +278,8 @@
         "caption": {
           "fr": "Le joueur cible renvoie le ballon et le jeu continue",
           "en": "The target player returns the ball and play continues",
-          "ar": "لاعب الهدف يعيد الكرة ويستمر اللعب"
+          "ar": "لاعب الهدف يعيد الكرة ويستمر اللعب",
+          "de": "Der Zielspieler gibt den Ball zurück und das Spiel läuft weiter"
         },
         "moves": {
           "b": [

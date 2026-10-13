@@ -25,12 +25,14 @@
   "name": {
     "fr": "Défendre en 1 contre 1 dans un couloir",
     "en": "1v1 defending in a channel",
-    "ar": "الدفاع واحد ضد واحد داخل ممر"
+    "ar": "الدفاع واحد ضد واحد داخل ممر",
+    "de": "1 gegen 1 verteidigen im Korridor"
   },
   "organisation": {
     "fr": "Couloir de 25 m sur 10 m. L'attaquant conduit vers le défenseur et cherche à franchir la ligne de fond. Le défenseur ferme l'espace, jockey de côté, retarde et pousse l'attaquant vers l'extérieur. S'il récupère le ballon, les rôles s'inversent.",
     "en": "25 m by 10 m channel. The attacker dribbles at the defender and tries to cross the far end line. The defender closes down, jockeys side-on, delays and forces the attacker wide. Win the ball and the roles swap.",
-    "ar": "ممر 25 × 10 م. يراوغ المهاجم نحو المدافع ويحاول تجاوز خط النهاية البعيد. يغلق المدافع المساحة ويتراجع جانبيًا ويؤخّر المهاجم ويدفعه نحو الطرف. إذا استخلص الكرة تتبادل الأدوار."
+    "ar": "ممر 25 × 10 م. يراوغ المهاجم نحو المدافع ويحاول تجاوز خط النهاية البعيد. يغلق المدافع المساحة ويتراجع جانبيًا ويؤخّر المهاجم ويدفعه نحو الطرف. إذا استخلص الكرة تتبادل الأدوار.",
+    "de": "Korridor von 25 m mal 10 m. Der Angreifer dribbelt auf den Verteidiger zu und versucht, die gegenüberliegende Grundlinie zu überqueren. Der Verteidiger rückt auf, hält seitlich Abstand, verzögert und drängt den Angreifer nach außen. Erobert er den Ball, tauschen die Rollen."
   },
   "coachingPoints": {
     "fr": [
@@ -47,6 +49,11 @@
       "اقترب بسرعة ثم أبطئ وابقَ على أطراف قدميك",
       "قف جانبيًا ووجّه المهاجم نحو خط التماس",
       "تدخّل فقط عندما تبتعد الكرة عن قدم المهاجم"
+    ],
+    "de": [
+      "Schnell herangehen, dann abbremsen und auf den Fußballen bleiben",
+      "Seitlich stehen und den Angreifer zur Seitenlinie lenken",
+      "Nur tackeln, wenn der Ball vom Fuß des Angreifers weg ist"
     ]
   },
   "variants": [
@@ -55,7 +62,8 @@
       "text": {
         "fr": "Élargir le couloir",
         "en": "Make the channel wider",
-        "ar": "وسّع الممر"
+        "ar": "وسّع الممر",
+        "de": "Den Korridor breiter machen"
       }
     },
     {
@@ -63,7 +71,8 @@
       "text": {
         "fr": "Ajouter un défenseur qui revient en partant 5 m derrière",
         "en": "Add a recovering defender who starts 5 m behind",
-        "ar": "أضف مدافعًا عائدًا يبدأ على بُعد 5 م"
+        "ar": "أضف مدافعًا عائدًا يبدأ على بُعد 5 م",
+        "de": "Einen zurücklaufenden Verteidiger hinzufügen, der 5 m dahinter startet"
       }
     }
   ],
@@ -107,7 +116,8 @@
         "label": {
           "fr": "Ligne de fond",
           "en": "End line",
-          "ar": "خط النهاية"
+          "ar": "خط النهاية",
+          "de": "Grundlinie"
         }
       }
     ],
@@ -154,7 +164,8 @@
         "caption": {
           "fr": "L'attaquant conduit vers le défenseur",
           "en": "The attacker dribbles at the defender",
-          "ar": "المهاجم يراوغ نحو المدافع"
+          "ar": "المهاجم يراوغ نحو المدافع",
+          "de": "Der Angreifer dribbelt auf den Verteidiger zu"
         },
         "moves": {
           "a1": [
@@ -173,7 +184,8 @@
         "caption": {
           "fr": "Le défenseur jockey de côté et retarde",
           "en": "The defender jockeys side-on and delays",
-          "ar": "المدافع يتراجع جانبيًا ويؤخّر"
+          "ar": "المدافع يتراجع جانبيًا ويؤخّر",
+          "de": "Der Verteidiger hält seitlich Abstand und verzögert"
         },
         "moves": {
           "a1": [
@@ -192,7 +204,8 @@
         "caption": {
           "fr": "Le défenseur pousse l'attaquant vers l'extérieur",
           "en": "The defender forces the attacker wide",
-          "ar": "المدافع يدفع المهاجم نحو الطرف"
+          "ar": "المدافع يدفع المهاجم نحو الطرف",
+          "de": "Der Verteidiger drängt den Angreifer nach außen"
         },
         "moves": {
           "a1": [
@@ -211,7 +224,8 @@
         "caption": {
           "fr": "Touche lourde : tacler, gagner le ballon et inverser les rôles",
           "en": "Heavy touch: tackle, win the ball and swap roles",
-          "ar": "لمسة ثقيلة: تدخّل واستخلص الكرة وبدّل الأدوار"
+          "ar": "لمسة ثقيلة: تدخّل واستخلص الكرة وبدّل الأدوار",
+          "de": "Schlechter Kontakt: tackeln, Ball erobern und Rollen tauschen"
         },
         "moves": {
           "b": [

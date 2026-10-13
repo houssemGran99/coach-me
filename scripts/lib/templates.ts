@@ -37,9 +37,9 @@ const ARABIC = /[؀-ۿ]/;
 const hasArabic = (s: string) => ARABIC.test(s);
 
 /** Collect all human text of a practice by language, for script checks. */
-function textsOf(p: Practice): { lang: "fr" | "en" | "ar"; where: string; text: string }[] {
-  const out: { lang: "fr" | "en" | "ar"; where: string; text: string }[] = [];
-  for (const lang of ["fr", "en", "ar"] as const) {
+function textsOf(p: Practice): { lang: "fr" | "en" | "ar" | "de"; where: string; text: string }[] {
+  const out: { lang: "fr" | "en" | "ar" | "de"; where: string; text: string }[] = [];
+  for (const lang of ["fr", "en", "ar", "de"] as const) {
     out.push({ lang, where: "name", text: p.name[lang] });
     out.push({ lang, where: "organisation", text: p.organisation[lang] });
     p.coachingPoints[lang].forEach((t, i) => out.push({ lang, where: `coachingPoints[${i}]`, text: t }));
@@ -120,6 +120,13 @@ export function validateTemplates(opts: ValidateOptions = {}): { problems: Probl
     if (p.name.en === p.name.fr && p.organisation.en === p.organisation.fr) {
       add(file, "fr text is identical to en; it must be translated");
     }
+    // German is optional in the schema (it falls back to English), but every shipped template must have its own text.
+    if (p.name.de === p.name.en || p.organisation.de === p.organisation.en) {
+      add(file, "de text is missing or identical to en; it must be translated");
+    }
+    p.animation.steps.forEach((s, i) => {
+      if (s.caption.de.length > LIMITS.maxCaptionChars) add(file, `steps[${i}].caption (de) is ${s.caption.de.length} chars; the maximum is ${LIMITS.maxCaptionChars}`);
+    });
 
     // Match the brief's table
     const exp = EXPECTED.find((e) => e.id === p.id);

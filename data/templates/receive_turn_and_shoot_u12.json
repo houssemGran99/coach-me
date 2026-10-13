@@ -25,12 +25,14 @@
   "name": {
     "fr": "Recevoir, se retourner et tirer",
     "en": "Receive, turn and shoot",
-    "ar": "استلم وانعطف وسدّد"
+    "ar": "استلم وانعطف وسدّد",
+    "de": "Annehmen, drehen und schießen"
   },
   "organisation": {
     "fr": "Zone de 30 m sur 25 m avec un grand but et un gardien. Un serveur passe à l'attaquant à l'entrée de la zone. L'attaquant se montre, reçoit, se retourne et tire. Rotation : attaquant au service, serveur en fin de file, nouveau gardien tous les 5 tirs.",
     "en": "30 m by 25 m area with a full goal and a goalkeeper. A server plays the ball to the striker at the edge of the area. The striker shows for the ball, receives, turns and shoots. Rotate: striker to server, server to the queue, a new keeper every 5 shots.",
-    "ar": "منطقة 30 × 25 م مع مرمى كبير وحارس. يمرّر المرسل الكرة إلى المهاجم عند حافة المنطقة. يظهر المهاجم لاستلام الكرة ثم يستقبلها ويدور ويسدّد. التدوير: المهاجم إلى الإرسال، والمرسل إلى آخر الصف، وحارس جديد كل 5 تسديدات."
+    "ar": "منطقة 30 × 25 م مع مرمى كبير وحارس. يمرّر المرسل الكرة إلى المهاجم عند حافة المنطقة. يظهر المهاجم لاستلام الكرة ثم يستقبلها ويدور ويسدّد. التدوير: المهاجم إلى الإرسال، والمرسل إلى آخر الصف، وحارس جديد كل 5 تسديدات.",
+    "de": "Fläche von 30 m mal 25 m mit einem großen Tor und einem Torwart. Ein Zuspieler spielt den Ball zum Stürmer am Strafraumrand. Der Stürmer bietet sich an, nimmt den Ball an, dreht sich und schießt. Rotation: Stürmer zum Zuspieler, Zuspieler in die Schlange, alle 5 Schüsse ein neuer Torwart."
   },
   "coachingPoints": {
     "fr": [
@@ -47,6 +49,11 @@
       "ابتعد ثم اظهر لاستلام الكرة",
       "خذ اللمسة الأولى نحو مساحة التسديد",
       "اضرب الكرة بثبات ورأسك ثابت"
+    ],
+    "de": [
+      "Erst weglaufen, dann zum Ball anbieten",
+      "Den ersten Kontakt in den Schussraum nehmen",
+      "Durch den Ball schießen und den Kopf ruhig halten"
     ]
   },
   "variants": [
@@ -55,7 +62,8 @@
       "text": {
         "fr": "L'attaquant se retourne sans pression",
         "en": "The striker turns without pressure",
-        "ar": "المهاجم يدور دون ضغط"
+        "ar": "المهاجم يدور دون ضغط",
+        "de": "Der Stürmer dreht sich ohne Druck"
       }
     },
     {
@@ -63,7 +71,8 @@
       "text": {
         "fr": "Ajouter un défenseur qui presse après la passe",
         "en": "Add a defender who closes down after the pass",
-        "ar": "أضف مدافعًا يضغط بعد التمريرة"
+        "ar": "أضف مدافعًا يضغط بعد التمريرة",
+        "de": "Einen Verteidiger hinzufügen, der nach dem Pass aufrückt"
       }
     }
   ],
@@ -139,7 +148,8 @@
         "caption": {
           "fr": "L'attaquant fait un contre-appel puis se montre",
           "en": "The striker checks away, then shows for the ball",
-          "ar": "المهاجم يبتعد ثم يظهر لاستلام الكرة"
+          "ar": "المهاجم يبتعد ثم يظهر لاستلام الكرة",
+          "de": "Der Stürmer läuft weg und bietet sich dann an"
         },
         "moves": {
           "a1": [
@@ -153,7 +163,8 @@
         "caption": {
           "fr": "Le serveur passe à l'attaquant",
           "en": "The server passes to the striker",
-          "ar": "المرسل يمرّر إلى المهاجم"
+          "ar": "المرسل يمرّر إلى المهاجم",
+          "de": "Der Zuspieler passt zum Stürmer"
         },
         "moves": {
           "b": [
@@ -166,7 +177,8 @@
         "caption": {
           "fr": "Recevoir et se retourner face au but",
           "en": "Receive and turn toward goal",
-          "ar": "استلم وانعطف نحو المرمى"
+          "ar": "استلم وانعطف نحو المرمى",
+          "de": "Annehmen und zum Tor drehen"
         },
         "moves": {
           "a1": [
@@ -182,7 +194,8 @@
         "caption": {
           "fr": "Tir",
           "en": "Shoot",
-          "ar": "سدّد"
+          "ar": "سدّد",
+          "de": "Schuss"
         },
         "moves": {
           "b": [
@@ -198,7 +211,8 @@
         "caption": {
           "fr": "Rotation : l'attaquant au service, le serveur en fin de file",
           "en": "Rotate: striker to server, server to the queue",
-          "ar": "التدوير: المهاجم إلى الإرسال والمرسل إلى آخر الصف"
+          "ar": "التدوير: المهاجم إلى الإرسال والمرسل إلى آخر الصف",
+          "de": "Rotation: Stürmer zum Zuspieler, Zuspieler in die Schlange"
         },
         "moves": {
           "a1": [

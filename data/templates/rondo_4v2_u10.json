@@ -25,12 +25,14 @@
   "name": {
     "en": "4v2 rondo",
     "fr": "Rondo 4 contre 2",
-    "ar": "روندو 4 ضد 2"
+    "ar": "روندو 4 ضد 2",
+    "de": "Rondo 4 gegen 2"
   },
   "organisation": {
     "en": "Square of 15 m by 15 m with cones. Four players keep the ball from two defenders in the middle. A defender who wins the ball swaps with the player who lost it. Rotate every 2 minutes.",
     "fr": "Carré de 15 m sur 15 m avec des plots. Quatre joueurs gardent le ballon face à deux défenseurs au centre. Un défenseur qui récupère le ballon prend la place du joueur qui l'a perdu. Rotation toutes les 2 minutes.",
-    "ar": "مربع 15 × 15 م بالأقماع. أربعة لاعبين يحتفظون بالكرة أمام مدافعَين في الوسط. المدافع الذي يستخلص الكرة يتبادل المكان مع اللاعب الذي فقدها. التدوير كل دقيقتين."
+    "ar": "مربع 15 × 15 م بالأقماع. أربعة لاعبين يحتفظون بالكرة أمام مدافعَين في الوسط. المدافع الذي يستخلص الكرة يتبادل المكان مع اللاعب الذي فقدها. التدوير كل دقيقتين.",
+    "de": "Quadrat von 15 m mal 15 m mit Hütchen. Vier Spieler halten den Ball gegen zwei Verteidiger in der Mitte. Ein Verteidiger, der den Ball erobert, tauscht mit dem Spieler, der ihn verloren hat. Rotation alle 2 Minuten."
   },
   "coachingPoints": {
     "en": [
@@ -47,6 +49,11 @@
       "تحرّك لتستقبل الكرة ولا تنتظر التمريرة",
       "مرّر بباطن القدم وبقوة مناسبة",
       "افتح جسمك لتبتعد اللمسة الأولى عن أقرب مدافع"
+    ],
+    "de": [
+      "Bewege dich zum Ballerhalt, warte nicht auf den Pass",
+      "Mit der Innenseite des Fußes fest passen",
+      "Den Körper öffnen, damit der erste Kontakt vom nächsten Verteidiger wegführt"
     ]
   },
   "variants": [
@@ -55,7 +62,8 @@
       "text": {
         "en": "Remove one defender or enlarge the square",
         "fr": "Retirer un défenseur ou agrandir le carré",
-        "ar": "أزل مدافعًا أو وسّع المربع"
+        "ar": "أزل مدافعًا أو وسّع المربع",
+        "de": "Einen Verteidiger herausnehmen oder das Quadrat vergrößern"
       }
     },
     {
@@ -63,7 +71,8 @@
       "text": {
         "en": "One touch only for the outside players",
         "fr": "Une seule touche de balle pour les joueurs extérieurs",
-        "ar": "لمسة واحدة فقط للاعبين الخارجيين"
+        "ar": "لمسة واحدة فقط للاعبين الخارجيين",
+        "de": "Nur ein Ballkontakt für die äußeren Spieler"
       }
     }
   ],
@@ -156,7 +165,8 @@
         "caption": {
           "en": "Player 1 passes to player 2",
           "fr": "Le joueur 1 passe au joueur 2",
-          "ar": "اللاعب 1 يمرّر إلى اللاعب 2"
+          "ar": "اللاعب 1 يمرّر إلى اللاعب 2",
+          "de": "Spieler 1 passt zu Spieler 2"
         },
         "moves": {
           "b": [
@@ -175,7 +185,8 @@
         "caption": {
           "en": "Switch the play to player 3",
           "fr": "Changer de côté vers le joueur 3",
-          "ar": "حوّل اللعب إلى اللاعب 3"
+          "ar": "حوّل اللعب إلى اللاعب 3",
+          "de": "Das Spiel auf Spieler 3 verlagern"
         },
         "moves": {
           "a3": [
@@ -197,7 +208,8 @@
         "caption": {
           "en": "Player 3 finds player 4",
           "fr": "Le joueur 3 trouve le joueur 4",
-          "ar": "اللاعب 3 يجد اللاعب 4"
+          "ar": "اللاعب 3 يجد اللاعب 4",
+          "de": "Spieler 3 findet Spieler 4"
         },
         "moves": {
           "a4": [
@@ -219,7 +231,8 @@
         "caption": {
           "en": "A loose pass: a defender intercepts",
           "fr": "Passe imprécise : un défenseur intercepte",
-          "ar": "تمريرة غير دقيقة: مدافع يعترضها"
+          "ar": "تمريرة غير دقيقة: مدافع يعترضها",
+          "de": "Ein ungenauer Pass: Ein Verteidiger fängt ihn ab"
         },
         "moves": {
           "b": [
@@ -238,7 +251,8 @@
         "caption": {
           "en": "The defender swaps with the player who lost the ball",
           "fr": "Le défenseur prend la place du joueur qui a perdu le ballon",
-          "ar": "يتبادل المدافع المكان مع اللاعب الذي فقد الكرة"
+          "ar": "يتبادل المدافع المكان مع اللاعب الذي فقد الكرة",
+          "de": "Der Verteidiger tauscht mit dem Spieler, der den Ball verloren hat"
         },
         "moves": {
           "d1": [

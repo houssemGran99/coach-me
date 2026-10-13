@@ -181,7 +181,7 @@
     "equipment": "Matériel",
     "focus": "Thème",
     "note": "Que s'est-il passé la semaine dernière ?",
-    "noteHint": "Décrivez-le en français, en arabe ou en anglais. N'indiquez ni noms ni détails sur des joueurs en particulier.",
+    "noteHint": "Décrivez-le en français, en arabe, en anglais ou en allemand. N'indiquez ni noms ni détails sur des joueurs en particulier.",
     "notePlaceholder": "p. ex. Nous avons perdu la largeur et le soutien après la première passe.",
     "generate": "Générer la séance",
     "generating": "Construction de la séance…",

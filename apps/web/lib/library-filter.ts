@@ -38,7 +38,7 @@ export function filterLibrary(items: LibraryItem[], f: LibraryFilters): LibraryI
     if (!ok.has(i.data.id)) return false;
     if (f.source && i.source !== f.source) return false;
     if (!words.length) return true;
-    const hay = norm([i.title, i.data.name.fr, i.data.name.en, i.data.name.ar, i.data.organisation.fr, i.data.organisation.en].join(" "));
+    const hay = norm([i.title, i.data.name.fr, i.data.name.en, i.data.name.ar, i.data.name.de, i.data.organisation.fr, i.data.organisation.en].join(" "));
     return words.every((w) => hay.includes(w));
   });
   return out.sort((a, b) =>
