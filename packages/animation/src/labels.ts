@@ -32,11 +32,6 @@ export const PLAYER_LABELS: Record<Lang, PlayerLabels> = {
     prev: "Vorheriger Schritt", next: "Nächster Schritt", speed: "Tempo", scrub: "Zeitleiste",
     aiDraft: "KI-Entwurf, nicht geprüft", pending: "Trainerprüfung ausstehend", edited: "Vom Besitzer bearbeitet",
   },
-  ar: {
-    title: "رسم متحرك للتمرين", step: "الخطوة {n} من {m}", play: "تشغيل", pause: "إيقاف مؤقت", replay: "إعادة",
-    prev: "الخطوة السابقة", next: "الخطوة التالية", speed: "السرعة", scrub: "المخطط الزمني",
-    aiDraft: "مسودة بالذكاء الاصطناعي، لم تتم مراجعتها", pending: "بانتظار مراجعة المدرّب", edited: "عدّلها المالك",
-  },
 };
 
 export const fill = (tpl: string, vars: Record<string, string | number>): string =>

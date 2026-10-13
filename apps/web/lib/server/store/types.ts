@@ -53,7 +53,7 @@ export interface GenerationLog {
   retries: number;
 }
 
-/** Everything the app persists. Implementations: in-memory (dev/e2e) and Supabase. */
+/** Everything the app persists. Implementations: in-memory (dev/e2e) and MongoDB. */
 export interface Store {
   getProfile(userId: string): Promise<Profile | null>;
   upsertProfile(profile: Profile): Promise<void>;

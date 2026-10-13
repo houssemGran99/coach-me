@@ -1,4 +1,3 @@
-import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_COOKIE, isLocale } from "./i18n/config";
 import {
@@ -6,9 +5,8 @@ import {
 } from "./lib/guest";
 
 /**
- * 1. `?lang=fr|ar|en|de` sets the language cookie and drops the parameter, so shared links can pick a language.
- * 2. Refreshes the Supabase session cookies on every request when Supabase is configured.
- * 3. Opening a feature page without an account creates an automatic guest account (no email needed).
+ * 1. `?lang=fr|en|de` sets the language cookie and drops the parameter, so shared links can pick a language.
+ * 2. Opening a feature page without an account creates an automatic guest account (no email needed).
  */
 export async function proxy(request: NextRequest) {
   const lang = request.nextUrl.searchParams.get("lang");
@@ -20,8 +18,6 @@ export async function proxy(request: NextRequest) {
     return res;
   }
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   let response = NextResponse.next({ request });
   const wantsAccount = needsAccount(request.nextUrl.pathname, request.method);
 
@@ -43,23 +39,6 @@ export async function proxy(request: NextRequest) {
       response.cookies.set(GUEST_COOKIE, value, { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: GUEST_COOKIE_MAX_AGE });
     }
     return response;
-  }
-  if (!url || !key) return response;
-
-  const supabase = createServerClient(url, key, {
-    cookies: {
-      getAll: () => request.cookies.getAll(),
-      setAll: (list) => {
-        for (const { name, value } of list) request.cookies.set(name, value);
-        response = NextResponse.next({ request });
-        for (const { name, value, options } of list) response.cookies.set(name, value, options);
-      },
-    },
-  });
-  const { data } = await supabase.auth.getUser();
-  if (!data.user && wantsAccount) {
-    // Needs "Anonymous sign-ins" enabled in the Supabase project. If it is off, pages fall back to the login page.
-    await supabase.auth.signInAnonymously().catch(() => undefined);
   }
   return response;
 }

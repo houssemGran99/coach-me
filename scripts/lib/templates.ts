@@ -37,9 +37,9 @@ const ARABIC = /[؀-ۿ]/;
 const hasArabic = (s: string) => ARABIC.test(s);
 
 /** Collect all human text of a practice by language, for script checks. */
-function textsOf(p: Practice): { lang: "fr" | "en" | "ar" | "de"; where: string; text: string }[] {
-  const out: { lang: "fr" | "en" | "ar" | "de"; where: string; text: string }[] = [];
-  for (const lang of ["fr", "en", "ar", "de"] as const) {
+function textsOf(p: Practice): { lang: "fr" | "en" | "de"; where: string; text: string }[] {
+  const out: { lang: "fr" | "en" | "de"; where: string; text: string }[] = [];
+  for (const lang of ["fr", "en", "de"] as const) {
     out.push({ lang, where: "name", text: p.name[lang] });
     out.push({ lang, where: "organisation", text: p.organisation[lang] });
     p.coachingPoints[lang].forEach((t, i) => out.push({ lang, where: `coachingPoints[${i}]`, text: t }));
@@ -114,8 +114,7 @@ export function validateTemplates(opts: ValidateOptions = {}): { problems: Probl
 
     // Three languages really present
     for (const t of textsOf(p)) {
-      if (t.lang === "ar" && !hasArabic(t.text)) add(file, `${t.where} (ar) has no Arabic text: "${t.text}"`);
-      if (t.lang !== "ar" && hasArabic(t.text)) add(file, `${t.where} (${t.lang}) contains Arabic text`);
+      if (hasArabic(t.text)) add(file, `${t.where} (${t.lang}) contains Arabic text`);
     }
     if (p.name.en === p.name.fr && p.organisation.en === p.organisation.fr) {
       add(file, "fr text is identical to en; it must be translated");

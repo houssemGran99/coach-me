@@ -28,13 +28,11 @@
   "name": {
     "fr": "Conservation en trois zones",
     "en": "Three-zone possession",
-    "ar": "الاستحواذ في ثلاث مناطق",
     "de": "Ballbesitz in drei Zonen"
   },
   "organisation": {
     "fr": "Terrain de 40 m sur 30 m divisé en trois zones. Deux équipes de six. Pas plus de quatre joueurs d'une même équipe dans une zone, et l'équipe en possession doit traverser les trois zones avant de marquer un point en jouant vers un joueur de la dernière zone. Adapter les règles de zone à l'objectif de la séance.",
     "en": "40 m by 30 m pitch split into three zones. Two teams of six. No more than four players of one team may be in a zone at once, and the team in possession must use all three zones before it scores a point by playing to a player in the end zone. Change the zone rules to match the lesson.",
-    "ar": "ملعب 40 × 30 م مقسّم إلى ثلاث مناطق. فريقان من ستة لاعبين. لا يتجاوز عدد لاعبي الفريق الواحد في منطقة واحدة أربعة، ويجب على الفريق المستحوذ عبور المناطق الثلاث قبل أن يسجّل نقطة بتمريرة إلى لاعب في المنطقة الأخيرة. عدّلوا قواعد المناطق وفق هدف الحصة.",
     "de": "Feld von 40 m mal 30 m, in drei Zonen geteilt. Zwei Teams zu sechs Spielern. Höchstens vier Spieler eines Teams dürfen gleichzeitig in einer Zone sein, und das Team am Ball muss alle drei Zonen nutzen, bevor es einen Punkt erzielt, indem es auf einen Spieler in der Endzone spielt. Ändere die Zonenregeln passend zum Lernziel."
   },
   "coachingPoints": {
@@ -48,11 +46,6 @@
       "Arrive late into the next zone to receive in space",
       "When the ball goes forward, the team compacts behind it"
     ],
-    "ar": [
-      "حرّك الكرة بين المناطق بتمريرات سريعة ثم غيّر الزاوية",
-      "اصل متأخرًا إلى المنطقة التالية لتستلم في مساحة",
-      "عندما تتقدم الكرة يتقارب الفريق خلفها"
-    ],
     "de": [
       "Den Ball mit schnellen Pässen durch die Zonen bewegen, dann den Winkel ändern",
       "Spät in die nächste Zone kommen, um im freien Raum anzunehmen",
@@ -65,7 +58,6 @@
       "text": {
         "fr": "Autoriser cinq joueurs par zone",
         "en": "Allow five players per zone",
-        "ar": "اسمح بخمسة لاعبين في كل منطقة",
         "de": "Fünf Spieler pro Zone erlauben"
       }
     },
@@ -74,7 +66,6 @@
       "text": {
         "fr": "Deux touches maximum dans la zone centrale",
         "en": "Two touches maximum in the middle zone",
-        "ar": "لمستان كحد أقصى في المنطقة الوسطى",
         "de": "Höchstens zwei Ballkontakte in der mittleren Zone"
       }
     }
@@ -98,7 +89,6 @@
         "label": {
           "fr": "Zone 1",
           "en": "Zone 1",
-          "ar": "المنطقة 1",
           "de": "Zone 1"
         }
       },
@@ -110,7 +100,6 @@
         "label": {
           "fr": "Zone 2",
           "en": "Zone 2",
-          "ar": "المنطقة 2",
           "de": "Zone 2"
         }
       },
@@ -122,7 +111,6 @@
         "label": {
           "fr": "Zone 3",
           "en": "Zone 3",
-          "ar": "المنطقة 3",
           "de": "Zone 3"
         }
       }
@@ -226,7 +214,6 @@
         "caption": {
           "fr": "Construire en zone 1 : 1 joue vers 3",
           "en": "Build in zone 1: 1 plays to 3",
-          "ar": "البناء في المنطقة 1: 1 يمرّر إلى 3",
           "de": "Aufbau in Zone 1: 1 spielt zu 3"
         },
         "moves": {
@@ -246,7 +233,6 @@
         "caption": {
           "fr": "Jouer vers l'avant dans la zone 2",
           "en": "Play forward into zone 2",
-          "ar": "العب إلى الأمام نحو المنطقة 2",
           "de": "Nach vorn in Zone 2 spielen"
         },
         "moves": {
@@ -266,7 +252,6 @@
         "caption": {
           "fr": "Changer vers le joueur excentré ; un joueur rejoint depuis la zone 1",
           "en": "Switch to the wide player; a runner joins from zone 1",
-          "ar": "حوّل إلى لاعب الطرف ولاعب ينضم من المنطقة 1",
           "de": "Auf den Außenspieler verlagern; ein Läufer kommt aus Zone 1 dazu"
         },
         "moves": {
@@ -289,7 +274,6 @@
         "caption": {
           "fr": "Jouer dans la zone 3 pour finir la séquence",
           "en": "Play into zone 3 to complete the sequence",
-          "ar": "العب إلى المنطقة 3 لإكمال التسلسل",
           "de": "In Zone 3 spielen, um die Passfolge abzuschließen"
         },
         "moves": {

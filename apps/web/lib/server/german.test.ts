@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PracticeSchema } from "@mourabbi/schemas";
+import { LangSchema, PracticeSchema } from "@mourabbi/schemas";
 import { detectLanguage } from "../practice-search";
 import { getTemplates } from "../templates";
 import { isOutOfScope } from "./scope";
@@ -36,5 +36,30 @@ describe("German", () => {
       expect(r.data.name.de).toBe(t!.name.en);
       expect(r.data.coachingPoints.de).toEqual(t!.coachingPoints.en);
     }
+  });
+});
+
+describe("practices saved while Arabic existed", () => {
+  it("still parse: the leftover ar text is dropped", () => {
+    const [t] = getTemplates();
+    const old = JSON.parse(JSON.stringify(t)) as {
+      name: Record<string, string>;
+      coachingPoints: Record<string, string[]>;
+      animation: { steps: { caption: Record<string, string> }[] };
+    };
+    old.name.ar = "اسم";
+    old.coachingPoints.ar = ["نقطة"];
+    old.animation.steps.forEach((s) => (s.caption.ar = "شرح"));
+    const r = PracticeSchema.safeParse(old);
+    expect(r.success).toBe(true);
+    if (r.success) {
+      expect(Object.keys(r.data.name).sort()).toEqual(["de", "en", "fr"]);
+      expect(Object.keys(r.data.coachingPoints).sort()).toEqual(["de", "en", "fr"]);
+    }
+  });
+
+  it("an old language setting of ar reads as German", () => {
+    expect(LangSchema.parse("ar")).toBe("de");
+    expect(LangSchema.safeParse("xx").success).toBe(false);
   });
 });

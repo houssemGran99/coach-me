@@ -8,7 +8,6 @@ export interface Constraints {
   themes: Theme[];
 }
 
-const ARABIC = /[؀-ۿ]/g;
 const FRENCH_HINT = /[àâçéèêëîïôùûœ]|\b(le|la|les|des|un|une|du|de|pour|avec|sans|sur|après|apres|et|ou|joueurs?|terrain|exercice|séance|seance|passes?|contre|ballon|moins|ans|petit|grand|demi|gardien|ptit|bch|barcha|3la|fi|el|mta3)\b/i;
 const GERMAN_CHARS = /[äöüß]/i;
 const GERMAN_HINT = /\b(der|die|das|und|mit|ohne|für|nach|gegen|spieler|übung|uebung|einheit|tor|torwart|torhüter|abschluss|ballbesitz|halbes|feld|kleines|großes|jahre|jährige)\b/i;
@@ -16,13 +15,11 @@ const ENGLISH_HINT = /\b(the|and|with|without|for|players?|pitch|drill|practice|
 
 /**
  * The language of the coach's message decides the language of the reply.
- * Darija mixed with French (Latin script) counts as French; Arabic script counts as Arabic.
+ * Darija mixed with French (Latin script) counts as French.
  */
 export function detectLanguage(text: string, fallback: Lang): Lang {
   const letters = text.replace(/[^\p{L}]/gu, "");
   if (!letters) return fallback;
-  const arabic = (text.match(ARABIC) ?? []).length;
-  if (arabic / letters.length > 0.3) return "ar";
   const de = GERMAN_CHARS.test(text) || GERMAN_HINT.test(text);
   if (de && !FRENCH_HINT.test(text.replace(GERMAN_CHARS, ""))) return "de";
   const fr = FRENCH_HINT.test(text);
@@ -35,21 +32,21 @@ export function detectLanguage(text: string, fallback: Lang): Lang {
 }
 
 const THEME_WORDS: [Theme, RegExp][] = [
-  ["finishing", /finish|shoot|shot|cutback|cut-back|cross|goal ?scor|finition|tir(er|s)?\b|centre|frappe|abschluss|schie(ß|ss)en|flanke|إنهاء|تسديد|إنهاء الهجمات|ارتدادي/i],
-  ["possession", /possession|keep.?ball|keep the ball|rondo|conservation|garder le ballon|ballbesitz|استحواذ|الاحتفاظ بالكرة/i],
-  ["passing", /\bpass|passes?\b|passing|passspiel|تمرير/i],
-  ["receiving", /receiv|first touch|control|réception|contrôle|ballannahme|استلام/i],
-  ["width_and_support", /width|support|largeur|soutien|breite|unterstützung|عرض|مساندة/i],
-  ["pressing", /press|pressing|ضغط/i],
-  ["transition", /transition|counter|contre-attaque|après avoir perdu|après une perte|losing the ball|umschalten|konter|ballverlust|تحول|مرتدة/i],
-  ["decision_making", /decision|décision|choix|entscheidung|قرار/i],
-  ["dribbling", /dribbl|conduite de balle|مراوغ/i],
-  ["1v1_attacking", /1\s?(v|vs|contre|ضد)\s?1.*(attack|attaque|هجوم)|(attack|attaque|هجوم).*1\s?(v|vs|contre)\s?1/i],
-  ["1v1_defending", /1\s?(v|vs|contre|ضد)\s?1.*(defend|défense|دفاع)|(defend|défens|دفاع).*1\s?(v|vs|contre)\s?1/i],
-  ["goalkeeping", /goalkeeper|keeper|gardien|torwart|torhüter|حارس/i],
+  ["finishing", /finish|shoot|shot|cutback|cut-back|cross|goal ?scor|finition|tir(er|s)?\b|centre|frappe|abschluss|schie(ß|ss)en|flanke/i],
+  ["possession", /possession|keep.?ball|keep the ball|rondo|conservation|garder le ballon|ballbesitz/i],
+  ["passing", /\bpass|passes?\b|passing|passspiel/i],
+  ["receiving", /receiv|first touch|control|réception|contrôle|ballannahme/i],
+  ["width_and_support", /width|support|largeur|soutien|breite|unterstützung/i],
+  ["pressing", /press|pressing/i],
+  ["transition", /transition|counter|contre-attaque|après avoir perdu|après une perte|losing the ball|umschalten|konter|ballverlust/i],
+  ["decision_making", /decision|décision|choix|entscheidung/i],
+  ["dribbling", /dribbl|conduite de balle/i],
+  ["1v1_attacking", /1\s?(v|vs|contre|gegen)\s?1.*(attack|attaque|angriff)|(attack|attaque|angriff).*1\s?(v|vs|contre|gegen)\s?1/i],
+  ["1v1_defending", /1\s?(v|vs|contre|gegen)\s?1.*(defend|défense|abwehr|verteidig)|(defend|défens|abwehr|verteidig).*1\s?(v|vs|contre|gegen)\s?1/i],
+  ["goalkeeping", /goalkeeper|keeper|gardien|torwart|torhüter/i],
 ];
 
-const SIDES = /\b(\d{1,2})\s?(?:v|vs|contre|gegen|x|ضد)\s?(\d{1,2})\b/i;
+const SIDES = /\b(\d{1,2})\s?(?:v|vs|contre|gegen|x)\s?(\d{1,2})\b/i;
 
 /** Heuristic, language-tolerant extraction of the constraints a coach usually gives. */
 export function parseConstraints(message: string): Constraints {
@@ -59,25 +56,24 @@ export function parseConstraints(message: string): Constraints {
   const age =
     /\bU\s?(\d{1,2})\b/i.exec(m) ??
     /\b(?:under|moins de|<)\s?(\d{1,2})\b/i.exec(m) ??
-    /(?:تحت|أقل من)\s?(\d{1,2})/.exec(m) ??
-    /\b(\d{1,2})\s?(?:ans|years?|سنة|سنوات)\b/i.exec(m);
+    /\b(\d{1,2})\s?(?:ans|years?|jahre)\b/i.exec(m);
   if (age) {
     const g = `U${age[1]}` as AgeGroup;
     if ((AGE_GROUPS as readonly string[]).includes(g)) c.age = g;
-  } else if (/\bseniors?\b|séniors?|الكبار/i.test(m)) c.age = "senior";
+  } else if (/\bseniors?\b|séniors?/i.test(m)) c.age = "senior";
 
   const sides = SIDES.exec(m);
-  const direct = /(\d{1,2})\s*(?:players?|joueu\w*|لاعب\w*|لاعبين)/i.exec(m);
+  const direct = /(\d{1,2})\s*(?:players?|joueu\w*|spieler\w*)/i.exec(m);
   if (direct) c.players = Number(direct[1]);
   else if (sides) c.players = Number(sides[1]) + Number(sides[2]);
 
-  const dims = /(\d{1,3})\s*(?:m\b|م\b)?\s*(?:x|×|by|sur|par|\*)\s*(\d{1,3})\s*(?:m\b|م\b)?/i.exec(m);
+  const dims = /(\d{1,3})\s*m?\s*(?:x|×|by|sur|par|mal|\*)\s*(\d{1,3})\s*m?/i.exec(m);
   if (dims) {
     const a = Number(dims[1]);
     const b = Number(dims[2]);
     c.area = { lengthM: Math.max(a, b), widthM: Math.min(a, b) };
-  } else if (/half (a )?pitch|half-pitch|demi[- ]terrain|moitié de terrain|نصف ملعب/i.test(m)) c.area = { lengthM: 50, widthM: 68 };
-  else if (/full pitch|whole pitch|terrain entier|tout le terrain|ملعب كامل/i.test(m)) c.area = { lengthM: 100, widthM: 65 };
+  } else if (/half (a )?pitch|half-pitch|demi[- ]terrain|moitié de terrain|halbes feld|halbfeld/i.test(m)) c.area = { lengthM: 50, widthM: 68 };
+  else if (/full pitch|whole pitch|terrain entier|tout le terrain|ganzes (spiel)?feld|ganzer platz/i.test(m)) c.area = { lengthM: 100, widthM: 65 };
 
   for (const [theme, re] of THEME_WORDS) if (re.test(m)) c.themes.push(theme);
   return c;

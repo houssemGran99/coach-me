@@ -31,13 +31,11 @@
   "name": {
     "en": "Walk and stretch",
     "fr": "Marche et étirements",
-    "ar": "مشي وإطالة",
     "de": "Gehen und Dehnen"
   },
   "organisation": {
     "en": "Slow walk around the pitch, then static stretches for the main leg muscles, about 20 seconds each. Finish with a short group talk.",
     "fr": "Marche lente autour du terrain, puis étirements statiques des principaux muscles des jambes, environ 20 secondes chacun. Terminer par un court échange en groupe.",
-    "ar": "مشي بطيء حول الملعب، ثم إطالة ثابتة لعضلات الساقين الرئيسية نحو 20 ثانية لكل عضلة. تُختتم بحديث قصير مع المجموعة.",
     "de": "Langsam um den Platz gehen, danach die großen Beinmuskeln statisch dehnen, etwa 20 Sekunden pro Dehnung. Zum Abschluss ein kurzes Gespräch in der Gruppe."
   },
   "coachingPoints": {
@@ -48,10 +46,6 @@
     "fr": [
       "Respirer lentement et garder un rythme tranquille",
       "Demander à chaque joueur une chose qu'il a bien faite"
-    ],
-    "ar": [
-      "تنفّس ببطء وحافظ على إيقاع هادئ",
-      "اسأل كل لاعب عن أمر واحد أجاده"
     ],
     "de": [
       "Langsam atmen und das Tempo locker halten",
@@ -114,7 +108,6 @@
         "caption": {
           "en": "Walk slowly around the pitch",
           "fr": "Marcher lentement autour du terrain",
-          "ar": "امشِ ببطء حول الملعب",
           "de": "Langsam um den Platz gehen"
         },
         "moves": {
@@ -137,7 +130,6 @@
         "caption": {
           "en": "Stretch the main leg muscles",
           "fr": "Étirer les principaux muscles des jambes",
-          "ar": "أطِل عضلات الساقين الرئيسية",
           "de": "Die großen Beinmuskeln dehnen"
         },
         "moves": {
@@ -160,7 +152,6 @@
         "caption": {
           "en": "Gather for a short group talk",
           "fr": "Se rassembler pour un court échange",
-          "ar": "اجتمعوا لحديث قصير",
           "de": "Zu einem kurzen Gruppengespräch zusammenkommen"
         },
         "moves": {

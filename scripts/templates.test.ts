@@ -58,19 +58,19 @@ describe("validator catches bad templates", () => {
     expect(problems.some((x) => x.message.includes("reviewed"))).toBe(true);
   });
 
-  it("flags duplicate ids, wrong file names and missing Arabic", () => {
+  it("flags duplicate ids, wrong file names and Arabic text", () => {
     const dir = tmp();
     const p = seed();
     writeFileSync(path.join(dir, "rondo_4v2_u10.json"), JSON.stringify(p));
     writeFileSync(path.join(dir, "copy.json"), JSON.stringify(p));
     const q = seed();
     q.id = "tag_with_ball";
-    q.name.ar = "Tag";
+    q.name.fr = "تمرين";
     writeFileSync(path.join(dir, "tag_with_ball.json"), JSON.stringify(q));
     const msgs = validateTemplates({ dir, partial: true }).problems.map((x) => x.message).join("\n");
     expect(msgs).toContain("duplicate id");
     expect(msgs).toContain("file name must be");
-    expect(msgs).toContain("no Arabic text");
+    expect(msgs).toContain("contains Arabic text");
   });
 
   it("flags an animation that breaks the rules and ranges that drift from the brief", () => {

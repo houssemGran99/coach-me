@@ -3,9 +3,9 @@
  *
  *   pnpm videos:export                          # every template, French, 9:16
  *   pnpm videos:export --id rondo_4v2_u10       # one template (repeatable, or comma-separated)
- *   pnpm videos:export --lang ar --format square
+ *   pnpm videos:export --lang de --format square
  *
- * Options: --id <id[,id]>  --lang fr|en|ar  --format vertical|square|landscape
+ * Options: --id <id[,id]>  --lang fr|en|de  --format vertical|square|landscape
  *          --fps <n> (default 30)  --out <dir> (default out/videos)  --partial (skip validation failures)
  *
  * Frames are drawn with the same core and pitch as the app (buildTimeline/stateAt/PitchSvg),
@@ -49,15 +49,6 @@ const UI: Record<Lang, { kind: Record<string, string>; reviewedBy: (n: string) =
     outroSub: "Animated drills · timed session · shareable link",
     step: "Step",
   },
-  ar: {
-    kind: { warmup: "إحماء", technical: "تمرين تقني", game_related: "وضعية لعب", main: "التمرين الرئيسي", game: "مباراة", cooldown: "تهدئة" },
-    reviewedBy: (n) => `راجعه ${n}`,
-    aiDraft: "مسودة بالذكاء الاصطناعي",
-    players: "لاعبين",
-    outro: "حضّر حصتك التدريبية في 30 ثانية",
-    outroSub: "تمارين متحركة · حصة مؤقتة · رابط للمشاركة",
-    step: "المرحلة",
-  },
   de: {
     kind: { warmup: "Aufwärmen", technical: "Technik", game_related: "Spielform", main: "Hauptübung", game: "Spiel", cooldown: "Abwärmen" },
     reviewedBy: (n) => `Geprüft von ${n}`,
@@ -85,7 +76,7 @@ function parseArgs(argv: string[]) {
     if (f === "--id") a.ids.push(...need(i++, f).split(",").filter(Boolean));
     else if (f === "--lang") {
       const v = need(i++, f);
-      if (v !== "fr" && v !== "en" && v !== "ar") throw new Error("--lang must be fr, en or ar");
+      if (v !== "fr" && v !== "en" && v !== "de") throw new Error("--lang must be fr, en or de");
       a.lang = v;
     } else if (f === "--format") {
       const v = need(i++, f);
@@ -102,12 +93,12 @@ function parseArgs(argv: string[]) {
 }
 
 function pageHtml(w: number, h: number, lang: Lang): string {
-  const rtl = lang === "ar";
+  const rtl = false;
   const wide = w > h;
   return `<!doctype html><html lang="${lang}"><meta charset="utf-8"><style>
 *{box-sizing:border-box;margin:0}
 html,body{width:${w}px;height:${h}px;overflow:hidden;background:#0D1A13;color:#E9F2EB;
-  font-family:'Barlow','IBM Plex Sans Arabic','Segoe UI',system-ui,sans-serif}
+  font-family:'Barlow','Segoe UI',system-ui,sans-serif}
 #root{position:relative;width:${w}px;height:${h}px;display:flex;flex-direction:${wide ? "row" : "column"};padding:${wide ? 56 : 64}px;gap:${wide ? 56 : 40}px;direction:${rtl ? "rtl" : "ltr"}}
 #head{display:flex;flex-direction:column;gap:14px;${wide ? "width:560px;flex:none;justify-content:center" : ""}}
 #tags{display:flex;gap:10px;flex-wrap:wrap}

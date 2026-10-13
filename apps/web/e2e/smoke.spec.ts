@@ -140,12 +140,7 @@ test("scope: health and diet requests are refused in the coach's language", asyn
   await expect(page.getByTestId("chat-error")).toBeVisible();
 });
 
-test("French and Arabic render with the right direction", async ({ page }) => {
-  await page.goto("/templates?lang=ar");
-  await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-  await expect(page.locator("html")).toHaveAttribute("lang", "ar");
-  // the pitch itself never flips
-  await expect(page.locator("svg[role=img]").first()).toHaveCSS("direction", "ltr");
+test("French and German render in their own language", async ({ page }) => {
   await page.goto("/templates?lang=fr");
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
   await expect(page.locator("html")).toHaveAttribute("lang", "fr");

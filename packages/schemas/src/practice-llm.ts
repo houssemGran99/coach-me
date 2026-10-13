@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AreaSchema, i18n } from "./common";
+import { AreaSchema, dropAr, i18n } from "./common";
 import { PracticeSchema, VariantSchema } from "./practice";
 import { LlmErrorSchema } from "./session";
 
@@ -12,12 +12,12 @@ export const TemplateAdaptationSchema = z
     templateId: z.string().min(1).max(64),
     name: i18n(80),
     organisation: i18n(600),
-    coachingPoints: z.strictObject({ fr: Points, en: Points, ar: Points, de: Points.optional() }),
+    coachingPoints: z.preprocess(dropAr, z.strictObject({ fr: Points, en: Points, de: Points.optional() })),
     variants: z.array(VariantSchema).max(3),
     area: AreaSchema.optional(),
   })
   .superRefine((v, ctx) => {
-    const n = [v.coachingPoints.fr.length, v.coachingPoints.en.length, v.coachingPoints.ar.length, v.coachingPoints.de?.length ?? v.coachingPoints.en.length];
+    const n = [v.coachingPoints.fr.length, v.coachingPoints.en.length, v.coachingPoints.de?.length ?? v.coachingPoints.en.length];
     if (new Set(n).size !== 1) {
       ctx.addIssue({ code: "custom", path: ["coachingPoints"], message: "coaching points must have the same count in every language" });
     }

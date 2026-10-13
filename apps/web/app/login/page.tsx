@@ -9,17 +9,16 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getTranslations("auth"))("loginTitle") };
 }
 
-export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string; error?: string }> }) {
-  const { next, error } = await searchParams;
+export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
+  const { next } = await searchParams;
   const dest = safeNext(next);
-  // MongoDB mode has no email sign-in: visitors are guests, so send them straight to the feature.
-  if ((await getUser()) || getConfig().backend === "mongo") redirect(dest);
+  // Only mock mode has an email sign-in: elsewhere visitors are guests, so send them straight to the feature.
+  if ((await getUser()) || getConfig().backend !== "mock") redirect(dest);
   const t = await getTranslations("auth");
   return (
     <div className="grid gap-4">
       <h1 className="display text-5xl leading-none">{t("loginTitle")}</h1>
       <p className="muted max-w-[52ch]">{t("loginIntro")}</p>
-      {error && <p className="banner banner-bad max-w-md">{t("callbackError")}</p>}
       <LoginForm next={dest} mock={getConfig().mockBackend} />
     </div>
   );

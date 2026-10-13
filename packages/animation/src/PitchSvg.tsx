@@ -19,7 +19,7 @@ export const STAGE = {
   team: { a: "#2F6FDE", b: "#D93A3A", n: "#F2C230", k: "#20262B", c: "#F3F3F3" } as Record<Team, string>,
   teamText: { a: "#FFFFFF", b: "#FFFFFF", n: "#1B1F23", k: "#FFFFFF", c: "#1B1F23" } as Record<Team, string>,
   cone: { o: "#F28C28", y: "#F2C230", w: "#F3F3F3", r: "#E5484D" } as Record<ConeColor, string>,
-  font: "'Barlow','IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif",
+  font: "'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif",
 } as const;
 
 export function viewBoxOf(area: Area): { width: number; height: number } {

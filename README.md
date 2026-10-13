@@ -1,8 +1,8 @@
 # Coach Me
 
-A mobile-first PWA for football academy coaches in Tunisia. Describe your squad and what went wrong last week and get a **timed session** built from drills; watch every drill as an **animation**; describe a drill in chat to get a new one; keep a **personal library** (works offline); **share** a drill by link.
+A mobile-first PWA for football coaches. Describe your squad and what went wrong last week and get a **timed session** built from drills; watch every drill as an **animation**; describe a drill in chat to get a new one; keep a **personal library** (works offline); **share** a drill by link.
 
-French, Arabic (full RTL), English and German. Everything generated is a draft the coach can edit, save or discard, and unreviewed content is never shown as reviewed.
+French, English and German. Everything generated is a draft the coach can edit, save or discard, and unreviewed content is never shown as reviewed.
 
 ## Layout
 
@@ -13,7 +13,6 @@ packages/animation  pure animation core (timeline, stateAt, validateSpec) + <Pra
 data/templates      34 practice templates, one JSON file each (source of truth)
 prompts             system prompts for the model (markdown)
 scripts             template validation, preview, bundling, icon generation
-supabase            SQL migrations (RLS on every table) and pgTAP tests
 reference           the brief, the prototype and the seed practices
 ```
 
@@ -35,20 +34,11 @@ Put `MOCK_BACKEND=1` in `apps/web/.env.local`. You get an in-memory database, "s
 
 Set `MONGODB_URI` (for example a free MongoDB Atlas cluster), `AUTH_SECRET` (a long random string) and `LLM_API_KEY`, then `pnpm build && pnpm --filter @mourabbi/web start`. There are no accounts or emails: opening a feature gives the visitor a guest identity in a signed cookie, and everything they save belongs to that cookie. Data access control lives in code (every query filters on the owner); collections and indexes are created on first use. Run the store tests against a real database with `MONGODB_URI_TEST=mongodb://... pnpm test`.
 
-### Run for real with Supabase (alternative)
-
-1. Create a Supabase project (email magic-link auth only). Run `supabase/migrations/0001_init.sql` (e.g. `supabase db push`). In Auth settings, add your site URL and `<site>/auth/callback` as a redirect URL.
-2. Set the environment variables below.
-3. `pnpm build && pnpm --filter @mourabbi/web start`.
-
 | Variable | Purpose |
 |---|---|
-| `MONGODB_URI`, `MONGODB_DB`, `AUTH_SECRET` | MongoDB backend and the guest cookie signature (used instead of Supabase when `MONGODB_URI` is set) |
-| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase client |
-| `SUPABASE_SERVICE_ROLE_KEY` | server only: public share reads, generation log, reports |
+| `MONGODB_URI`, `MONGODB_DB`, `AUTH_SECRET` | MongoDB backend and the guest cookie signature |
 | `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL` | model provider: `gemini` (Google generateContent, default model `gemini-2.5-flash`) or `anthropic` (Messages API, default `claude-sonnet-5-5`). The provider is guessed from the key when `LLM_PROVIDER` is empty |
 | `FREE_LIBRARY_LIMIT` (20), `DAILY_GENERATION_LIMIT` (20), `DAILY_SHARE_LIMIT` (30) | limits per user |
-| `NEXT_PUBLIC_SITE_URL` | optional public origin for magic links |
 | `ALLOW_PENDING_TEMPLATES` (1) | see "Open items": set `0` to build sessions only from reviewed templates |
 | `MOCK_BACKEND`, `MOCK_BACKEND_ALLOW_PRODUCTION` | mock mode (see above) |
 
@@ -69,11 +59,9 @@ The key and the prompts never reach the client: all model code lives in `apps/we
 
 CI (`.github/workflows/ci.yml`) runs validate, lint, typecheck, unit tests, build and the e2e tests.
 
-Database tests: `supabase/tests/rls.test.sql` (pgTAP) proves that one user cannot read, change or delete another user's rows, that users cannot write the generation log, and that anonymous callers get nothing. Run with `supabase test db` (needs the Supabase CLI and Docker).
-
 ## Authoring and reviewing templates
 
-1. Edit or add `data/templates/<id>.json` (fr, en, ar and de text, 2 to 8 steps, an animation that passes `validateSpec`). New templates must be in the brief's table (`scripts/lib/expected.ts`).
+1. Edit or add `data/templates/<id>.json` (fr, en and de text, 2 to 8 steps, an animation that passes `validateSpec`). New templates must be in the brief's table (`scripts/lib/expected.ts`).
 2. `pnpm templates:validate` until it passes; `pnpm templates:preview` to look at them; `pnpm templates:bundle` to publish them to the app.
 3. Every template starts as `review.status: "pending"`. **Only a human marks one reviewed**, by editing the file: `"status": "reviewed"`, `"reviewedBy": "<name>"`, `"reviewedAt": "YYYY-MM-DD"`. A test fails the build if any file says `reviewed` without both, and the schema refuses AI content marked reviewed.
 4. The UI shows "Reviewed by <name>" only for such files. Pending templates show "Pending coach review"; AI drafts show "AI draft, not reviewed" on the card, in the player and on the public page.
@@ -85,7 +73,7 @@ The `difficulty` level (1 easy, 2 medium, 3 hard) of every template was set by t
 - **Session generation** (`/api/generate`): practices are filtered on the server (age, players, area with rotation, equipment, review policy, owner) before the prompt; the model only returns ids and minutes; the result is parsed strictly and validated (durations, ids, fit, order); one retry with the errors appended; then a fixed fallback built in code, flagged `source: "fallback"`. Model errors `NO_SUITABLE_DRILLS`, `CONSTRAINTS_CONFLICT`, `OUT_OF_SCOPE` come back in the coach's language.
 - **Practice chat** (`/api/practices/generate`, streamed as NDJSON): scope check, constraint parsing, template search; Mode A rewrites a template's text (its animation is untouched), Mode B writes a new practice that must pass `validateSpec`; one retry; otherwise the closest template is returned and labelled as such. Refinements create new versions (last 10 kept in the browser).
 - **Trust**: the server decides `source`, `review` and `id` of anything the model writes; saving a chat result can only ever produce an AI draft.
-- **Sharing**: a snapshot built through the strict Practice schema (no notes, owner or session context), read through a server route with the service role (there is no anonymous RLS policy). Unknown and revoked ids give the same 404 page.
+- **Sharing**: a snapshot built through the strict Practice schema (no notes, owner or session context), read through a server route that checks the share id. Unknown and revoked ids give the same 404 page.
 - **Offline**: the service worker caches build assets and one `/offline` page only; navigations, API calls and generation responses are never cached. Saved practices and the last viewed practice live in IndexedDB (wiped on sign-out) and are shown by the offline page.
 
 ## Decisions taken where the brief was open
@@ -98,8 +86,8 @@ The `difficulty` level (1 easy, 2 medium, 3 hard) of every template was set by t
 
 ## Open items
 
-- **Content review**: all 34 templates are `pending`; French, Arabic and German text and the 28 new animations need a native, qualified coach. The German text was written by the assistant. Nothing is marked reviewed.
-- **Not run in this environment**: the MongoDB store against a real database (the contract test runs only with `MONGODB_URI_TEST`),  the pgTAP RLS test (Docker was not running), a real Supabase project (magic link and RLS were only exercised through the in-memory store), a real model call (the Anthropic client is covered with a fake `fetch`; the pipeline with scripted models), and the Lighthouse PWA audit (manifest, icons, service worker and offline behaviour are covered by the e2e tests instead).
+- **Content review**: all 34 templates are `pending`; French and German text and the 28 new animations need a native, qualified coach. The German text was written by the assistant. Nothing is marked reviewed.
+- **Not run in this environment**: the MongoDB store against a real database (the contract test runs only with `MONGODB_URI_TEST`),  a real model call (the Anthropic client is covered with a fake `fetch`; the pipeline with scripted models), and the Lighthouse PWA audit (manifest, icons, service worker and offline behaviour are covered by the e2e tests instead).
 - Editing a saved practice in the library changes the set-up text and title in the current UI language only; the other languages keep their text.
 - The offline page uses the language that was active when the service worker installed.
 - Report throttling is per server process; generation and share limits use database counts per UTC day.
