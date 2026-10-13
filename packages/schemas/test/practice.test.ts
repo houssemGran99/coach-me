@@ -22,9 +22,9 @@ describe("PracticeSchema", () => {
     expect(parse(q).success).toBe(false);
   });
 
-  it("requires text in fr, en and ar", () => {
+  it("requires text in fr and en", () => {
     const p = seed("rondo_4v2_u10") as unknown as { name: Record<string, string> };
-    delete p.name.ar;
+    delete p.name.en;
     expect(parse(p).success).toBe(false);
   });
 
@@ -35,12 +35,10 @@ describe("PracticeSchema", () => {
     const b = seed("rondo_4v2_u10");
     b.coachingPoints.en = ["a", "b", "c", "d", "e", "f"];
     b.coachingPoints.fr = ["a", "b", "c", "d", "e", "f"];
-    b.coachingPoints.ar = ["a", "b", "c", "d", "e", "f"];
     expect(parse(b).success).toBe(false);
     const c = seed("rondo_4v2_u10");
     c.coachingPoints.en = ["x".repeat(201)];
     c.coachingPoints.fr = ["x"];
-    c.coachingPoints.ar = ["x"];
     expect(parse(c).success).toBe(false);
   });
 

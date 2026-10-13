@@ -157,8 +157,7 @@
     "failed": "Impossible d'envoyer le lien. Réessayez dans une minute.",
     "mockNote": "Mode développement : n'importe quel e-mail vous connecte sans envoyer de message.",
     "signedOut": "Vous êtes déconnecté.",
-    "needSignIn": "Connectez-vous pour continuer.",
-    "callbackError": "Ce lien ne fonctionne pas ou a expiré. Demandez-en un nouveau."
+    "needSignIn": "Connectez-vous pour continuer."
   },
   "onboarding": {
     "title": "Bienvenue, entraîneur",
@@ -181,7 +180,7 @@
     "equipment": "Matériel",
     "focus": "Thème",
     "note": "Que s'est-il passé la semaine dernière ?",
-    "noteHint": "Décrivez-le en français, en arabe, en anglais ou en allemand. N'indiquez ni noms ni détails sur des joueurs en particulier.",
+    "noteHint": "Décrivez-le en français, en anglais ou en allemand. N'indiquez ni noms ni détails sur des joueurs en particulier.",
     "notePlaceholder": "p. ex. Nous avons perdu la largeur et le soutien après la première passe.",
     "generate": "Générer la séance",
     "generating": "Construction de la séance…",

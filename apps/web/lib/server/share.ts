@@ -60,7 +60,7 @@ export async function activeShare(store: Store, owner: string, practiceId: strin
 
 /**
  * Public read, used by the page and the JSON route. Unknown and revoked ids are indistinguishable (both null).
- * Goes through the service role in the store; RLS has no anonymous policy on shared_practices.
+ * Only the share id is needed: there is no owner check on public reads.
  */
 export async function readPublicShare(store: Store, id: string): Promise<Practice | null> {
   if (!SHARE_ID.test(id)) return null;

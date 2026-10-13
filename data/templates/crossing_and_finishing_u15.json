@@ -26,13 +26,11 @@
   "name": {
     "fr": "Centres et finition",
     "en": "Crossing and finishing",
-    "ar": "العرضيات والتسديد",
     "de": "Flanken und Abschluss"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Un joueur de couloir conduit vers la ligne de fond et centre. Deux finisseurs attaquent le premier et le second poteau. Faire tourner joueur de couloir, finisseurs et gardien régulièrement, et utiliser les deux côtés.",
     "en": "35 m by 30 m area with a full goal and a goalkeeper. A wide player dribbles toward the byline and crosses. Two finishers attack the near post and the far post. Rotate wide player, finishers and goalkeeper every few turns, and use both wings.",
-    "ar": "منطقة 35 × 30 م مع مرمى كبير وحارس. يراوغ لاعب الجناح نحو خط النهاية ثم يعرض الكرة. يهاجم مسدّدان القائم القريب والقائم البعيد. دوّروا لاعب الجناح والمسدّدين والحارس كل بضع محاولات واستعملوا الجناحين.",
     "de": "Fläche von 35 m mal 30 m mit einem großen Tor und einem Torwart. Ein Außenspieler dribbelt zur Grundlinie und flankt. Zwei Abschlussspieler laufen auf den kurzen und den langen Pfosten. Wechsle Außenspieler, Abschlussspieler und Torwart nach einigen Durchgängen und nutze beide Seiten."
   },
   "coachingPoints": {
@@ -46,11 +44,6 @@
       "The near-post runner attacks the front of the goal, the far-post runner arrives late",
       "Time the run to meet the cross; do not wait for it"
     ],
-    "ar": [
-      "اعرض الكرة مبكرًا أرضية أو قوية قبل أن يتمركز الحارس",
-      "مهاجم القائم القريب يهاجم مقدمة المرمى والبعيد يصل متأخرًا",
-      "اضبط توقيت الركض لتلاقي العرضية ولا تنتظرها"
-    ],
     "de": [
       "Früh flanken, flach oder hart, bevor der Torwart sicher steht",
       "Der Läufer am kurzen Pfosten läuft in den Torraum, der am langen Pfosten kommt spät",
@@ -63,7 +56,6 @@
       "text": {
         "fr": "Centrer depuis un ballon arrêté",
         "en": "Cross from a stationary ball",
-        "ar": "اعرض الكرة من وضع ثابت",
         "de": "Flanke aus dem ruhenden Ball"
       }
     },
@@ -72,7 +64,6 @@
       "text": {
         "fr": "Ajouter un défenseur qui suit le joueur du second poteau",
         "en": "Add a defender who tracks the far-post runner",
-        "ar": "أضف مدافعًا يراقب مهاجم القائم البعيد",
         "de": "Ein Verteidiger deckt den Läufer am langen Pfosten"
       }
     }
@@ -149,7 +140,6 @@
         "caption": {
           "fr": "Le joueur de couloir conduit vers la ligne de fond",
           "en": "The wide player dribbles toward the byline",
-          "ar": "لاعب الجناح يراوغ نحو خط النهاية",
           "de": "Der Außenspieler dribbelt zur Grundlinie"
         },
         "moves": {
@@ -174,7 +164,6 @@
         "caption": {
           "fr": "Centre tendu vers le second poteau",
           "en": "Cross early to the far post",
-          "ar": "اعرض الكرة مبكرًا نحو القائم البعيد",
           "de": "Früh auf den langen Pfosten flanken"
         },
         "moves": {
@@ -194,7 +183,6 @@
         "caption": {
           "fr": "Le joueur du second poteau finit de première",
           "en": "The far-post runner finishes first time",
-          "ar": "مهاجم القائم البعيد يسدّد من لمسة واحدة",
           "de": "Der Läufer am langen Pfosten schließt direkt ab"
         },
         "moves": {
@@ -211,7 +199,6 @@
         "caption": {
           "fr": "Remise en place : tourner joueur de couloir, finisseurs et gardien",
           "en": "Reset: rotate wide player, finishers and keeper",
-          "ar": "إعادة التمركز: دوّروا اللاعبين والحارس",
           "de": "Neustart: Außenspieler, Abschlussspieler und Torwart wechseln"
         },
         "moves": {

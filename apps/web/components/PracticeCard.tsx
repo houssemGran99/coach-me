@@ -12,8 +12,8 @@ export function PracticeCard({ practice, href }: { practice: Practice; href: str
   const locale = useLocale() as Locale;
   const name = practice.name[locale];
   return (
-    <li className="card flex flex-col gap-3 !p-3" data-testid="practice-card">
-      <Link href={href} className="block overflow-hidden rounded-md" aria-label={name}>
+    <li className="card card-hover flex flex-col gap-3 !p-3" data-testid="practice-card">
+      <Link href={href} className="card-media" aria-label={name}>
         <PitchPreview
           spec={practice.animation}
           area={practice.area}

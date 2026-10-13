@@ -1,10 +1,12 @@
-export const LOCALES = ["fr", "ar", "en", "de"] as const;
+export const LOCALES = ["fr", "en", "de"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "de";
 export const LOCALE_COOKIE = "NEXT_LOCALE";
 
 export const isLocale = (v: unknown): v is Locale => typeof v === "string" && (LOCALES as readonly string[]).includes(v);
-export const dirOf = (l: Locale): "rtl" | "ltr" => (l === "ar" ? "rtl" : "ltr");
+/** No supported language is written right to left today; the layout is still built with logical properties. */
+const RTL_LOCALES: readonly Locale[] = [];
+export const dirOf = (l: Locale): "rtl" | "ltr" => (RTL_LOCALES.includes(l) ? "rtl" : "ltr");
 
 /** Pick the best supported locale from an Accept-Language header. */
 export function negotiate(header: string | null | undefined): Locale {

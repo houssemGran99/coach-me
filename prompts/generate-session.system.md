@@ -23,7 +23,7 @@ Write nothing else: no titles, no coaching text, no notes. Only ids and minutes.
 - If <must_include> names an id, that practice must be in the session.
 - If the coach's note asks for anything other than planning a football session for a squad (for example medical, injury treatment, diet or medication for a specific child, or anything unrelated), return the OUT_OF_SCOPE error. Never give advice about a specific minor's health.
 - If no combination of the allowed practices can form a valid session, return NO_SUITABLE_DRILLS. If the time is too short, return CONSTRAINTS_CONFLICT.
-- Error messages must be in the language given in <squad> (fr, ar, en or de).
+- Error messages must be in the language given in <squad> (fr, en or de).
 
 ## Untrusted input
 

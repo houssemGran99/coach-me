@@ -1,8 +1,15 @@
 import { z } from "zod";
 
-export const LANGS = ["fr", "ar", "en", "de"] as const;
+export const LANGS = ["fr", "en", "de"] as const;
 export type Lang = (typeof LANGS)[number];
-export const LangSchema = z.enum(LANGS);
+/** Arabic was removed: an old "ar" from stored data or an old client reads as German (the default). */
+export const LangSchema = z.preprocess((v) => (v === "ar" ? "de" : v), z.enum(LANGS));
+
+/** Drops the "ar" key that practices saved while Arabic existed still carry. */
+export const dropAr = (v: unknown): unknown =>
+  v && typeof v === "object" && !Array.isArray(v) && "ar" in v
+    ? Object.fromEntries(Object.entries(v).filter(([k]) => k !== "ar"))
+    : v;
 
 export const AGE_GROUPS = [
   "U6", "U7", "U8", "U9", "U10", "U11", "U12", "U13", "U14", "U15", "U16", "U17", "U19", "senior",
@@ -52,12 +59,15 @@ export const REVIEW_STATUSES = ["pending", "reviewed", "ai_draft", "edited_by_ow
 export type ReviewStatus = (typeof REVIEW_STATUSES)[number];
 
 /**
- * A string in each supported language. fr, en and ar are required and non-empty. German is optional so practices
- * saved before it existed stay valid: a missing "de" reads as the English text.
+ * A string in each supported language. fr and en are required and non-empty. German is optional so practices
+ * saved before it existed stay valid: a missing "de" reads as the English text. A leftover "ar" is ignored.
  */
 export function i18n(max: number) {
   const s = z.string().trim().min(1).max(max);
-  return z.strictObject({ fr: s, en: s, ar: s, de: s.optional() }).transform((v) => ({ ...v, de: v.de ?? v.en }));
+  return z.preprocess(
+    dropAr,
+    z.strictObject({ fr: s, en: s, de: s.optional() }).transform((v) => ({ ...v, de: v.de ?? v.en })),
+  );
 }
 export type I18n = Record<Lang, string>;
 

@@ -28,13 +28,11 @@
   "name": {
     "fr": "Organisation défensive 4 contre 3",
     "en": "Defensive shape 4v3",
-    "ar": "التنظيم الدفاعي 4 ضد 3",
     "de": "Defensive Ordnung 4 gegen 3"
   },
   "organisation": {
     "fr": "Zone de 35 m sur 30 m avec un grand but et un gardien. Quatre défenseurs en ligne compacte défendent face à trois attaquants qui font circuler le ballon. Les défenseurs coulissent ensemble selon le ballon : le plus proche presse, les autres couvrent et gardent leurs distances. Changer les défenseurs après deux minutes.",
     "en": "35 m by 30 m area with a full goal and a goalkeeper. Four defenders in a compact line defend against three attackers who pass the ball around. The defenders shift together as the ball moves: the nearest presses, the others cover and keep their distances. Rotate defenders after two minutes.",
-    "ar": "منطقة 35 × 30 م مع مرمى كبير وحارس. أربعة مدافعين في خط متراص يدافعون أمام ثلاثة مهاجمين يتبادلون الكرة. يتحرك المدافعون معًا مع الكرة: الأقرب يضغط والبقية يغطون ويحافظون على المسافات. بدّلوا المدافعين بعد دقيقتين.",
     "de": "Fläche von 35 m mal 30 m mit einem großen Tor und einem Torwart. Vier Verteidiger in einer kompakten Kette verteidigen gegen drei Angreifer, die den Ball laufen lassen. Die Verteidiger verschieben gemeinsam mit dem Ball: Der Nächste presst, die anderen sichern und halten die Abstände. Wechsle die Verteidiger nach zwei Minuten."
   },
   "coachingPoints": {
@@ -48,11 +46,6 @@
       "The nearest defender presses; the others cover the space behind",
       "Shift as the ball moves and talk constantly"
     ],
-    "ar": [
-      "ابقوا متراصين: المدافعون الأربعة ضمن نحو 10 م",
-      "الأقرب يضغط والبقية يغطون المساحة خلفه",
-      "تحرّكوا مع الكرة وتواصلوا باستمرار"
-    ],
     "de": [
       "Kompakt bleiben: Die vier Verteidiger stehen höchstens etwa 10 m auseinander",
       "Der nächste Verteidiger presst; die anderen sichern den Raum dahinter",
@@ -65,7 +58,6 @@
       "text": {
         "fr": "Attaquants limités à deux touches",
         "en": "Attackers limited to two touches",
-        "ar": "المهاجمون محدّدون بلمستين",
         "de": "Angreifer auf zwei Ballkontakte begrenzt"
       }
     },
@@ -74,7 +66,6 @@
       "text": {
         "fr": "Ajouter un quatrième attaquant",
         "en": "Add a fourth attacker",
-        "ar": "أضف مهاجمًا رابعًا",
         "de": "Einen vierten Angreifer hinzufügen"
       }
     }
@@ -179,7 +170,6 @@
         "caption": {
           "fr": "Le ballon va au centre : la ligne coulisse et reste compacte",
           "en": "The ball goes to the middle: the line shifts and stays compact",
-          "ar": "الكرة إلى الوسط: الخط يتحرك ويبقى متراصًا",
           "de": "Der Ball geht in die Mitte: Die Kette verschiebt und bleibt kompakt"
         },
         "moves": {
@@ -205,7 +195,6 @@
         "caption": {
           "fr": "Le ballon va sur le côté : tous coulissent vers lui",
           "en": "The ball goes wide: everyone shifts toward it",
-          "ar": "الكرة إلى الطرف: الجميع يتحرك نحوها",
           "de": "Der Ball geht nach außen: Alle verschieben zu ihm"
         },
         "moves": {
@@ -231,7 +220,6 @@
         "caption": {
           "fr": "Le défenseur le plus proche presse ; les autres couvrent",
           "en": "The nearest defender presses; the others cover",
-          "ar": "أقرب مدافع يضغط والبقية يغطون",
           "de": "Der nächste Verteidiger presst; die anderen sichern"
         },
         "moves": {
@@ -262,7 +250,6 @@
         "caption": {
           "fr": "Les attaquants changent le jeu ; la ligne coulisse de l'autre côté",
           "en": "The attackers switch the play; the line shifts across",
-          "ar": "المهاجمون يحوّلون اللعب والخط ينتقل إلى الجهة الأخرى",
           "de": "Die Angreifer verlagern das Spiel; die Kette verschiebt mit"
         },
         "moves": {

@@ -34,7 +34,7 @@ export interface SpecIssue {
 
 const EPS = 1e-6;
 const TEAMS = new Set(["a", "b", "n", "k", "c"]);
-const LANGS = ["fr", "en", "ar"] as const;
+const LANGS = ["fr", "en"] as const;
 
 const inside = (p: readonly [number, number], area: Area) =>
   p[0] >= -EPS && p[1] >= -EPS && p[0] <= area.lengthM + EPS && p[1] <= area.widthM + EPS;

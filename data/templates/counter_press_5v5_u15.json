@@ -27,13 +27,11 @@
   "name": {
     "fr": "Contre-pressing 5 contre 5",
     "en": "Counter-press 5v5",
-    "ar": "الضغط المعاكس 5 ضد 5",
     "de": "Gegenpressing 5 gegen 5"
   },
   "organisation": {
     "fr": "Terrain de 40 m sur 30 m avec un mini-but à chaque extrémité. Deux équipes de cinq. Quand une équipe perd le ballon, les trois joueurs les plus proches pressent immédiatement pendant cinq secondes pour le récupérer ; sinon tout le monde se replace et défend. Un but marqué dans les cinq secondes après la récupération compte double.",
     "en": "40 m by 30 m pitch with a mini goal at each end. Two teams of five. When a team loses the ball, the nearest three players press immediately for five seconds to win it back; if they fail, everyone recovers and defends. A goal scored within five seconds of winning the ball back counts double.",
-    "ar": "ملعب 40 × 30 م بمرمى صغير في كل طرف. فريقان من خمسة لاعبين. عند فقدان الكرة يضغط أقرب ثلاثة لاعبين فورًا لمدة خمس ثوانٍ لاستعادتها، وإن فشلوا يعود الجميع ويدافعون. الهدف المسجّل خلال خمس ثوانٍ من استعادة الكرة يُحسب مضاعفًا.",
     "de": "Feld von 40 m mal 30 m mit einem Minitor an jedem Ende. Zwei Teams zu je fünf Spielern. Verliert ein Team den Ball, pressen die drei nächsten Spieler sofort fünf Sekunden lang, um ihn zurückzuerobern; gelingt das nicht, fallen alle zurück und verteidigen. Ein Tor innerhalb von fünf Sekunden nach der Balleroberung zählt doppelt."
   },
   "coachingPoints": {
@@ -47,11 +45,6 @@
       "If the press fails after five seconds, drop and defend together",
       "After winning the ball, attack quickly while the opponent is disorganised"
     ],
-    "ar": [
-      "تفاعل فورًا: الأقرب يضغط والبقية يقطعون التمريرات",
-      "إذا فشل الضغط بعد خمس ثوانٍ فتراجعوا ودافعوا معًا",
-      "بعد استخلاص الكرة هاجم بسرعة والخصم غير منظّم"
-    ],
     "de": [
       "Sofort reagieren: Die nächsten Spieler pressen den Ball, die anderen schneiden die Passwege ab",
       "Scheitert das Pressing nach fünf Sekunden, gemeinsam zurückfallen und verteidigen",
@@ -64,7 +57,6 @@
       "text": {
         "fr": "Dix secondes pour récupérer le ballon",
         "en": "Ten seconds to win the ball back",
-        "ar": "عشر ثوانٍ لاستعادة الكرة",
         "de": "Zehn Sekunden Zeit zur Balleroberung"
       }
     },
@@ -73,7 +65,6 @@
       "text": {
         "fr": "Seuls les deux joueurs les plus proches peuvent presser",
         "en": "Only the nearest two players may press",
-        "ar": "يُسمح فقط لأقرب لاعبين بالضغط",
         "de": "Nur die zwei nächsten Spieler dürfen pressen"
       }
     }
@@ -208,7 +199,6 @@
         "caption": {
           "fr": "Les bleus attaquent et jouent vers l'avant",
           "en": "Blue attacks and plays forward",
-          "ar": "الأزرق يهاجم ويلعب إلى الأمام",
           "de": "Blau greift an und spielt nach vorn"
         },
         "moves": {
@@ -237,7 +227,6 @@
         "caption": {
           "fr": "Une touche lourde : les rouges gagnent le ballon",
           "en": "A heavy touch: red wins the ball",
-          "ar": "لمسة ثقيلة: الأحمر يستخلص الكرة",
           "de": "Schlechte Ballmitnahme: Rot erobert den Ball"
         },
         "moves": {
@@ -254,7 +243,6 @@
         "caption": {
           "fr": "Contre-pressing : les trois plus proches pressent en moins de cinq secondes",
           "en": "Counter-press: the nearest three press within five seconds",
-          "ar": "الضغط المعاكس: أقرب ثلاثة يضغطون خلال خمس ثوانٍ",
           "de": "Gegenpressing: Die drei nächsten pressen innerhalb von fünf Sekunden"
         },
         "moves": {
@@ -280,7 +268,6 @@
         "caption": {
           "fr": "Les bleus récupèrent le ballon près de la moitié rouge",
           "en": "Blue wins the ball back near the red half",
-          "ar": "الأزرق يستعيد الكرة قرب نصف الأحمر",
           "de": "Blau erobert den Ball in der roten Hälfte zurück"
         },
         "moves": {
@@ -297,7 +284,6 @@
         "caption": {
           "fr": "Attaquer vite et tirer avant le repli des rouges",
           "en": "Attack quickly and shoot before red recovers",
-          "ar": "هاجم بسرعة وسدّد قبل عودة الأحمر",
           "de": "Schnell angreifen und abschließen, bevor Rot zurück ist"
         },
         "moves": {

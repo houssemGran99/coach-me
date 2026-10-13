@@ -4,11 +4,10 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { GUEST_COOKIE, MOCK_COOKIE, isGuestEmail, verifyGuestCookie } from "../guest";
 import { getConfig } from "./config";
-import { supabaseUser } from "./supabase";
 
 export interface AppUser {
   id: string;
-  /** Empty for guests created by the supabase anonymous sign-in. */
+  /** Empty for the automatic guest accounts. */
   email: string;
   /** True for the automatic guest account (no email). */
   isGuest: boolean;
@@ -45,12 +44,7 @@ export async function getUser(): Promise<AppUser | null> {
     const id = verifyGuestCookie((await cookies()).get(GUEST_COOKIE)?.value, cfg.authSecret);
     return id ? { id, email: "", isGuest: true } : null;
   }
-  if (!cfg.supabaseUrl) return null;
-  const sb = await supabaseUser();
-  const { data } = await sb.auth.getUser();
-  if (!data.user) return null;
-  const email = data.user.email ?? "";
-  return { id: data.user.id, email, isGuest: !email || data.user.is_anonymous === true };
+  return null;
 }
 
 /** Only same-site relative paths are allowed as a post-login destination. */

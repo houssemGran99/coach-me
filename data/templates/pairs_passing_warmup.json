@@ -31,13 +31,11 @@
   "name": {
     "fr": "Échauffement en passes par deux",
     "en": "Pairs passing warm-up",
-    "ar": "إحماء بالتمرير ثنائيًا",
     "de": "Aufwärmen mit Passspiel zu zweit"
   },
   "organisation": {
     "fr": "Les joueurs se placent par deux face à face à 10 m, un ballon par paire. Passer et recevoir avec l'intérieur du pied, puis ajouter un second ballon pour passer en même temps. Changer de partenaire après une minute.",
     "en": "Pairs face each other 10 m apart, one ball per pair. Pass and receive with the inside of the foot, then add a second ball so both players pass at the same time. After a minute, swap partners.",
-    "ar": "يقف اللاعبون في أزواج متقابلين على بُعد 10 م، وكرة لكل زوج. مرّر واستقبل بباطن القدم، ثم أضف كرة ثانية ليمرّر اللاعبان في الوقت نفسه. بدّل الشريك بعد دقيقة.",
     "de": "Paare stehen sich im Abstand von 10 m gegenüber, ein Ball pro Paar. Mit der Innenseite passen und annehmen, dann einen zweiten Ball hinzunehmen, sodass beide gleichzeitig passen. Nach einer Minute die Partner wechseln."
   },
   "coachingPoints": {
@@ -51,11 +49,6 @@
       "Cushion the first touch and look up",
       "Talk to your partner before the second ball"
     ],
-    "ar": [
-      "مرّر بقوة نحو القدم الأمامية للشريك",
-      "امتص الكرة بلمسة أولى وارفع رأسك",
-      "تحدث مع شريكك قبل الكرة الثانية"
-    ],
     "de": [
       "Fest auf den vorderen Fuß des Partners passen",
       "Den ersten Kontakt abfedern und aufschauen",
@@ -68,7 +61,6 @@
       "text": {
         "fr": "Utiliser d'abord le bon pied, puis le pied faible",
         "en": "Use the stronger foot first, then the weaker foot",
-        "ar": "استعمل القدم الأقوى أولًا ثم الأضعف",
         "de": "Zuerst mit dem stärkeren, dann mit dem schwächeren Fuß"
       }
     },
@@ -77,7 +69,6 @@
       "text": {
         "fr": "Deux touches maximum, puis une seule",
         "en": "Two touches maximum, then one touch",
-        "ar": "لمستان كحد أقصى ثم لمسة واحدة",
         "de": "Höchstens zwei Ballkontakte, dann einen"
       }
     }
@@ -175,7 +166,6 @@
         "caption": {
           "fr": "Passer à son partenaire",
           "en": "Pass to your partner",
-          "ar": "مرّر إلى شريكك",
           "de": "Zum Partner passen"
         },
         "moves": {
@@ -195,7 +185,6 @@
         "caption": {
           "fr": "Repasser en gardant les appuis actifs",
           "en": "Pass back and keep moving your feet",
-          "ar": "أعد التمرير وأبقِ قدميك نشطتين",
           "de": "Zurückpassen und die Füße in Bewegung halten"
         },
         "moves": {
@@ -215,7 +204,6 @@
         "caption": {
           "fr": "Second ballon : passer en même temps",
           "en": "Second ball: both pass at the same time",
-          "ar": "كرة ثانية: يمرّر الاثنان في الوقت نفسه",
           "de": "Zweiter Ball: beide passen gleichzeitig"
         },
         "moves": {
@@ -244,7 +232,6 @@
         "caption": {
           "fr": "Changer de partenaire : la file de gauche descend d'une rangée",
           "en": "Change partner: the left line moves down one row",
-          "ar": "تغيير الشريك: صف اليسار ينزل صفًا واحدًا",
           "de": "Partnerwechsel: Die linke Reihe rückt eine Position weiter"
         },
         "moves": {

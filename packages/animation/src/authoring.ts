@@ -31,4 +31,4 @@ export function carry(entries: readonly (readonly [string, string, readonly Poin
 export const mix = (...parts: Step["moves"][]): Step["moves"] => Object.assign({}, ...parts);
 
 /** Build a three-language text object. */
-export const say = (en: string, fr: string, ar: string, de?: string) => ({ fr, en, ar, ...(de ? { de } : {}) });
+export const say = (en: string, fr: string, de?: string) => ({ fr, en, ...(de ? { de } : {}) });

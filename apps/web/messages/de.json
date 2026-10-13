@@ -157,8 +157,7 @@
     "failed": "Wir konnten den Link nicht senden. Versuche es in einer Minute erneut.",
     "mockNote": "Entwicklungsmodus: Jede E-Mail-Adresse meldet dich an, ohne dass eine Nachricht verschickt wird.",
     "signedOut": "Du bist abgemeldet.",
-    "needSignIn": "Melde dich an, um fortzufahren.",
-    "callbackError": "Dieser Link hat nicht funktioniert oder ist abgelaufen. Fordere einen neuen an."
+    "needSignIn": "Melde dich an, um fortzufahren."
   },
   "onboarding": {
     "title": "Willkommen, Trainer",
@@ -181,7 +180,7 @@
     "equipment": "Material",
     "focus": "Schwerpunkt",
     "note": "Was ist letzte Woche passiert?",
-    "noteHint": "Beschreibe es auf Französisch, Arabisch, Englisch oder Deutsch. Nenne keine Namen oder Details zu einzelnen Spielern.",
+    "noteHint": "Beschreibe es auf Französisch, Englisch oder Deutsch. Nenne keine Namen oder Details zu einzelnen Spielern.",
     "notePlaceholder": "z. B. Nach dem ersten Pass haben wir Breite und Unterstützung verloren.",
     "generate": "Einheit erstellen",
     "generating": "Deine Einheit wird erstellt …",

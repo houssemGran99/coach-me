@@ -39,11 +39,6 @@
   --ok: #5ccb92; --warn: #e7b04a; --bad: #ff8479;
   color-scheme: dark;
 }
-html[lang="ar"] {
-  --f-display: var(--font-plex-ar), system-ui, sans-serif;
-  --f-body: var(--font-plex-ar), system-ui, sans-serif;
-}
-html[lang="ar"] * { letter-spacing: 0 !important; }
 
 @theme inline {
   --color-bg: var(--bg);
@@ -97,7 +92,18 @@ html[lang="ar"] * { letter-spacing: 0 !important; }
   .btn-sm { min-height: 44px; padding-inline: 14px; font-size: 14px; }
   .btn-danger { border-color: var(--bad); color: var(--bad); }
 
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: clamp(14px, 3vw, 24px); }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: clamp(14px, 3vw, 24px);
+    box-shadow: 0 1px 2px rgb(16 32 26 / 6%);
+  }
+  /* Gallery cards: the whole card reacts, and the preview box has the same shape for every drill. */
+  .card-hover { transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; }
+  .card-hover:hover, .card-hover:focus-within {
+    border-color: var(--brand); box-shadow: 0 6px 18px rgb(16 32 26 / 14%); transform: translateY(-2px);
+  }
+  @media (prefers-reduced-motion: reduce) { .card-hover { transition: none; } .card-hover:hover, .card-hover:focus-within { transform: none; } }
+  .card-media { aspect-ratio: 4 / 3; display: grid; place-items: center; background: var(--surface-2); border-radius: 8px; overflow: hidden; }
+  .card-media svg { width: auto !important; height: 100% !important; max-width: 100%; }
   .field { display: grid; gap: 6px; }
   .field > label, .field > .lab { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
   .hint { font-size: 12px; color: var(--muted); }

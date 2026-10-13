@@ -28,13 +28,11 @@
   "name": {
     "fr": "Conduite dans les portes de couleur",
     "en": "Colour gates dribbling",
-    "ar": "المراوغة عبر البوابات الملونة",
     "de": "Dribbling durch Farbtore"
   },
   "organisation": {
     "fr": "Carré de 20 m avec quatre portes, chacune formée de deux plots d'une même couleur. Chaque joueur conduit un ballon à travers n'importe quelle porte. À l'appel de l'entraîneur, tout le monde change de porte. Démarrer tranquillement puis accélérer.",
     "en": "20 m square with four gates, each made of two cones of one colour. Every player dribbles a ball through any gate. On the coach's call, everyone changes to another gate. Start at an easy pace and build up.",
-    "ar": "مربع 20 م فيه أربع بوابات، كل بوابة من قمعين بلون واحد. يراوغ كل لاعب بكرته عبر أي بوابة. عند نداء المدرّب يغيّر الجميع البوابة. ابدأ بإيقاع هادئ ثم زد السرعة.",
     "de": "Quadrat von 20 m mit vier Toren, jedes aus zwei Hütchen einer Farbe. Jeder Spieler dribbelt mit einem Ball durch ein beliebiges Tor. Auf Ruf des Trainers wechseln alle zu einem anderen Tor. Beginne in lockerem Tempo und steigere dich."
   },
   "coachingPoints": {
@@ -48,11 +46,6 @@
       "Small touches with both feet",
       "Change direction quickly on the call"
     ],
-    "ar": [
-      "ارفع رأسك لتجد بوابة فارغة",
-      "لمسات صغيرة بالقدمين",
-      "غيّر الاتجاه بسرعة عند النداء"
-    ],
     "de": [
       "Kopf hoch, um ein freies Tor zu finden",
       "Kleine Berührungen mit beiden Füßen",
@@ -65,7 +58,6 @@
       "text": {
         "fr": "Portes plus larges et sans appel",
         "en": "Wider gates and no calls",
-        "ar": "بوابات أوسع دون نداءات",
         "de": "Breitere Tore und keine Rufe"
       }
     },
@@ -74,7 +66,6 @@
       "text": {
         "fr": "Utiliser seulement le pied faible",
         "en": "Use only the weaker foot",
-        "ar": "استعمل القدم الأضعف فقط",
         "de": "Nur mit dem schwächeren Fuß"
       }
     }
@@ -189,7 +180,6 @@
         "caption": {
           "fr": "Conduire à travers une porte au choix",
           "en": "Dribble through any gate",
-          "ar": "راوغ عبر أي بوابة",
           "de": "Dribbele durch ein beliebiges Tor"
         },
         "moves": {
@@ -232,7 +222,6 @@
         "caption": {
           "fr": "À l'appel, aller à la porte opposée",
           "en": "On the call, cross to the opposite gate",
-          "ar": "عند النداء اذهب إلى البوابة المقابلة",
           "de": "Auf den Ruf zum gegenüberliegenden Tor wechseln"
         },
         "moves": {
@@ -275,7 +264,6 @@
         "caption": {
           "fr": "Repasser par la nouvelle porte",
           "en": "Go back through the new gate",
-          "ar": "عُد عبر البوابة الجديدة",
           "de": "Durch das neue Tor zurückdribbeln"
         },
         "moves": {

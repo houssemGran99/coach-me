@@ -36,7 +36,6 @@ const Svg = ({ k }: { k: keyof typeof ICON }) => (
 const CSS = `
 .mrb{border:1px solid rgba(233,242,235,.18);border-radius:8px;overflow:hidden;background:${STAGE.bg};color:${STAGE.ink};font-family:inherit;text-align:start}
 .mrb:focus-visible{outline:2px solid #E6EFE8;outline-offset:3px}
-.mrb[lang=ar] *{letter-spacing:0 !important}
 .mrb svg[role=img]{max-height:min(52vh,400px)}
 .mrb-head{display:flex;justify-content:space-between;align-items:center;gap:6px 12px;flex-wrap:wrap;padding:10px 14px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .mrb-time{font-variant-numeric:tabular-nums;letter-spacing:.04em}
@@ -208,7 +207,7 @@ export function PracticePlayer({ practice, lang, autoplay = false, labels, class
     <div
       className={`mrb ${className ?? ""}`.trim()}
       lang={lang}
-      dir={lang === "ar" ? "rtl" : "ltr"}
+      dir="ltr"
       role="group"
       aria-label={`${name} — ${L.title}`}
       tabIndex={0}

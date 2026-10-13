@@ -71,7 +71,7 @@ describe("validateSpec", () => {
     goals.animation.goals = mk(7, () => ({ x: 1, y: 1, w: 1, h: 1 })) as AnimationSpec["goals"];
     only(goals, "TOO_MANY");
     const zones = base();
-    const label = { fr: "z", en: "z", ar: "z" };
+    const label = { fr: "z", en: "z", de: "z" };
     zones.animation.zones = mk(5, () => ({ x: 1, y: 1, w: 2, h: 2, label })) as AnimationSpec["zones"];
     only(zones, "TOO_MANY");
   });
@@ -165,9 +165,9 @@ describe("validateSpec", () => {
     expect(codes(r)).not.toContain("BALL_START");
   });
 
-  it("requires captions in all three languages, at most 90 chars", () => {
+  it("requires captions in fr and en, at most 90 chars", () => {
     const p = base();
-    p.animation.steps[0]!.caption.ar = "";
+    p.animation.steps[0]!.caption.fr = "";
     only(p, "CAPTION");
     const q = base();
     q.animation.steps[1]!.caption.en = "x".repeat(91);

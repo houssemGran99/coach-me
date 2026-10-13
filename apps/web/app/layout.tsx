@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow, Barlow_Condensed, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
 import { SerwistProvider } from "@serwist/next/react";
 import { NextIntlClientProvider } from "next-intl";
@@ -13,7 +13,6 @@ import "./globals.css";
 
 const barlow = Barlow({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], variable: "--font-barlow", display: "swap" });
 const barlowCondensed = Barlow_Condensed({ subsets: ["latin", "latin-ext"], weight: ["600", "700"], variable: "--font-barlow-condensed", display: "swap" });
-const plexArabic = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600", "700"], variable: "--font-plex-ar", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "Coach Me", template: "%s · Coach Me" },
@@ -37,14 +36,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const t = await getTranslations("common");
   const legal = await getTranslations("legal");
   return (
-    <html lang={locale} dir={dirOf(locale)} className={`${barlow.variable} ${barlowCondensed.variable} ${plexArabic.variable}`}>
+    <html lang={locale} dir={dirOf(locale)} className={`${barlow.variable} ${barlowCondensed.variable}`}>
       <body>
         <SerwistProvider swUrl="/sw.js" disable={process.env.NODE_ENV === "development"}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <a href="#content" className="sr-only-x focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:bg-surface focus:p-3">
             {t("skipToContent")}
           </a>
-          <Header user={user} emailSignIn={getConfig().backend !== "mongo"} />
+          <Header user={user} emailSignIn={getConfig().backend === "mock"} />
           <OfflineBanner />
           <main id="content" className="wrap py-6 sm:py-8">
             {children}

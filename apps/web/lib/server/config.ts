@@ -15,19 +15,16 @@ export function getConfig() {
   // The in-memory backend has no real auth, so it is refused in production builds unless explicitly allowed (e2e).
   const mockBackend = mockRequested && (!production || process.env.MOCK_BACKEND_ALLOW_PRODUCTION === "1");
   const mongoUri = process.env.MONGODB_URI ?? "";
-  const backend = mockBackend ? "mock" : mongoUri ? "mongo" : process.env.NEXT_PUBLIC_SUPABASE_URL ? "supabase" : "none";
+  const backend = mockBackend ? "mock" : mongoUri ? "mongo" : "none";
   return {
-    /** Which persistence layer is active: in-memory mock, MongoDB, Supabase, or none configured. */
-    backend: backend as "mock" | "mongo" | "supabase" | "none",
+    /** Which persistence layer is active: in-memory mock, MongoDB, or none configured. */
+    backend: backend as "mock" | "mongo" | "none",
     mongoUri,
     mongoDb: process.env.MONGODB_DB ?? "coach",
     /** Signs the guest cookie in MongoDB mode. Set a long random value. */
     authSecret: process.env.AUTH_SECRET ?? "",
     mockBackend,
     mockLlm: process.env.LLM_PROVIDER === "mock" || (mockBackend && !process.env.LLM_API_KEY),
-    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
-    supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
-    supabaseServiceKey: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
     llmApiKey: process.env.LLM_API_KEY ?? "",
     /** "anthropic" or "gemini"; guessed from the key when LLM_PROVIDER is not set (sk-ant-... is Anthropic, AQ./AIza... is Google). */
     llmProvider: ((): "anthropic" | "gemini" => {
@@ -36,7 +33,6 @@ export function getConfig() {
       return /^(AQ.|AIza)/.test(process.env.LLM_API_KEY ?? "") ? "gemini" : "anthropic";
     })(),
     llmModel: process.env.LLM_MODEL ?? "",
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
     freeLibraryLimit: int(process.env.FREE_LIBRARY_LIMIT, 20),
     dailyGenerationLimit: int(process.env.DAILY_GENERATION_LIMIT, 20),
     dailyShareLimit: int(process.env.DAILY_SHARE_LIMIT, 30),

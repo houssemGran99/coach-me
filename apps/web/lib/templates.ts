@@ -42,7 +42,7 @@ export function filterPractices(list: Practice[], f: TemplateFilters): Practice[
     }
     if (f.lengthM && f.widthM && !areaFits(p.area, { lengthM: f.lengthM, widthM: f.widthM })) return false;
     if (q) {
-      const hay = norm([p.id.replaceAll("_", " "), p.name.fr, p.name.en, p.name.ar, p.name.de, p.organisation.fr, p.organisation.en].join(" "));
+      const hay = norm([p.id.replaceAll("_", " "), p.name.fr, p.name.en, p.name.de, p.organisation.fr, p.organisation.en].join(" "));
       if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
     }
     return true;

@@ -27,13 +27,11 @@
   "name": {
     "fr": "Rondo 5 contre 2, deux touches",
     "en": "5v2 rondo, two touches",
-    "ar": "روندو 5 ضد 2، لمستان",
     "de": "Rondo 5 gegen 2, zwei Kontakte"
   },
   "organisation": {
     "fr": "Carré de 18 m avec cinq joueurs à l'extérieur et deux défenseurs au centre. Les joueurs extérieurs sont limités à deux touches. Le défenseur qui récupère le ballon prend la place du joueur qui l'a perdu. Changer les défenseurs toutes les 90 secondes.",
     "en": "Square of 18 m with five players on the outside and two defenders inside. The outside players are limited to two touches. A defender who wins the ball swaps with the player who lost it. Rotate the defenders every 90 seconds.",
-    "ar": "مربع 18 م فيه خمسة لاعبين في الخارج ومدافعان في الداخل. يُسمح للاعبين الخارجيين بلمستين فقط. المدافع الذي يستخلص الكرة يتبادل المكان مع اللاعب الذي فقدها. بدّل المدافعين كل 90 ثانية.",
     "de": "Quadrat von 18 m mit fünf Spielern außen und zwei Verteidigern innen. Die Außenspieler sind auf zwei Ballkontakte begrenzt. Ein Verteidiger, der den Ball erobert, tauscht mit dem Spieler, der ihn verloren hat. Wechsle die Verteidiger alle 90 Sekunden."
   },
   "coachingPoints": {
@@ -47,11 +45,6 @@
       "Take the first touch away from pressure",
       "Switch the play to the player furthest from the defenders"
     ],
-    "ar": [
-      "مرّر مبكرًا قبل أن يغلق المدافعان المساحة",
-      "وجّه اللمسة الأولى بعيدًا عن الضغط",
-      "حوّل اللعب إلى اللاعب الأبعد عن المدافعين"
-    ],
     "de": [
       "Früh passen, bevor die Verteidiger die Lücke schließen",
       "Den ersten Kontakt vom Druck weg nehmen",
@@ -64,7 +57,6 @@
       "text": {
         "fr": "Trois touches et une zone plus grande",
         "en": "Three touches and a bigger area",
-        "ar": "ثلاث لمسات ومساحة أكبر",
         "de": "Drei Ballkontakte und eine größere Fläche"
       }
     },
@@ -73,7 +65,6 @@
       "text": {
         "fr": "Une touche pour les deux joueurs voisins du passeur",
         "en": "One touch for the two players next to the passer",
-        "ar": "لمسة واحدة للاعبين المجاورين للممرّر",
         "de": "Ein Kontakt für die zwei Spieler neben dem Passgeber"
       }
     }
@@ -174,7 +165,6 @@
         "caption": {
           "fr": "1 passe à 2, deux touches maximum",
           "en": "1 passes to 2, two touches maximum",
-          "ar": "1 يمرّر إلى 2 بلمستين كحد أقصى",
           "de": "1 passt zu 2, höchstens zwei Kontakte"
         },
         "moves": {
@@ -194,7 +184,6 @@
         "caption": {
           "fr": "2 change le jeu vers 4",
           "en": "2 switches the play to 4",
-          "ar": "2 يحوّل اللعب إلى 4",
           "de": "2 verlagert das Spiel zu 4"
         },
         "moves": {
@@ -214,7 +203,6 @@
         "caption": {
           "fr": "4 trouve 5 de l'autre côté",
           "en": "4 finds 5 on the other side",
-          "ar": "4 يجد 5 في الجهة الأخرى",
           "de": "4 findet 5 auf der anderen Seite"
         },
         "moves": {
@@ -234,7 +222,6 @@
         "caption": {
           "fr": "5 joue vers 1 et les défenseurs se replacent",
           "en": "5 plays to 1 and the defenders reset",
-          "ar": "5 يمرّر إلى 1 والمدافعان يعيدان التمركز",
           "de": "5 spielt zu 1 und die Verteidiger ordnen sich neu"
         },
         "moves": {
@@ -254,7 +241,6 @@
         "caption": {
           "fr": "Passe imprécise : un défenseur la gagne et échange",
           "en": "A loose pass: a defender wins it and swaps",
-          "ar": "تمريرة غير دقيقة: مدافع يستخلصها ويتبادل",
           "de": "Ein ungenauer Pass: Ein Verteidiger erobert ihn und tauscht"
         },
         "moves": {

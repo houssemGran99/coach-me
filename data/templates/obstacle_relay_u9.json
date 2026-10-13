@@ -24,13 +24,11 @@
   "name": {
     "fr": "Relais de conduite en slalom",
     "en": "Dribbling slalom relay",
-    "ar": "سباق تتابع المراوغة بين الأقماع",
     "de": "Dribbel-Slalomstaffel"
   },
   "organisation": {
     "fr": "Deux équipes s'affrontent dans deux couloirs d'une zone de 25 m sur 15 m. Chaque joueur conduit entre trois plots de slalom, contourne le plot de fond puis revient, et passe au joueur suivant de son équipe. La première équipe qui termine gagne. Garder le contrôle : un ballon perdu oblige à repartir du dernier plot.",
     "en": "Two teams race in two lanes of a 25 m by 15 m area. Each player dribbles through three slalom cones, around the end cone and back, then passes to the next player in the team. The first team to finish wins. Keep control: a lost ball means going back to the last cone.",
-    "ar": "يتسابق فريقان في ممرين داخل منطقة 25 × 15 م. يراوغ كل لاعب بين ثلاثة أقماع متعرجة ثم حول القمع الأخير ويعود، ثم يمرّر إلى اللاعب التالي في فريقه. الفريق الذي ينتهي أولًا يفوز. حافظ على التحكم: الكرة الضائعة تعني العودة إلى آخر قمع.",
     "de": "Zwei Teams laufen in zwei Bahnen einer Fläche von 25 m mal 15 m um die Wette. Jeder Spieler dribbelt durch drei Slalomhütchen, um das Endhütchen und zurück und passt dann zum nächsten Spieler seines Teams. Das Team, das zuerst fertig ist, gewinnt. Behalte die Kontrolle: Bei Ballverlust geht es zurück zum letzten Hütchen."
   },
   "coachingPoints": {
@@ -44,11 +42,6 @@
       "Use both feet and both sides of each foot",
       "Pass to your teammate before they start"
     ],
-    "ar": [
-      "لمسات صغيرة قرب الأقماع وأطول في المسافات المستقيمة",
-      "استعمل القدمين وجانبي القدم",
-      "مرّر إلى زميلك قبل أن ينطلق"
-    ],
     "de": [
       "Kleine Berührungen an den Hütchen, längere auf den geraden Stücken",
       "Beide Füße und beide Seiten des Fußes benutzen",
@@ -61,7 +54,6 @@
       "text": {
         "fr": "Moins de plots, plus espacés",
         "en": "Fewer cones with wider spacing",
-        "ar": "أقماع أقل ومسافات أوسع",
         "de": "Weniger Hütchen mit größeren Abständen"
       }
     },
@@ -70,7 +62,6 @@
       "text": {
         "fr": "Utiliser seulement l'extérieur du pied",
         "en": "Use only the outside of the foot",
-        "ar": "استعمل الجزء الخارجي من القدم فقط",
         "de": "Nur mit der Außenseite des Fußes"
       }
     }
@@ -185,7 +176,6 @@
         "caption": {
           "fr": "Conduire entre les plots du slalom",
           "en": "Dribble through the slalom cones",
-          "ar": "راوغ بين أقماع التعرّج",
           "de": "Durch die Slalomhütchen dribbeln"
         },
         "moves": {
@@ -220,7 +210,6 @@
         "caption": {
           "fr": "Contourner le plot de fond et revenir en courant",
           "en": "Round the end cone and race back",
-          "ar": "دُر حول القمع الأخير وعُد بسرعة",
           "de": "Um das Endhütchen und im Sprint zurück"
         },
         "moves": {
@@ -255,7 +244,6 @@
         "caption": {
           "fr": "Passer au joueur suivant de son équipe",
           "en": "Pass to the next player in your team",
-          "ar": "مرّر إلى اللاعب التالي في فريقك",
           "de": "Zum nächsten Spieler des Teams passen"
         },
         "moves": {
@@ -272,7 +260,6 @@
         "caption": {
           "fr": "Les joueurs suivants démarrent le slalom",
           "en": "The next players start the slalom",
-          "ar": "اللاعبان التاليان يبدآن التعرّج",
           "de": "Die nächsten Spieler starten den Slalom"
         },
         "moves": {
