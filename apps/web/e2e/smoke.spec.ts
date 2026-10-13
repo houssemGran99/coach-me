@@ -195,8 +195,11 @@ test("a saved practice opens offline from the device cache", async ({ page, cont
     if (!navigator.serviceWorker.controller) await new Promise((r) => navigator.serviceWorker.addEventListener("controllerchange", r, { once: true }));
   });
 
+  // Leave the app page first: switching to offline can make the live page reload itself (Serwist reloads on
+  // connectivity events), and that reload would race with, and cancel, the navigation below.
+  await page.goto("about:blank");
   await context.setOffline(true);
-  await page.goto(href!).catch(() => undefined);
+  await page.goto(href!);
   await expect(page.getByTestId("offline-practice")).toBeVisible();
   await expect(page.locator(".mrb")).toBeVisible();
   await expect(page.getByText("4v2 rondo").first()).toBeVisible();
