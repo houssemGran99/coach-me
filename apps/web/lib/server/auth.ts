@@ -2,15 +2,19 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { MOCK_COOKIE, isGuestEmail } from "../guest";
 import { getConfig } from "./config";
 import { supabaseUser } from "./supabase";
 
 export interface AppUser {
   id: string;
+  /** Empty for guests created by the supabase anonymous sign-in. */
   email: string;
+  /** True for the automatic guest account (no email). */
+  isGuest: boolean;
 }
 
-export const MOCK_COOKIE = "mock_user";
+export { MOCK_COOKIE };
 
 /** Stable uuid-shaped id for a mock user, derived from the email. */
 export function mockUserId(email: string): string {
@@ -27,7 +31,7 @@ export function decodeMockCookie(value: string | undefined): AppUser | null {
   try {
     const email = Buffer.from(value, "base64url").toString("utf8");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) return null;
-    return { id: mockUserId(email), email };
+    return { id: mockUserId(email), email, isGuest: isGuestEmail(email) };
   } catch {
     return null;
   }
@@ -40,7 +44,9 @@ export async function getUser(): Promise<AppUser | null> {
   if (!cfg.supabaseUrl) return null;
   const sb = await supabaseUser();
   const { data } = await sb.auth.getUser();
-  return data.user?.email ? { id: data.user.id, email: data.user.email } : null;
+  if (!data.user) return null;
+  const email = data.user.email ?? "";
+  return { id: data.user.id, email, isGuest: !email || data.user.is_anonymous === true };
 }
 
 /** Only same-site relative paths are allowed as a post-login destination. */

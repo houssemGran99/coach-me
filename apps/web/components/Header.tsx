@@ -17,7 +17,7 @@ export async function Header({ user }: { user: AppUser | null }) {
           <Suspense fallback={null}>
             <LanguageSwitch />
           </Suspense>
-          {user ? (
+          {user && !user.isGuest ? (
             <SignOutButton email={user.email} />
           ) : (
             <Link href="/login" className="btn btn-sm">{t("signIn")}</Link>
