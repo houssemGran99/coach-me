@@ -90,6 +90,17 @@ test("plan a session, watch a practice, save it, share it, read it logged out, s
   await anon.close();
 });
 
+test("a feature opens without any email: visitors get an automatic guest account", async ({ page }) => {
+  await page.goto("/plan/new");
+  await expect(page).toHaveURL(/\/plan\/new$/);
+  await expect(page.getByTestId("generate")).toBeVisible();
+  // the header still offers an optional sign-in, not a sign-out
+  await expect(page.getByRole("link", { name: "Sign in" })).toBeVisible();
+  await page.getByTestId("generate").click();
+  await expect(page).toHaveURL(/\/plan\/[0-9a-f-]{36}$/);
+  await expect(page.getByTestId("checks")).toBeVisible();
+});
+
 test("chat: an AI draft is labelled everywhere, including on the shared page", async ({ page, browser, baseURL }) => {
   await signIn(page, "coach2@example.com", "/practice/new");
   await page.getByTestId("chat-input").fill("U7, 4 players, goalkeeper handling");
